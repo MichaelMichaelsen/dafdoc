@@ -1,0 +1,221 @@
+swagger: '2.0'
+info:
+  version: '0.8'
+  title: Services for Matriklen på Datafordeleren
+  description: >
+    ## Matriklen
+
+    Matriklen er grundlaget for ejendomsregistreringen i Danmark og udgør en
+    vigtig del af administrationsgrundlaget i den offentlige forvaltning.
+
+    Matriklen består konceptuelt af matrikelregistret, matrikelkortet og
+    matrikelarkivet.
+
+    Registret indeholder oplysninger om arealer, herunder evt. vej- eller
+    vandløbsarealer noteringsforhold (f.eks. om landbrugsejendomme, samlede
+    faste ejendomme eller fredskov).
+
+    Matrikelkortet er et digitalt, juridisk kortværk, som viser de registrerede
+    ejendomsgrænser og vejrettigheder. I matrikelkortet vises også de
+    fredskovsbelagte arealer, zoner for strandbeskyttelse og klitfredning.
+    Matrikelarkivet indeholder bl.a. tidligere gældende matrikelkort,
+    matrikelprotokoller og registrerede matrikulære sager, herunder
+    måloplysninger.
+
+    Matrikelregistret og matrikelkortet er integreret i én samlet datamodel,
+    hvor ”Matrikulære data” er det bærende dataelement. Matrikulære data kan
+    deles op i tre grupper:
+
+    1. Elementer i basismatriklen
+
+    2. Øvrige elementer
+
+    3. Temaer.
+
+
+    Basismatriklen indeholder de elementer, der indgår i den matrikulære proces,
+    og de er vigtige elementer i bestemmelsen af den grundlæggende matrikulære
+    situation.
+
+
+    **Elementer i basismatriklen**
+
+    * Matrikelskel
+
+    * Optaget vej
+
+    * Jordstykke
+
+    * Centroidepunkt
+
+    * Skelpunkt
+
+    * Fikspunkt
+
+    * Grænsesten
+
+
+    **Øvrige elementer** indeholder administrative og matrikulære områder, der
+    automatisk kan afledes ud fra elementer i basismatriklen. De indgår således
+    ikke direkte i den matrikulære proces, men kan bruges som støttemateriale i
+    processen. Temaer: Region, kommune, sogn, ejerlav, herred,
+    opmålingsdistrikt.
+
+
+    Endelig er **temaer** elementer, der bygger på den grundlæggende matrikulære
+    situation, og som indgår i den matrikulære proces (jordrente, majoratskov,
+    stormfald, fredskov, strandbeskyttelse, klitfredning, notering om
+    jordforurening).
+
+    ## URL opbygning
+
+
+    URL for de enkelte REST services er opbygget af et **endpoint** efterfulgt af
+    **registernavn**, **servicenavn**, **versionen** af servicen, **servicetype** (REST eller
+    WFS etc.) samt **metodenavn** for REST services. Efter ? tilføjes parametre i
+    kaldet, der kan indeholde generelle kaldeparametre for REST services og
+    metode specifikke parametre.
+
+
+    Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke
+    er produktionsmiljøet der tilgås. Hvis der er tale om fortrolige eller
+    følsomme data, følger S5. Se miljøbeskrivelser på Datafordeler.dk
+
+
+
+
+    | URL-struktur for REST services |
+    endpoint/register/service/version/servicetype/metode |
+
+    | ------------------------------ |
+    ------------------------------------------------------ |
+
+    | Eksempel   |
+    https://test03-services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendo
+    |
+schemes:
+  - https
+host: services.datafordeler.dk
+basePath: /MATRIKEL/Matrikel/1/REST
+paths:
+  /MatrikelKommune:
+    get:
+      summary: Søg kommunenavn eller kommunekode
+      description: Søg kommunenavn eller kommunekode
+      tags:
+        - Normal
+      parameters:
+        - name: SFEBFEnr
+          in: query
+          type: string
+          format: int
+      responses:
+        200:
+          description: bpfg
+  /BygningPaaFremmedGrund:
+    get:
+      summary: Henter en Bygning på fremmed grund
+      description: Henter en Bygning på fremmed grund med oplysninger om geometri samt en reference til den SFE, BPFG’en ligger på, samt referencer til eventuelle lejligheder, der er beliggende i BPFG’en.
+      tags:
+        - Normal
+      parameters:
+        - name: SFEBFEnr
+          in: query
+          type: string
+          format: int
+      responses:
+        200:
+          description: bpfg
+  /SamletFastEjendom:
+    get:
+      summary: Henter en Samlet fast ejendom
+      description: Henter en Samlet fast ejendom og tilhørende Jordstykker, herunder fælleslodder samt referencer til eventuelle bestemte faste ejendomme, der er beliggende på eller i ejendommen.
+      tags:
+          - Normal
+      parameters:
+        - name: SFEBFEnr
+          in: query
+          type: string
+          format: int
+      responses:
+        200:
+          description: sfe
+  /MatrikulaerSag:
+    get:
+      summary: Matrikulær Sag
+      description: Henter de udstillede sagsdata via sagsid eller journalnummer. Obligatoriske parametre SagsId ELLER Journalnr ELLER Sagskategori og Kommunenavn ELLER Sagsoperation+RekvirentRef. Er de ikke sat fås ingen resultater
+      tags:
+        - Kompleks
+      parameters:
+        - name: SagsId
+          in: query
+          description: UUID for en sag
+          type: string
+          format: uuid
+          required: false
+        - name: Journalnr
+          in: query
+          description: Journalnummer
+          type: string
+          format: string
+        - name: Kommunenavn
+          in: query
+          type: string
+          format: string
+          required: false
+        - name: SagsOperation
+          in: query
+          description: Synonym for forretningshændelse
+          type: string
+          format: string
+          required: false
+        - name: RegistreringstidFra
+          in: query
+          description: Startdato for registering af objektet
+          type: string
+          format: date-time
+        - name: RegistreingstidTil
+          in: query
+          type: string
+          description: Slutdato for registrering af objektet
+          format: date-time
+          required: false
+        - name: Registreringstid
+          in: query
+          type: string
+          description: Dato som falder indenfor enregistreringstidsperiode. Anvendes fx 2015-09-02 vil de instanser med en gældende registreringstid på denne dato udvælges
+          format: date-time
+          required: false
+        - name: VirkningstidFra
+          in: query
+          description: Startdato for virkningen af objektet
+          type: string
+          format: date-time
+        - name: VirkningstidTil
+          in: query
+          type: string
+          description: Slutdato for virkning af objektet
+          format: date-time
+          required: false
+        - name: Status
+          in: query
+          type: array
+          description: Status jf. modellens udfaldsrum
+          items:
+            type: string
+            enum:
+              - "Hjemsendt til indberetter"
+              - "Hos matrikelmyndigheden"
+              - "Foreløbige sagsdata udstillet"
+              - "Afventer svar fra kommunen"
+              - "Afventer indsendelse til registrering"
+              - "Annulleret"
+              - "Afventer Tinglysningsretten"
+              - "Afsluttet"
+              - "Aflyst"
+          required: false
+      responses:
+        200:
+          description: Matrikulær Sag
+          schema:
+            $ref: 'schemas/matrikulaersag.yaml'

@@ -1,0 +1,49 @@
+{
+  "_from": "swagger-ui-build",
+  "_id": "swagger-ui-build@2.2.12",
+  "_inBundle": false,
+  "_integrity": "sha1-JTwpiW7Ii3cXSlYZrrwduWmcSpM=",
+  "_location": "/swagger-ui-build",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "swagger-ui-build",
+    "name": "swagger-ui-build",
+    "escapedName": "swagger-ui-build",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/swagger-ui-build/-/swagger-ui-build-2.2.12.tgz",
+  "_shasum": "253c29896ec88b77174a5619aebc1db9699c4a93",
+  "_spec": "swagger-ui-build",
+  "_where": "/home/mmi/Development/dafdoc",
+  "author": {
+    "name": "Jonathan Beech"
+  },
+  "bugs": {
+    "url": "https://github.com/LeftAndRight/swagger-ui-build/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Basic holder for a standalone version of the swagger-ui to easily be installed via npm",
+  "homepage": "https://github.com/LeftAndRight/swagger-ui-build#readme",
+  "keywords": [
+    "swagger",
+    "swagger-ui",
+    "build"
+  ],
+  "license": "ISC",
+  "main": "index.html",
+  "name": "swagger-ui-build",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeftAndRight/swagger-ui-build.git"
+  },
+  "version": "2.2.12"
+}
