@@ -37,7 +37,7 @@
 
   <script type="text/javascript">
     $(function () {
-      var url = 'yaml/dafmu.yaml'
+      var url = '../yaml/proto/proto.yaml'
 
       hljs.configure({
         highlightSizeThreshold: 5000
@@ -73,7 +73,7 @@
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
         },
-        docExpansion: "none",
+        docExpansion: "list",
         jsonEditor: false,
         defaultModelRendering: 'example',
         showRequestHeaders: false,
@@ -99,7 +99,6 @@ body { padding-top: 32px; }
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-
       <a class="navbar-brand" href="#">
         <img alt="Datafordeler" src="images/LogoGD7.png" width="20" height="32">
       </a>
@@ -108,6 +107,14 @@ body { padding-top: 32px; }
       </a>
     </div>
   </div>
+  <form class="form-inline ml-auto d-none d-lg-block">
+      <div class="input-group input-group-sm">
+          <input type="text" autocorrect="off" class="form-control form-control-sm" id="input_baseUrl" placeholder="http://example.com/api">
+          <div class="input-group-append">
+              <button data-add-scope id="update-url" class="btn btn-secondary" type="button">Explore</button>
+          </div>
+      </div>
+  </form>
 </nav>
 <hr style="border: 1px solid #f00">
 <div class="container-fluid">

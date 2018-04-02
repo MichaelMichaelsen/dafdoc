@@ -1,0 +1,830 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services for Matriklen på Datafordeleren | API Reference</title>
+    <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+    <link rel="stylesheet" href="stylesheets/spectacle.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- <script src="javascripts/foundation.js"></script> -->
+    <script src="javascripts/spectacle.min.js"></script>
+  </head>
+  <body id="spectacle">
+    <div id="page" class="drawer-layout drawer-slide-right-large">
+      <div id="sidebar">
+        <button class="close-button" aria-label="Close menu" type="button" data-drawer-close>
+          <span aria-hidden="true">×</span>
+        </button>
+        <nav id="nav" role="navigation">
+          <h5>Topics</h5>
+          <a href="#introduction">Introduction</a>
+          <h5>Operations</h5>
+          <section>
+            <a href="#tag-Normal">Normal</a>
+            <ul>
+              <li>
+                <a href="#operation--MatrikelKommune-get"> Søg kommunenavn eller kommunekode </a>
+              </li>
+              <li>
+                <a href="#operation--BygningPaaFremmedGrund-get"> Henter en Bygning på fremmed grund </a>
+              </li>
+              <li>
+                <a href="#operation--BestemtFastEjendom-get"> Henter en Samlet fast ejendom </a>
+              </li>
+              <li>
+                <a href="#operation--Ejerlejlighed-get"> Ejerlejlighed </a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <a href="#tag-Kompleks">Kompleks</a>
+            <ul>
+              <li>
+                <a href="#operation--SamletFastEjendom-get"> Henter en Samlet fast ejendom </a>
+              </li>
+              <li>
+                <a href="#operation--WFS-get"> Henter WFS fra MU </a>
+              </li>
+              <li>
+                <a href="#operation--MatrikulaerSag-get"> Matrikulær Sag </a>
+              </li>
+            </ul>
+          </section>
+          <h5>Schema Definitions</h5>
+          <a href="#definition-schemas-matrikulaersag.yaml"> schemas/matrikulaersag.yaml </a>
+        </nav>
+      </div>
+      <div id="docs" class="row collapse expanded drawer" data-drawer>
+        <button class="floating-menu-icon" type="button" data-drawer-slide="right">
+          <span class="hamburger"></span>
+        </button>
+        <div class="example-box doc-content"></div>
+        <article>
+          <h1 class="doc-title">Services for Matriklen på Datafordeleren
+            <span>API Reference</span>
+          </h1>
+          <div id="introduction" data-traverse-target="introduction">
+            <div class="doc-row">
+              <div class="doc-copy">
+                <h2 id="matriklen">Matriklen</h2>
+                <p>Matriklen er grundlaget for ejendomsregistreringen i Danmark og udgør en vigtig del af administrationsgrundlaget i den offentlige forvaltning. Matriklen består konceptuelt af matrikelregistret, matrikelkortet og matrikelarkivet. Registret indeholder oplysninger om arealer, herunder evt. vej- eller vandløbsarealer noteringsforhold (f.eks. om landbrugsejendomme, samlede faste ejendomme eller fredskov). Matrikelkortet er et digitalt, juridisk kortværk, som viser de registrerede ejendomsgrænser og vejrettigheder. I matrikelkortet vises også de fredskovsbelagte arealer, zoner for strandbeskyttelse og klitfredning. Matrikelarkivet indeholder bl.a. tidligere gældende matrikelkort, matrikelprotokoller og registrerede matrikulære sager, herunder måloplysninger. Matrikelregistret og matrikelkortet er integreret i én samlet datamodel, hvor ”Matrikulære data” er det bærende dataelement. Matrikulære data kan deles op i tre grupper:</p>
+                <ol>
+                  <li>Elementer i basismatriklen</li>
+                  <li>Øvrige elementer</li>
+                  <li>Temaer.</li>
+                </ol>
+                <p>Basismatriklen indeholder de elementer, der indgår i den matrikulære proces, og de er vigtige elementer i bestemmelsen af den grundlæggende matrikulære situation.</p>
+                <p>
+                  <strong>Elementer i basismatriklen</strong>
+                </p>
+                <ul>
+                  <li>Matrikelskel</li>
+                  <li>Optaget vej</li>
+                  <li>Jordstykke</li>
+                  <li>Centroidepunkt</li>
+                  <li>Skelpunkt</li>
+                  <li>Fikspunkt</li>
+                  <li>Grænsesten</li>
+                </ul>
+                <p>
+                  <strong>Øvrige elementer</strong> indeholder administrative og matrikulære områder, der automatisk kan afledes ud fra elementer i basismatriklen. De indgår således ikke direkte i den matrikulære proces, men kan bruges som støttemateriale i processen. Temaer: Region, kommune, sogn, ejerlav, herred, opmålingsdistrikt.</p>
+                <p>Endelig er
+                  <strong>temaer</strong> elementer, der bygger på den grundlæggende matrikulære situation, og som indgår i den matrikulære proces (jordrente, majoratskov, stormfald, fredskov, strandbeskyttelse, klitfredning, notering om jordforurening).</p>
+                <h2 id="url-opbygning">URL opbygning</h2>
+                <p>URL for de enkelte REST services er opbygget af et
+                  <strong>endpoint</strong> efterfulgt af
+                  <strong>registernavn</strong>,
+                  <strong>servicenavn</strong>,
+                  <strong>versionen</strong> af servicen,
+                  <strong>servicetype</strong> (REST eller WFS etc.) samt
+                  <strong>metodenavn</strong> for REST services. Efter ? tilføjes parametre i kaldet, der kan indeholde generelle kaldeparametre for REST services og metode specifikke parametre.</p>
+                <p>Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke er produktionsmiljøet der tilgås. Hvis der er tale om fortrolige eller følsomme data, følger S5. Se miljøbeskrivelser på Datafordeler.dk</p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>URL-struktur for REST services</th>
+                      <th>endpoint/register/service/version/servicetype/metode</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Eksempel</td>
+                      <td>
+                        <a href="https://test03-services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendo">https://test03-services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendo</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>API Endpoint</h5>
+                  <!-- <div class="hljs"> --><pre><code>https://services.datafordeler.dk/MATRIKEL/Matrikel/1/REST</code></pre>
+                  <!-- </div> -->
+                  <h5>Schemes:
+                    <span>https</span>
+                  </h5>
+                  <h5>Version:
+                    <span>0.8</span>
+                  </h5>
+                </section>
+              </div>
+            </div>
+          </div>
+          <h1 id="tag-Normal" class="swagger-summary-tag" data-traverse-target="tag-Normal">Normal</h1>
+          <div id="operation--MatrikelKommune-get" class="operation panel" data-traverse-target="operation--MatrikelKommune-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Normal">Normal</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">S&#xF8;g kommunenavn eller kommunekode</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/MatrikelKommune</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Søg kommunenavn eller kommunekode</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SFEBFEnr</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(int)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>bpfg</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"> </div>
+            </div>
+          </div>
+          <div id="operation--BygningPaaFremmedGrund-get" class="operation panel" data-traverse-target="operation--BygningPaaFremmedGrund-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Normal">Normal</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Henter en Bygning p&#xE5; fremmed grund</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/BygningPaaFremmedGrund</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Henter en Bygning på fremmed grund med oplysninger om geometri samt en reference til den SFE, BPFG’en ligger på, samt referencer til eventuelle lejligheder, der er beliggende i BPFG’en.</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SFEBFEnr</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(int)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>bpfg</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"> </div>
+            </div>
+          </div>
+          <div id="operation--BestemtFastEjendom-get" class="operation panel" data-traverse-target="operation--BestemtFastEjendom-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Normal">Normal</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Henter en Samlet fast ejendom</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/BestemtFastEjendom</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Henter Bestemt fast ejendom, uanset type, med tilhørende oplysninger og ejendomstype samt reference til eventuelle bestemte faste ejendomme, der er beliggende på eller i ejendommen.iggende på eller i ejendommen.</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SFEBFEnr</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(int)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>sfe</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"> </div>
+            </div>
+          </div>
+          <div id="operation--Ejerlejlighed-get" class="operation panel" data-traverse-target="operation--Ejerlejlighed-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Normal">Normal</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Ejerlejlighed</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/Ejerlejlighed</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Henter Ejerlejlighed med oplysninger om areal samt en reference til hovedejendommen (Samlet fast ejendom, elle Bygning på fremmed grund, Ejerlejligheden ligger i).</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SFEBFEnr</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(int)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>sfe</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"> </div>
+            </div>
+          </div>
+          <h1 id="tag-Kompleks" class="swagger-summary-tag" data-traverse-target="tag-Kompleks">Kompleks</h1>
+          <div id="operation--SamletFastEjendom-get" class="operation panel" data-traverse-target="operation--SamletFastEjendom-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Kompleks">Kompleks</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Henter en Samlet fast ejendom</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/SamletFastEjendom</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Henter en Samlet fast ejendom og tilhørende Jordstykker, herunder fælleslodder samt referencer til eventuelle bestemte faste ejendomme, der er beliggende på eller i ejendommen.</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SFEBFEnr</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(int)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>sfe</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"> </div>
+            </div>
+          </div>
+          <div id="operation--WFS-get" class="operation panel" data-traverse-target="operation--WFS-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Kompleks">Kompleks</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Henter WFS fra MU</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/WFS</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Tjenesten indeholder alle objekttyper fra Matriklens udstillingsmodel og alle temaer fra matrikelkort, dvs , 1. BygningPaaFremmedGrundFlade 2. BygningPaaFremmedGrundPunkt 3. Centroide 4. Ejerlav 5. Ejerlejlighed 6. Ejerlejlighedslod, JordstykkeTemaflade, Lodflade, MatrikelKommune, MatrikelRegion, Matrikelskel, MatrikelSogn, Nullinje, OptagetVej, Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er baseret på GML-version 3.2 til avanceret GIS-anvendelse.</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy"> </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>wfs</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"> </div>
+            </div>
+          </div>
+          <div id="operation--MatrikulaerSag-get" class="operation panel" data-traverse-target="operation--MatrikulaerSag-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Kompleks">Kompleks</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Matrikul&#xE6;r Sag</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/MatrikulaerSag</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Henter de udstillede sagsdata via sagsid eller journalnummer. Obligatoriske parametre SagsId ELLER Journalnr ELLER Sagskategori og Kommunenavn ELLER Sagsoperation+RekvirentRef. Er de ikke sat fås ingen resultater</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SagsId</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(uuid)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>UUID for en sag</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">Journalnr</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(string)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Journalnummer</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">Kommunenavn</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(string)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">SagsOperation</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(string)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Synonym for forretningshændelse</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">RegistreringstidFra</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(date-time)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Startdato for registering af objektet</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">RegistreingstidTil</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(date-time)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Slutdato for registrering af objektet</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">Registreringstid</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(date-time)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Dato som falder indenfor enregistreringstidsperiode. Anvendes fx 2015-09-02 vil de instanser med en gældende registreringstid på denne dato udvælges</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">VirkningstidFra</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(date-time)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Startdato for virkningen af objektet</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">VirkningstidTil</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-format">(date-time)</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Slutdato for virkning af objektet</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">Status</div>
+                      <div class="prop-subtitle"> in query </div>
+                      <div class="prop-subtitle">
+                        <span class="json-property-type">string[]</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                      </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Status jf. modellens udfaldsrum</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href=" #definition-schemas-matrikulaersag.yaml">schemas/matrikulaersag.yaml</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>Matrikulær Sag</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">[
+  {
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;properties&quot;</span>: {
+      <span class="hljs-attr">&quot;ejerlavLokalId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;id_namespace&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;id_lokalId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;forretningshaendelse&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;forretningsomraade&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;forretningsproces&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;journaliseringsdato&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;kommune&quot;</span>: <span class="hljs-string">&quot;0101&quot;</span>,
+      <span class="hljs-attr">&quot;matrikelmyndighedensJournalnummer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;registreringFra&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;registreringsaktoer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;registreringTil&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;rekvirentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;sagstitel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;virkningFra&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;virkningsaktoer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;virkningTil&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;jordstykkeLokalId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;bestemtFastEjendom&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;BFEnummer&quot;</span>: <span class="hljs-number">100000207</span>,
+          <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ]
+    }
+  }
+]
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <h1>Schema Definitions</h1>
+          <div id="definition-schemas-matrikulaersag.yaml" class="definition panel" data-traverse-target="definition-schemas-matrikulaersag.yaml">
+            <h2 class="panel-title">
+              <a name="/definitions/schemas/matrikulaersag.yaml"></a>schemas/matrikulaersag.yaml: array
+              <!-- <span class="json-property-type"><span class="json-property-type">object[]</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-array-items">
+                  <span class="json-property-type">object</span>
+                  <span class="json-property-range" title="Value limits"></span>
+                  <div class="json-inner-schema">
+                    <section class="json-schema-properties">
+                      <dl>
+                        <dt data-property-name="type">
+                          <span class="json-property-name">type:</span>
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-enum" title="Possible values">
+                            <span class="json-property-enum-item json-property-enum-default-value">Features</span>
+                          </span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">Features</span>
+                          <span class="json-property-required"></span>
+                        </dt>
+                        <dt data-property-name="properties">
+                          <span class="json-property-name">properties:</span>
+                          <span class="json-property-type">object</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-required"></span>
+                        </dt>
+                      </dl>
+                    </section>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">[
+  {
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;properties&quot;</span>: {
+      <span class="hljs-attr">&quot;ejerlavLokalId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;id_namespace&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;id_lokalId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;forretningshaendelse&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;forretningsomraade&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;forretningsproces&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;journaliseringsdato&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;kommune&quot;</span>: <span class="hljs-string">&quot;0101&quot;</span>,
+      <span class="hljs-attr">&quot;matrikelmyndighedensJournalnummer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;registreringFra&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;registreringsaktoer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;registreringTil&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;rekvirentRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;sagstitel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;virkningFra&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;virkningsaktoer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;virkningTil&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;jordstykkeLokalId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;bestemtFastEjendom&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;BFEnummer&quot;</span>: <span class="hljs-number">100000207</span>,
+          <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ]
+    }
+  }
+]
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="doc-row no-margin">
+            <div class="doc-copy doc-separator">
+              <a class="powered-by" href="https://sourcey.com/spectacle">Documentation by
+                <span>Spectacle</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

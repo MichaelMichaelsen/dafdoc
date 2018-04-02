@@ -37,7 +37,7 @@
 
   <script type="text/javascript">
     $(function () {
-      var url = 'yaml/dafmu.yaml'
+      var url = '../yaml/dafmu.yaml'
 
       hljs.configure({
         highlightSizeThreshold: 5000
@@ -73,7 +73,7 @@
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
         },
-        docExpansion: "none",
+        docExpansion: "list",
         jsonEditor: false,
         defaultModelRendering: 'example',
         showRequestHeaders: false,
@@ -95,24 +95,33 @@
 body { padding-top: 32px; }
 </style>
 </head>
-<body class="swagger-section">
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
+<body data-spy="scroll" data-target="#resources_nav" data-offset="60">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
 
-      <a class="navbar-brand" href="#">
-        <img alt="Datafordeler" src="images/LogoGD7.png" width="20" height="32">
-      </a>
-      <a class="navbar-brand" href="#">
-        <h3 class="navbar-text">Datafordeler</h3>
-      </a>
+        <a class="navbar-brand" href="#">
+          <img alt="Datafordeler" src="images/LogoGD7.png" width="20" height="32">
+        </a>
+        <a class="navbar-brand" href="#">
+          <h3 class="navbar-text">Datafordeler</h3>
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
-<hr style="border: 1px solid #f00">
-<div class="container-fluid">
-  <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
-</div>
+
+  </nav>
+
+  <nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="http://swagger.io">Bootstrap Swagger UI</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sticky_nav_wrapper">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+  </nav>
+  <main role="main" class="container-fluid">
+      <div id="swagger-ui-container" class="row"></div>
+  </main>
+
 
 </body>
 </html>

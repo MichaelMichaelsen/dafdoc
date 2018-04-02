@@ -83,6 +83,7 @@ info:
 
 
 
+
     | URL-struktur for REST services |
     endpoint/register/service/version/servicetype/metode |
 
@@ -90,17 +91,12 @@ info:
     ------------------------------------------------------ |
 
     | Eksempel   |
-    https://services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendom
+    https://test03-services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendo
     |
 schemes:
   - https
 host: services.datafordeler.dk
 basePath: /MATRIKEL/Matrikel/1/REST
-tags:
-  - name: Normal
-    description: Services med garanteret svartider under 1 sekund
-  - name: Kompleks
-    description: Services med svartider mindre en 10 sekunder
 paths:
   /MatrikelKommune:
     get:
@@ -113,8 +109,6 @@ paths:
           in: query
           type: string
           format: int
-        - $ref: '#/parameters/pageSize'
-        - $ref: '#/parameters/pageNumber'
       responses:
         '200':
           description: bpfg
@@ -132,8 +126,6 @@ paths:
           in: query
           type: string
           format: int
-        - $ref: '#/parameters/pageSize'
-        - $ref: '#/parameters/pageNumber'
       responses:
         '200':
           description: bpfg
@@ -144,10 +136,6 @@ paths:
         Henter en Samlet fast ejendom og tilhørende Jordstykker, herunder
         fælleslodder samt referencer til eventuelle bestemte faste ejendomme,
         der er beliggende på eller i ejendommen.
-        
-        ### Input parametre
-        
-        Obligatoriske parametre: SFEBFEnr ELLER Ejerlavskode+Matrikelnr ELLER point ELLER JordstykkeID ELLER SagsID. Er ingen af disse ikke sat fås ingen resultater. Kun én af disse muligheder må anvendes i et kald, dog må SagsID frit kombineres med andre parametre, hvilket også gælder for Status, Registreringstid og/eller Virkningstid. Date: Datoformat følger ISO 8601 Date and time format
       tags:
         - Kompleks
       parameters:
@@ -162,19 +150,15 @@ paths:
     get:
       summary: Henter en Samlet fast ejendom
       description: >-
-        Henter Bestemt fast ejendom, uanset type, med tilhørende oplysninger og
-        ejendomstype samt reference til eventuelle bestemte faste ejendomme, der
-        er beliggende på eller i ejendommen.iggende på eller i ejendommen.
+        Henter Bestemt fast ejendom, uanset type, med tilhørende oplysninger og ejendomstype samt reference til eventuelle
+        bestemte faste ejendomme, der er beliggende på eller i ejendommen.iggende på eller i ejendommen.
       tags:
-        - Normal
+          - Normal
       parameters:
         - name: SFEBFEnr
           in: query
           type: string
           format: int
-          description: BFE nummeret på Samlet fast ejendom
-        - $ref: '#/parameters/pageSize'
-        - $ref: '#/parameters/pageNumber'
       responses:
         '200':
           description: sfe
@@ -182,13 +166,13 @@ paths:
     get:
       summary: Henter WFS fra MU
       description: >-
-        Tjenesten indeholder alle objekttyper fra Matriklens udstillingsmodel og
-        alle temaer fra matrikelkort, dvs ,  1. BygningPaaFremmedGrundFlade  2.
-        BygningPaaFremmedGrundPunkt 3. Centroide 4. Ejerlav  5. Ejerlejlighed 6.
-        Ejerlejlighedslod, JordstykkeTemaflade, Lodflade, MatrikelKommune,
-        MatrikelRegion, Matrikelskel, MatrikelSogn, Nullinje, OptagetVej,
-        Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er
-        baseret på GML-version 3.2 til avanceret GIS-anvendelse.
+        Tjenesten indeholder alle objekttyper fra Matriklens udstillingsmodel og alle temaer fra matrikelkort, dvs , 
+        1. BygningPaaFremmedGrundFlade 
+        2. BygningPaaFremmedGrundPunkt
+        3. Centroide
+        4. Ejerlav 
+        5. Ejerlejlighed
+        6. Ejerlejlighedslod, JordstykkeTemaflade, Lodflade, MatrikelKommune, MatrikelRegion, Matrikelskel, MatrikelSogn, Nullinje, OptagetVej, Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er baseret på GML-version 3.2 til avanceret GIS-anvendelse.
       tags:
         - Kompleks
       responses:
@@ -198,9 +182,8 @@ paths:
     get:
       summary: Ejerlejlighed
       description: >-
-        Henter Ejerlejlighed med oplysninger om areal samt en reference til
-        hovedejendommen (Samlet fast ejendom, elle Bygning på fremmed grund,
-        Ejerlejligheden ligger i).
+        Henter Ejerlejlighed med oplysninger om areal samt en reference til hovedejendommen (Samlet fast ejendom, elle
+        Bygning på fremmed grund, Ejerlejligheden ligger i).
       tags:
         - Normal
       parameters:
@@ -208,8 +191,6 @@ paths:
           in: query
           type: string
           format: int
-        - $ref: '#/parameters/pageSize'
-        - $ref: '#/parameters/pageNumber'
       responses:
         '200':
           description: sfe
@@ -224,7 +205,6 @@ paths:
       tags:
         - Kompleks
       parameters:
-        - $ref: '#/parameters/format'
         - name: SagsId
           in: query
           description: UUID for en sag
@@ -295,28 +275,8 @@ paths:
               - Afsluttet
               - Aflyst
           required: false
-        - $ref: '#/parameters/pageSize'
-        - $ref: '#/parameters/pageNumber'
-
       responses:
         '200':
           description: Matrikulær Sag
           schema:
             $ref: schemas/matrikulaersag.yaml
-parameters:
-  pageSize:
-    name: pageSize
-    in: query
-    description: Number of records returned
-    type: integer
-  pageNumber:
-    name: pageNumber
-    in: query
-    description: Page number
-    type: integer
-  format:
-    name: format
-    in: query
-    description: Output format xml or json
-    type: string
-    default: json
