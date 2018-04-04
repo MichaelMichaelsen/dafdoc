@@ -1,0 +1,65 @@
+swagger: '2.0'
+info:
+  version: '3.2'
+  title: Services for CPR på Datafordeleren
+  description: |
+    # CPR #
+    
+    ## URL opbygning ##
+    
+    URL for de enkelte REST services er opbygget af et endpoint efterfulgt af registernavn, servicenavn, versionen af servicen, servicetype (REST eller WFS etc.)samt metodenavn for REST services. Efter ? tilføjes parametre i kaldet, der kan indeholde generelle kaldeparametre for REST services og metode specifikke parametre. 
+
+    Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke er produktionsmiljøet der tilgås.  Hvis der er tale om fortrolige eller følsomme data, følger S5. Se miljøbeskrivelser på Datafordeler.dk
+
+    Tjenesterne er specificeret til at give JSON som output, og dette er default såfremt output parameter ikke anvendes. Såfremt der angives XML som output parameter, leveres XML baseret på det specificerede JSON skema:
+    * Der udføres samme sæt SQL'er (data fremsøgning) uafhængigt af ønsket format og der hentes kun data der indgår i JSON skemaet.
+    * Herefter formateres de fremsøgte data til det ønskede format ud fra JSON skemaet.
+    
+    Om output er i XML eller JSON er et spørgsmål om syntaks og påvirker IKKE data indholdet.
+    
+    Format          | JSON                                           |
+    --------------- | -----------------------------------------------|
+    Sikkerhedszone  | 5 - Indeholder fortrolige eller følsomme data. |
+    Adgangsniveau   | Indgået aftale med CPR om anvendelse af data påkrævet. |
+    Anvendt udstillingsmodel | * Person Udstillingsmodel forefindes: http://data.gov.dk/model/diagrammer/ |
+    REST-regler     | Anvend paging. Default paging-størrelse: 20 |
+    ---------------------------------------------------------------------
+    
+schemes:
+  - https
+host: services.datafordeler.dk
+basePath: //CPR/CprPerson/1/REST
+tags:
+  - name: Normal
+    description: Services med garanteret svartider under 1 sekund
+  - name: Kompleks
+    description: Services med svartider mindre en 10 sekunder
+paths:
+  /PersonKompletListeHent:
+    get:
+      summary: Find en person
+      description: Find en person
+      tags:
+        - Normal
+      parameters:
+        - name: adropl.conavn.wi
+          description: Person.Adresseoplysninger.conavnErIndeholdtI - C/O navn på adressen
+          in: query
+          type: string
+        - name: adropl.conavn.cont
+          description: Person.Adresseoplysninger.conavnIndeholder - C/O navn på adressen
+          in: query
+          type: string
+        - name: adropl.fraflytningsdatokommune.ne
+          description: Person.Adresseoplysninger.fraflytningsdatokommuneForskelligFra - Hændelsesdato for flytning fra en kommune
+          in: query
+          type: string
+          format: date-time
+        - name: adropl.fraflytningsdatokommuneum.eq
+          description: Person.Adresseoplysninger.fraflytningsdatokommuneusikkerhedsmarkeringLigMed
+          in: query
+          type: boolean
+      responses:
+        '200':
+          description: Person
+          

@@ -1,0 +1,302 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description" : "PersonComplete - DLS Version 3.2",
+  "properties": {
+    "Personer": {
+      "title" : "Personer",
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "Person" : {
+            "type" : "object",
+            "title" : "Person",
+            "properties" : {
+              "id": {
+                "title": "id",
+                "description": "EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5",
+                "type": "string"
+              },
+              "cprfoedselsregistreringsstedskode" : {
+                "title" : "cprfoedselsregistreringsstedskode",
+                "type" : "string",
+                "description" : "EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2"
+              },
+              "cprfoedselsregistreringsstedsnavn" : {
+                "title" : "cprfoedselsregistreringsstedsnavn",
+                "type" : "string",
+                "description" : "EAID_F0A1C86C_88C4_45c6_9B69_28BB45A4702F"
+              },
+              "supplerendeFoedselsregistreringssted" : {
+                "title" : "supplerendeFoedselsregistreringssted",
+                "type" : ["string","null"],
+                "description" : "EAID_218AD03D_4161_4849_BACE_DBFEB26F6113"
+              },
+              "foedselsdato": {
+                "$ref": "CPR_definitioner.json#/definitions/foedselsdato",
+                "description" : "EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B"
+              },
+              "foedselsdatoUsikkerhedsmarkering": {
+                "title": "foedselsdatoUsikkerhedsmarkering",
+                "description": "EAID_01234969_FFF0_4963_873C_711C364B53A7",
+                "type": "boolean"
+              },
+              "koen": {
+                "title": "koen",
+                "description": "EAID_dstF7A403_40CF_47c0_B8E8_819BC58A1DC4",
+                "type": "string",
+                "enum": [
+                  "kvinde",
+                  "mand"
+                ]
+              },
+              "stilling" :  {
+                "title" : "stilling",
+                "description" : "EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4",
+                "type" : ["string","null"]
+              },
+              "statusdato": {
+                "title": "statusdato",
+                "description": "EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49",
+                "type": "string",
+                "format": "date-time"
+              },
+              "statusdatoUsikkerhedsmarkering": {
+                "title": "statusdatoUsikkerhedsmarkering",
+                "description": "EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7",
+                "type": "boolean"
+              },
+              "status": {
+                "$ref" : "CPR_definitioner.json#/definitions/PersonStatus",
+                "description" : "EAID_dstB8BFA9_D6E2_43e8_AF38_A6C1F0174C5A"
+              },
+              "Beskyttelser": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Beskyttelse": {
+                      "$ref" : "CPR_definitioner.json#/definitions/Beskyttelse",
+                      "description" : "EAID_dst8F2337_8084_47ad_87AD_6661D7ACDDB5"
+                    }
+                  }
+                }
+              },
+              "Personnumre": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Personnummer": {
+                      "$ref" : "CPR_definitioner.json#/definitions/Personnummer",
+                      "description" : "EAID_665E1A38_7A6A_41ab_A32B_B0DACA10757E"
+                    }
+                  },
+                  "required": [
+                    "Personnummer"
+                  ]
+                }
+              },
+              "Navne" : {
+                "title" : "Navne",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Navn": {
+                      "$ref": "CPR_definitioner.json#/definitions/Navn",
+                      "description": "EAID_dstE45817_FD1E_4a55_A20E_0A3EEBC580F0"
+                    }
+                  }
+                }
+              },
+              "Statsborgerskaber" : {
+                "title" : "Statsborgerskab",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Statsborgerskab" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Statsborgerskab",
+                      "description" : "EAID_dst0DD5DB_77E6_44a9_BDCA_875E661DBCC3"
+                    }
+                  }
+                }
+              },
+              "Civilstande" : {
+                "title" : "Civilstande",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Civilstand" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Civilstand",
+                      "description" : "EAID_dst8EF56A_040C_43b1_9F57_AE3CB9C80ACC"
+                    }
+                  }
+                }
+              },
+              "Foraelderoplysninger" : {
+                "title" : "Foraelderoplysninger",
+                "type" : "array",
+                "items": {
+                  "type" : "object",
+                  "properties" : {
+                    "Foraelderoplysning" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Foraelderoplysning",
+                      "description" : "EAID_dst7EE6CC_7788_4125_9C02_EE32AAEA265D"
+                    }
+                  }
+                }
+              },
+              "Boern" : {
+                "title" : "Boern",
+                "type" : "array",
+                "items": {
+                  "type" : "object",
+                  "properties" : {
+                    "Barnoplysning" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Barnoplysning",
+                      "description" : "EAID_src7EE6CC_7788_4125_9C02_EE32AAEA265D"
+                    }
+                  }
+                }
+              },
+              "Foraeldermyndighedsoplysninger" : {
+                "title" : "Foraeldermyndighedsoplysninger",
+                "type" : "array",
+                "items": {
+                  "type" : "object",
+                  "properties" : {
+                    "Foraeldermyndighedsoplysning" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Foraeldermyndighedsoplysning",
+                      "description" : "EAID_dstAE8811_E867_417a_A608_8340F2E6FE05"
+                    }
+                  }
+                }
+              },
+              "Vaergemaal" : {
+                "title" : "Vaergemaal",
+                "type" : "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "Vaergemaal": {
+                      "$ref" : "CPR_definitioner.json#/definitions/Vaergemaal",
+                      "description": "EAID_dst1107F4_DA32_4111_AB59_5F2714D8B9CD"
+                    }
+                  }
+                }
+              },
+              "Forsvindinger" : {
+                "title" : "Forsvindinger",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Forsvinding" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Forsvinding",
+                      "description" : "EAID_dst9D8AA8_1C30_435a_B114_4A45C92058E6"
+                    }
+                  }
+                }
+              },
+              "UdrejseIndrejser" : {
+                "title" : "UdrejseIndrejser",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "UdrejseIndrejse": {
+                      "$ref": "CPR_definitioner.json#/definitions/UdrejseIndrejse",
+                      "description": "EAID_dst0CFADD_06AD_4f98_B616_33D3716849E1"
+                    }
+                  }
+                }
+              },
+              "Kontaktadresse" : {
+                "title" : "Kontaktadresse",
+                "$ref" : "CPR_definitioner.json#/definitions/SimpelAdresseoplysning",
+                "description" : "EAID_dst19482F_9A6C_41e7_9DEE_D7B297BAA34E"
+              },
+              "Adresseoplysninger": {
+                "title" : "Adresseoplysninger",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Adresseoplysninger" : {
+                      "$ref": "CPR_definitioner.json#/definitions/Adresseoplysninger",
+                      "description": "EAID_dst56392A_9FBF_4da9_8527_FBE1B63C7EDA"
+                    }
+                  }
+                }
+              },
+              "KommunaleForhold" : {
+                "title" : "KommunaleForhold",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "KommunaleForhold" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/KommunaleForhold",
+                      "description" : "EAID_dst363F43_69AE_42cb_8117_2F0261CB056E"
+                    }
+                  }
+                }
+              },
+              "Valgoplysninger" : {
+                "title" : "Valgoplysninger",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Valgoplysning" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Valgoplysning",
+                      "description" : "EAID_dstF1C163_0232_4c88_9DFE_C51391607128"
+                    }
+                  }
+                }
+              },
+              "Folkekirke" : {
+                "title" : "Folkekirke",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Folkekirke" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Folkekirke",
+                      "description" : "EAID_dst3BADC0_4D05_45e9_BBDF_1A13E61A219A"
+                    }
+                  }
+                }
+              },
+              "Notater" : {
+                "title" : "Notat",
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "Notat" : {
+                      "$ref" : "CPR_definitioner.json#/definitions/Notat",
+                      "description" : "EAID_dst341570_A775_45cf_B773_3D42C0A5C3D1"
+                    }
+                  }
+                }
+              },
+              "Flyttepaabud" : {
+                "$ref" : "CPR_definitioner.json#/definitions/Flyttepaabud",
+                "description" : "EAID_dstD9E682_56A4_4fda_94B8_0C48AB19D6DA"
+              }
+            },
+            "additionalProperties" : false,
+            "required" : ["id","foedselsdato", "foedselsdatoUsikkerhedsmarkering","koen","status","statusdato","statusdatoUsikkerhedsmarkering", "Personnumre"]
+          }
+        },
+        "required" : ["Person"]
+      }
+    }
+  },
+  "required" : ["Personer"]
+}

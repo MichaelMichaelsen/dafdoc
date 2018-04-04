@@ -1,0 +1,1482 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema xmlns="cpr" xmlns:cpr="http://cpr.dk/grundatamodel/cpr/person/2015/11/16" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://cpr.dk/grundatamodel/cpr/person/2015/11/16" version="DLS2.5_20161208">
+	<xs:simpleType name="IdType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="36"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Person" type="cpr:PersonType"/>
+	<xs:simpleType name="KoenType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+			<xs:enumeration value="kvinde"/>
+			<xs:enumeration value="mand"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonstatusType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="31"/>
+			<xs:enumeration value="annulleret"/>
+			<xs:enumeration value="bopael_i_danmark"/>
+			<xs:enumeration value="bopael_i_danmark_hoej_vejkode"/>
+			<xs:enumeration value="bopael_i_groenland"/>
+			<xs:enumeration value="bopael_i_groenland_hoej_vejkode"/>
+			<xs:enumeration value="doed"/>
+			<xs:enumeration value="ej_bopael"/>
+			<xs:enumeration value="forsvundet"/>
+			<xs:enumeration value="nedlagt_person"/>
+			<xs:enumeration value="udrejst"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16"/>
+			<xs:enumeration value="aktuel"/>
+			<xs:enumeration value="fortrudt"/>
+			<xs:enumeration value="historisk"/>
+			<xs:enumeration value="rettet"/>
+			<xs:enumeration value="teknisk_aendring"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CprFoedselsregistreringsstedskodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NamespaceType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CprFoedselsregistreringsstedsnavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="PersonnummerType">
+		<xs:annotation>
+			<xs:appinfo>EAID_665E1A38_7A6A_41ab_A32B_B0DACA10757E</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_srcCF5125_4014_4222_9727_26D6180CA811</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="personnummer" type="cpr:CprnummerType">
+				<xs:annotation>
+					<xs:appinfo>EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst2034E8_04BE_4751_8DB1_C82BA391C3EF</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_1A2720AF_6818_4887_894B_055B95CC9FAB</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_40834881_0B92_4472_B435_E63AB0A6C38C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_944FC593_5829_4f44_844F_675CA1AB90BA</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="CprnummerType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="CprAdresseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_5B1E3DAB_0235_4b7b_9EE5_2C5F8B8A17F8</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="bygningsnummer" nillable="true" type="cpr:BygningsnummerType">
+				<xs:annotation>
+					<xs:appinfo>EAID_ACD32207_32F0_4915_AAA8_9E2788B44F2F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="bynavn" nillable="true" type="cpr:BynavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_B5548113_C452_4341_8E8F_CF25F0D4C303</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="conavn" nillable="true" type="cpr:ConavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_741EF37B_4051_4519_9679_BBE002387552</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprkommunekode" type="cpr:CprkommunekodeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprkommunenavn" type="cpr:CprkommunenavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_726EF7E6_C1A9_451b_B96E_F8089B1F5737</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprvejkode" type="cpr:CprvejkodeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="daradresse" nillable="true" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_0B2FDA44_B0BA_46c7_B1E5_12720402B077</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="etage" nillable="true" type="cpr:EtageType">
+				<xs:annotation>
+					<xs:appinfo>EAID_F7EC8E87_F0CC_497c_8CBA_540BF38A0841</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="fraflytningsdatokommune" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="fraflytningsdatokommuneusikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_2A916826_236A_420b_BD17_0680703AFE03</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="fraflytningskommunekode" nillable="true" type="cpr:CprkommunekodeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="fraflytningskommunenavn" nillable="true" type="cpr:CprMyndighedsnavn">
+				<xs:annotation>
+					<xs:appinfo>EAID_0CC1A8E8_6623_4242_AA39_108CFE7D9C64</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="husnummer" nillable="true" type="cpr:HusnummerType">
+				<xs:annotation>
+					<xs:appinfo>EAID_83469B46_64B3_49f1_8A47_357349B12725</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src56392A_9FBF_4da9_8527_FBE1B63C7EDA</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="postdistrikt" nillable="true" type="cpr:PostdistriktType">
+				<xs:annotation>
+					<xs:appinfo>EAID_220BE81E_5B14_406c_B503_BD96ABEB559A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="postnummer" nillable="true" type="cpr:PostnummerType">
+				<xs:annotation>
+					<xs:appinfo>EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="sidedoer" nillable="true" type="cpr:SidedoerType">
+				<xs:annotation>
+					<xs:appinfo>EAID_542068CC_8B0B_41de_845D_63E39479BA22</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst0A8EF9_B8DF_4a4c_A9FA_F6715F48F3E8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadresseadresselinie1" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_65467DBA_54ED_4da7_8F09_3646D0052892</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadresseadresselinie2" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_9F3B7E21_B625_4f58_890D_D3EAFDB84112</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadresseadresselinie3" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_730F4C3D_8B73_4bdc_9B62_BB758FF03018</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadresseadresselinie4" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_3B60F849_84EE_4774_A3A3_8AD836836C84</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadresseadresselinie5" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_A791BBA5_8145_4f31_A1E0_9E6813148B82</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadressevirkningfra" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_F2B3195C_8E48_4336_836B_EA709F2029E1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadressevirkningframyndighedskode" nillable="true" type="cpr:CprMyndighedskode"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadressevirkningframyndighedsnavn" nillable="true" type="cpr:CprMyndighedsnavn"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendeadressevirkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="tilflytningsdatokommune" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="tilflytningsdatokommuneusikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_2BE18F8B_AC08_45fa_BD81_39665A4EF536</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="vejadresseringsnavn" nillable="true" type="cpr:VejadresseringsnavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_F35B588E_8604_45be_88EE_D88095DA8AE1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_7538171E_D04C_4b0a_90F4_D83903FF475C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_DCC1BF46_12EA_4ab4_9EB5_41A14DD68DA8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="BygningsnummerType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BynavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CprkommunekodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CprkommunenavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CprvejkodeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EtageType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HusnummerType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PostdistriktType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PostnummerType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SidedoerType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VejadresseringsnavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ConavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="NavnType">
+		<xs:annotation>
+			<xs:appinfo>EAID_20C79015_D907_485a_98A4_0517A9899FC2</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresseringsnavn" nillable="true" type="cpr:AdresseringsnavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="efternavn" type="cpr:EfternavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_D3E09BDA_7174_4555_92F0_A7093671DCCF</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="efternavnmarkering" nillable="true" type="cpr:NavnemarkeringType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst1C8603_CA9A_401b_9EB2_024C6D23716E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="fornavne" type="cpr:FornavneType">
+				<xs:annotation>
+					<xs:appinfo>EAID_C83C2BED_DA60_4017_B446_044A502AFE01</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="fornavnemarkering" nillable="true" type="cpr:NavnemarkeringType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst5627DC_FCE7_4113_B8B4_DF03C77487CD</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="mellemnavn" nillable="true" type="cpr:MellemnavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_6503AA6C_33D3_4baa_AD1A_5D7FED741A2B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="mellemnavnmarkering" nillable="true" type="cpr:NavnemarkeringType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst1D642B_2424_442c_8016_3BAAE69B6246</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_srcE45817_FD1E_4a55_A20E_0A3EEBC580F0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst5E2C1A_CCA5_45da_A5B8_BD184C890AE3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_CFD36FDB_A3C2_456d_B174_562853726A0D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_BDD9A534_FCF1_4a44_8D77_C8D8F013B7D4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_3513A669_E062_4e51_9443_1676F42AEC55</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_A966857F_7F67_4263_845C_0A772B7413E8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="NavnemarkeringType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="51"/>
+			<xs:enumeration value="forkortet"/>
+			<xs:enumeration value="indeholder_tegn_der_ikke_kan_indrapporteres_til_cpr"/>
+			<xs:enumeration value="utilstraekkeligt_dokumenteret"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FornavneType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MellemnavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EfternavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BeskyttelsestypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="16"/>
+			<xs:enumeration value="lokal_vejviser"/>
+			<xs:enumeration value="markedsfoering"/>
+			<xs:enumeration value="navne_og_adresse"/>
+			<xs:enumeration value="kreditadvarsel"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="BeskyttelseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_1C8B099A_4D09_4c75_8B36_F8B92F853D6D</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="beskyttelsestype" type="cpr:BeskyttelsestypeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst0DF442_9282_4181_B43D_23B02F422804</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src8F2337_8084_47ad_87AD_6661D7ACDDB5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstC43285_59A6_4899_B5D8_9951BB124C39</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="AdresselinieType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="CprAdresse" type="cpr:CprAdresseType"/>
+	<xs:element name="Navn" type="cpr:NavnType"/>
+	<xs:element name="Beskyttelse" type="cpr:BeskyttelseType"/>
+	<xs:element name="Personnummer" type="cpr:PersonnummerType"/>
+	
+	<xs:complexType name="CivilstandType">
+		<xs:annotation>
+			<xs:appinfo>EAID_65159CA9_C56E_4141_A449_32F6C2233B21</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="aegtefaelle" nillable="true" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src8EF56A_040C_43b1_9F57_AE3CB9C80ACC</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="aegtefaellefoedselsdato" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="aegtefaellefoedselsdatousikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_81C99C34_E0FB_4fb5_A3E9_ED6732F74194</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="aegtefaellenavn" nillable="true" type="cpr:FuldNavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_C1FA9AB2_094F_434f_82F0_1CB3B4386955</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="aegtefaellenavnemarkering" nillable="true" type="cpr:NavnemarkeringType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstC1F489_D20F_46e8_A7F5_A625AF29BA12</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="civilstandsid" nillable="true" type="cpr:LongType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst4F9474_41AB_4f50_B2DE_F79926FF6DAF</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="civilstandstype" type="cpr:CivilstandstypeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst013E03_2A8F_4483_A3C4_BDB2EA8D78F9</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src8EF56A_040C_43b1_9F57_AE3CB9C80ACC</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst10364D_C551_446e_96E0_0333863B6C2C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_29D7D407_4154_4525_A05D_68C813E15345</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_7C888BC3_473F_425c_9339_C778042E9C94</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="CivilstandstypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="23"/>
+			<xs:enumeration value="doed"/>
+			<xs:enumeration value="enke_enkemand"/>
+			<xs:enumeration value="fraskilt"/>
+			<xs:enumeration value="gift"/>
+			<xs:enumeration value="laengstlevende_partner"/>
+			<xs:enumeration value="ophoert_partnerskab"/>
+			<xs:enumeration value="registreret_partnerskab"/>
+			<xs:enumeration value="ugift"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CivilstandsidType">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	
+	<xs:complexType name="SeparationType">
+		<xs:annotation>
+			<xs:appinfo>EAID_8D700962_A80C_4546_99CD_3CC138DFD6B8</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="civilstandsid" type="cpr:LongType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src4F9474_41AB_4f50_B2DE_F79926FF6DAF</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src8EF56A_040C_43b1_9F57_AE3CB9C80ACC</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst8988D9_C089_46ff_B4DC_BD4512642200</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_07586AE8_9BA0_4135_B68C_EC47729262B2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_508252A8_2170_46cc_A5BB_7DBC63805B75</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Civilstand" type="cpr:CivilstandType"/>
+	<xs:element name="Separation" type="cpr:SeparationType"/>
+	<xs:element name="Long" type="cpr:LongType"/>
+	<xs:simpleType name="LongType">
+		<xs:restriction base="xs:integer">
+			<xs:maxExclusive value="9223372036854775807"/>
+			<xs:minInclusive value="-9223372036854775808"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="PersonType">
+		<xs:annotation>
+			<xs:appinfo>EAID_88677603_1144_48ed_B41E_90321AC84A84</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="foedselsdato" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="foedselsdatousikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_01234969_FFF0_4963_873C_711C364B53A7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="id" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="koen" type="cpr:KoenType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstF7A403_40CF_47c0_B8E8_819BC58A1DC4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="namespacetype" type="cpr:NamespaceType">
+				<xs:annotation>
+					<xs:appinfo>EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="registreringfra" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="registreringtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:PersonstatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstB8BFA9_D6E2_43e8_AF38_A6C1F0174C5A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="statusdato" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="statusdatousikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="stilling" nillable="true" type="cpr:StillingType">
+				<xs:annotation>
+					<xs:appinfo>EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_E21BB85D_31C6_4647_B211_E863CB536713</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_30693F4D_1301_449d_BF5F_1272125F4FBA</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_400D7423_2E16_4fde_9B73_1282E5218EF8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_F525F1DE_F276_47ad_9FC6_58A293AB9C28</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="StillingType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="UdrejseIndrejseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_EF1C0CBC_3539_467f_8B44_2AA54A4C1B03</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprlandekodeindrejse" nillable="true" type="cpr:CprMyndighedskode">
+				<xs:annotation>
+					<xs:appinfo>EAID_979F7108_CBD4_45f5_AC1C_90412128278D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprlandekodeudrejse" type="cpr:CprMyndighedskode">
+				<xs:annotation>
+					<xs:appinfo>EAID_DA761AC7_7D23_42be_88DE_D8766666D055</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprlandindrejse" nillable="true" type="cpr:CprMyndighedsnavn">
+				<xs:annotation>
+					<xs:appinfo>EAID_8DD5EDDC_5A66_4790_8142_B1A08ECA2988</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprlandudrejse" type="cpr:CprMyndighedsnavn">
+				<xs:annotation>
+					<xs:appinfo>EAID_13FA5170_102B_42cc_8AD5_ED692015DBA3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src0CFADD_06AD_4f98_B616_33D3716849E1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst1A0F9E_5322_4a67_A7C7_2145B666D25B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="udenlandsadresselinie1" nillable="true" type="cpr:UdenlandsAdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_65467DBA_54ED_4da7_8F09_3646D0052892</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="udenlandsadresselinie2" nillable="true" type="cpr:UdenlandsAdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_9F3B7E21_B625_4f58_890D_D3EAFDB84112</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="udenlandsadresselinie3" nillable="true" type="cpr:UdenlandsAdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_730F4C3D_8B73_4bdc_9B62_BB758FF03018</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="udenlandsadresselinie4" nillable="true" type="cpr:UdenlandsAdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_3B60F849_84EE_4774_A3A3_8AD836836C84</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="udenlandsadresselinie5" nillable="true" type="cpr:UdenlandsAdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_A791BBA5_8145_4f31_A1E0_9E6813148B82</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_336F1C95_EC31_40af_BFE1_1655406283F1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_701D4F6B_EEB3_431e_8706_BD588FA27A24</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="UdrejseIndrejse" type="cpr:UdrejseIndrejseType"/>
+	<xs:simpleType name="UdenlandsAdresselinieType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="StatsborgerskabType">
+		<xs:annotation>
+			<xs:appinfo>EAID_45A473C0_81CE_4b2d_98A0_85091A12C0B4</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprlandekode" type="cpr:CprMyndighedskode">
+				<xs:annotation>
+					<xs:appinfo>EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprlandenavn" type="cpr:CprMyndighedsnavn">
+				<xs:annotation>
+					<xs:appinfo>EAID_4556FC37_C712_452a_8589_775A5B2F6EB9</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src0DD5DB_77E6_44a9_BDCA_875E661DBCC3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst5A3A00_7AFC_4f0f_9D77_BABC35753623</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningFra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_5694F919_40E5_4846_AD8F_419058DCE12B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_EE057711_5BCD_44f9_86DF_518F1B2131F0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="CprMyndighedskode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CprMyndighedsnavn">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Statsborgerskab" type="cpr:StatsborgerskabType"/>
+	
+	<xs:complexType name="ForsvindingType">
+		<xs:annotation>
+			<xs:appinfo>EAID_0C528E5F_1A9E_4d44_B563_F8493C8AC709</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src9D8AA8_1C30_435a_B114_4A45C92058E6</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstF3A94A_2E62_43d8_B0D2_18FFB9A9D813</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_793FAD6C_5310_48d4_803F_1FE25B0D2D96</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_8D953F55_7BBA_419b_98C1_EEE517816294</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Forsvinding" type="cpr:ForsvindingType"/>
+	
+	<xs:complexType name="FlyttepaabudType">
+		<xs:annotation>
+			<xs:appinfo>EAID_D71C5A62_F78E_482d_BAB3_7DFD5CDFDE08</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="bemarkning" nillable="true" type="cpr:FlyttepaabudBemaerkningType">
+				<xs:annotation>
+					<xs:appinfo>EAID_3584F178_736C_4b05_AF8A_5D5D9ED3C1F8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_srcD9E682_56A4_4fda_94B8_0C48AB19D6DA</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Flyttepaabud" type="cpr:FlyttepaabudType"/>
+	
+	<xs:complexType name="FolkekirkeType">
+		<xs:annotation>
+			<xs:appinfo>EAID_116AE8E3_F028_49cb_B7D9_9073323C4F41</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src3BADC0_4D05_45e9_BBDF_1A13E61A219A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="status" type="cpr:StatusType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst4B9493_A704_4e54_BC07_0FEC9637D066</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="tilhoersforhold" type="cpr:FolkekirketilhoersforholdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst75AD72_6186_4418_89E1_DF9CFD0D54E7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_A7644231_5B71_45b1_B96A_9E130D855CBF</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_86C5E44C_D5B7_4190_B15A_0BB9AD0BBF30</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_24561393_60A0_4129_B4E4_018E2F3A588D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtilusikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_3E0D2947_4CAC_4345_853E_291292095743</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Folkekirke" type="cpr:FolkekirkeType"/>
+	<xs:simpleType name="FolkekirketilhoersforholdType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="52"/>
+			<xs:enumeration value="uden_for_folkekirken"/>
+			<xs:enumeration value="medlem_af_valgmenighed_tillige_medlem_af_folkekirken"/>
+			<xs:enumeration value="medlem_af_folkekirken_men_fritaget_for_kirkeskat"/>
+			<xs:enumeration value="medlem_af_folkekirken"/>
+			<xs:enumeration value="afventer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FlyttepaabudBemaerkningType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="FoedselsregistreringType">
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprfoedselsregistreringsstedskode" type="cpr:CprMyndighedskode">
+				<xs:annotation>
+					<xs:appinfo>EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprfoedselsregistreringsstedsnavn" type="cpr:CprMyndighedsnavn">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0A1C86C_88C4_45c6_9B69_28BB45A4702F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_C74FB362_3078_4731_83C7_0D42ED478FCD</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="supplerendefoedselsregistreringssted" nillable="true" type="cpr:SupplerendeFoedselsregistreringsstedType">
+				<xs:annotation>
+					<xs:appinfo>EAID_218AD03D_4161_4849_BACE_DBFEB26F6113</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="SupplerendeFoedselsregistreringsstedType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Foedselsregistrering" type="cpr:FoedselsregistreringType"/>
+	<xs:simpleType name="KommunaleForholdstypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="19"/>
+			<xs:enumeration value="adskilt"/>
+			<xs:enumeration value="betalingskommune"/>
+			<xs:enumeration value="kommunale_forhold_5"/>
+			<xs:enumeration value="kommunale_forhold_6"/>
+			<xs:enumeration value="kommunale_forhold_7"/>
+			<xs:enumeration value="kommunale_forhold_8"/>
+			<xs:enumeration value="kommunale_forhold_9"/>
+			<xs:enumeration value="pensionsforhold"/>
+			<xs:enumeration value="plejebarn"/>
+			<xs:enumeration value="ukendt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="KommunaleForholdType">
+		<xs:annotation>
+			<xs:appinfo>EAID_BB898E3B_203C_4089_AF3B_623C79516EEF</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="bemaerkning" nillable="true" type="cpr:KommunaleforholdBemaerkningType">
+				<xs:annotation>
+					<xs:appinfo>EAID_53BD4D49_152D_4e73_95FF_1CB01519AE55</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="kommunaleforholdskode" type="cpr:KommunaleForholdskode">
+				<xs:annotation>
+					<xs:appinfo>EAID_EB376BCE_E3FF_4946_9A6D_A650E48B39E8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="kommunaleforholdstype" type="cpr:KommunaleForholdstypeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst2349F8_DE64_4b55_B0B1_0301EB1F355F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src363F43_69AE_42cb_8117_2F0261CB056E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_6C73F10E_D311_4bb9_8345_14BB817B750F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="KommunaleForhold" type="cpr:KommunaleForholdType"/>
+	<xs:simpleType name="KommunaleforholdBemaerkningType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KommunaleForholdskode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="KontaktadresseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_DC4B4B42_F7DD_4be6_983C_579F060D13AF</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie1" nillable="true" type="cpr:KontaktadresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_65467DBA_54ED_4da7_8F09_3646D0052892</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie2" nillable="true" type="cpr:KontaktadresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_9F3B7E21_B625_4f58_890D_D3EAFDB84112</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie3" nillable="true" type="cpr:KontaktadresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_730F4C3D_8B73_4bdc_9B62_BB758FF03018</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie4" nillable="true" type="cpr:KontaktadresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_3B60F849_84EE_4774_A3A3_8AD836836C84</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie5" nillable="true" type="cpr:KontaktadresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_A791BBA5_8145_4f31_A1E0_9E6813148B82</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src19482F_9A6C_41e7_9DEE_D7B297BAA34E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_F2B3195C_8E48_4336_836B_EA709F2029E1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Kontaktadresse" type="cpr:KontaktadresseType"/>
+	<xs:simpleType name="KontaktadresselinieType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="ForaeldremyndighedType">
+		<xs:annotation>
+			<xs:appinfo>EAID_C2271D21_6278_49ea_B08B_18AABE3F1DEA</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="Foraeldremyndighedshaverrolle" type="cpr:ForaeldremyndighedshaverrolleType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst3E15EC_F88C_47c3_A8F3_B01D5A36B5C3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="foraeldremyndighedsindehaver" nillable="true" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst27941A_F592_4277_8447_2C6FE06C1B3B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_srcAE8811_E867_417a_A608_8340F2E6FE05</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_ABBCE703_0A9C_4dcb_BB31_121C0E97CD87</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Foraeldremyndighed" type="cpr:ForaeldremyndighedType"/>
+	<xs:simpleType name="NotatlinieType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="NotatType">
+		<xs:annotation>
+			<xs:appinfo>EAID_609B61D4_80F7_4d61_9A4B_C5C0CC65CEBD</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="notatlinie" type="cpr:NotatlinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_4D9AB31F_BEB8_46dd_B719_0DC39E9E14D2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="notatnummer" type="xs:int">
+				<xs:annotation>
+					<xs:appinfo>EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src341570_A775_45cf_B773_3D42C0A5C3D1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_84409219_53A9_4a7b_8E49_6B8484BC795D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Notat" type="cpr:NotatType"/>
+	
+	<xs:complexType name="VaergemaalType">
+		<xs:annotation>
+			<xs:appinfo>EAID_5F131DF3_F242_4fe4_BF38_033EF7AC753B</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie1" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_65467DBA_54ED_4da7_8F09_3646D0052892</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie2" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_9F3B7E21_B625_4f58_890D_D3EAFDB84112</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie3" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_730F4C3D_8B73_4bdc_9B62_BB758FF03018</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie4" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_3B60F849_84EE_4774_A3A3_8AD836836C84</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="adresselinie5" nillable="true" type="cpr:AdresselinieType">
+				<xs:annotation>
+					<xs:appinfo>EAID_A791BBA5_8145_4f31_A1E0_9E6813148B82</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src1107F4_DA32_4111_AB59_5F2714D8B9CD</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="vaergenavn" nillable="true" type="cpr:VaergenavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_845FA40A_7E1B_4b72_B264_515054369DA5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_81796E0F_27AD_483e_9B52_815AB2DAE591</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrausikkerhedsmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_57BB37D0_FA67_4a81_91FD_E3EEAA1E1C23</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Vaergemaal" type="cpr:VaergemaalType"/>
+	<xs:simpleType name="VaergenavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="ValgoplysningerType">
+		<xs:annotation>
+			<xs:appinfo>EAID_2E09F811_14BF_4254_BC4C_708B72E6C472</xs:appinfo>
+		</xs:annotation>
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_srcF1C163_0232_4c88_9DFE_C51391607128</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="valgoplysningstype" type="cpr:ValgoplysningstypeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst184AE1_0D53_4b61_AE44_5677FCDEA5F7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="valgretdato" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfra" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningtil" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="Valgoplysninger" type="cpr:ValgoplysningerType"/>
+	<xs:simpleType name="ValgoplysningstypeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="18"/>
+			<xs:enumeration value="almindelig_valgret"/>
+			<xs:enumeration value="diplomater"/>
+			<xs:enumeration value="eu_valg_ja"/>
+			<xs:enumeration value="eu_valg_koebenhavn"/>
+			<xs:enumeration value="eu_valg_nej"/>
+			<xs:enumeration value="gamle_diplomater"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="MorFarType">
+		<xs:all>
+			<xs:element maxOccurs="1" minOccurs="0" name="farfoedselsdato" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="farfoedselsdatousikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_81C99C34_E0FB_4fb5_A3E9_ED6732F74194</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="farid" nillable="true" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src2D11AD_A0DE_45e9_A943_15F6AF70AD75</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="farnavn" nillable="true" type="cpr:FuldNavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_C1FA9AB2_094F_434f_82F0_1CB3B4386955</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="farnavnmarkering" nillable="true" type="cpr:NavnemarkeringType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstC1F489_D20F_46e8_A7F5_A625AF29BA12</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="morfoedselsdato" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="morfoedselsdatousikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_81C99C34_E0FB_4fb5_A3E9_ED6732F74194</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="morid" nillable="true" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src2D11AD_A0DE_45e9_A943_15F6AF70AD75</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="mornavn" nillable="true" type="cpr:FuldNavnType">
+				<xs:annotation>
+					<xs:appinfo>EAID_C1FA9AB2_094F_434f_82F0_1CB3B4386955</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="mornavnmarkering" nillable="true" type="cpr:NavnemarkeringType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dstC1F489_D20F_46e8_A7F5_A625AF29BA12</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src7EE6CC_7788_4125_9C02_EE32AAEA265D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrafar" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningfrafarusikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_28DDF5A4_198C_4304_97D6_F362D0183B4D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningframor" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="virkningframorusikkerhedsmarkering" nillable="true" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_28DDF5A4_198C_4304_97D6_F362D0183B4D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="MorFar" type="cpr:MorFarType"/>
+	<xs:simpleType name="FuldNavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ForaeldremyndighedshaverrolleType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:enumeration value="anden"/>
+			<xs:enumeration value="far_medmor"/>
+			<xs:enumeration value="mor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AdresseringsnavnType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="34"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ForretningshaendelseType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="33"/>
+			<xs:enumeration value="CPRADRESSE"/>
+			<xs:enumeration value="ADRESSEOPLYSNINGER_OG_BESKYTTELSE"/>
+			<xs:enumeration value="CIVILSTAND"/>
+			<xs:enumeration value="SEPARATION"/>
+			<xs:enumeration value="FORAELDEROPLYSNING"/>
+			<xs:enumeration value="FORAELDREMYNDIGHEDSOPLYSNING"/>
+			<xs:enumeration value="FOLKEKIRKE"/>
+			<xs:enumeration value="KOMMUNALEFORHOLD"/>
+			<xs:enumeration value="NOTAT"/>
+			<xs:enumeration value="NAVN_OG_BESKYTTELSE"/>
+			<xs:enumeration value="FLYTTEPAABUD"/>
+			<xs:enumeration value="FORSVINDING"/>
+			<xs:enumeration value="KONTAKTADRESSE"/>
+			<xs:enumeration value="UDREJSEINDREJSE"/>
+			<xs:enumeration value="PERSON"/>
+			<xs:enumeration value="PERSONNUMMER"/>
+			<xs:enumeration value="STATSBORGERSKAB"/>
+			<xs:enumeration value="VAERGEMAAL"/>
+			<xs:enumeration value="VALGOPLYSNINGER"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ForretningsomraadeType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="CprhaendelseType">
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="0" name="afledtmarkering" type="xs:boolean">
+				<xs:annotation>
+					<xs:appinfo>EAID_7824DF9E_81A1_4afa_B0D8_5A187A65252D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="afleveringsdato" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprkommunekodeNuvaerende" nillable="true" type="cpr:CprkommunekodeType"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="cprkommunekodeTidligere" nillable="true" type="cpr:CprkommunekodeType"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="forretningshaendelse" type="cpr:ForretningshaendelseType">
+				<xs:annotation>
+					<xs:appinfo>EAID_dst15D74B_21B2_41ca_9AB4_8FD703AA2597</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="forretningsomraade" type="cpr:ForretningsomraadeType">
+				<xs:annotation>
+					<xs:appinfo>EAID_8E47BD3F_A937_4856_BB04_E308E6E5DFE1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="personid" type="cpr:IdType">
+				<xs:annotation>
+					<xs:appinfo>EAID_src4754FD_F699_40cf_B714_6C4B758B1B0E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="0" name="rettetDen" nillable="true" type="xs:dateTime">
+				<xs:annotation>
+					<xs:appinfo>EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Cprhaendelse" type="cpr:CprhaendelseType"/>
+</xs:schema>
