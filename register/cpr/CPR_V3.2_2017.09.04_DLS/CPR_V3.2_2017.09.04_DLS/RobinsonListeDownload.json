@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description" : "PersonMedium - DLS Version 3.2",
+  "properties": {
+    "Personer": {
+      "title" : "Personer",
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "Person" : {
+            "type" : "object",
+            "title" : "Person",
+            "properties" : {
+              "adresseringsnavn": {
+                "title": "adresseringsnavn",
+                "description": "EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D",
+                "type" : ["string","null"]
+              },
+              "CprAdresse" : {
+                "$ref" : "CPR_definitioner.json#/definitions/CprAdresse",
+                "description" : "EAID_dst03EEA2_5F4F_43c3_B182_E70F5E86A4CB"
+              }
+            },
+            "required" : ["CprAdresse"],
+            "additionalProperties" : false
+          }
+        },
+        "required" : ["Person"]
+      }
+    }
+  },
+  "required" : ["Personer"]
+}

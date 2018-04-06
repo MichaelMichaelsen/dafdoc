@@ -1,0 +1,9 @@
+Kald 																																							Svar
+https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumSimple/1/rest/PersonMediumListSimple?format=json&pnr.personnummer.eq=1233321					HTTP 400 - forkert anmodning
+https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumSimple/1/rest/PersonMediumListSimple?format=json&pnr.personnummer.ne=1233321					HTTP 400 - forkert anmodning
+https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumComplete/1/rest/PersonMediumListComplete?format=json&pnr.personnummer.eq=1212130567https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumComplete/1/rest/PersonMediumListComplete?format=json&pnr.personnummer.eq=1212130567
+https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumComplete/1/rest/PersonMediumCurrentListComplete?format=json&pnr.personnummer.eq=??????????
+https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumSimple/1/rest/PersonMediumListSimple?format=json&pnr.personnummer.eq=??????????
+
+
+https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumSimple/1/rest/PersonMediumCurrentListSimple?format=json&pnr.personnummer.eq=??????????

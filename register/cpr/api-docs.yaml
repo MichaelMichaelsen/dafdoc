@@ -1,0 +1,109 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "https://test04-s5-certservices.datafordeler.dk"
+basePath: ""
+paths:
+  /cpr/CPRPerson/1/rest/PersonKompletListeHent:
+    get:
+      operationId: "CPRPerson"
+      parameters:
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "count"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        0: {}
+        200: {}
+        204: {}
+  /cpr/CprPersonFullComplete/1/rest/PersonFullCurrentListComplete:
+    get:
+      operationId: "CprPersonSmallComplete"
+      parameters: []
+  /cpr/CprPersonFullSimple/1/rest/PersonFullCurrentListSimple:
+    get:
+      operationId: "CprPersonFullSimple"
+      parameters:
+      - name: "formatl"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "count"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        401: {}
+  /cpr/CprPersonFullSimple/1/rest/PersonFullListSimple:
+    get:
+      operationId: "CprPersonFullSimple"
+      parameters:
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        401: {}
+  /cpr/CprPersonMediumComplete/1/rest/PersonMediumCurrentListComplete:
+    get:
+      operationId: "CprPersonMediumCompletemplete"
+      parameters: []
+  /cpr/CprPersonMediumComplete/1/rest/PersonMediumListComplete:
+    get:
+      operationId: "CprPersonMediumComplete"
+      parameters: []
+  /cpr/CprPersonMediumSimple/1/rest/PersonMediumCurrentListSimple:
+    get:
+      operationId: "CprPersonMediumSimple"
+      parameters: []
+  /cpr/CprPersonMediumSimple/1/rest/PersonMediumListSimple:
+    get:
+      operationId: "CprPersonMediumSimple"
+      parameters: []
+  /cpr/CprPersonSmallComplete /1/rest/PersonSmallCurrentListComplete:
+    get:
+      operationId: "CprPersonSmallComplete"
+      parameters:
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "pnr.personnummer.eq"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        404: {}
+  /cpr/CprPersonSmallComplete /1/rest/PersonSmallListComplete:
+    get:
+      operationId: "CprPersonSmallComplete"
+      parameters:
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "pnr.personnummer.eq"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        404: {}
+  /cpr/CprPersonSmallSimple/1/rest/PersonSmallCurrentListSimple:
+    get:
+      operationId: "CprPersonSmallComplete"
+      parameters: []
+  /cpr/CprPersonSmallSimple/1/rest/PersonSmallListSimple:
+    get:
+      operationId: "CprPersonSmallComplete"
+      parameters:
+      - name: "format"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        204: {}
