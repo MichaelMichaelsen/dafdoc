@@ -4,19 +4,19 @@ info:
   title: Services for CPR på Datafordeleren
   description: |
     # CPR #
-    
+
     ## URL opbygning ##
-    
-    URL for de enkelte REST services er opbygget af et endpoint efterfulgt af registernavn, servicenavn, versionen af servicen, servicetype (REST eller WFS etc.)samt metodenavn for REST services. Efter ? tilføjes parametre i kaldet, der kan indeholde generelle kaldeparametre for REST services og metode specifikke parametre. 
+
+    URL for de enkelte REST services er opbygget af et endpoint efterfulgt af registernavn, servicenavn, versionen af servicen, servicetype (REST eller WFS etc.)samt metodenavn for REST services. Efter ? tilføjes parametre i kaldet, der kan indeholde generelle kaldeparametre for REST services og metode specifikke parametre.
 
     Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke er produktionsmiljøet der tilgås.  Hvis der er tale om fortrolige eller følsomme data, følger S5. Se miljøbeskrivelser på Datafordeler.dk
 
     Tjenesterne er specificeret til at give JSON som output, og dette er default såfremt output parameter ikke anvendes. Såfremt der angives XML som output parameter, leveres XML baseret på det specificerede JSON skema:
     * Der udføres samme sæt SQL'er (data fremsøgning) uafhængigt af ønsket format og der hentes kun data der indgår i JSON skemaet.
     * Herefter formateres de fremsøgte data til det ønskede format ud fra JSON skemaet.
-    
+
     Om output er i XML eller JSON er et spørgsmål om syntaks og påvirker IKKE data indholdet.
-    
+
     Parameter       |  Værdi |
     --------------- | ---------------------------------------------- |
     Format          | JSON                                           |
@@ -25,26 +25,54 @@ info:
     Anvendt udstillingsmodel | Person Udstillingsmodel forefindes: http://data.gov.dk/model/diagrammer/ |
     REST-regler     | Anvend paging. Default paging-størrelse: 20 |
     ---------------------------------------------------------------------
-    
+
 schemes:
   - https
-host: services.datafordeler.dk
-basePath: //CPR/CprPerson/1/REST
+host: test03-s5-certservices.datafordeler.dk
+basePath: /CPR/CprPrivateAdressName/1/rest/
 tags:
-  - name: Normal
-    description: Services med garanteret svartider under 1 sekund
+  - name: Simpel
+    description: Services med garanteret svartider under 0.09 sekund
+  - name: Almindelig
+    description: Services med svartider mindre end 1.0 sekund
   - name: Kompleks
-    description: Services med svartider mindre en 10 sekunder
+    description: Service med svartider mindre end 2.5 sekunder
 paths:
-  /PersonKompletListeHent:
+  /CprPrivateAdressName:
     get:
       summary: Find en person
       description: Find en person
       tags:
         - Normal
       parameters:
-        - $ref: 'http://grunddataprogrammet.dk/swagger-editor/CprPersonFullComplete.yaml#/parameters'
+        - name: cadr.bygningsnummer.eq
+          in: query
+          type: string
+          required: true
+          description: Person.CprAdresse.bygningsnummerLigMed - Bygningsnummer er et persondatafelt, og anvendes på Grønland
+        - name: cadr.etage.eq
+          in: query
+          type: string
+          required: true
+          description: Person.CprAdresse.etageLigMed - Angivelse af etage i adressen
       responses:
         '200':
-          description: Person
-          
+          description: "A list of pets."
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Person"
+  definitions:
+    Person:
+      type: "object"
+      required:
+      - "id"
+      - "name"
+      properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      tag:
+        type: "string"

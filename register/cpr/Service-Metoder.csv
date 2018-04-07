@@ -1,0 +1,20 @@
+Endpoint,https://test04-s5-certservices.datafordeler.dk/cpr,
+Version,/1/rest,
+Service,Metode,Request
+CPRPerson,PersonKompletListeHent,https://test04-s5-certservices.datafordeler.dk/cpr/CPRPerson/1/rest/PersonKompletListeHent
+CprPersonFullSimple,PersonFullListSimple,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonFullSimple/1/rest/PersonFullListSimple
+CprPersonFullSimple,PersonFullCurrentListSimple ,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonFullSimple/1/rest/PersonFullCurrentListSimple 
+CprPersonFullComplete,PersonFullCurrentListSimple                                     ,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonFullComplete/1/rest/PersonFullCurrentListSimple                                     
+CprPersonFullComplete,PersonFullCurrentListComplete,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonFullComplete/1/rest/PersonFullCurrentListComplete
+CprPersonSmallSimple,PersonSmallListSimple,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonSmallSimple/1/rest/PersonSmallListSimple
+CprPersonSmallSimple,PersonSmallCurrentListSimple,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonSmallSimple/1/rest/PersonSmallCurrentListSimple
+CprPersonSmallComplete ,PersonSmallListComplete ,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonSmallComplete /1/rest/PersonSmallListComplete 
+CprPersonSmallComplete ,PersonSmallCurrentListComplete,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonSmallComplete /1/rest/PersonSmallCurrentListComplete
+CprPersonMediumSimple,PersonMediumListSimple ,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumSimple/1/rest/PersonMediumListSimple 
+CprPersonMediumSimple,PersonMediumCurrentListSimple,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumSimple/1/rest/PersonMediumCurrentListSimple
+CprPersonMediumComplete,PersonMediumListComplete,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumComplete/1/rest/PersonMediumListComplete
+CprPersonMediumComplete,PersonMediumCurrentListComplete,https://test04-s5-certservices.datafordeler.dk/cpr/CprPersonMediumComplete/1/rest/PersonMediumCurrentListComplete
+CprPrivatePNR,PrivatePersonCurrentPNR,https://test04-s5-certservices.datafordeler.dk/cpr/CprPrivatePNR/1/rest/PrivatePersonCurrentPNR
+CprPrivateAdressName,PrivatePersonCurrentAdressName,https://test04-s5-certservices.datafordeler.dk/cpr/CprPrivateAdressName/1/rest/PrivatePersonCurrentAdressName
+CprPrivateDateOfBirthName,PrivatePersonCurrentDateOfBirthName,https://test04-s5-certservices.datafordeler.dk/cpr/CprPrivateDateOfBirthName/1/rest/PrivatePersonCurrentDateOfBirthName
+CprPrivateDaradressName,PrivatePersonCurrentDarIdName,https://test04-s5-certservices.datafordeler.dk/cpr/CprPrivateDaradressName/1/rest/PrivatePersonCurrentDarIdName
