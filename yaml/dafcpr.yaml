@@ -36,16 +36,20 @@ tags:
   - name: Almindelig
     description: Services med svartider mindre end 1.0 sekund
   - name: Kompleks
-    description: Service med svartider mindre end 2.5 sekunder
+    description: Services med svartider mindre end 2.5 sekunder
+  - name: Offentlige
+    description: Services som bruges af det offentlige
+  - name: Privat
+    description: Services, som bruges af det private
 paths:
   /CprPrivateAdressName:
     get:
       summary: Find en person
       description: Find en person
       tags:
-        - Normal
+        - Offentlige
       parameters:
-        - name: cadr.bygningsnummer.eq
+        - name:                                                                                                                                                                               cadr.bygningsnummer.eq
           in: query
           type: string
           required: true
