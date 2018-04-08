@@ -97,17 +97,19 @@ schemes:
 host: services.datafordeler.dk
 basePath: /MATRIKEL/Matrikel/1/REST
 tags:
-  - name: Normal
-    description: Services med garanteret svartider under 1 sekund
-  - name: Kompleks
-    description: Services med svartider mindre en 10 sekunder
+  - name: Ejendom
+    description: Services for Samlet fast ejendom, Bygning på fremmed grund og Ejerlejlighed
+  - name: Sag
+    description: Matrikulær sager
+  - name: GEO
+    description: Services for matriklære kort
 paths:
   /MatrikelKommune:
     get:
       summary: Søg kommunenavn eller kommunekode
       description: Søg kommunenavn eller kommunekode
       tags:
-        - Normal
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -126,7 +128,7 @@ paths:
         reference til den SFE, BPFG’en ligger på, samt referencer til eventuelle
         lejligheder, der er beliggende i BPFG’en.
       tags:
-        - Normal
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -144,12 +146,12 @@ paths:
         Henter en Samlet fast ejendom og tilhørende Jordstykker, herunder
         fælleslodder samt referencer til eventuelle bestemte faste ejendomme,
         der er beliggende på eller i ejendommen.
-        
+
         ### Input parametre
-        
+
         Obligatoriske parametre: SFEBFEnr ELLER Ejerlavskode+Matrikelnr ELLER point ELLER JordstykkeID ELLER SagsID. Er ingen af disse ikke sat fås ingen resultater. Kun én af disse muligheder må anvendes i et kald, dog må SagsID frit kombineres med andre parametre, hvilket også gælder for Status, Registreringstid og/eller Virkningstid. Date: Datoformat følger ISO 8601 Date and time format
       tags:
-        - Kompleks
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -166,7 +168,7 @@ paths:
         ejendomstype samt reference til eventuelle bestemte faste ejendomme, der
         er beliggende på eller i ejendommen.iggende på eller i ejendommen.
       tags:
-        - Normal
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -190,7 +192,7 @@ paths:
         Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er
         baseret på GML-version 3.2 til avanceret GIS-anvendelse.
       tags:
-        - Kompleks
+        - GEO
       responses:
         '200':
           description: wfs
@@ -202,7 +204,7 @@ paths:
         hovedejendommen (Samlet fast ejendom, elle Bygning på fremmed grund,
         Ejerlejligheden ligger i).
       tags:
-        - Normal
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -222,7 +224,7 @@ paths:
         Kommunenavn ELLER Sagsoperation+RekvirentRef. Er de ikke sat fås ingen
         resultater
       tags:
-        - Kompleks
+        - Sag
       parameters:
         - $ref: '#/parameters/format'
         - name: SagsId
