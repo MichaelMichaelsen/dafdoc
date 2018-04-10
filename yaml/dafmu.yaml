@@ -109,7 +109,7 @@ paths:
       summary: Søg kommunenavn eller kommunekode
       description: Søg kommunenavn eller kommunekode
       tags:
-        - Ejendom
+        - Normal
       parameters:
         - name: SFEBFEnr
           in: query
@@ -192,7 +192,7 @@ paths:
         Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er
         baseret på GML-version 3.2 til avanceret GIS-anvendelse.
       tags:
-        - GEO
+        - Geo
       responses:
         '200':
           description: wfs
@@ -204,7 +204,7 @@ paths:
         hovedejendommen (Samlet fast ejendom, elle Bygning på fremmed grund,
         Ejerlejligheden ligger i).
       tags:
-        - Ejendom
+        - Normal
       parameters:
         - name: SFEBFEnr
           in: query
@@ -224,7 +224,7 @@ paths:
         Kommunenavn ELLER Sagsoperation+RekvirentRef. Er de ikke sat fås ingen
         resultater
       tags:
-        - Sag
+        - Kompleks
       parameters:
         - $ref: '#/parameters/format'
         - name: SagsId
