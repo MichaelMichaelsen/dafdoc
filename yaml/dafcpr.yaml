@@ -2,30 +2,63 @@ swagger: '2.0'
 info:
   version: '3.2'
   title: Services for CPR på Datafordeleren
-  description: |
+  description: >
     # CPR #
+
 
     ## URL opbygning ##
 
-    URL for de enkelte REST services er opbygget af et endpoint efterfulgt af registernavn, servicenavn, versionen af servicen, servicetype (REST eller WFS etc.)samt metodenavn for REST services. Efter ? tilføjes parametre i kaldet, der kan indeholde generelle kaldeparametre for REST services og metode specifikke parametre.
 
-    Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke er produktionsmiljøet der tilgås.  Hvis der er tale om fortrolige eller følsomme data, følger S5. Se miljøbeskrivelser på Datafordeler.dk
+    URL for de enkelte REST services er opbygget af et endpoint efterfulgt af
+    registernavn, servicenavn, versionen af servicen, servicetype (REST eller
+    WFS etc.),
 
-    Tjenesterne er specificeret til at give JSON som output, og dette er default såfremt output parameter ikke anvendes. Såfremt der angives XML som output parameter, leveres XML baseret på det specificerede JSON skema:
-    * Der udføres samme sæt SQL'er (data fremsøgning) uafhængigt af ønsket format og der hentes kun data der indgår i JSON skemaet.
-    * Herefter formateres de fremsøgte data til det ønskede format ud fra JSON skemaet.
+    samt metodenavn for REST services.
 
-    Om output er i XML eller JSON er et spørgsmål om syntaks og påvirker IKKE data indholdet.
+    Efter ? tilføjes parametre i kaldet, der kan indeholde generelle
+    kaldeparametre for REST services og metode specifikke parametre.
+
+
+    Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke
+    er produktionsmiljøet der tilgås.
+
+    Hvis der er tale om fortrolige eller følsomme data, følger S5. Se
+    miljøbeskrivelser på http://Datafordeler.dk
+
+
+    Tjenesterne er specificeret til at give JSON som output, og dette er default
+    såfremt output parameter ikke anvendes.
+
+    Såfremt der angives XML som output parameter, leveres XML baseret på det
+    specificerede JSON skema:
+
+    * Der udføres samme sæt SQL'er (data fremsøgning) uafhængigt af ønsket
+    format og der hentes kun data der indgår i JSON skemaet.
+
+    * Herefter formateres de fremsøgte data til det ønskede format ud fra JSON
+    skemaet.
+
+
+    Om output er i XML eller JSON er et spørgsmål om syntaks og påvirker IKKE
+    data indholdet.
+
 
     Parameter       |  Værdi |
-    --------------- | ---------------------------------------------- |
-    Format          | JSON                                           |
-    Sikkerhedszone  | 5 - Indeholder fortrolige eller følsomme data. |
-    Adgangsniveau   | Indgået aftale med CPR om anvendelse af data påkrævet. |
-    Anvendt udstillingsmodel | Person Udstillingsmodel forefindes: http://data.gov.dk/model/diagrammer/ |
-    REST-regler     | Anvend paging. Default paging-størrelse: 20 |
-    ---------------------------------------------------------------------
 
+    --------------- | ---------------------------------------------- |
+
+    Format          | JSON                                           |
+
+    Sikkerhedszone  | 5 - Indeholder fortrolige eller følsomme data. |
+
+    Adgangsniveau   | Indgået aftale med CPR om anvendelse af data påkrævet. |
+
+    Anvendt udstillingsmodel | Person Udstillingsmodel forefindes:
+    http://data.gov.dk/model/diagrammer/ |
+
+    REST-regler     | Anvend paging. Default paging-størrelse: 20 |
+
+    ---------------------------------------------------------------------
 schemes:
   - https
 host: test03-s5-certservices.datafordeler.dk
@@ -40,7 +73,7 @@ tags:
   - name: Offentlige
     description: Services som bruges af det offentlige
   - name: Privat
-    description: Services, som bruges af det private
+    description: 'Services, som bruges af det private'
 paths:
   /PrivatePersonCurrentAdressName:
     get:
@@ -53,11 +86,15 @@ paths:
         - Privat
       parameters:
         - $ref: '#/parameters/format'
-        - name: cadr.bygningsnummer.eq                                                                                                                                                                             cadr.bygningsnummer.eq
+        - name: >-
+            cadr.bygningsnummer.eq                                                                                                                                                                            
+            cadr.bygningsnummer.eq
           in: query
           type: string
           required: false
-          description: Person.CprAdresse.bygningsnummerLigMed - Bygningsnummer er et persondatafelt, og anvendes på Grønland
+          description: >-
+            Person.CprAdresse.bygningsnummerLigMed - Bygningsnummer er et
+            persondatafelt, og anvendes på Grønland
         - name: cadr.etage.eq
           in: query
           type: string
@@ -67,47 +104,58 @@ paths:
           in: query
           type: string
           required: false
-          description: Person.CprAdresse.husnummerLigMed - Angiver husnummer for en given bolig
+          description: >-
+            Person.CprAdresse.husnummerLigMed - Angiver husnummer for en given
+            bolig
         - name: cadr.postnummer.eq
           in: query
           type: integer
           required: true
-          description: Person.CprAdresse.postnummerLigMed - Postnummer, krævet felt
+          description: 'Person.CprAdresse.postnummerLigMed - Postnummer, krævet felt'
         - name: cadr.sidedoer.eq
           in: query
           type: string
           required: false
           description: Person.CprAdresse.sidedoerLigMed - Sidedør nummer for en bolig
         - name: cadr.vejadresseringsnavn.eq
+          in: query
           type: string
           required: false
-          description: Person.CprAdresse.vejadresseringsnavnLigMed - Forkortelse af adresse som bruges ved forsendelser
+          description: >-
+            Person.CprAdresse.vejadresseringsnavnLigMed - Forkortelse af adresse
+            som bruges ved forsendelser
         - name: navn.efternavn.eq
+          in: query
           type: string
           required: false
           description: Person.Navn.efternavnLigMed - En persons efternavne
         - name: navn.fornavne.eq
+          in: query
           type: string
           required: false
-          description: Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne. Konkat af fornavne og mellemnavn
+          description: >-
+            Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne.
+            Konkat af fornavne og mellemnavn
         - $ref: '#/parameters/pageSize'
         - $ref: '#/parameters/pageNumber'
       responses:
         '200':
-          description: "Person objekt"
-          schema:
-            $ref: "schemas/CPR_V3.2_PersonPrivate.json"
+          description: Person objekt
   /CprPrivateDaradressName:
     get:
-      summary: Private kunders anvendelse af aktuelle CPR data med søgning på DarID og navn.
-      description: |
-      Private kunders anvendelse af aktuelle CPR data med søgning på DarID og navn.
-      Sikkerhedszone: 5
-      Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet.
+      summary: >-
+        Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
+        navn.
+      description: >
+        Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
+        navn.
+
+        Sikkerhedszone 5
+
+        Adgangsniveau Indgået aftale med CPR om anvendelse af data påkrævet.
       tags:
         - Privat
       parameters:
-        - $ref: '#/parameters/format'
         - name: navn.efternavn.eq
           type: string
           in: query
@@ -115,17 +163,23 @@ paths:
         - name: navn.fornavne.eq
           type: string
           in: query
-          description: Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne. Konkat af fornavne og mellemnavn
+          description: >-
+            Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne.
+            Konkat af fornavne og mellemnavn
         - name: person.foedselsdato.eq
           type: string
           in: query
-          description: Person.Person.foedselsdatoLigMed -Angiver hvilken dato fødslen har fundet sted. Datoformat følger ISO 8601
-          - $ref: '#/parameters/pageSize'
-          - $ref: '#/parameters/pageNumber'
+          description: >-
+            Person.Person.foedselsdatoLigMed -Angiver hvilken dato fødslen har
+            fundet sted. Datoformat følger ISO 8601
+        - $ref: '#/parameters/format'
+        - $ref: '#/parameters/pageSize'
+        - $ref: '#/parameters/pageNumber'
       responses:
-        '200':
-          description: "Person objekt"
-          scehma: "schemas/CPR_V3.2_PersonPrivate.json"
+        200:
+          description: A User object
+          schema:
+            $ref: "#/definitions/Personer"
 
 parameters:
   pageSize:
@@ -144,3 +198,28 @@ parameters:
     description: Output format xml or json
     type: string
     default: json
+    
+definitions:
+  Personer:
+    title: Personer
+    type: array
+    items:
+      type: object
+      properties:
+        Person:
+          type: object
+          title: Person
+          properties:
+            statusdato:
+              title: statusdato
+              description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+              type: string
+              format: date-time
+            statusdatoUsikkerhedsmarkering:
+              title: statusdatoUsikkerhedsmarkering
+              description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+              type: boolean
+            stilling:
+              title: stilling
+              description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+              type: string
