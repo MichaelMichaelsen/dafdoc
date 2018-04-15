@@ -59,36 +59,109 @@ info:
     REST-regler     | Anvend paging. Default paging-størrelse: 20 |
 
     ---------------------------------------------------------------------
+
+    ### Resultatkoder:
+
+    Der er nedenfor angivet responskoder der er specfikke for de enkelte
+    operationer. 
+
+    Der anvendes følgende generelle HTTP Statuskoder:
+
+    * 400 - Bad Request
+
+    * 401 - Unauthorized
+
+    * 403 - Forbidden
+
+    * 406 - Not Acceptable
+
+    * 408 - Request Timeout
+
+    * 415 - Unsupported Media Type
+
+    * 500 - Unexpected failure
+
+    Derudover vil der blive anvendt JSON API fejlkoder [JSON API error
+    format](http://jsonapi.org/format/#errors).
 schemes:
   - https
 host: test03-s5-certservices.datafordeler.dk
-basePath: /CPR/CprPrivateAdressName/1/rest/
+basePath: /CPR
 tags:
-  - name: Simpel
-    description: Services med garanteret svartider under 0.09 sekund
-  - name: Almindelig
-    description: Services med svartider mindre end 1.0 sekund
-  - name: Kompleks
-    description: Services med svartider mindre end 2.5 sekunder
   - name: Offentlige
-    description: Services som bruges af det offentlige
+    description: Services som bruges af det offentlige anvendere.
+    externalDocs:
+      url: 'http://datafordeler.dk'
   - name: Privat
     description: 'Services, som bruges af det private'
 paths:
-  /PrivatePersonCurrentAdressName:
+  /CprPrivatePNR/1/rest/PrivatePersonCurrentPNR:
+    get:
+      tags:
+        - Privat
+      produces:
+        - application/json
+        - application/xml
+      summary: Hent en person ud fra personnummeret
+      description: Hent en person ud fra personnummeret
+      parameters:
+        - name: pnr.personnummer.eq
+          type: string
+          in: query
+          required: true
+          description: |-
+            Person.Personnummer.personnummerLigMed
+            Entydig identifikation af en personer i CPR
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                Person:
+                  type: object
+                  title: Person
+                  properties:
+                    statusdato:
+                      title: statusdato
+                      description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                      type: string
+                      format: date-time
+                    statusdatoUsikkerhedsmarkering:
+                      title: statusdatoUsikkerhedsmarkering
+                      description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                      type: boolean
+                    status:
+                      $ref: '#/definitions/PersonStatus'
+                    stilling:
+                      title: stilling
+                      description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                      type: string
+                    Beskyttelser:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Beskyttelse:
+                            $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                    Navn:
+                      $ref: '#/definitions/NavnUdenVirkningsperiode'
+  /CprPrivateAdressName/1/rest/PrivatePersonCurrentAdressName:
     get:
       summary: Find en person
       description: |
         Find en person
+
         Sikkerhedszone: 5
+
         Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet.
       tags:
         - Privat
       parameters:
         - $ref: '#/parameters/format'
-        - name: >-
-            cadr.bygningsnummer.eq                                                                                                                                                                            
-            cadr.bygningsnummer.eq
+        - name: cadr.bygningsnummer.eq
           in: query
           type: string
           required: false
@@ -140,8 +213,51 @@ paths:
         - $ref: '#/parameters/pageNumber'
       responses:
         '200':
-          description: Person objekt
-  /CprPrivateDaradressName:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                Person:
+                  type: object
+                  title: Person
+                  properties:
+                    statusdato:
+                      title: statusdato
+                      description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                      type: string
+                      format: date-time
+                    statusdatoUsikkerhedsmarkering:
+                      title: statusdatoUsikkerhedsmarkering
+                      description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                      type: boolean
+                    status:
+                      $ref: '#/definitions/PersonStatus'
+                    stilling:
+                      title: stilling
+                      description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                      type: string
+                    Beskyttelser:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Beskyttelse:
+                            $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                    Navn:
+                      $ref: '#/definitions/NavnUdenVirkningsperiode'
+        '400':
+          description: >-
+            Client did something wrong but can fix it (provide another credit
+            card number e.g.)
+        '401':
+          description: Tries to access something that it is not authenticated for.
+        '404':
+          description: Tries to do something to something that does not exist.
+        '500':
+          description: Server does not know what happened
+  /CPRPrivateDateOfBirth/1/rest/PrivatePersonCurrentDateOfBirthName:
     get:
       summary: >-
         Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
@@ -150,7 +266,9 @@ paths:
         Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
         navn.
 
+
         Sikkerhedszone 5
+
 
         Adgangsniveau Indgået aftale med CPR om anvendelse af data påkrævet.
       tags:
@@ -176,11 +294,97 @@ paths:
         - $ref: '#/parameters/pageSize'
         - $ref: '#/parameters/pageNumber'
       responses:
-        200:
-          description: A User object
+        '200':
+          description: OK
           schema:
-            $ref: "#/definitions/Personer"
-
+            type: array
+            items:
+              type: object
+              properties:
+                Person:
+                  type: object
+                  title: Person
+                  properties:
+                    statusdato:
+                      title: statusdato
+                      description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                      type: string
+                      format: date-time
+                    statusdatoUsikkerhedsmarkering:
+                      title: statusdatoUsikkerhedsmarkering
+                      description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                      type: boolean
+                    status:
+                      $ref: '#/definitions/PersonStatus'
+                    stilling:
+                      title: stilling
+                      description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                      type: string
+                    Beskyttelser:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Beskyttelse:
+                            $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                    Navn:
+                      $ref: '#/definitions/NavnUdenVirkningsperiode'
+  /CprPrivateDaradressName/1/REST/PrivatePersonCurrentDaradressName:
+    get:
+      summary: Hent person information
+      description: Hent person information
+      tags:
+        - Privat
+      parameters:
+        - name: navn.efternavn.eq
+          type: string
+          in: query
+          description: Person.Navn.efternavnLigMed - En persons efternavne
+        - name: navn.fornavne.eq
+          type: string
+          in: query
+          description: Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne
+        - name: cadr.daradresse.eq
+          type: string
+          in: query
+          description: Person.CprAdresse.daradresseLigMed - Angivelse af adresseUUID
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                Person:
+                  type: object
+                  title: Person
+                  properties:
+                    statusdato:
+                      title: statusdato
+                      description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                      type: string
+                      format: date-time
+                    statusdatoUsikkerhedsmarkering:
+                      title: statusdatoUsikkerhedsmarkering
+                      description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                      type: boolean
+                    status:
+                      $ref: '#/definitions/PersonStatus'
+                    stilling:
+                      title: stilling
+                      description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                      type: string
+                    Beskyttelser:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Beskyttelse:
+                            $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                    Navn:
+                      $ref: '#/definitions/NavnUdenVirkningsperiode'
 parameters:
   pageSize:
     name: pageSize
@@ -198,8 +402,91 @@ parameters:
     description: Output format xml or json
     type: string
     default: json
-    
 definitions:
+  PersonStatus:
+    title: PersonStatus
+    type: string
+    enum:
+      - annulleret
+      - bopael_i_danmark
+      - bopael_i_danmark_hoej_vejkode
+      - bopael_i_groenland
+      - bopael_i_groenland_hoej_vejkode
+      - doed
+      - ej_bopael
+      - forsvundet
+      - nedlagt_person
+      - udrejst
+    example: bopael_i_danmark
+  Status:
+    title: Status
+    type: string
+    enum:
+      - aktuel
+      - fortrudt
+      - historisk
+      - rettet
+      - teknisk_aendring
+    example: aktuel
+  BeskyttelseUdenVirkningTil:
+    title: Beskyttelse
+    type: object
+    properties:
+      beskyttelsestype:
+        title: beskyttelsestype
+        description: EAID_dst0DF442_9282_4181_B43D_23B02F422804
+        type: string
+        enum:
+          - lokal_vejviser
+          - markedsfoering
+          - navne_og_adresse
+      virkningFra:
+        title: virkningFra
+        type: string
+        description: EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9
+        format: date-time
+    required:
+      - beskyttelsestype
+  NavnUdenVirkningsperiode:
+    title: Navn
+    type: object
+    properties:
+      adresseringsnavn:
+        title: adresseringsnavn
+        description: EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D
+        type: string
+      efternavn:
+        title: efternavn
+        description: EAID_D3E09BDA_7174_4555_92F0_A7093671DCCF
+        type: string
+      fornavne:
+        title: fornavne
+        description: EAID_C83C2BED_DA60_4017_B446_044A502AFE01
+        type: string
+      mellemnavn:
+        title: mellemnavn
+        description: EAID_6503AA6C_33D3_4baa_AD1A_5D7FED741A2B
+        type: string
+      efternavnsmarkering:
+        $ref: '#/definitions/Navnemarkering'
+      fornavnsmarkering:
+        $ref: '#/definitions/Navnemarkering'
+      mellemnavnsmarkering:
+        $ref: '#/definitions/Navnemarkering'
+      status:
+        $ref: '#/definitions/Status'
+    additionalProperties: false
+    required:
+      - status
+  Navnemarkering:
+    type: string
+    title: Navnemarkering
+    description: Anvendes til at angive dokumentationsniveauet for navnet
+    enum:
+      - forkortet
+      - indeholder_tegn_der_ikke_kan_indrapporteres_til_cpr
+      - utilstraekkeligt_dokumenteret
+properties:
   Personer:
     title: Personer
     type: array
@@ -219,6 +506,8 @@ definitions:
               title: statusdatoUsikkerhedsmarkering
               description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
               type: boolean
+            status:
+              $ref: '#/definitions/PersonStatus'
             stilling:
               title: stilling
               description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4

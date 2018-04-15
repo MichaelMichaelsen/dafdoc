@@ -1,0 +1,65 @@
+---
+"$schema": http://json-schema.org/draft-04/schema#
+description: Private Person Aktuel - version 3.2
+type: object
+properties:
+  Personer:
+    title: Personer
+    type: array
+    items:
+      type: object
+      properties:
+        Person:
+          type: object
+          title: Person
+          properties:
+            statusdato:
+              title: statusdato
+              description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+              type: string
+              format: date-time
+            statusdatoUsikkerhedsmarkering:
+              title: statusdatoUsikkerhedsmarkering
+              description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+              type: boolean
+            status:
+              "$ref": CPR_definitioner.yaml#/definitions/PersonStatus
+              description: EAID_dstB8BFA9_D6E2_43e8_AF38_A6C1F0174C5A
+            stilling:
+              title: stilling
+              description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+              type:
+              - string
+              - 'null'
+            Beskyttelser:
+              type: array
+              items:
+                type: object
+                properties:
+                  Beskyttelse:
+                    "$ref": CPR_definitioner.yaml#/definitions/BeskyttelseUdenVirkningTil
+                    description: EAID_dst8F2337_8084_47ad_87AD_6661D7ACDDB5
+            Navn:
+              "$ref": CPR_definitioner.yaml#/definitions/NavnUdenVirkningsperiode
+              description: EAID_dstE45817_FD1E_4a55_A20E_0A3EEBC580F0
+            Vaergemaal:
+              "$ref": CPR_definitioner.yaml#/definitions/SimpelVaergemaal
+              description: EAID_dst1107F4_DA32_4111_AB59_5F2714D8B9CD
+            UdrejseIndrejse:
+              "$ref": CPR_definitioner.yaml#/definitions/UdrejseIndrejseUdenVirkningTil
+              description: EAID_dst0CFADD_06AD_4f98_B616_33D3716849E1
+            Kontaktadresse:
+              "$ref": CPR_definitioner.yaml#/definitions/SimpelAdresseoplysningUdenVirkningTil
+              description: EAID_dst19482F_9A6C_41e7_9DEE_D7B297BAA34E
+            Adresseoplysninger:
+              "$ref": CPR_definitioner.yaml#/definitions/AdresseoplysningerUdenSupplerendeAdresse
+              description: EAID_dst56392A_9FBF_4da9_8527_FBE1B63C7EDA
+          additionalProperties: false
+          required:
+          - status
+          - statusdato
+          - statusdatoUsikkerhedsmarkering
+      required:
+      - Person
+required:
+- Personer
