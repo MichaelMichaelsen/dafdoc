@@ -1,0 +1,3186 @@
+        - name: adropl.conavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.conavnErIndeholdtI - C/O navn på adressen (EAID_741EF37B_4051_4519_9679_BBE002387552)
+        - name: adropl.conavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.conavnIndeholder - C/O navn på adressen (EAID_741EF37B_4051_4519_9679_BBE002387552)
+        - name: adropl.conavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.conavnLigMed - Conavn - C/O navn på adressen (EAID_741EF37B_4051_4519_9679_BBE002387552)
+        - name: adropl.fraflytningsdatokommune.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneForskelligFra - Hændelsesdato for flytning fra en kommune (EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B)
+        - name: adropl.fraflytningsdatokommune.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneLigMed - Hændelsesdato for flytning fra en kommune (EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B)
+        - name: adropl.fraflytningsdatokommune.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneMindreEnd - Hændelsesdato for flytning fra en kommune (EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B)
+        - name: adropl.fraflytningsdatokommune.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneMindreEndEllerLigMed - Hændelsesdato for flytning fra en kommune (EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B)
+        - name: adropl.fraflytningsdatokommune.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneStoerreEnd - Hændelsesdato for flytning fra en kommune (EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B)
+        - name: adropl.fraflytningsdatokommune.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneStoerreEndEllerLigMed - Hændelsesdato for flytning fra en kommune (EAID_6A14236A_5AC1_4bdd_97F7_C6F4E5B60F3B)
+        - name: adropl.fraflytningsdatokommuneum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningsdatokommuneusikkerhedsmarkeringLigMed - Usikkerhed ved fraflytningsdato (EAID_2A916826_236A_420b_BD17_0680703AFE03)
+        - name: adropl.fraflytningskommunekode.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeErIndeholdtI - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunekode.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeForskelligFra - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunekode.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeLigMed - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunekode.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeMindreEnd - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunekode.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeMindreEndEllerLigMed - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunekode.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeStoerreEnd - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunekode.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunekodeStoerreEndEllerLigMed - Tidligere kommunekode, hvorfra personen er fraflyttet (EAID_C556FE2D_2899_4567_A0CD_4311A5D15D2A)
+        - name: adropl.fraflytningskommunenavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunenavnErIndeholdtI - Tidligere kommunenavn, hvorfra personen er fraflyttet (EAID_0CC1A8E8_6623_4242_AA39_108CFE7D9C64)
+        - name: adropl.fraflytningskommunenavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunenavnIndeholder - Tidligere kommunenavn, hvorfra personen er fraflyttet (EAID_0CC1A8E8_6623_4242_AA39_108CFE7D9C64)
+        - name: adropl.fraflytningskommunenavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.fraflytningskommunenavnLigMed - Tidligere kommunenavn, hvorfra personen er fraflyttet (EAID_0CC1A8E8_6623_4242_AA39_108CFE7D9C64)
+        - name: adropl.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.statusErIndeholdtI -  (EAID_dst0A8EF9_B8DF_4a4c_A9FA_F6715F48F3E8)
+        - name: adropl.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.statusLigMed -  (EAID_dst0A8EF9_B8DF_4a4c_A9FA_F6715F48F3E8)
+        - name: adropl.suppladr.simpelAdresse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.simpelAdresseIndeholder - ()
+        - name: adropl.suppladr.startmyndighedskode.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.startmyndighedskodeErIndeholdtI - Angiver koden for den myndighed, der har konstateret adresseoplysningerne (EAID_847F7CE0_8DB8_40a7_8B7F_D54109696CA9)
+        - name: adropl.suppladr.startmyndighedskode.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.startmyndighedskodeIndeholder - Angiver koden for den myndighed, der har konstateret adresseoplysningerne (EAID_847F7CE0_8DB8_40a7_8B7F_D54109696CA9)
+        - name: adropl.suppladr.startmyndighedskode.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.startmyndighedskodeLigMed - Angiver koden for den myndighed, der har konstateret adresseoplysningerne (EAID_847F7CE0_8DB8_40a7_8B7F_D54109696CA9)
+        - name: adropl.suppladr.startmyndighedsnavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.startmyndighedsnavnErIndeholdtI - Angiver den myndighed, der har konstateret adresseoplysningerne (EAID_164C240B_1832_4c44_8952_CC55A67DF7E7)
+        - name: adropl.suppladr.startmyndighedsnavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.startmyndighedsnavnIndeholder - Angiver den myndighed, der har konstateret adresseoplysningerne (EAID_164C240B_1832_4c44_8952_CC55A67DF7E7)
+        - name: adropl.suppladr.startmyndighedsnavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.startmyndighedsnavnLigMed - Angiver den myndighed, der har konstateret adresseoplysningerne (EAID_164C240B_1832_4c44_8952_CC55A67DF7E7)
+        - name: adropl.suppladr.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningfraForskelligFra -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: adropl.suppladr.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningfraLigMed -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: adropl.suppladr.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningfraMindreEnd -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: adropl.suppladr.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningfraMindreEndEllerLigMed -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: adropl.suppladr.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningfraStoerreEnd -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: adropl.suppladr.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningfraStoerreEndEllerLigMed -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: adropl.suppladr.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningtilForskelligFra -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: adropl.suppladr.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningtilLigMed -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: adropl.suppladr.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningtilMindreEnd -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: adropl.suppladr.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningtilMindreEndEllerLigMed -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: adropl.suppladr.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningtilStoerreEnd -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: adropl.suppladr.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.SupplerendeAdresse.virkningtilStoerreEndEllerLigMed -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: adropl.tilflytningsdatokommune.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneForskelligFra - Hændelsesdato for tilflytning i en kommune  (EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4)
+        - name: adropl.tilflytningsdatokommune.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneLigMed - Hændelsesdato for tilflytning i en kommune  (EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4)
+        - name: adropl.tilflytningsdatokommune.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneMindreEnd - Hændelsesdato for tilflytning i en kommune  (EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4)
+        - name: adropl.tilflytningsdatokommune.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneMindreEndEllerLigMed - Hændelsesdato for tilflytning i en kommune  (EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4)
+        - name: adropl.tilflytningsdatokommune.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneStoerreEnd - Hændelsesdato for tilflytning i en kommune  (EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4)
+        - name: adropl.tilflytningsdatokommune.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneStoerreEndEllerLigMed - Hændelsesdato for tilflytning i en kommune  (EAID_5A9E9CD8_54CB_4e03_A383_16C7AA39C7E4)
+        - name: adropl.tilflytningsdatokommuneum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Adresseoplysninger.tilflytningsdatokommuneusikkerhedsmarkeringLigMed - Usikkerhed ved tilflytningsdato (EAID_2BE18F8B_AC08_45fa_BD81_39665A4EF536)
+        - name: adropl.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfraForskelligFra -  (EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00)
+        - name: adropl.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfraLigMed -  (EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00)
+        - name: adropl.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfraMindreEnd -  (EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00)
+        - name: adropl.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfraMindreEndEllerLigMed -  (EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00)
+        - name: adropl.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfraStoerreEnd -  (EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00)
+        - name: adropl.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfraStoerreEndEllerLigMed -  (EAID_DD92B117_FAA0_4e53_9E7D_CF90C86E6F00)
+        - name: adropl.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningfrausikkerhedsmarkeringLigMed -  (EAID_7538171E_D04C_4b0a_90F4_D83903FF475C)
+        - name: adropl.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilForskelligFra -  (EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96)
+        - name: adropl.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilLigMed -  (EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96)
+        - name: adropl.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilMindreEnd -  (EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96)
+        - name: adropl.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilMindreEndEllerLigMed -  (EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96)
+        - name: adropl.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilStoerreEnd -  (EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96)
+        - name: adropl.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilStoerreEndEllerLigMed -  (EAID_21521AB3_9D7F_4559_BE5B_415AE41C0F96)
+        - name: adropl.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Adresseoplysninger.virkningtilusikkerhedsmarkeringLigMed -  (EAID_DCC1BF46_12EA_4ab4_9EB5_41A14DD68DA8)
+        - name: besk.beskyttelsestype.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Beskyttelse.beskyttelsestypeErIndeholdtI -Angiver typen for beskyttelse 1) navn og adr. 2) vejviser eller 3) markedsføring (EAID_dst0DF442_9282_4181_B43D_23B02F422804)
+        - name: besk.beskyttelsestype.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Beskyttelse.beskyttelsestypeLigMed -Angiver typen for beskyttelse 1) navn og adr. 2) vejviser eller 3) markedsføring (EAID_dst0DF442_9282_4181_B43D_23B02F422804)
+        - name: besk.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Beskyttelse.statusErIndeholdtI -  (EAID_dstC43285_59A6_4899_B5D8_9951BB124C39)
+        - name: besk.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Beskyttelse.statusLigMed -  (EAID_dstC43285_59A6_4899_B5D8_9951BB124C39)
+        - name: besk.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningfraForskelligFra -  (EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9)
+        - name: besk.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningfraLigMed -  (EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9)
+        - name: besk.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningfraMindreEnd -  (EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9)
+        - name: besk.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningfraMindreEndEllerLigMed -  (EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9)
+        - name: besk.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningfraStoerreEnd -  (EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9)
+        - name: besk.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningfraStoerreEndEllerLigMed -  (EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9)
+        - name: besk.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningtilForskelligFra -  (EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670)
+        - name: besk.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningtilLigMed -  (EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670)
+        - name: besk.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningtilMindreEnd -  (EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670)
+        - name: besk.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningtilMindreEndEllerLigMed -  (EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670)
+        - name: besk.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningtilStoerreEnd -  (EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670)
+        - name: besk.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Beskyttelse.virkningtilStoerreEndEllerLigMed -  (EAID_4F7C792A_DD2C_4bd1_BCC3_A3B730945670)
+        - name: civ.civilstandstype.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Civilstand.civilstandstypeErIndeholdtI - Død, fraskilt, gift, enke osv. (EAID_dst013E03_2A8F_4483_A3C4_BDB2EA8D78F9)
+        - name: civ.civilstandstype.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Civilstand.civilstandstypeLigMed - Død, fraskilt, gift, enke osv. (EAID_dst013E03_2A8F_4483_A3C4_BDB2EA8D78F9)
+        - name: civ.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Civilstand.statusErIndeholdtI - Aktuel, fortrudt, historisk osv. (EAID_dst10364D_C551_446e_96E0_0333863B6C2C)
+        - name: civ.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Civilstand.statusLigMed - Aktuel, fortrudt, historisk osv. (EAID_dst10364D_C551_446e_96E0_0333863B6C2C)
+        - name: civ.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningfraForskelligFra -  (EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F)
+        - name: civ.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningfraLigMed -  (EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F)
+        - name: civ.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningfraMindreEnd -  (EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F)
+        - name: civ.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningfraMindreEndEllerLigMed -  (EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F)
+        - name: civ.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningfraStoerreEnd -  (EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F)
+        - name: civ.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningfraStoerreEndEllerLigMed -  (EAID_C0D4D4D2_B8F0_4a08_8D3C_030619E95A3F)
+        - name: civ.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Civilstand.virkningfrausikkerhedsmarkeringLigMed -  (EAID_29D7D407_4154_4525_A05D_68C813E15345)
+        - name: civ.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningtilForskelligFra -  (EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D)
+        - name: civ.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningtilLigMed -  (EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D)
+        - name: civ.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningtilMindreEnd -  (EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D)
+        - name: civ.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningtilMindreEndEllerLigMed -  (EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D)
+        - name: civ.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningtilStoerreEnd -  (EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D)
+        - name: civ.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Civilstand.virkningtilStoerreEndEllerLigMed -  (EAID_B51D065C_AAEC_4cd4_A09E_3E4D1D417B5D)
+        - name: civ.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Civilstand.virkningtilusikkerhedsmarkeringLigMed -  (EAID_7C888BC3_473F_425c_9339_C778042E9C94)
+        - name: cadr.bygningsnummer.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.bygningsnummerErIndeholdtI - Bygningsnummer er et persondatafelt, og anvendes på Grønland  (EAID_ACD32207_32F0_4915_AAA8_9E2788B44F2F)
+        - name: cadr.bygningsnummer.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.bygningsnummerIndeholder - Bygningsnummer er et persondatafelt, og anvendes på Grønland  (EAID_ACD32207_32F0_4915_AAA8_9E2788B44F2F)
+        - name: cadr.bygningsnummer.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.bygningsnummerLigMed - Bygningsnummer er et persondatafelt, og anvendes på Grønland  (EAID_ACD32207_32F0_4915_AAA8_9E2788B44F2F)
+        - name: cadr.bynavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.bynavnErIndeholdtI - Bynavn (EAID_B5548113_C452_4341_8E8F_CF25F0D4C303)
+        - name: cadr.bynavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.bynavnIndeholder - Bynavn (EAID_B5548113_C452_4341_8E8F_CF25F0D4C303)
+        - name: cadr.bynavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.bynavnLigMed - Bynavn (EAID_B5548113_C452_4341_8E8F_CF25F0D4C303)
+        - name: cadr.cprkommunekode.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeErIndeholdtI - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunekode.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeForskelligFra - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunekode.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeLigMed - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunekode.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeMindreEnd - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunekode.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeMindreEndEllerLigMed - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunekode.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeStoerreEnd - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunekode.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunekodeStoerreEndEllerLigMed - Kode for en kommune (EAID_CFBC5E5D_1439_41ba_B8AB_356A1859A89F)
+        - name: cadr.cprkommunenavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunenavnErIndeholdtI - Navn for kommune (EAID_726EF7E6_C1A9_451b_B96E_F8089B1F5737)
+        - name: cadr.cprkommunenavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunenavnIndeholder - Navn for kommune (EAID_726EF7E6_C1A9_451b_B96E_F8089B1F5737)
+        - name: cadr.cprkommunenavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.cprkommunenavnLigMed - Navn for kommune (EAID_726EF7E6_C1A9_451b_B96E_F8089B1F5737)
+        - name: cadr.cprvejkode.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeErIndeholdtI - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.cprvejkode.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeForskelligFra - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.cprvejkode.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeLigMed - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.cprvejkode.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeMindreEnd - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.cprvejkode.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeMindreEndEllerLigMed - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.cprvejkode.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeStoerreEnd - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.cprvejkode.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.cprvejkodeStoerreEndEllerLigMed - (Kode for en vej) Kode der entydigt identificere en vej indenfor en kommune. (EAID_D813A2D9_DEE3_4173_8CD1_8870F48BDE80)
+        - name: cadr.daradresse.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.daradresseErIndeholdtI - Angivelse af adresseUUID (EAID_0B2FDA44_B0BA_46c7_B1E5_12720402B077)
+        - name: cadr.daradresse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.daradresseIndeholder - Angivelse af adresseUUID (EAID_0B2FDA44_B0BA_46c7_B1E5_12720402B077)
+        - name: cadr.daradresse.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.daradresseLigMed - Angivelse af adresseUUID (EAID_0B2FDA44_B0BA_46c7_B1E5_12720402B077)
+        - name: cadr.etage.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.etageErIndeholdtI - Angivelse af etage i adressen (EAID_F7EC8E87_F0CC_497c_8CBA_540BF38A0841)
+        - name: cadr.etage.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.etageIndeholder - Angivelse af etage i adressen (EAID_F7EC8E87_F0CC_497c_8CBA_540BF38A0841)
+        - name: cadr.etage.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.etageLigMed - Angivelse af etage i adressen (EAID_F7EC8E87_F0CC_497c_8CBA_540BF38A0841)
+        - name: cadr.husnummer.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.husnummerErIndeholdtI - Angiver husnummer for en given bolig (EAID_83469B46_64B3_49f1_8A47_357349B12725)
+        - name: cadr.husnummer.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.husnummerIndeholder - Angiver husnummer for en given bolig (EAID_83469B46_64B3_49f1_8A47_357349B12725)
+        - name: cadr.husnummer.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.husnummerLigMed - Angiver husnummer for en given bolig (EAID_83469B46_64B3_49f1_8A47_357349B12725)
+        - name: cadr.postdistrikt.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.postdistriktErIndeholdtI - Postdistrikt (EAID_220BE81E_5B14_406c_B503_BD96ABEB559A)
+        - name: cadr.postdistrikt.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.postdistriktIndeholder - Postdistrikt (EAID_220BE81E_5B14_406c_B503_BD96ABEB559A)
+        - name: cadr.postdistrikt.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.postdistriktLigMed - Postdistrikt (EAID_220BE81E_5B14_406c_B503_BD96ABEB559A)
+        - name: cadr.postnummer.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerErIndeholdtI - Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.postnummer.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerForskelligFra - Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.postnummer.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerLigMed - Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.postnummer.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerMindreEnd - Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.postnummer.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerMindreEndEllerLigMed -Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.postnummer.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerStoerreEnd - Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.postnummer.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.CprAdresse.postnummerStoerreEndEllerLigMed - Postnummer (EAID_2E49BFE4_0E7D_47e1_934F_4A2BEF38D14E)
+        - name: cadr.sidedoer.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.sidedoerErIndeholdtI - Sidedør nummer for en bolig (EAID_542068CC_8B0B_41de_845D_63E39479BA22)
+        - name: cadr.sidedoer.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.sidedoerIndeholder - Sidedør nummer for en bolig (EAID_542068CC_8B0B_41de_845D_63E39479BA22)
+        - name: cadr.sidedoer.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.sidedoerLigMed - Sidedør nummer for en bolig (EAID_542068CC_8B0B_41de_845D_63E39479BA22)
+        - name: cadr.vejadresseringsnavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.vejadresseringsnavnErIndeholdtI - Forkortelse af adresse som bruges ved forsendelser (EAID_F35B588E_8604_45be_88EE_D88095DA8AE1)
+        - name: cadr.vejadresseringsnavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.vejadresseringsnavnIndeholder - Forkortelse af adresse som bruges ved forsendelser (EAID_F35B588E_8604_45be_88EE_D88095DA8AE1)
+        - name: cadr.vejadresseringsnavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.CprAdresse.vejadresseringsnavnLigMed - Forkortelse af adresse som bruges ved forsendelser (EAID_F35B588E_8604_45be_88EE_D88095DA8AE1)
+        - name: chaen.afledtmarkering.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Cprhaendelse.afledtmarkeringLigMed -  (EAID_7824DF9E_81A1_4afa_B0D8_5A187A65252D)
+        - name: chaen.afleveringsdato.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.afleveringsdatoForskelligFra -  (EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3)
+        - name: chaen.afleveringsdato.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.afleveringsdatoLigMed -  (EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3)
+        - name: chaen.afleveringsdato.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.afleveringsdatoMindreEnd -  (EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3)
+        - name: chaen.afleveringsdato.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.afleveringsdatoMindreEndEllerLigMed -  (EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3)
+        - name: chaen.afleveringsdato.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.afleveringsdatoStoerreEnd -  (EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3)
+        - name: chaen.afleveringsdato.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.afleveringsdatoStoerreEndEllerLigMed -  (EAID_9A3E62D3_C123_400d_B1DC_EC88E27D74E3)
+        - name: chaen.forretningshaendelse.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Cprhaendelse.forretningshaendelseErIndeholdtI -  (EAID_dst15D74B_21B2_41ca_9AB4_8FD703AA2597)
+        - name: chaen.forretningsomraade.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Cprhaendelse.forretningsomraadeIndeholder -  (EAID_8E47BD3F_A937_4856_BB04_E308E6E5DFE1)
+        - name: chaen.forretningsomraade.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Cprhaendelse.forretningsomraadeLigMed -  (EAID_8E47BD3F_A937_4856_BB04_E308E6E5DFE1)
+        - name: chaen.rettetden.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.rettetdenForskelligFra -  (EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2)
+        - name: chaen.rettetden.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.rettetdenLigMed -  (EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2)
+        - name: chaen.rettetden.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.rettetdenMindreEnd -  (EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2)
+        - name: chaen.rettetden.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.rettetdenMindreEndEllerLigMed -  (EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2)
+        - name: chaen.rettetden.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.rettetdenStoerreEnd -  (EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2)
+        - name: chaen.rettetden.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Cprhaendelse.rettetdenStoerreEndEllerLigMed -  (EAID_5E4D2C6D_8025_462f_89D4_1BE860A449B2)
+        - name: flyt.bemaerkninger.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Flyttepaabud.bemaerkningerErIndeholdtI - Fritekstfelt til bemærkninger i tilknytning til oplysninger om flyttepåbud (EAID_3584F178_736C_4b05_AF8A_5D5D9ED3C1F8)
+        - name: flyt.bemaerkninger.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Flyttepaabud.bemaerkningerIndeholder - Fritekstfelt til bemærkninger i tilknytning til oplysninger om flyttepåbud (EAID_3584F178_736C_4b05_AF8A_5D5D9ED3C1F8)
+        - name: flyt.bemaerkninger.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Flyttepaabud.bemaerkningerLigMed - Fritekstfelt til bemærkninger i tilknytning til oplysninger om flyttepåbud (EAID_3584F178_736C_4b05_AF8A_5D5D9ED3C1F8)
+        - name: flyt.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Flyttepaabud.virkningfraForskelligFra -  (EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA)
+        - name: flyt.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Flyttepaabud.virkningfraLigMed -  (EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA)
+        - name: flyt.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Flyttepaabud.virkningfraMindreEnd -  (EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA)
+        - name: flyt.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Flyttepaabud.virkningfraMindreEndEllerLigMed -  (EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA)
+        - name: flyt.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Flyttepaabud.virkningfraStoerreEnd -  (EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA)
+        - name: flyt.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Flyttepaabud.virkningfraStoerreEndEllerLigMed -  (EAID_93E6C4D8_F235_4dbc_B6F7_9C675ED021FA)
+        - name: folk.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Folkekirke.statusErIndeholdtI - Angiver om: Aktuel, fortrudt, historisk, rettet osv. (EAID_dst4B9493_A704_4e54_BC07_0FEC9637D066)
+        - name: folk.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Folkekirke.statusLigMed - Angiver om: Aktuel, fortrudt, historisk, rettet osv. (EAID_dst4B9493_A704_4e54_BC07_0FEC9637D066)
+        - name: folk.tilhoersforhold.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Folkekirke.tilhoersforholdErIndeholdtI - Kode for tilhørsforhold til folkekirken (EAID_dst75AD72_6186_4418_89E1_DF9CFD0D54E7)
+        - name: folk.tilhoersforhold.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Folkekirke.tilhoersforholdLigMed - Kode for tilhørsforhold til folkekirken (EAID_dst75AD72_6186_4418_89E1_DF9CFD0D54E7)
+        - name: folk.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningfraForskelligFra -  (EAID_A7644231_5B71_45b1_B96A_9E130D855CBF)
+        - name: folk.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningfraLigMed -  (EAID_A7644231_5B71_45b1_B96A_9E130D855CBF)
+        - name: folk.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningfraMindreEnd -  (EAID_A7644231_5B71_45b1_B96A_9E130D855CBF)
+        - name: folk.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningfraMindreEndEllerLigMed -  (EAID_A7644231_5B71_45b1_B96A_9E130D855CBF)
+        - name: folk.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningfraStoerreEnd -  (EAID_A7644231_5B71_45b1_B96A_9E130D855CBF)
+        - name: folk.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningfraStoerreEndEllerLigMed -  (EAID_A7644231_5B71_45b1_B96A_9E130D855CBF)
+        - name: folk.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Folkekirke.virkningfrausikkerhedsmarkeringLigMed -  (EAID_86C5E44C_D5B7_4190_B15A_0BB9AD0BBF30)
+        - name: folk.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilForskelligFra -  (EAID_24561393_60A0_4129_B4E4_018E2F3A588D)
+        - name: folk.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilLigMed -  (EAID_24561393_60A0_4129_B4E4_018E2F3A588D)
+        - name: folk.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilMindreEnd -  (EAID_24561393_60A0_4129_B4E4_018E2F3A588D)
+        - name: folk.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilMindreEndEllerLigMed -  (EAID_24561393_60A0_4129_B4E4_018E2F3A588D)
+        - name: folk.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilStoerreEnd -  (EAID_24561393_60A0_4129_B4E4_018E2F3A588D)
+        - name: folk.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilStoerreEndEllerLigMed -  (EAID_24561393_60A0_4129_B4E4_018E2F3A588D)
+        - name: folk.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Folkekirke.virkningtilusikkerhedsmarkeringLigMed -  (EAID_3E0D2947_4CAC_4345_853E_291292095743)
+        - name: fopl.foraelderrolle.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Foraelderoplysning.foraelderrolleErIndeholdtI -  (EAID_dstD4ECB2_D55A_4e6b_961F_ACA4F7C401B8)
+        - name: fopl.foraelderrolle.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Foraelderoplysning.foraelderrolleLigMed -  (EAID_dstD4ECB2_D55A_4e6b_961F_ACA4F7C401B8)
+        - name: fopl.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfraForskelligFra -  (EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E)
+        - name: fopl.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfraLigMed -  (EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E)
+        - name: fopl.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfraMindreEnd -  (EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E)
+        - name: fopl.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfraMindreEndEllerLigMed -  (EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E)
+        - name: fopl.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfraStoerreEnd -  (EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E)
+        - name: fopl.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfraStoerreEndEllerLigMed -  (EAID_C10A9A75_5FC0_4b24_95E7_2652DF46441E)
+        - name: fopl.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Foraelderoplysning.virkningfrausikkerhedsmarkeringLigMed -  (EAID_28DDF5A4_198C_4304_97D6_F362D0183B4D)
+        - name: fmyn.indehaverrolle.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.foraeldremyndighedsindehaverrolleErIndeholdtI -  (EAID_dst3E15EC_F88C_47c3_A8F3_B01D5A36B5C3)
+        - name: fmyn.indehaverrolle.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.foraeldremyndighedsindehaverrolleLigMed -  (EAID_dst3E15EC_F88C_47c3_A8F3_B01D5A36B5C3)
+        - name: fmyn.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfraForskelligFra -  (EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2)
+        - name: fmyn.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfraLigMed -  (EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2)
+        - name: fmyn.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfraMindreEnd -  (EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2)
+        - name: fmyn.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfraMindreEndEllerLigMed -  (EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2)
+        - name: fmyn.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfraStoerreEnd -  (EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2)
+        - name: fmyn.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfraStoerreEndEllerLigMed -  (EAID_FCEFA529_D5EE_4e00_981C_A966F5B5B3F2)
+        - name: fmyn.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningfrausikkerhedsmarkeringLigMed -  (EAID_ABBCE703_0A9C_4dcb_BB31_121C0E97CD87)
+        - name: fmyn.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningtilForskelligFra -  (EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86)
+        - name: fmyn.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningtilLigMed -  (EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86)
+        - name: fmyn.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningtilMindreEnd -  (EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86)
+        - name: fmyn.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningtilMindreEndEllerLigMed -  (EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86)
+        - name: fmyn.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningtilStoerreEnd -  (EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86)
+        - name: fmyn.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Foraeldremyndighedsoplysning.virkningtilStoerreEndEllerLigMed -  (EAID_B66D0AF5_E4FA_4c42_80C1_C81557E53D86)
+        - name: forsvind.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Forsvinding.statusErIndeholdtI -  (EAID_dstF3A94A_2E62_43d8_B0D2_18FFB9A9D813)
+        - name: forsvind.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Forsvinding.statusLigMed -  (EAID_dstF3A94A_2E62_43d8_B0D2_18FFB9A9D813)
+        - name: forsvind.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningfraForskelligFra -  (EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0)
+        - name: forsvind.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningfraLigMed -  (EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0)
+        - name: forsvind.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningfraMindreEnd -  (EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0)
+        - name: forsvind.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningfraMindreEndEllerLigMed -  (EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0)
+        - name: forsvind.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningfraStoerreEnd -  (EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0)
+        - name: forsvind.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningfraStoerreEndEllerLigMed -  (EAID_E0EA4E7E_48AF_4767_98FB_C7E4C0554BC0)
+        - name: forsvind.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Forsvinding.virkningfrausikkerhedsmarkeringLigMed -  (EAID_793FAD6C_5310_48d4_803F_1FE25B0D2D96)
+        - name: forsvind.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilForskelligFra -  (EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A)
+        - name: forsvind.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilLigMed -  (EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A)
+        - name: forsvind.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilMindreEnd -  (EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A)
+        - name: forsvind.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilMindreEndEllerLigMed -  (EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A)
+        - name: forsvind.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilStoerreEnd -  (EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A)
+        - name: forsvind.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilStoerreEndEllerLigMed -  (EAID_D330A8DB_81E6_49a0_B6A6_3374C510B49A)
+        - name: forsvind.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Forsvinding.virkningtilusikkerhedsmarkeringLigMed -  (EAID_8D953F55_7BBA_419b_98C1_EEE517816294)
+        - name: komfor.bemaerkninger.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.bemaerkningerErIndeholdtI - Fritekstfelt til bemærkninger i tilknytning til kommunale forhold (EAID_53BD4D49_152D_4e73_95FF_1CB01519AE55)
+        - name: komfor.bemaerkninger.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.bemaerkningerIndeholder - Fritekstfelt til bemærkninger i tilknytning til kommunale forhold (EAID_53BD4D49_152D_4e73_95FF_1CB01519AE55)
+        - name: komfor.bemaerkninger.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.bemaerkningerLigMed - Fritekstfelt til bemærkninger i tilknytning til kommunale forhold (EAID_53BD4D49_152D_4e73_95FF_1CB01519AE55)
+        - name: komfor.kommunaleforholdskode.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.kommunaleforholdskodeErIndeholdtI - Kode for kommunale forhold (EAID_EB376BCE_E3FF_4946_9A6D_A650E48B39E8)
+        - name: komfor.kommunaleforholdskode.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.kommunaleforholdskodeIndeholder - Kode for kommunale forhold (EAID_EB376BCE_E3FF_4946_9A6D_A650E48B39E8)
+        - name: komfor.kommunaleforholdskode.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.kommunaleforholdskodeLigMed - Kode for kommunale forhold (EAID_EB376BCE_E3FF_4946_9A6D_A650E48B39E8)
+        - name: komfor.kommunaleforholdstype.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.kommunaleforholdstypeErIndeholdtI - Angiver forhold som: Adskilt, pension, plejebarn, ukendt, betalingskommune osv.) (EAID_dst2349F8_DE64_4b55_B0B1_0301EB1F355F)
+        - name: komfor.kommunaleforholdstype.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KommunaleForhold.kommunaleforholdstypeLigMed - Angiver forhold som: Adskilt, pension, plejebarn, ukendt, betalingskommune osv.) (EAID_dst2349F8_DE64_4b55_B0B1_0301EB1F355F)
+        - name: komfor.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfraForskelligFra -  (EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1)
+        - name: komfor.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfraLigMed -  (EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1)
+        - name: komfor.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfraMindreEnd -  (EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1)
+        - name: komfor.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfraMindreEndEllerLigMed -  (EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1)
+        - name: komfor.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfraStoerreEnd -  (EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1)
+        - name: komfor.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfraStoerreEndEllerLigMed -  (EAID_5524CA7D_A622_45c0_80A6_0DE73599E5F1)
+        - name: komfor.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.KommunaleForhold.virkningfrausikkerhedsmarkeringLigMed -  (EAID_6C73F10E_D311_4bb9_8345_14BB817B750F)
+        - name: konadr.simpelAdresse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.KontaktAdresse.simpelAdresseIndeholder -  ()
+        - name: konadr.startmyndighedskode.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Kontaktadresse.startmyndighedskodeErIndeholdtI - Angiver koden for den myndighed, der har konstateret adresseoplysningerne (EAID_847F7CE0_8DB8_40a7_8B7F_D54109696CA9)
+        - name: konadr.startmyndighedskode.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Kontaktadresse.startmyndighedskodeIndeholder - Angiver koden for den myndighed, der har konstateret adresseoplysningerne (EAID_847F7CE0_8DB8_40a7_8B7F_D54109696CA9)
+        - name: konadr.startmyndighedskode.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Kontaktadresse.SupplerendeAdresse.startmyndighedskodeLigMed - Angiver koden for den myndighed, der har konstateret adresseoplysningerne (EAID_847F7CE0_8DB8_40a7_8B7F_D54109696CA9)
+        - name: konadr.startmyndighedsnavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Kontaktadresse.SupplerendeAdresse.startmyndighedsnavnErIndeholdtI - Angiver den myndighed, der har konstateret adresseoplysningerne (EAID_164C240B_1832_4c44_8952_CC55A67DF7E7)
+        - name: konadr.startmyndighedsnavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Kontaktadresse.SupplerendeAdresse.startmyndighedsnavnIndeholder - Angiver den myndighed, der har konstateret adresseoplysningerne (EAID_164C240B_1832_4c44_8952_CC55A67DF7E7)
+        - name: konadr.startmyndighedsnavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Kontaktadresse.SupplerendeAdresse.startmyndighedsnavnLigMed - Angiver den myndighed, der har konstateret adresseoplysningerne (EAID_164C240B_1832_4c44_8952_CC55A67DF7E7)
+        - name: konadr.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningfraForskelligFra -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: konadr.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningfraLigMed -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: konadr.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningfraMindreEnd -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: konadr.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningfraMindreEndEllerLigMed -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: konadr.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningfraStoerreEnd -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: konadr.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningfraStoerreEndEllerLigMed -  (EAID_F2B3195C_8E48_4336_836B_EA709F2029E1)
+        - name: konadr.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningtilForskelligFra -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: konadr.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningtilLigMed -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: konadr.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningtilMindreEnd -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: konadr.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningtilMindreEndEllerLigMed -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: konadr.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningtilStoerreEnd -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: konadr.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Kontaktadresse.virkningtilStoerreEndEllerLigMed -  (EAID_26591C78_F9C5_46b2_9912_3BEAE3FC0F3C)
+        - name: navn.adresseringsnavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.adresseringsnavnErIndeholdtI - Adresse, som bruges ved forsendelser (EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D)
+        - name: navn.adresseringsnavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.adresseringsnavnIndeholder - Adresse, som bruges ved forsendelser (EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D)
+        - name: navn.adresseringsnavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.adresseringsnavnLigMed - Adresse, som bruges ved forsendelser (EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D)
+        - name: navn.efternavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.efternavnErIndeholdtI - En persons efternavne (EAID_D3E09BDA_7174_4555_92F0_A7093671DCCF)
+        - name: navn.efternavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.efternavnIndeholder - En persons efternavne (EAID_D3E09BDA_7174_4555_92F0_A7093671DCCF)
+        - name: navn.efternavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.efternavnLigMed - En persons efternavne (EAID_D3E09BDA_7174_4555_92F0_A7093671DCCF)
+        - name: navn.efternavnsmarkering.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.efternavnsmarkeringErIndeholdtI - Feltet markerer, at der usikkerhed ved indsættelse af efternavn i CPR  (EAID_dst1C8603_CA9A_401b_9EB2_024C6D23716E)
+        - name: navn.efternavnsmarkering.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.efternavnsmarkeringLigMed - Feltet markerer, at der usikkerhed ved indsættelse af efternavn i CPR  (EAID_dst1C8603_CA9A_401b_9EB2_024C6D23716E)
+        - name: navn.fornavne.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.fornavneErIndeholdtI - En persons fornavne (EAID_C83C2BED_DA60_4017_B446_044A502AFE01)
+        - name: navn.fornavne.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.fornavneIndeholder - En persons fornavne (EAID_C83C2BED_DA60_4017_B446_044A502AFE01)
+        - name: navn.fornavne.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.fornavneLigMed - En persons fornavne (EAID_C83C2BED_DA60_4017_B446_044A502AFE01)
+        - name: navn.fornavnsmarkering.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.fornavnsmarkeringErIndeholdtI - Feltet markerer, at der usikkerhed ved indsættelse af fornavn i CPR  (EAID_dst5627DC_FCE7_4113_B8B4_DF03C77487CD)
+        - name: navn.fornavnsmarkering.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.fornavnsmarkeringLigMed - Feltet markerer, at der usikkerhed ved indsættelse af fornavn i CPR  (EAID_dst5627DC_FCE7_4113_B8B4_DF03C77487CD)
+        - name: navn.mellemnavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.mellemnavnErIndeholdtI - En persons mellemnavne (EAID_6503AA6C_33D3_4baa_AD1A_5D7FED741A2B)
+        - name: navn.mellemnavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.mellemnavnIndeholder - En persons mellemnavne (EAID_6503AA6C_33D3_4baa_AD1A_5D7FED741A2B)
+        - name: navn.mellemnavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.mellemnavnLigMed - En persons mellemnavne (EAID_6503AA6C_33D3_4baa_AD1A_5D7FED741A2B)
+        - name: navn.mellemnavnsmarkering.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.mellemnavnsmarkeringErIndeholdtI - Feltet markerer, at der usikkerhed ved indsættelse af mellemnavn i CPR  (EAID_dst1D642B_2424_442c_8016_3BAAE69B6246)
+        - name: navn.mellemnavnsmarkering.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.mellemnavnsmarkeringLigMed - Feltet markerer, at der usikkerhed ved indsættelse af mellemnavn i CPR  (EAID_dst1D642B_2424_442c_8016_3BAAE69B6246)
+        - name: navn.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.statusErIndeholdtI -  (EAID_dst5E2C1A_CCA5_45da_A5B8_BD184C890AE3)
+        - name: navn.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Navn.statusLigMed -  (EAID_dst5E2C1A_CCA5_45da_A5B8_BD184C890AE3)
+        - name: navn.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningfraForskelligFra -  (EAID_CFD36FDB_A3C2_456d_B174_562853726A0D)
+        - name: navn.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningfraLigMed -  (EAID_CFD36FDB_A3C2_456d_B174_562853726A0D)
+        - name: navn.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningfraMindreEnd -  (EAID_CFD36FDB_A3C2_456d_B174_562853726A0D)
+        - name: navn.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningfraMindreEndEllerLigMed -  (EAID_CFD36FDB_A3C2_456d_B174_562853726A0D)
+        - name: navn.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningfraStoerreEnd -  (EAID_CFD36FDB_A3C2_456d_B174_562853726A0D)
+        - name: navn.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningfraStoerreEndEllerLigMed -  (EAID_CFD36FDB_A3C2_456d_B174_562853726A0D)
+        - name: navn.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Navn.virkningfrausikkerhedsmarkeringLigMed -  (EAID_BDD9A534_FCF1_4a44_8D77_C8D8F013B7D4)
+        - name: navn.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningtilForskelligFra -  (EAID_3513A669_E062_4e51_9443_1676F42AEC55)
+        - name: navn.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningtilLigMed -  (EAID_3513A669_E062_4e51_9443_1676F42AEC55)
+        - name: navn.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningtilMindreEnd -  (EAID_3513A669_E062_4e51_9443_1676F42AEC55)
+        - name: navn.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningtilMindreEndEllerLigMed -  (EAID_3513A669_E062_4e51_9443_1676F42AEC55)
+        - name: navn.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningtilStoerreEnd -  (EAID_3513A669_E062_4e51_9443_1676F42AEC55)
+        - name: navn.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Navn.virkningtilStoerreEndEllerLigMed -  (EAID_3513A669_E062_4e51_9443_1676F42AEC55)
+        - name: navn.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Navn.virkningtilusikkerhedsmarkeringLigMed -  (EAID_A966857F_7F67_4263_845C_0A772B7413E8)
+        - name: notat.notatlinie.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatlinieErIndeholdtI - Tekstfelt, der kan benyttes til fritekst i forbindelse med folkeregisternotater (EAID_4D9AB31F_BEB8_46dd_B719_0DC39E9E14D2)
+        - name: notat.notatlinie.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatlinieIndeholder - Tekstfelt, der kan benyttes til fritekst i forbindelse med folkeregisternotater (EAID_4D9AB31F_BEB8_46dd_B719_0DC39E9E14D2)
+        - name: notat.notatlinie.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatlinieLigMed - Tekstfelt, der kan benyttes til fritekst i forbindelse med folkeregisternotater (EAID_4D9AB31F_BEB8_46dd_B719_0DC39E9E14D2)
+        - name: notat.notatnummer.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerErIndeholdtI - Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.notatnummer.ne
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerForskelligFra - Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.notatnummer.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerLigMed - Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.notatnummer.lt
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerMindreEnd - Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.notatnummer.le
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerMindreEndEllerLigMed - Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.notatnummer.gt
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerStoerreEnd - Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.notatnummer.ge
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Notat.notatnummerStoerreEndEllerLigMed- Angiver en notatlinies nummer, idet en person kan have flere notatlinier (EAID_9249D65C_AE5A_4649_BCFF_540BE8CF296D)
+        - name: notat.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningfraForskelligFra -  (EAID_84409219_53A9_4a7b_8E49_6B8484BC795D)
+        - name: notat.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningfraLigMed -  (EAID_84409219_53A9_4a7b_8E49_6B8484BC795D)
+        - name: notat.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningfraMindreEnd -  (EAID_84409219_53A9_4a7b_8E49_6B8484BC795D)
+        - name: notat.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningfraMindreEndEllerLigMed -  (EAID_84409219_53A9_4a7b_8E49_6B8484BC795D)
+        - name: notat.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningfraStoerreEnd -  (EAID_84409219_53A9_4a7b_8E49_6B8484BC795D)
+        - name: notat.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningfraStoerreEndEllerLigMed -  (EAID_84409219_53A9_4a7b_8E49_6B8484BC795D)
+        - name: notat.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningtilForskelligFra -  (EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B)
+        - name: notat.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningtilLigMed -  (EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B)
+        - name: notat.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningtilMindreEnd -  (EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B)
+        - name: notat.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningtilMindreEndEllerLigMed -  (EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B)
+        - name: notat.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningtilStoerreEnd -  (EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B)
+        - name: notat.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Notat.virkningtilStoerreEndEllerLigMed -  (EAID_5EC7B7C8_ABB5_43f0_B7F5_407CE343956B)
+        - name: person.cprfoedselsregstedskode.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeErIndeholdtI - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedskode.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeForskelligFra - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedskode.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeLigMed - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedskode.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeMindreEnd - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedskode.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeMindreEndEllerLigMed - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedskode.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeStoerreEnd - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedskode.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedskodeStoerreEndEllerLigMed - Angiver myndighed for fødselsregistrerings stedet (EAID_890B9C20_B2B8_4930_A344_EED0AF95E2F2)
+        - name: person.cprfoedselsregstedsnavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedsnavnErIndeholdtI - Registreringssted for fødsel (EAID_F0A1C86C_88C4_45c6_9B69_28BB45A4702F)
+        - name: person.cprfoedselsregstedsnavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedsnavnIndeholder - Registreringssted for fødsel (EAID_F0A1C86C_88C4_45c6_9B69_28BB45A4702F)
+        - name: person.cprfoedselsregstedsnavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.cprfoedselsregistreringsstedsnavnLigMed - Registreringssted for fødsel (EAID_F0A1C86C_88C4_45c6_9B69_28BB45A4702F)
+        - name: person.foedselsdato.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.foedselsdatoForskelligFra -Angiver hvilken dato fødslen har fundet sted (EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B)
+        - name: person.foedselsdato.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.foedselsdatoLigMed -Angiver hvilken dato fødslen har fundet sted (EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B)
+        - name: person.foedselsdato.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.foedselsdatoMindreEnd -Angiver hvilken dato fødslen har fundet sted (EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B)
+        - name: person.foedselsdato.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.foedselsdatoMindreEndEllerLigMed -Angiver hvilken dato fødslen har fundet sted (EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B)
+        - name: person.foedselsdato.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.foedselsdatoStoerreEnd -Angiver hvilken dato fødslen har fundet sted (EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B)
+        - name: person.foedselsdato.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.foedselsdatoStoerreEndEllerLigMed -Angiver hvilken dato fødslen har fundet sted (EAID_73A30E1A_3B25_4e2a_A0A0_3CFA34BBB97B)
+        - name: person.foedselsdatoum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Person.foedselsdatousikkerhedsmarkeringLigMed - Angiver usikkerhed omkring fødslesdato (EAID_01234969_FFF0_4963_873C_711C364B53A7)
+        - name: person.id.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idErIndeholdtI -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.id.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idForskelligFra -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.id.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idLigMed -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.id.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idMindreEnd -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.id.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idMindreEndEllerLigMed -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.id.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idStoerreEnd -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.id.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Person.idStoerreEndEllerLigMed -  (EAID_C74FB362_3078_4731_83C7_0D42ED478FCD)
+        - name: person.koen.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.koenErIndeholdtI - En persons køn (EAID_dstF7A403_40CF_47c0_B8E8_819BC58A1DC4)
+        - name: person.koen.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.koenLigMed - En persons køn (EAID_dstF7A403_40CF_47c0_B8E8_819BC58A1DC4)
+        - name: person.registreringfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringfraForskelligFra -  (EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48)
+        - name: person.registreringfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringfraLigMed -  (EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48)
+        - name: person.registreringfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringfraMindreEnd -  (EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48)
+        - name: person.registreringfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringfraMindreEndEllerLigMed -  (EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48)
+        - name: person.registreringfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringfraStoerreEnd -  (EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48)
+        - name: person.registreringfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringfraStoerreEndEllerLigMed -  (EAID_6068F0DE_B804_473f_ADE2_B3E0D2AAFD48)
+        - name: person.registreringtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringtilForskelligFra -  (EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD)
+        - name: person.registreringtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringtilLigMed -  (EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD)
+        - name: person.registreringtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringtilMindreEnd -  (EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD)
+        - name: person.registreringtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringtilMindreEndEllerLigMed -  (EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD)
+        - name: person.registreringtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringtilStoerreEnd -  (EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD)
+        - name: person.registreringtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.registreringtilStoerreEndEllerLigMed -  (EAID_BC5EECD4_79C2_410b_B48C_A6CA0645B1DD)
+        - name: person.statusdato.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.statusdatoForskelligFra -  (EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49)
+        - name: person.statusdato.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.statusdatoLigMed -  (EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49)
+        - name: person.statusdato.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.statusdatoMindreEnd -  (EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49)
+        - name: person.statusdato.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.statusdatoMindreEndEllerLigMed -  (EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49)
+        - name: person.statusdato.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.statusdatoStoerreEnd -  (EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49)
+        - name: person.statusdato.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.statusdatoStoerreEndEllerLigMed -  (EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49)
+        - name: person.statusdatoum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Person.statusdatousikkerhedsmarkeringLigMed -  (EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7)
+        - name: person.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.statusErIndeholdtI - Angiver om en persons er udrejst, forsvundet, har dansk/grønlandsk bopæl, død osv.  (EAID_dstB8BFA9_D6E2_43e8_AF38_A6C1F0174C5A)
+        - name: person.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.statusLigMed - Angiver om en persons er udrejst, forsvundet, har dansk/grønlandsk bopæl, død osv.  (EAID_dstB8BFA9_D6E2_43e8_AF38_A6C1F0174C5A)
+        - name: person.stilling.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.stillingErIndeholdtI - Stilling i klarskrift (EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4)
+        - name: person.stilling.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.stillingIndeholder - Stilling i klarskrift (EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4)
+        - name: person.stilling.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.stillingLigMed - Stilling i klarskrift (EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4)
+        - name: person.supplfoedselsregsted.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.supplerendefoedselsregistreringsstedErIndeholdtI - Supplerende registreringssted for fødsel (EAID_218AD03D_4161_4849_BACE_DBFEB26F6113)
+        - name: person.supplfoedselsregsted.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.supplerendefoedselsregistreringsstedIndeholder - Supplerende registreringssted for fødsel (EAID_218AD03D_4161_4849_BACE_DBFEB26F6113)
+        - name: person.supplfoedselsregsted.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Person.supplerendefoedselsregistreringsstedLigMed - Supplerende registreringssted for fødsel (EAID_218AD03D_4161_4849_BACE_DBFEB26F6113)
+        - name: person.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningfraForskelligFra -  (EAID_E21BB85D_31C6_4647_B211_E863CB536713)
+        - name: person.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningfraLigMed -  (EAID_E21BB85D_31C6_4647_B211_E863CB536713)
+        - name: person.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningfraMindreEnd -  (EAID_E21BB85D_31C6_4647_B211_E863CB536713)
+        - name: person.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningfraMindreEndEllerLigMed -  (EAID_E21BB85D_31C6_4647_B211_E863CB536713)
+        - name: person.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningfraStoerreEnd -  (EAID_E21BB85D_31C6_4647_B211_E863CB536713)
+        - name: person.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningfraStoerreEndEllerLigMed -  (EAID_E21BB85D_31C6_4647_B211_E863CB536713)
+        - name: person.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Person.virkningfrausikkerhedsmarkeringLigMed -  (EAID_30693F4D_1301_449d_BF5F_1272125F4FBA)
+        - name: person.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningtilForskelligFra -  (EAID_400D7423_2E16_4fde_9B73_1282E5218EF8)
+        - name: person.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningtilLigMed -  (EAID_400D7423_2E16_4fde_9B73_1282E5218EF8)
+        - name: person.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningtilMindreEnd -  (EAID_400D7423_2E16_4fde_9B73_1282E5218EF8)
+        - name: person.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningtilMindreEndEllerLigMed -  (EAID_400D7423_2E16_4fde_9B73_1282E5218EF8)
+        - name: person.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningtilStoerreEnd -  (EAID_400D7423_2E16_4fde_9B73_1282E5218EF8)
+        - name: person.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Person.virkningtilStoerreEndEllerLigMed -  (EAID_400D7423_2E16_4fde_9B73_1282E5218EF8)
+        - name: person.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Person.virkningtilusikkerhedsmarkeringLigMed -  (EAID_F525F1DE_F276_47ad_9FC6_58A293AB9C28)
+        - name: pnr.personnummer.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Personnummer.personnummerErIndeholdtI - Entydig identifikation af en personer i CPR (EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0)
+        - name: pnr.personnummer.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Personnummer.personnummerIndeholder - Entydig identifikation af en personer i CPR (EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0)
+        - name: pnr.personnummer.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Personnummer.personnummerLigMed - Entydig identifikation af en personer i CPR (EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0)
+        - name: pnr.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Personnummer.statusErIndeholdtI - Angiver om en persons cpr-nummer er aktivt eller inaktivt samt andre oplysninger (EAID_dst2034E8_04BE_4751_8DB1_C82BA391C3EF)
+        - name: pnr.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Personnummer.statusLigMed - Angiver om en persons cpr-nummer er aktivt eller inaktivt samt andre oplysninger (EAID_dst2034E8_04BE_4751_8DB1_C82BA391C3EF)
+        - name: pnr.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningfraForskelligFra -  (EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197)
+        - name: pnr.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningfraLigMed -  (EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197)
+        - name: pnr.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningfraMindreEnd -  (EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197)
+        - name: pnr.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningfraMindreEndEllerLigMed -  (EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197)
+        - name: pnr.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningfraStoerreEnd -  (EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197)
+        - name: pnr.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningfraStoerreEndEllerLigMed -  (EAID_5AC6B7C9_3F2D_47c4_B3A4_036421F88197)
+        - name: pnr.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Personnummer.virkningfrausikkerhedsmarkeringLigMed -  (EAID_1A2720AF_6818_4887_894B_055B95CC9FAB)
+        - name: pnr.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningtilForskelligFra -  (EAID_40834881_0B92_4472_B435_E63AB0A6C38C)
+        - name: pnr.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningtilLigMed -  (EAID_40834881_0B92_4472_B435_E63AB0A6C38C)
+        - name: pnr.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningtilMindreEnd -  (EAID_40834881_0B92_4472_B435_E63AB0A6C38C)
+        - name: pnr.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningtilMindreEndEllerLigMed -  (EAID_40834881_0B92_4472_B435_E63AB0A6C38C)
+        - name: pnr.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningtilStoerreEnd -  (EAID_40834881_0B92_4472_B435_E63AB0A6C38C)
+        - name: pnr.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Personnummer.virkningtilStoerreEndEllerLigMed -  (EAID_40834881_0B92_4472_B435_E63AB0A6C38C)
+        - name: pnr.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Personnummer.virkningtilusikkerhedsmarkeringLigMed -  (EAID_944FC593_5829_4f44_844F_675CA1AB90BA)
+        - name: pucpr.foedselsdato.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatoForskelligFra - En person uden cpr-nr. føsdselsdato (EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4)
+        - name: pucpr.foedselsdato.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatoLigMed - En person uden cpr-nr. føsdselsdato (EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4)
+        - name: pucpr.foedselsdato.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatoMindreEnd - En person uden cpr-nr. føsdselsdato (EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4)
+        - name: pucpr.foedselsdato.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatoMindreEndEllerLigMed - En person uden cpr-nr. føsdselsdato (EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4)
+        - name: pucpr.foedselsdato.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatoStoerreEnd - En person uden cpr-nr. føsdselsdato (EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4)
+        - name: pucpr.foedselsdato.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatoStoerreEndEllerLigMed - En person uden cpr-nr. føsdselsdato (EAID_D1610644_C3F3_4ce2_8508_8F1DFC4F9EA4)
+        - name: pucpr.foedselsdatoum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.PersonUdenCpr.foedselsdatousikkerhedsmarkeringLigMed - En person uden cpr-nr. navn (EAID_81C99C34_E0FB_4fb5_A3E9_ED6732F74194)
+        - name: pucpr.navnemarkering.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.PersonUdenCpr.navnemarkeringErIndeholdtI - Feltet markerer, at navnet indeholder tegn, der ikke kan rapporteres i CPR (EAID_dstC1F489_D20F_46e8_A7F5_A625AF29BA12)
+        - name: pucpr.navnemarkering.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.PersonUdenCpr.navnemarkeringLigMed - Feltet markerer, at navnet indeholder tegn, der ikke kan rapporteres i CPR (EAID_dstC1F489_D20F_46e8_A7F5_A625AF29BA12)
+        - name: pucpr.navn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.PersonUdenCpr.navnErIndeholdtI - Usikkerhed ved indsættelse af fornavn i CPR, på person uden cpr-nr. (EAID_C1FA9AB2_094F_434f_82F0_1CB3B4386955)
+        - name: pucpr.navn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.PersonUdenCpr.navnIndeholder - Usikkerhed ved indsættelse af fornavn i CPR, på person uden cpr-nr. (EAID_C1FA9AB2_094F_434f_82F0_1CB3B4386955)
+        - name: pucpr.navn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.PersonUdenCpr.navnLigMed - Usikkerhed ved indsættelse af fornavn i CPR, på person uden cpr-nr. (EAID_C1FA9AB2_094F_434f_82F0_1CB3B4386955)
+        - name: sep.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Separation.statusErIndeholdtI -  (EAID_dst8988D9_C089_46ff_B4DC_BD4512642200)
+        - name: sep.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Separation.statusLigMed -  (EAID_dst8988D9_C089_46ff_B4DC_BD4512642200)
+        - name: sep.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningfraForskelligFra -  (EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B)
+        - name: sep.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningfraLigMed -  (EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B)
+        - name: sep.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningfraMindreEnd -  (EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B)
+        - name: sep.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningfraMindreEndEllerLigMed -  (EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B)
+        - name: sep.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningfraStoerreEnd -  (EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B)
+        - name: sep.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningfraStoerreEndEllerLigMed -  (EAID_1FA30E82_30B8_472f_8750_9CE9D437A07B)
+        - name: sep.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Separation.virkningfrausikkerhedsmarkeringLigMed -  (EAID_07586AE8_9BA0_4135_B68C_EC47729262B2)
+        - name: sep.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningtilForskelligFra -  (EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556)
+        - name: sep.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningtilLigMed -  (EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556)
+        - name: sep.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningtilMindreEnd -  (EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556)
+        - name: sep.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningtilMindreEndEllerLigMed -  (EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556)
+        - name: sep.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningtilStoerreEnd -  (EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556)
+        - name: sep.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Separation.virkningtilStoerreEndEllerLigMed -  (EAID_F1E1CB39_47F0_4571_BEC7_8F657C7E5556)
+        - name: sep.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Separation.virkningtilusikkerhedsmarkeringLigMed -  (EAID_508252A8_2170_46cc_A5BB_7DBC63805B75)
+        - name: stat.cprlandekode.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeErIndeholdtI - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandekode.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeForskelligFra - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandekode.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeLigMed - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandekode.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeMindreEnd - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandekode.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeMindreEndEllerLigMed - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandekode.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeStoerreEnd - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandekode.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandekodeStoerreEndEllerLigMed - Angiver landekode for personens statsborgerret (EAID_9BD3B1E9_4031_4db3_AA93_9199A71EF82B)
+        - name: stat.cprlandenavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandenavnErIndeholdtI - Angiver landenavn for personens statsborgerret (EAID_4556FC37_C712_452a_8589_775A5B2F6EB9)
+        - name: stat.cprlandenavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandenavnIndeholder - Angiver landenavn for personens statsborgerret (EAID_4556FC37_C712_452a_8589_775A5B2F6EB9)
+        - name: stat.cprlandenavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Statsborgerskab.cprlandenavnLigMed - Angiver landenavn for personens statsborgerret (EAID_4556FC37_C712_452a_8589_775A5B2F6EB9)
+        - name: stat.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Statsborgerskab.statusErIndeholdtI -  (EAID_dst5A3A00_7AFC_4f0f_9D77_BABC35753623)
+        - name: stat.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Statsborgerskab.statusLigMed -  (EAID_dst5A3A00_7AFC_4f0f_9D77_BABC35753623)
+        - name: stat.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfraForskelligFra -  (EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F)
+        - name: stat.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfraLigMed -  (EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F)
+        - name: stat.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfraMindreEnd -  (EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F)
+        - name: stat.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfraMindreEndEllerLigMed -  (EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F)
+        - name: stat.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfraStoerreEnd -  (EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F)
+        - name: stat.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfraStoerreEndEllerLigMed -  (EAID_C3F806F8_BD48_4434_9A4B_C1F6FDCAF31F)
+        - name: stat.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningfrausikkerhedsmarkeringLigMed -  (EAID_5694F919_40E5_4846_AD8F_419058DCE12B)
+        - name: stat.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilForskelligFra -  (EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0)
+        - name: stat.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilLigMed -  (EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0)
+        - name: stat.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilMindreEnd -  (EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0)
+        - name: stat.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilMindreEndEllerLigMed -  (EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0)
+        - name: stat.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilStoerreEnd -  (EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0)
+        - name: stat.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilStoerreEndEllerLigMed -  (EAID_519EF853_D7FD_472d_BBF4_5C361B5FFEE0)
+        - name: stat.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Statsborgerskab.virkningtilusikkerhedsmarkeringLigMed -  (EAID_EE057711_5BCD_44f9_86DF_518F1B2131F0)
+        - name: udind.cprlandekodeindrejse.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseErIndeholdtI - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeindrejse.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseForskelligFra - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeindrejse.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseLigMed - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeindrejse.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseMindreEnd - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeindrejse.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseMindreEndEllerLigMed - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeindrejse.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseStoerreEnd - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeindrejse.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeindrejseStoerreEndEllerLigMed - Angiver den landekode personen er indrejst fra (EAID_979F7108_CBD4_45f5_AC1C_90412128278D)
+        - name: udind.cprlandekodeudrejse.wi
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseErIndeholdtI - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandekodeudrejse.ne
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseForskelligFra - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandekodeudrejse.eq
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseLigMed - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandekodeudrejse.lt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseMindreEnd - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandekodeudrejse.le
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseMindreEndEllerLigMed - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandekodeudrejse.gt
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseStoerreEnd - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandekodeudrejse.ge
+          type: integer
+          format: integer
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandekodeudrejseStoerreEndEllerLigMed - Angiver den landekode personen er udrejst til (EAID_DA761AC7_7D23_42be_88DE_D8766666D055)
+        - name: udind.cprlandindrejse.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandindrejseErIndeholdtI - Angiver det land personen er indrejst fra (EAID_8DD5EDDC_5A66_4790_8142_B1A08ECA2988)
+        - name: udind.cprlandindrejse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandindrejseIndeholder - Angiver det land personen er indrejst fra (EAID_8DD5EDDC_5A66_4790_8142_B1A08ECA2988)
+        - name: udind.cprlandindrejse.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandindrejseLigMed - Angiver det land personen er indrejst fra (EAID_8DD5EDDC_5A66_4790_8142_B1A08ECA2988)
+        - name: udind.cprlandudrejse.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandudrejseErIndeholdtI - Angiver det land personen er udrejst til (EAID_13FA5170_102B_42cc_8AD5_ED692015DBA3)
+        - name: udind.cprlandudrejse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandudrejseIndeholder - Angiver det land personen er udrejst til (EAID_13FA5170_102B_42cc_8AD5_ED692015DBA3)
+        - name: udind.cprlandudrejse.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.cprlandudrejseLigMed - Angiver det land personen er udrejst til (EAID_13FA5170_102B_42cc_8AD5_ED692015DBA3)
+        - name: udind.status.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.statusErIndeholdtI -  (EAID_dst1A0F9E_5322_4a67_A7C7_2145B666D25B)
+        - name: udind.status.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.statusLigMed -  (EAID_dst1A0F9E_5322_4a67_A7C7_2145B666D25B)
+        - name: udind.udenlandsadresse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.UdrejseIndrejse.udenlandsadresseIndeholder -  ()
+        - name: udind.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfraForskelligFra -  (EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7)
+        - name: udind.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfraLigMed -  (EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7)
+        - name: udind.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfraMindreEnd -  (EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7)
+        - name: udind.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfraMindreEndEllerLigMed -  (EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7)
+        - name: udind.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfraStoerreEnd -  (EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7)
+        - name: udind.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfraStoerreEndEllerLigMed -  (EAID_C71E1A16_FBAE_4c23_88D9_DA9F1BE32FD7)
+        - name: udind.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningfrausikkerhedsmarkeringLigMed -  (EAID_336F1C95_EC31_40af_BFE1_1655406283F1)
+        - name: udind.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Udrejseindrejse.virkningtilForskelligFra -  (EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545)
+        - name: udind.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningtilLigMed -  (EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545)
+        - name: udind.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningtilMindreEnd -  (EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545)
+        - name: udind.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningtilMindreEndEllerLigMed -  (EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545)
+        - name: udind.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningtilStoerreEnd -  (EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545)
+        - name: udind.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningtilStoerreEndEllerLigMed -  (EAID_C7567091_7ED3_49e7_AF98_EEBFAE512545)
+        - name: udind.virkningtilum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.UdrejseIndrejse.virkningtilusikkerhedsmarkeringLigMed -  (EAID_701D4F6B_EEB3_431e_8706_BD588FA27A24)
+        - name: vaerge.adresse.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Vaergemaal.adresseIndeholder -  ()
+        - name: vaerge.vaergenavn.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Vaergemaal.vaergenavnErIndeholdtI - Værges navn (EAID_845FA40A_7E1B_4b72_B264_515054369DA5)
+        - name: vaerge.vaergenavn.cont
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Vaergemaal.vaergenavnIndeholder - Værges navn (EAID_845FA40A_7E1B_4b72_B264_515054369DA5)
+        - name: vaerge.vaergenavn.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Vaergemaal.vaergenavnLigMed - Værges navn (EAID_845FA40A_7E1B_4b72_B264_515054369DA5)
+        - name: vaerge.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfraForskelligFra -  (EAID_81796E0F_27AD_483e_9B52_815AB2DAE591)
+        - name: vaerge.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfraLigMed -  (EAID_81796E0F_27AD_483e_9B52_815AB2DAE591)
+        - name: vaerge.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfraMindreEnd -  (EAID_81796E0F_27AD_483e_9B52_815AB2DAE591)
+        - name: vaerge.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfraMindreEndEllerLigMed -  (EAID_81796E0F_27AD_483e_9B52_815AB2DAE591)
+        - name: vaerge.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfraStoerreEnd -  (EAID_81796E0F_27AD_483e_9B52_815AB2DAE591)
+        - name: vaerge.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfraStoerreEndEllerLigMed -  (EAID_81796E0F_27AD_483e_9B52_815AB2DAE591)
+        - name: vaerge.virkningfraum.eq
+          type: boolean
+          format: boolean
+          in: query
+          description: |
+            Person.Vaergemaal.virkningfrausikkerhedsmarkeringLigMed -  (EAID_57BB37D0_FA67_4a81_91FD_E3EEAA1E1C23)
+        - name: vaerge.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningtilForskelligFra -  (EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12)
+        - name: vaerge.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningtilLigMed -  (EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12)
+        - name: vaerge.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningtilMindreEnd -  (EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12)
+        - name: vaerge.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningtilMindreEndEllerLigMed -  (EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12)
+        - name: vaerge.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningtilStoerreEnd -  (EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12)
+        - name: vaerge.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Vaergemaal.virkningtilStoerreEndEllerLigMed -  (EAID_65C71D8E_42AC_4c4b_880A_9E29CFFC7C12)
+        - name: valg.valgoplysningstype.wi
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Valgoplysninger.valgoplysningstypeErIndeholdtI - Angiver alm. Valgret, gamle og nye diplomater, EU-Valg (EAID_dst184AE1_0D53_4b61_AE44_5677FCDEA5F7)
+        - name: valg.valgoplysningstype.eq
+          type: string
+          format: string
+          in: query
+          description: |
+            Person.Valgoplysninger.valgoplysningstypeLigMed - Angiver alm. Valgret, gamle og nye diplomater, EU-Valg (EAID_dst184AE1_0D53_4b61_AE44_5677FCDEA5F7)
+        - name: valg.valgretdato.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.valgretdatoForskelligFra - Dato for hvor lang tid personens valgret er gældende (EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003)
+        - name: valg.valgretdato.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.valgretdatoLigMed - Dato for hvor lang tid personens valgret er gældende (EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003)
+        - name: valg.valgretdato.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.valgretdatoMindreEnd - Dato for hvor lang tid personens valgret er gældende (EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003)
+        - name: valg.valgretdato.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.valgretdatoMindreEndEllerLigMed - Dato for hvor lang tid personens valgret er gældende (EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003)
+        - name: valg.valgretdato.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.valgretdatoStoerreEnd - Dato for hvor lang tid personens valgret er gældende (EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003)
+        - name: valg.valgretdato.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.valgretdatoStoerreEndEllerLigMed - Dato for hvor lang tid personens valgret er gældende (EAID_D3A4F769_BCB7_40bd_8A0E_D4EAE319E003)
+        - name: valg.virkningfra.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningfraForskelligFra -  (EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE)
+        - name: valg.virkningfra.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningfraLigMed -  (EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE)
+        - name: valg.virkningfra.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningfraMindreEnd -  (EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE)
+        - name: valg.virkningfra.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningfraMindreEndEllerLigMed -  (EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE)
+        - name: valg.virkningfra.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningfraStoerreEnd -  (EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE)
+        - name: valg.virkningfra.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningfraStoerreEndEllerLigMed -  (EAID_DE0F26D1_AF49_461a_AE1E_8BBF13404FAE)
+        - name: valg.virkningtil.ne
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningtilForskelligFra -  (EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55)
+        - name: valg.virkningtil.eq
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningtilLigMed -  (EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55)
+        - name: valg.virkningtil.lt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningtilMindreEnd -  (EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55)
+        - name: valg.virkningtil.le
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningtilMindreEndEllerLigMed -  (EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55)
+        - name: valg.virkningtil.gt
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningtilStoerreEnd -  (EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55)
+        - name: valg.virkningtil.ge
+          type: string
+          format: date
+          in: query
+          description: |
+            Person.Valgoplysninger.virkningtilStoerreEndEllerLigMed -  (EAID_BA6B8A81_4A91_4e40_B321_9F1899634D55)

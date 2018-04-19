@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: '0.8'
+  version: 'DLS Version 0.8'
   title: Services for Matriklen på Datafordeleren
   description: >
     ## Matriklen
@@ -8,8 +8,14 @@ info:
     Matriklen er grundlaget for ejendomsregistreringen i Danmark og udgør en
     vigtig del af administrationsgrundlaget i den offentlige forvaltning.
 
-    Matriklen består konceptuelt af matrikelregistret, matrikelkortet og
-    matrikelarkivet.
+    Matriklen består konceptuelt af
+
+    * Matrikelregistret
+
+    * Matrikelkortet
+
+    * Matrikelarkivet.
+
 
     Registret indeholder oplysninger om arealer, herunder evt. vej- eller
     vandløbsarealer noteringsforhold (f.eks. om landbrugsejendomme, samlede
@@ -23,7 +29,10 @@ info:
     måloplysninger.
 
     Matrikelregistret og matrikelkortet er integreret i én samlet datamodel,
-    hvor ”Matrikulære data” er det bærende dataelement. Matrikulære data kan
+    hvor ”Matrikulære data” er det bærende dataelement.
+
+
+    Matrikulære data kan
     deles op i tre grupper:
 
     1. Elementer i basismatriklen
@@ -33,12 +42,12 @@ info:
     3. Temaer.
 
 
+    **Elementer i basismatriklen**
+
     Basismatriklen indeholder de elementer, der indgår i den matrikulære proces,
     og de er vigtige elementer i bestemmelsen af den grundlæggende matrikulære
     situation.
 
-
-    **Elementer i basismatriklen**
 
     * Matrikelskel
 
@@ -109,7 +118,7 @@ paths:
       summary: Søg kommunenavn eller kommunekode
       description: Søg kommunenavn eller kommunekode
       tags:
-        - Normal
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -185,14 +194,24 @@ paths:
       summary: Henter WFS fra MU
       description: >-
         Tjenesten indeholder alle objekttyper fra Matriklens udstillingsmodel og
-        alle temaer fra matrikelkort, dvs ,  1. BygningPaaFremmedGrundFlade  2.
-        BygningPaaFremmedGrundPunkt 3. Centroide 4. Ejerlav  5. Ejerlejlighed 6.
-        Ejerlejlighedslod, JordstykkeTemaflade, Lodflade, MatrikelKommune,
+        alle temaer fra matrikelkort, dvs ,
+
+        1. BygningPaaFremmedGrundFlade
+
+        2. BygningPaaFremmedGrundPunkt
+
+        3. Centroide
+
+        4. Ejerlav
+
+        5. Ejerlejlighed
+
+        6. Ejerlejlighedslod, JordstykkeTemaflade, Lodflade, MatrikelKommune,
         MatrikelRegion, Matrikelskel, MatrikelSogn, Nullinje, OptagetVej,
         Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er
         baseret på GML-version 3.2 til avanceret GIS-anvendelse.
       tags:
-        - Geo
+        - GEO
       responses:
         '200':
           description: wfs
@@ -204,7 +223,7 @@ paths:
         hovedejendommen (Samlet fast ejendom, elle Bygning på fremmed grund,
         Ejerlejligheden ligger i).
       tags:
-        - Normal
+        - Ejendom
       parameters:
         - name: SFEBFEnr
           in: query
@@ -224,7 +243,7 @@ paths:
         Kommunenavn ELLER Sagsoperation+RekvirentRef. Er de ikke sat fås ingen
         resultater
       tags:
-        - Kompleks
+        - Sag
       parameters:
         - $ref: '#/parameters/format'
         - name: SagsId

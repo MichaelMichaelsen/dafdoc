@@ -59,30 +59,28 @@ info:
     REST-regler     | Anvend paging. Default paging-størrelse: 20 |
 
     ---------------------------------------------------------------------
-
+    
     ### Resultatkoder:
-
-    Der er nedenfor angivet responskoder der er specfikke for de enkelte
-    operationer. 
-
+    
+    Der er nedenfor angivet responskoder der er specfikke for de enkelte operationer. 
+    
     Der anvendes følgende generelle HTTP Statuskoder:
-
+    
     * 400 - Bad Request
-
+    
     * 401 - Unauthorized
-
+    
     * 403 - Forbidden
-
+    
     * 406 - Not Acceptable
-
+    
     * 408 - Request Timeout
-
+    
     * 415 - Unsupported Media Type
-
+    
     * 500 - Unexpected failure
-
-    Derudover vil der blive anvendt JSON API fejlkoder [JSON API error
-    format](http://jsonapi.org/format/#errors).
+    
+    Derudover vil der blive anvendt JSON API fejlkoder [JSON API error format](http://jsonapi.org/format/#errors).
 schemes:
   - https
 host: test03-s5-certservices.datafordeler.dk
@@ -112,9 +110,10 @@ paths:
           description: |-
             Person.Personnummer.personnummerLigMed
             Entydig identifikation af en personer i CPR
+            EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0
       responses:
         '200':
-          description: OK
+          description: OK - Private Person Aktuel - version 3.2
           schema:
             type: array
             items:
@@ -148,6 +147,16 @@ paths:
                             $ref: '#/definitions/BeskyttelseUdenVirkningTil'
                     Navn:
                       $ref: '#/definitions/NavnUdenVirkningsperiode'
+        '400':
+          description: >-
+            Client did something wrong but can fix it (provide another credit
+            card number e.g.)
+        '401':
+          description: Tries to access something that it is not authenticated for.
+        '404':
+          description: Tries to do something to something that does not exist.
+        '500':
+          description: Server does not know what happened
   /CprPrivateAdressName/1/rest/PrivatePersonCurrentAdressName:
     get:
       summary: Find en person
@@ -161,7 +170,7 @@ paths:
         - Privat
       parameters:
         - $ref: '#/parameters/format'
-        - name: cadr.bygningsnummer.eq
+        - name: cadr.bygningsnummer.eq cadr.bygningsnummer.eq
           in: query
           type: string
           required: false
