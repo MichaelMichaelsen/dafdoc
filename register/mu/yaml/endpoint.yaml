@@ -1,0 +1,4 @@
+schemes:
+  - https
+server_and_port: services.datafordeler.dk
+path: /MATRIKEL/Matrikel/1/REST

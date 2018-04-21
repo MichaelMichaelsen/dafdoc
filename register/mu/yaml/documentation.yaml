@@ -1,0 +1,41 @@
+external:
+  description: |
+    Detaljeret beskrivelse af brugen af services på datafordeleren
+  url: http://datafordeler.dk/api
+
+categories:
+  - name: Ejendom
+    description: Services for Samlet fast ejendom, Bygning på fremmed grund og Ejerlejlighed
+    externalDocs:
+      description: Dokumentation af ejendomsbegrebet
+      url: http://gst.dk/ejendomme
+  - name: Matrikulær Sag
+    description: Matrikulær sager
+    externalDocs:
+      description: Dokumentation af matrikulære sags
+      url: http://gst.dk/matirkulæresager
+  - name: GEO
+    description: Services for matriklære kort
+    externalDocs:
+      description: Dokumentation af matrikulære sags
+      url: http://gst.dk/matirkulæresagskort
+  - name: Persons
+    description: Everything you need to handle `users` and `friends`
+    externalDocs:
+      description: People category documentation
+      url: http://doc.simple.api/people
+  - name: Items
+    description: Everything you need to handle items collected by users
+    externalDocs:
+      description: Items category documentation
+      url: http://doc.simple.api/items
+  - name: Media
+    description: Everything you need to handle images
+    externalDocs:
+      description: Media category documentation
+      url: http://doc.simple.api/media
+  - name: JSLess
+    description: Specific operations for JS less consumers
+    externalDocs:
+      description: JS Less Consumers documentation
+      url: http://doc.simple.api/jsless

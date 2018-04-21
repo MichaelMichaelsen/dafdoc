@@ -1,0 +1,104 @@
+
+version: 'DLS Version 0.8'
+title: Services for Matriklen på Datafordeleren
+description: >
+  ## Matriklen
+
+  Matriklen er grundlaget for ejendomsregistreringen i Danmark og udgør en
+  vigtig del af administrationsgrundlaget i den offentlige forvaltning.
+
+  Matriklen består konceptuelt af
+
+  * Matrikelregistret
+
+  * Matrikelkortet
+
+  * Matrikelarkivet.
+
+
+  Registret indeholder oplysninger om arealer, herunder evt. vej- eller
+  vandløbsarealer noteringsforhold (f.eks. om landbrugsejendomme, samlede
+  faste ejendomme eller fredskov).
+
+  Matrikelkortet er et digitalt, juridisk kortværk, som viser de registrerede
+  ejendomsgrænser og vejrettigheder. I matrikelkortet vises også de
+  fredskovsbelagte arealer, zoner for strandbeskyttelse og klitfredning.
+  Matrikelarkivet indeholder bl.a. tidligere gældende matrikelkort,
+  matrikelprotokoller og registrerede matrikulære sager, herunder
+  måloplysninger.
+
+  Matrikelregistret og matrikelkortet er integreret i én samlet datamodel,
+  hvor ”Matrikulære data” er det bærende dataelement.
+
+
+  Matrikulære data kan
+  deles op i tre grupper:
+
+  1. Elementer i basismatriklen
+
+  2. Øvrige elementer
+
+  3. Temaer.
+
+
+  **Elementer i basismatriklen**
+
+  Basismatriklen indeholder de elementer, der indgår i den matrikulære proces,
+  og de er vigtige elementer i bestemmelsen af den grundlæggende matrikulære
+  situation.
+
+
+  * Matrikelskel
+
+  * Optaget vej
+
+  * Jordstykke
+
+  * Centroidepunkt
+
+  * Skelpunkt
+
+  * Fikspunkt
+
+  * Grænsesten
+
+
+  **Øvrige elementer** indeholder administrative og matrikulære områder, der
+  automatisk kan afledes ud fra elementer i basismatriklen. De indgår således
+  ikke direkte i den matrikulære proces, men kan bruges som støttemateriale i
+  processen. Temaer: Region, kommune, sogn, ejerlav, herred,
+  opmålingsdistrikt.
+
+
+  Endelig er **temaer** elementer, der bygger på den grundlæggende matrikulære
+  situation, og som indgår i den matrikulære proces (jordrente, majoratskov,
+  stormfald, fredskov, strandbeskyttelse, klitfredning, notering om
+  jordforurening).
+
+  ## URL opbygning
+
+
+  URL for de enkelte REST services er opbygget af et **endpoint** efterfulgt
+  af **registernavn**, **servicenavn**, **versionen** af servicen,
+  **servicetype** (REST eller WFS etc.) samt **metodenavn** for REST services.
+  Efter ? tilføjes parametre i kaldet, der kan indeholde generelle
+  kaldeparametre for REST services og metode specifikke parametre.
+
+
+  Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke
+  er produktionsmiljøet der tilgås. Hvis der er tale om fortrolige eller
+  følsomme data, følger S5. Se miljøbeskrivelser på Datafordeler.dk
+
+
+
+  | URL-struktur for REST services |  endpoint/register/service/version/servicetype/metode |
+  
+  | ------------------------------ | ------------------------------------------------------ |
+
+  | Eksempel   |  https://services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendom |
+
+termsOfService: http://datafordeler.dk
+contact:
+  name: Datafordeler support
+  url: http://datafordeler.dk
+  email: support@datafordeler.dk
