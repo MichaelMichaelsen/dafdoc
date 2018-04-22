@@ -7,21 +7,77 @@ username:
 pageSize:
   name: pageSize
   in: query
-  description: Number of persons returned
+  description: Number of records returned
   type: integer
   format: int32
-  minimum: 0
-  exclusiveMinimum: true
-  maximum: 100
-  exclusiveMaximum: false
-  multipleOf: 10
-  default: 20
+  minimum: 1
+  default: 1
 pageNumber:
   name: pageNumber
   in: query
   description: Page number
   type: integer
   default: 1
+format:
+  name: format
+  in: query
+  description: Output format xml or json
+  type: string
+  default: json
+Kommunenavn:
+  name: Kommunenavn
+  in: query
+  description: Kommunenavn EAID_CBF5C68F_2889_4104_B423_22B718D1DA8B
+  type: string
+  default: Roskilde
+Kommunekode:
+  name: Kommunekode
+  in: query
+  description: Fire-cifret kommunekode EAID_A8B32F95_988E_4efb_B3AD_4920B839393B
+  type: string
+  pattern: '\d{4}'
+  default: '0175'
+RegistreringstidFra:
+  name: RegistreringstidFra
+  in: query
+  description: Fra dato i registreringstidsperioden EAID_05A5039B_ACFF_4754_BEA9_BD2EBC8F5C6A
+  type: string
+  format: date-time
+RegistreringstidTil:
+  name: RegistreringstidTil
+  in: query
+  description: Til dato i registreringstidsperioden EAID_6DA20624_44E5_441b_87E4_CDF7765666D7
+  type: string
+  format: date-time
+Registreringstid:
+  name: Registreringstid
+  in: query
+  description: Dato som falder indenfor en registreringstidsperiode. Anvendes fx 2015-09-02 vil de instanser med en gældende registreringstid på denne dato udvælges EAID_05A5039B_ACFF_4754_BEA9_BD2EBC8F5C6A
+  type: string
+  format: date-time
+VirkningstidFra:
+  name: VirkningstidFra
+  in: query
+  description: Fra dato i virkningstidsperioden EAID_E5614463_E808_4491_8205_E30FB93CF3C8
+  type: string
+  format: date-time
+VirkningstidTil:
+  name: VirkningstidTil
+  in: query
+  description: Til dato i virkningstidsperioden EAID_4AE908FA_CBA2_458b_AE3F_C925D5C3A54B
+  type: string
+  format: date-time
+Virkningstid:
+  name: Virkningstid
+  in: query
+  description: Dato som falder indenfor en virkningstidsperiode. Anvendes fx 2015-09-02 vil de instanser med en gældende virkningstid på denne dato udvælges EAID_E5614463_E808_4491_8205_E30FB93CF3C8
+  type: string
+  format: date-time
+Status:
+  name: Status
+  in: query
+  description: Status jf. modellens udfaldsrum EAID_8972BCDE_C722_475d_8E2E_1869DBFAA78D
+  type: string
 includeNonVerifiedUsers:
   name: includeNonVerifiedUsers
   in: query

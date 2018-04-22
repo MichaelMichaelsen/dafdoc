@@ -1,21 +1,33 @@
 /MatrikelKommune:
   get:
     summary: Søg kommunenavn eller kommunekode
-    description: Søg kommunenavn eller kommunekode The list supports paging.
-    operationId: searchUsers
+    description: |
+      Søg kommunenavn eller kommunekode
+      Følgende parametre er obligatoriske:
+        * **Kommunenavn** ELLER
+        * **Kommunekode**.
+
+      Er de ikke sat fås ingen resultater.
     tags:
       - Ejendom
     parameters:
-      - $ref: '#/parameters/SFEBFEnr'
+      - $ref: '#/parameters/Kommunenavn'
+      - $ref: '#/parameters/Kommunekode'
+      - $ref: '#/parameters/RegistreringstidFra'
+      - $ref: '#/parameters/RegistreringstidTil'
+      - $ref: '#/parameters/Registreringstid'
+      - $ref: '#/parameters/VirkningstidFra'
+      - $ref: '#/parameters/VirkningstidTil'
+      - $ref: '#/parameters/Virkningstid'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/format'
       - $ref: '#/parameters/pageSize'
       - $ref: '#/parameters/pageNumber'
-      - $ref: '#/parameters/includeNonVerifiedUsers'
-      - $ref: '#/parameters/sortPersons'
     responses:
       '200':
-        description: A list of Person
+        description: En liste af kommuner
         schema:
-          $ref: '#/definitions/Persons'
+          $ref: '#/definitions/MatrikelKommmune'
         headers:
           X-Rate-Limit-Remaining:
             description: How many calls consumer can do

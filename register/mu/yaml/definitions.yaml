@@ -1,3 +1,75 @@
+MatrikelKommmune:
+  required:
+  - type
+  - features
+  title: MatrikelKommune
+  type:
+  - object
+  properties:
+    type:
+      enum:
+      - FeatureCollection
+      default: FeatureCollection
+      type: string
+    features:
+      type: array
+      items:
+        type: object
+        required:
+        - properties
+        - type
+        properties:
+          type:
+            enum:
+            - Feature
+            default: Feature
+            type: string
+          properties:
+            type: object
+            required:
+            - kommunenavn
+            - kommunekode
+            - registreringFra
+            - registreringTil
+            - virkningFra
+            - virkningTil
+            - sagLokalId
+            properties:
+              kommunekode:
+                description: EAID_A8B32F95_988E_4efb_B3AD_4920B839393B
+                title: kommunekode
+                type: string
+              kommunenavn:
+                description: EAID_CBF5C68F_2889_4104_B423_22B718D1DA8B
+                title: kommunenavn
+                type: string
+              sagLokalId:
+                description: EAID_dst278EFF_588D_479d_B7B0_D1E97BF42FDE
+                title: sagLokalId
+                type: string
+              registreringFra:
+                description: EAID_05A5039B_ACFF_4754_BEA9_BD2EBC8F5C6A
+                format: date-time
+                title: registreringFra
+                type: string
+              registreringTil:
+                description: EAID_6DA20624_44E5_441b_87E4_CDF7765666D7
+                format: date-time
+                title: registreringTil
+                type:
+                - string
+                - 'null'
+              virkningFra:
+                description: EAID_E5614463_E808_4491_8205_E30FB93CF3C8
+                format: date-time
+                title: virkningFra
+                type: string
+              virkningTil:
+                description: EAID_4AE908FA_CBA2_458b_AE3F_C925D5C3A54B
+                format: date-time
+                title: virkningTil
+                type:
+                - string
 Person:
   title: Human
   description: A person which can be the user itself or one of his friend
@@ -25,7 +97,7 @@ Person:
       format: date
       example: 1978-06-21
     lastTimeOnline:
-      description: The last time this person was connected to the service as a 
+      description: The last time this person was connected to the service as a
       type: string
       format: date-time
       readOnly: true
@@ -105,7 +177,7 @@ MultilingualErrorMessage:
     fr:
       longMessage: Nous sommes désolé mais une erreur est survenu
       shortMessage: Erreur
-      
+
 Error:
   title: MultiLingualMultiDeviceError
   description: Give full information about the problem
@@ -131,7 +203,7 @@ CollectingItem:
     itemType:
       description: |
         An item can be of different type:
-          
+
         type | definition
         -----|-----------
         Vinyl| #/definitions/Vinyl

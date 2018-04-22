@@ -1,0 +1,29 @@
+WITH bfenumre AS
+{
+	SELECT sfe.ID_LOKALID AS BFENUMMER, sfe.STATUS, sfe.SENESTESAGLOKALID
+	FROM SAMLETFASTEJENDOM sfe
+	WHERE
+	[snippet_bitemp_full_with_period(sfe)]
+	UNION ALL
+	SELECT ejl.ID_LOKALID AS BFENUMMER, ejl.STATUS, ejl.SENESTESAGLOKALID
+	FROM EJERLEJLIGHED ejl
+	WHERE
+	[snippet_bitemp_full_with_period(ejl)]
+	UNION ALL
+	SELECT bpfgf.ID_LOKALID AS BFENUMMER, bpfgf.STATUS, bpfgf.SENESTESAGLOKALID
+	FROM BYGNINGPAAFREMMEDGRUNDFLADE bpfgf
+	WHERE
+	[snippet_bitemp_full_with_period(bpfgf)]
+	UNION ALL
+	SELECT bpfgp.ID_LOKALID AS BFENUMMER, bpfgp.STATUS, bpfgp.SENESTESAGLOKALID
+	FROM INNER JOIN BYGNINGPAAFREMMEDGRUNDPUNKT bpfgp
+	WHERE
+	[snippet_bitemp_full_with_period(bpfgp)]
+}
+SELECT sag.*, bfenumre.*
+FROM FROM MATRIKULAERSAG sag
+LEFT JOIN bfenumre bfe ON bfe.SENESTESAGLOKALID = sag.ID_LOKALID
+
+WHERE (@Kommunekode IS NULL OR LOWER(msag.KOMMUNE) LIKE LOWER(%@Kommune%))
+
+AND (@Status IS NULL OR sag.STATUS = @Status)
