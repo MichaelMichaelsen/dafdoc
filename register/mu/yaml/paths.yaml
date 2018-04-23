@@ -28,6 +28,12 @@
         description: En liste af kommuner
         schema:
           $ref: '#/definitions/MatrikelKommune'
+      '401':
+        $ref: '#/responses/HTTP401'
+      '404':
+        $ref: '#/responses/HTTP404'
+      '500':
+        $ref: '#/responses/HTTP500'
 /MatrikulaerSag:
   get:
     summary: Søg en Matrikulær sag
@@ -65,11 +71,15 @@
       - $ref: '#/parameters/pageNumber'
     responses:
       '200':
-        description: Matrikulær sag
+        description: OK
         schema:
           $ref: '#/definitions/MatrikulaerSag'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
+      '401':
+        $ref: '#/responses/HTTP401'
+      '404':
+        $ref: '#/responses/HTTP404'
+      '500':
+        $ref: '#/responses/HTTP500'
 /Samletfastejendom:
   get:
     summary: Søg en samlet fast ejendommed
@@ -109,12 +119,12 @@
         description: Samletfastejendom
         schema:
           $ref: '#/definitions/SamletFastEjendom'
+      '401':
+        $ref: '#/responses/HTTP401'
       '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
+        $ref: '#/responses/HTTP404'
       '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
+        $ref: '#/responses/HTTP500'
 /BygningPaaFremmedGrund:
   get:
     summary: Søg en bygning på fremmed grund
@@ -166,12 +176,12 @@
                 $ref: "#/definitions/BygningPaaFremmedGrundFlade"
               BygningPaaFremmedGrundPunkt:
                 $ref: "#/definitions/BygningPaaFremmedGrundPunkt"
+      '401':
+        $ref: '#/responses/HTTP401'
       '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
+        $ref: '#/responses/HTTP404'
       '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
+        $ref: '#/responses/HTTP500'
 /Ejerlejlighed:
   get:
     summary: Søg en ejerlejlighed
@@ -215,12 +225,12 @@
         description: Matrikulær sag
         schema:
           $ref: '#/definitions/Ejerlejlighed'
+      '401':
+        $ref: '#/responses/HTTP401'
       '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
+        $ref: '#/responses/HTTP404'
       '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
+        $ref: '#/responses/HTTP500'
 /BestemtFastEjendom:
   get:
     summary: Søg bestemt fast ejendom
@@ -266,12 +276,12 @@
         description: Matrikulær sag
         schema:
           $ref: '#/definitions/MatrikulaerSag'
+      '401':
+        $ref: '#/responses/HTTP401'
       '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
+        $ref: '#/responses/HTTP404'
       '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
+        $ref: '#/responses/HTTP500'
 /Matrikel_HIST_GML3_1_0:
   get:
     summary: Henter WFS fra MU

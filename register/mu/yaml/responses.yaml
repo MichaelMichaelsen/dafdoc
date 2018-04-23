@@ -30,3 +30,9 @@ TotallyUnexpectedResponse:
       description: When rate limit will be reset
       type: string
       format: date-time
+HTTP401:
+  description:  Unauthorized access
+HTTP404:
+  description: Søgningen gav intet resultat.
+HTTP500:
+  description: Internal Server Error. Raporter denne fejl til KMD!

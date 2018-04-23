@@ -102,13 +102,13 @@ description: >
 
   ### Sikkerhedsniveau 0
 
-  | Klassenavn | UUID (xmi) |
+  | Klassenavn | UUID (xmi) | Omfattet af person-data loven | Omfattet af krigsreglen |
 
-  | ---------- | ---------- |
+  | ---------- | ---------- | ----------------------------- | ------------------------ |
 
-  | Bygning    | EAID_B1E6DD7D_EEED_4b8d_92D2_EB5F9B8FE892 |
+  | Bygning    | EAID_B1E6DD7D_EEED_4b8d_92D2_EB5F9B8FE892 | N/A | N/A |
 
-  | Enhed      | EAID_60B20BF8_3B6B_4712_B00D_3DA00DF6351C |
+  | Enhed      | EAID_60B20BF8_3B6B_4712_B00D_3DA00DF6351C | N/A | N/A |
 
   ### Sikkerhedsniveau 5
 
