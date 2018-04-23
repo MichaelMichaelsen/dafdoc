@@ -15,7 +15,6 @@ description: >
 
   * Matrikelarkivet.
 
-
   Registret indeholder oplysninger om arealer, herunder evt. vej- eller
   vandløbsarealer noteringsforhold (f.eks. om landbrugsejendomme, samlede
   faste ejendomme eller fredskov).
@@ -29,7 +28,6 @@ description: >
 
   Matrikelregistret og matrikelkortet er integreret i én samlet datamodel,
   hvor ”Matrikulære data” er det bærende dataelement.
-
 
   Matrikulære data kan
   deles op i tre grupper:
@@ -92,10 +90,35 @@ description: >
 
 
   | URL-struktur for REST services |  endpoint/register/service/version/servicetype/metode |
-  
+
   | ------------------------------ | ------------------------------------------------------ |
 
   | Eksempel   |  https://services.datafordeler.dk/MATRIKEL/Matrikel/1/REST/SamletFastEjendom |
+
+  ## Sikkerhedsniveauer
+
+  Der er to mulige sikkerhedsniveauer, 0 som er alle offentligt tilgængelige data og 5 som er fortrolige eller følsomme data.
+  Informationen registreres i datafordeleren på klasse- og tjeneste-niveau. Dvs. at hvis blot en af attributterne i klassen, eller data som en tjeneste udstiller, er følsom eller fortrolig skal hele klassen/tjenesten behandles som værende sikkerhedsniveau 5.
+
+  ### Sikkerhedsniveau 0
+
+  | Klassenavn | UUID (xmi) |
+
+  | ---------- | ---------- |
+
+  | Bygning    | EAID_B1E6DD7D_EEED_4b8d_92D2_EB5F9B8FE892 |
+
+  | Enhed      | EAID_60B20BF8_3B6B_4712_B00D_3DA00DF6351C |
+
+  ### Sikkerhedsniveau 5
+
+  | Klassenavn | UUID (xmi) | Omfattet af person-data loven | Omfattet af krigsreglen |
+
+  | ---------- | ---------- | ----------------------------- | ------------------------ |
+
+  | Grund      | EAID_A46F9273_2D54_42e0_BF52_2DC61F12C9F8 | Ja | Nej |
+
+  | Etage      | EAID_0E807FA0_77D7_4f45_B45F_F348C1CBDA79 | Ja | Nej |
 
 termsOfService: http://datafordeler.dk
 contact:

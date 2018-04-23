@@ -1,3 +1,78 @@
+Ejendomstype:
+  name: Ejendomstype
+  in: query
+  description: Ejendomstype. Angiver hvilken af de tre undertyper (Punkt og flade er slået sammen til én) der ønskes
+  type: string
+Ejerlavskode:
+  name: Ejerlavskode
+  in: query
+  description: Ejerlavskode. EAID_D16E1BA2_F38E_4cc4_B59E_F35D4ADEE636.EAID_157A3B49_F2FC_4dea_B641_19E46367B721
+  type: string
+Ejerlejlighednr:
+  name: Ejerlejlighednr
+  in: query
+  description: Ejerlejlighedsnummer. EAID_F33B87C5_ECD5_41d8_879D_53F8B778F32B
+  type: string
+BFEnr:
+  name: BFEnr
+  in: query
+  description: Et BFENummer eller en liste af BFEnumre på BestemtFastEjendom. EAID_3828326A_2F94_4e83_A24D_F0BBB5D9EC28
+  type: string
+ELBFEnr:
+  name: ELBFEnr
+  in: query
+  description: BFENummer på Ejerlejlighed. EAID_3828326A_2F94_4e83_A24D_F0BBB5D9EC28
+  type: string
+BPFGBFEnr:
+  name: BPFGBFEnr
+  in: query
+  description: BFENummer på BygningPaaFremmedGrund. EAID_3828326A_2F94_4e83_A24D_F0BBB5D9EC28
+  type: string
+JordstykkeId:
+  name: JordstykkeId
+  in: query
+  description: Jordstykke lokalid
+  type: string
+Point:
+  name: point
+  in: query
+  description: UTM32 etrs89 geometripunkt defineret som indholdet i parentes  fx point=(724786 6176332)
+  type: string
+  default: "(724786 6176332)"
+Matrikelnr:
+  name: Matrikelnr
+  in: query
+  description: Matrikelnummer EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1.EAID_9C0920E3_3534_492a_978A_D6ED7344379B
+  type: string
+RekvirentRef:
+  name: RekvirentRef
+  in: query
+  description: EAID_467DE9F6_E982_4a05_A337_F49700FC48E9
+  type: string
+SagsOperation:
+  name: SagsOperation
+  in: query
+  required: false
+  description: Synonym for forretningshændelse. EAID_CE6AEE92_1AD5_4496_8A73_5DF2380A5106
+  type: string
+SagsKategori:
+  name: SagsKategori
+  in: query
+  required: false
+  description: Synonym for forretningsproces. EAID_B8BDA19C_BD3A_45ae_9030_E7DFCEF34409
+  type: string
+Journalnr:
+  name: Journalnr
+  in: query
+  required: true
+  description: journalnummer
+  type: string
+SagsId:
+  name: SagsId
+  in: query
+  required: false
+  description: Sagsid. Reference EAID_9223BE9F_D422_4f05_9180_7D3205A382A9.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5
+  type: string
 username:
   name: username
   in: path

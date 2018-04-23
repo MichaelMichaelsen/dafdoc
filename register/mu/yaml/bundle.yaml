@@ -39,38 +39,6 @@
         "description": "Dokumentation af matrikulære sags",
         "url": "http://gst.dk/matirkulæresagskort"
       }
-    },
-    {
-      "name": "Persons",
-      "description": "Everything you need to handle `users` and `friends`",
-      "externalDocs": {
-        "description": "People category documentation",
-        "url": "http://doc.simple.api/people"
-      }
-    },
-    {
-      "name": "Items",
-      "description": "Everything you need to handle items collected by users",
-      "externalDocs": {
-        "description": "Items category documentation",
-        "url": "http://doc.simple.api/items"
-      }
-    },
-    {
-      "name": "Media",
-      "description": "Everything you need to handle images",
-      "externalDocs": {
-        "description": "Media category documentation",
-        "url": "http://doc.simple.api/media"
-      }
-    },
-    {
-      "name": "JSLess",
-      "description": "Specific operations for JS less consumers",
-      "externalDocs": {
-        "description": "JS Less Consumers documentation",
-        "url": "http://doc.simple.api/jsless"
-      }
     }
   ],
   "schemes": [
@@ -169,142 +137,75 @@
           "200": {
             "description": "En liste af kommuner",
             "schema": {
-              "$ref": "#/definitions/MatrikelKommmune"
+              "$ref": "#/definitions/MatrikelKommune"
             }
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
           }
         }
       }
     },
     "/MatrikulaerSag": {
       "get": {
-        "summary": "Gets a person",
-        "description": "Returns a single person for its username.",
-        "operationId": "readPerson",
+        "summary": "Søg en Matrikulær sag",
+        "description": "Søger en matrikulær sag baseret på sagsid eller journalnummer\nFølgende parametre er obligatoriske:\n\n  * **SagsId** ELLER\n\n  * **Journalnr**  ELLER\n\n  * **Sagskategori+Kommunenavn** ELLER\n\n  * **Sagsoperation+RekvirentRef**\n\n  Er de ikke sat fås ingen resultater.\n",
         "tags": [
           "Matrikulær Sag"
         ],
-        "responses": {
-          "200": {
-            "description": "A Person",
-            "schema": {
-              "$ref": "#/definitions/Person"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Deletes a person",
-        "description": "Delete a single person identified via its username",
-        "operationId": "deletePerson",
-        "tags": [
-          "Persons"
-        ],
-        "responses": {
-          "204": {
-            "description": "Person successfully deleted.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      }
-    },
-    "/persons/{username}/friends": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/username"
-        },
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "get": {
-        "summary": "Gets a person's friends",
-        "description": "Returns a list containing all persons. The list supports paging.",
-        "operationId": "readPersonsFriends",
-        "tags": [
-          "Persons"
-        ],
         "parameters": [
+          {
+            "$ref": "#/parameters/SagsId"
+          },
+          {
+            "$ref": "#/parameters/Journalnr"
+          },
+          {
+            "$ref": "#/parameters/SagsKategori"
+          },
+          {
+            "$ref": "#/parameters/Kommunenavn"
+          },
+          {
+            "$ref": "#/parameters/SagsOperation"
+          },
+          {
+            "$ref": "#/parameters/RekvirentRef"
+          },
+          {
+            "$ref": "#/parameters/RegistreringstidFra"
+          },
+          {
+            "$ref": "#/parameters/RegistreringstidTil"
+          },
+          {
+            "$ref": "#/parameters/Registreringstid"
+          },
+          {
+            "$ref": "#/parameters/VirkningstidFra"
+          },
+          {
+            "$ref": "#/parameters/VirkningstidTil"
+          },
+          {
+            "$ref": "#/parameters/Virkningstid"
+          },
+          {
+            "$ref": "#/parameters/Status"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
           {
             "$ref": "#/parameters/pageSize"
           },
           {
             "$ref": "#/parameters/pageNumber"
-          },
-          {
-            "$ref": "#/parameters/includeNonVerifiedUsers"
-          },
-          {
-            "$ref": "#/parameters/sortPersons"
           }
         ],
         "responses": {
           "200": {
-            "description": "A person's friends list",
+            "description": "Matrikulær sag",
             "schema": {
-              "$ref": "#/definitions/PagedPersons"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
+              "$ref": "#/definitions/MatrikulaerSag"
             }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
           },
           "default": {
             "$ref": "#/responses/TotallyUnexpectedResponse"
@@ -312,80 +213,56 @@
         }
       }
     },
-    "/persons/{username}/collecting-items": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/username"
-        },
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
+    "/Samletfastejendom": {
       "get": {
-        "summary": "Gets a person's collecting items list",
-        "description": "Returns a list containing all items this person is looking for.\nThe list supports paging.\n",
-        "operationId": "readPersonsCollectingItems",
+        "summary": "Søg en samlet fast ejendommed",
+        "description": "Søger en samlet fast ejendom\nFølgende parametre er obligatoriske:\n\n  * **SFEBFEnr** ELLER\n\n  * **Ejerlavskode+Matrikelnr** ELLER\n\n  * **point** ELLER\n\n  * **JordstykkeID** ELLER\n\n  * **SagsID**\n\n  Er ingen af disse ikke sat fås ingen resultater. Kun én af disse muligheder må anvendes i et kald,\ndog må SagsID frit kombineres med andre parametre, hvilket også gælder for Status, Registreringstid og/eller Virkningstid.\n",
         "tags": [
-          "Items"
+          "Ejendom"
         ],
         "parameters": [
+          {
+            "$ref": "#/parameters/SFEBFEnr"
+          },
+          {
+            "$ref": "#/parameters/Ejerlavskode"
+          },
+          {
+            "$ref": "#/parameters/Matrikelnr"
+          },
+          {
+            "$ref": "#/parameters/SagsId"
+          },
+          {
+            "$ref": "#/parameters/Point"
+          },
+          {
+            "$ref": "#/parameters/JordstykkeId"
+          },
+          {
+            "$ref": "#/parameters/Registreringstid"
+          },
+          {
+            "$ref": "#/parameters/Virkningstid"
+          },
+          {
+            "$ref": "#/parameters/Status"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
           {
             "$ref": "#/parameters/pageSize"
           },
           {
             "$ref": "#/parameters/pageNumber"
-          },
-          {
-            "$ref": "#/parameters/filterItemTypes"
           }
         ],
         "responses": {
           "200": {
-            "description": "A collected items list",
+            "description": "Samletfastejendom",
             "schema": {
-              "$ref": "#/definitions/PagedCollectingItems"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            },
-            "examples": {
-              "application/json": {
-                "totalItems": 10,
-                "totalPage": 4,
-                "pageSize": 3,
-                "currentPage": 2,
-                "items": [
-                  {
-                    "itemType": "Vinyl",
-                    "maxPrice": 20,
-                    "imageId": "98096838-04eb-4bac-b32e-cd5b7196de71",
-                    "albumName": "Captain Future Original Soundtrack",
-                    "artist": "Yuji Ohno"
-                  },
-                  {
-                    "itemType": "VHS",
-                    "maxPrice": 10,
-                    "imageId": "b74469bc-e6a1-4a90-858a-88ef94079356",
-                    "movieTitle": "Star Crash",
-                    "director": "Luigi Cozzi"
-                  },
-                  {
-                    "itemType": "AudioCassette",
-                    "maxPrice": 10,
-                    "imageId": "b74469bc-e6a1-4a90-858a-88ef94079356",
-                    "albumName": "Star Wars",
-                    "artist": "John Williams"
-                  }
-                ]
-              }
+              "$ref": "#/definitions/SamletFastEjendom"
             }
           },
           "404": {
@@ -400,59 +277,72 @@
         }
       }
     },
-    "/images": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "post": {
-        "summary": "Uploads an image",
-        "description": "Upload an image, will return an image id.",
-        "operationId": "storeImage",
-        "externalDocs": {
-          "description": "How to upload media",
-          "url": "http://doc.simple.api/media/upload"
-        },
+    "/BygningPaaFremmedGrund": {
+      "get": {
+        "summary": "Søg en bygning på fremmed grund",
         "tags": [
-          "Media"
+          "Ejendom"
         ],
-        "security": [
-          {
-            "MediaSecurity": []
-          }
-        ],
-        "consumes": [
-          "multipart/form-data"
-        ],
+        "description": "Følgende parametre er obligatoriske:\n\n* **SFEBEFnr** ELLER\n\n* **BPFGBEFnr** ELLER\n\n* **Ejerlavskode+Matrikelnr** ELLER\n\n* **Point** ELLER\n\n* **SagsId**\n\nEr de ikke sat fås ingen resultater.\n\nBemærk at brugeren ikke kender til den geometriske repræsentation af BygningPaaFremmedGrund\nLogikken skal derfor kunne returnere den relevante geometritype (den skal altså selv finde ud af,\nom den skal outputte et punkt eller en polygon/flade).\n\nDe to Default UUID'er repræsenterer henholdsvist et punkt og en flade.\n",
         "parameters": [
           {
-            "name": "image",
-            "in": "formData",
-            "type": "file"
+            "$ref": "#/parameters/SFEBFEnr"
+          },
+          {
+            "$ref": "#/parameters/BPFGBFEnr"
+          },
+          {
+            "$ref": "#/parameters/Ejerlavskode"
+          },
+          {
+            "$ref": "#/parameters/Matrikelnr"
+          },
+          {
+            "$ref": "#/parameters/Point"
+          },
+          {
+            "$ref": "#/parameters/SagsId"
+          },
+          {
+            "$ref": "#/parameters/Registreringstid"
+          },
+          {
+            "$ref": "#/parameters/Virkningstid"
+          },
+          {
+            "$ref": "#/parameters/Status"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          },
+          {
+            "$ref": "#/parameters/pageNumber"
           }
         ],
         "responses": {
           "200": {
-            "description": "Image's ID",
+            "description": "Bygning på fremmed grund",
             "schema": {
+              "type": "object",
+              "required": [
+                "BygningPaaFremmedGrundFlade",
+                "BygningPaaFremmedGrundPunkt"
+              ],
               "properties": {
-                "imageId": {
-                  "type": "string"
+                "BygningPaaFremmedGrundFlade": {
+                  "$ref": "#/definitions/BygningPaaFremmedGrundFlade"
+                },
+                "BygningPaaFremmedGrundPunkt": {
+                  "$ref": "#/definitions/BygningPaaFremmedGrundPunkt"
                 }
               }
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
             }
+          },
+          "404": {
+            "$ref": "#/responses/PersonDoesNotExistResponse"
           },
           "500": {
             "$ref": "#/responses/Standard500ErrorResponse"
@@ -463,62 +353,118 @@
         }
       }
     },
-    "/images/{imageId}": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
+    "/Ejerlejlighed": {
       "get": {
-        "summary": "Gets an image",
-        "description": "Return an image",
-        "operationId": "readImage",
+        "summary": "Søg en ejerlejlighed",
+        "description": "Følgende parametre er obligatoriske:\n* **SFEBFEnr** ELLER\n\n* **BPFGBFEnr** ELLER\n\n* **ELBFEnr** ELLER\n\n* **Ejerlavskode+Matrikelnr** ELLER\n\n* **Ejerlavskode+Matrikelnr+Elnr** ELLER\n\n* **SagsId** ELLER\n\n* **SFEBFENr** +\n\n* **Elnr**\n\nEr de ikke sat fås ingen resultater.\n",
         "tags": [
-          "Media"
+          "Ejendom"
         ],
         "parameters": [
           {
-            "name": "imageId",
-            "in": "path",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/SFEBFEnr"
+          },
+          {
+            "$ref": "#/parameters/BPFGBFEnr"
+          },
+          {
+            "$ref": "#/parameters/ELBFEnr"
+          },
+          {
+            "$ref": "#/parameters/Ejerlejlighednr"
+          },
+          {
+            "$ref": "#/parameters/Ejerlavskode"
+          },
+          {
+            "$ref": "#/parameters/Matrikelnr"
+          },
+          {
+            "$ref": "#/parameters/SagsId"
+          },
+          {
+            "$ref": "#/parameters/Registreringstid"
+          },
+          {
+            "$ref": "#/parameters/Virkningstid"
+          },
+          {
+            "$ref": "#/parameters/Status"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          },
+          {
+            "$ref": "#/parameters/pageNumber"
           }
-        ],
-        "produces": [
-          "image/png",
-          "image/gif",
-          "image/jpeg",
-          "application/json",
-          "application/x-yaml"
         ],
         "responses": {
           "200": {
-            "description": "The image",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
+            "description": "Matrikulær sag",
+            "schema": {
+              "$ref": "#/definitions/Ejerlejlighed"
             }
           },
           "404": {
-            "description": "Image do not exists",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
+            "$ref": "#/responses/PersonDoesNotExistResponse"
+          },
+          "500": {
+            "$ref": "#/responses/Standard500ErrorResponse"
+          },
+          "default": {
+            "$ref": "#/responses/TotallyUnexpectedResponse"
+          }
+        }
+      }
+    },
+    "/BestemtFastEjendom": {
+      "get": {
+        "summary": "Søg bestemt fast ejendom",
+        "description": "Følgende parametre er obligatoriske:\n  * **BFEnr** ELLER\n  * **SagsId**\n\nEr de ikke sat fås ingen resultater.\n\nInput paramter **Ejendomstype**, så kan den anvendes til at afgrænse hvilken af de tre ejendomstyper, der ønskes medtaget i resultatat.\n\nDe 4 UUID'er repræsenterer\n1. SFE\n\n2. BPFG Flade\n\n3. BPFG Punkt\n\n4. Ejerlejlighed.\n\nSe evt. beskrivelse af BygningPaaFremmedGrund.\n\nh4. Specialudvikling/Implementeringsdetaljer:\nI tjeneste logikken er der angivet 3 stykker logik som er modificeret (udelukkende i WHERE) ud fra hhv. SamletFastEjendom, BygningPaaFremmedGrund, og Ejerlejlighed udstillingsservices.\nDen af dem som er angivet med input Ejendomstype, skal køres, og resultatet angives ved at udfylde det dertil hørende JSON schema (af samme navn) som der er reference til i bestemtfastejendom.json.\n\nHvis Ejendomstype ikke er angivet, skal der søges på alle 3 slags Ejendomstyper ved at køre alle 3 metoder og derefter udfylde alle 3 JSON schemas med resultaterne.\n",
+        "tags": [
+          "Ejendom"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/BFEnr"
+          },
+          {
+            "$ref": "#/parameters/Ejendomstype"
+          },
+          {
+            "$ref": "#/parameters/SagsId"
+          },
+          {
+            "$ref": "#/parameters/Registreringstid"
+          },
+          {
+            "$ref": "#/parameters/Virkningstid"
+          },
+          {
+            "$ref": "#/parameters/Status"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          },
+          {
+            "$ref": "#/parameters/pageNumber"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matrikulær sag",
+            "schema": {
+              "$ref": "#/definitions/MatrikulaerSag"
             }
+          },
+          "404": {
+            "$ref": "#/responses/PersonDoesNotExistResponse"
           },
           "500": {
             "$ref": "#/responses/Standard500ErrorResponse"
@@ -581,6 +527,95 @@
     }
   },
   "parameters": {
+    "Ejendomstype": {
+      "name": "Ejendomstype",
+      "in": "query",
+      "description": "Ejendomstype. Angiver hvilken af de tre undertyper (Punkt og flade er slået sammen til én) der ønskes",
+      "type": "string"
+    },
+    "Ejerlavskode": {
+      "name": "Ejerlavskode",
+      "in": "query",
+      "description": "Ejerlavskode. EAID_D16E1BA2_F38E_4cc4_B59E_F35D4ADEE636.EAID_157A3B49_F2FC_4dea_B641_19E46367B721",
+      "type": "string"
+    },
+    "Ejerlejlighednr": {
+      "name": "Ejerlejlighednr",
+      "in": "query",
+      "description": "Ejerlejlighedsnummer. EAID_F33B87C5_ECD5_41d8_879D_53F8B778F32B",
+      "type": "string"
+    },
+    "BFEnr": {
+      "name": "BFEnr",
+      "in": "query",
+      "description": "Et BFENummer eller en liste af BFEnumre på BestemtFastEjendom. EAID_3828326A_2F94_4e83_A24D_F0BBB5D9EC28",
+      "type": "string"
+    },
+    "ELBFEnr": {
+      "name": "ELBFEnr",
+      "in": "query",
+      "description": "BFENummer på Ejerlejlighed. EAID_3828326A_2F94_4e83_A24D_F0BBB5D9EC28",
+      "type": "string"
+    },
+    "BPFGBFEnr": {
+      "name": "BPFGBFEnr",
+      "in": "query",
+      "description": "BFENummer på BygningPaaFremmedGrund. EAID_3828326A_2F94_4e83_A24D_F0BBB5D9EC28",
+      "type": "string"
+    },
+    "JordstykkeId": {
+      "name": "JordstykkeId",
+      "in": "query",
+      "description": "Jordstykke lokalid",
+      "type": "string"
+    },
+    "Point": {
+      "name": "point",
+      "in": "query",
+      "description": "UTM32 etrs89 geometripunkt defineret som indholdet i parentes  fx point=(724786 6176332)",
+      "type": "string",
+      "default": "(724786 6176332)"
+    },
+    "Matrikelnr": {
+      "name": "Matrikelnr",
+      "in": "query",
+      "description": "Matrikelnummer EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1.EAID_9C0920E3_3534_492a_978A_D6ED7344379B",
+      "type": "string"
+    },
+    "RekvirentRef": {
+      "name": "RekvirentRef",
+      "in": "query",
+      "description": "EAID_467DE9F6_E982_4a05_A337_F49700FC48E9",
+      "type": "string"
+    },
+    "SagsOperation": {
+      "name": "SagsOperation",
+      "in": "query",
+      "required": false,
+      "description": "Synonym for forretningshændelse. EAID_CE6AEE92_1AD5_4496_8A73_5DF2380A5106",
+      "type": "string"
+    },
+    "SagsKategori": {
+      "name": "SagsKategori",
+      "in": "query",
+      "required": false,
+      "description": "Synonym for forretningsproces. EAID_B8BDA19C_BD3A_45ae_9030_E7DFCEF34409",
+      "type": "string"
+    },
+    "Journalnr": {
+      "name": "Journalnr",
+      "in": "query",
+      "required": true,
+      "description": "journalnummer",
+      "type": "string"
+    },
+    "SagsId": {
+      "name": "SagsId",
+      "in": "query",
+      "required": false,
+      "description": "Sagsid. Reference EAID_9223BE9F_D422_4f05_9180_7D3205A382A9.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5",
+      "type": "string"
+    },
     "username": {
       "name": "username",
       "in": "path",

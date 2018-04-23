@@ -28,33 +28,275 @@
         description: En liste af kommuner
         schema:
           $ref: '#/definitions/MatrikelKommune'
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-'/MatrikulaerSag':
+/MatrikulaerSag:
   get:
     summary: Søg en Matrikulær sag
-    description: Returns a single person for its username.
-    operationId: readPerson
+    description: |
+      Søger en matrikulær sag baseret på sagsid eller journalnummer
+      Følgende parametre er obligatoriske:
+
+        * **SagsId** ELLER
+
+        * **Journalnr**  ELLER
+
+        * **Sagskategori+Kommunenavn** ELLER
+
+        * **Sagsoperation+RekvirentRef**
+
+        Er de ikke sat fås ingen resultater.
     tags:
       - Matrikulær Sag
+    parameters:
+      - $ref: '#/parameters/SagsId'
+      - $ref: '#/parameters/Journalnr'
+      - $ref: '#/parameters/SagsKategori'
+      - $ref: '#/parameters/Kommunenavn'
+      - $ref: '#/parameters/SagsOperation'
+      - $ref: '#/parameters/RekvirentRef'
+      - $ref: '#/parameters/RegistreringstidFra'
+      - $ref: '#/parameters/RegistreringstidTil'
+      - $ref: '#/parameters/Registreringstid'
+      - $ref: '#/parameters/VirkningstidFra'
+      - $ref: '#/parameters/VirkningstidTil'
+      - $ref: '#/parameters/Virkningstid'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
     responses:
       '200':
-        description: A Person
+        description: Matrikulær sag
         schema:
-          $ref: '#/definitions/Person'
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
+          $ref: '#/definitions/MatrikulaerSag'
+      default:
+        $ref: '#/responses/TotallyUnexpectedResponse'
+/Samletfastejendom:
+  get:
+    summary: Søg en samlet fast ejendommed
+    description: |
+      Søger en samlet fast ejendom
+      Følgende parametre er obligatoriske:
+
+        * **SFEBFEnr** ELLER
+
+        * **Ejerlavskode+Matrikelnr** ELLER
+
+        * **point** ELLER
+
+        * **JordstykkeID** ELLER
+
+        * **SagsID**
+
+        Er ingen af disse ikke sat fås ingen resultater. Kun én af disse muligheder må anvendes i et kald,
+      dog må SagsID frit kombineres med andre parametre, hvilket også gælder for Status, Registreringstid og/eller Virkningstid.
+    tags:
+      - Ejendom
+    parameters:
+      - $ref: '#/parameters/SFEBFEnr'
+      - $ref: '#/parameters/Ejerlavskode'
+      - $ref: '#/parameters/Matrikelnr'
+      - $ref: '#/parameters/SagsId'
+      - $ref: '#/parameters/Point'
+      - $ref: '#/parameters/JordstykkeId'
+      - $ref: '#/parameters/Registreringstid'
+      - $ref: '#/parameters/Virkningstid'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: Samletfastejendom
+        schema:
+          $ref: '#/definitions/SamletFastEjendom'
       '404':
         $ref: '#/responses/PersonDoesNotExistResponse'
       '500':
         $ref: '#/responses/Standard500ErrorResponse'
       default:
         $ref: '#/responses/TotallyUnexpectedResponse'
+/BygningPaaFremmedGrund:
+  get:
+    summary: Søg en bygning på fremmed grund
+    tags:
+      - Ejendom
+    description: |
+      Følgende parametre er obligatoriske:
+
+      * **SFEBEFnr** ELLER
+
+      * **BPFGBEFnr** ELLER
+
+      * **Ejerlavskode+Matrikelnr** ELLER
+
+      * **Point** ELLER
+
+      * **SagsId**
+
+      Er de ikke sat fås ingen resultater.
+
+      Bemærk at brugeren ikke kender til den geometriske repræsentation af BygningPaaFremmedGrund
+      Logikken skal derfor kunne returnere den relevante geometritype (den skal altså selv finde ud af,
+      om den skal outputte et punkt eller en polygon/flade).
+
+      De to Default UUID'er repræsenterer henholdsvist et punkt og en flade.
+    parameters:
+      - $ref: '#/parameters/SFEBFEnr'
+      - $ref: '#/parameters/BPFGBFEnr'
+      - $ref: '#/parameters/Ejerlavskode'
+      - $ref: '#/parameters/Matrikelnr'
+      - $ref: '#/parameters/Point'
+      - $ref: '#/parameters/SagsId'
+      - $ref: '#/parameters/Registreringstid'
+      - $ref: '#/parameters/Virkningstid'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: Bygning på fremmed grund
+        schema:
+            type: object
+            required:
+              - "BygningPaaFremmedGrundFlade"
+              - "BygningPaaFremmedGrundPunkt"
+            properties:
+              BygningPaaFremmedGrundFlade:
+                $ref: "#/definitions/BygningPaaFremmedGrundFlade"
+              BygningPaaFremmedGrundPunkt:
+                $ref: "#/definitions/BygningPaaFremmedGrundPunkt"
+      '404':
+        $ref: '#/responses/PersonDoesNotExistResponse'
+      '500':
+        $ref: '#/responses/Standard500ErrorResponse'
+      default:
+        $ref: '#/responses/TotallyUnexpectedResponse'
+/Ejerlejlighed:
+  get:
+    summary: Søg en ejerlejlighed
+    description: |
+      Følgende parametre er obligatoriske:
+      * **SFEBFEnr** ELLER
+
+      * **BPFGBFEnr** ELLER
+
+      * **ELBFEnr** ELLER
+
+      * **Ejerlavskode+Matrikelnr** ELLER
+
+      * **Ejerlavskode+Matrikelnr+Elnr** ELLER
+
+      * **SagsId** ELLER
+
+      * **SFEBFENr** +
+
+      * **Elnr**
+
+      Er de ikke sat fås ingen resultater.
+    tags:
+      - Ejendom
+    parameters:
+      - $ref: '#/parameters/SFEBFEnr'
+      - $ref: '#/parameters/BPFGBFEnr'
+      - $ref: '#/parameters/ELBFEnr'
+      - $ref: '#/parameters/Ejerlejlighednr'
+      - $ref: '#/parameters/Ejerlavskode'
+      - $ref: '#/parameters/Matrikelnr'
+      - $ref: '#/parameters/SagsId'
+      - $ref: '#/parameters/Registreringstid'
+      - $ref: '#/parameters/Virkningstid'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: Matrikulær sag
+        schema:
+          $ref: '#/definitions/Ejerlejlighed'
+      '404':
+        $ref: '#/responses/PersonDoesNotExistResponse'
+      '500':
+        $ref: '#/responses/Standard500ErrorResponse'
+      default:
+        $ref: '#/responses/TotallyUnexpectedResponse'
+/BestemtFastEjendom:
+  get:
+    summary: Søg bestemt fast ejendom
+    description: |
+      Følgende parametre er obligatoriske:
+        * **BFEnr** ELLER
+        * **SagsId**
+
+      Er de ikke sat fås ingen resultater.
+
+      Input paramter **Ejendomstype**, så kan den anvendes til at afgrænse hvilken af de tre ejendomstyper, der ønskes medtaget i resultatat.
+
+      De 4 UUID'er repræsenterer
+      1. SFE
+
+      2. BPFG Flade
+
+      3. BPFG Punkt
+
+      4. Ejerlejlighed.
+
+      Se evt. beskrivelse af BygningPaaFremmedGrund.
+
+      h4. Specialudvikling/Implementeringsdetaljer:
+      I tjeneste logikken er der angivet 3 stykker logik som er modificeret (udelukkende i WHERE) ud fra hhv. SamletFastEjendom, BygningPaaFremmedGrund, og Ejerlejlighed udstillingsservices.
+      Den af dem som er angivet med input Ejendomstype, skal køres, og resultatet angives ved at udfylde det dertil hørende JSON schema (af samme navn) som der er reference til i bestemtfastejendom.json.
+
+      Hvis Ejendomstype ikke er angivet, skal der søges på alle 3 slags Ejendomstyper ved at køre alle 3 metoder og derefter udfylde alle 3 JSON schemas med resultaterne.
+    tags:
+      - Ejendom
+    parameters:
+      - $ref: '#/parameters/BFEnr'
+      - $ref: '#/parameters/Ejendomstype'
+      - $ref: '#/parameters/SagsId'
+      - $ref: '#/parameters/Registreringstid'
+      - $ref: '#/parameters/Virkningstid'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: Matrikulær sag
+        schema:
+          $ref: '#/definitions/MatrikulaerSag'
+      '404':
+        $ref: '#/responses/PersonDoesNotExistResponse'
+      '500':
+        $ref: '#/responses/Standard500ErrorResponse'
+      default:
+        $ref: '#/responses/TotallyUnexpectedResponse'
+/Matrikel_HIST_GML3_1_0:
+  get:
+    summary: Henter WFS fra MU
+    description: >-
+      Matrikelkortet er et digitalt, juridisk kortværk, som viser de registrerede ejendomsgrænser og vejrettigheder.
+      I matrikelkortet vises også de fredskovsbelagte arealer, zoner for strandbeskyttelse og klitfredning.
+      Tjenesten indeholder alle objekttyper fra Matriklens udstillingsmodel og
+      alle temaer fra matrikelkort, dvs ,
+
+      1. BygningPaaFremmedGrundFlade
+
+      2. BygningPaaFremmedGrundPunkt
+
+      3. Centroide
+
+      4. Ejerlav
+
+      5. Ejerlejlighed
+
+      6. Ejerlejlighedslod, JordstykkeTemaflade, Lodflade, MatrikelKommune,
+      MatrikelRegion, Matrikelskel, MatrikelSogn, Nullinje, OptagetVej,
+      Skelpunkt, Temalinje, Jordstykke, SamletFastEjendom. Tjenesten er
+      baseret på GML-version 3.2 til avanceret GIS-anvendelse.
+    tags:
+      - GEO
+    responses:
+      '200':
+        description: wfs
