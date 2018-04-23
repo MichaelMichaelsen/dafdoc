@@ -1,0 +1,88 @@
+version: 'DLS Version 3.2'
+title: Services for CPR på Datafordeleren
+description: >
+  # CPR #
+
+
+  ## URL opbygning ##
+
+
+  URL for de enkelte REST services er opbygget af et endpoint efterfulgt af
+  registernavn, servicenavn, versionen af servicen, servicetype (REST eller
+  WFS etc.),
+
+  samt metodenavn for REST services.
+
+  Efter ? tilføjes parametre i kaldet, der kan indeholde generelle
+  kaldeparametre for REST services og metode specifikke parametre.
+
+
+  Endpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke
+  er produktionsmiljøet der tilgås.
+
+  Hvis der er tale om fortrolige eller følsomme data, følger S5. Se
+  miljøbeskrivelser på http://Datafordeler.dk
+
+
+  Tjenesterne er specificeret til at give JSON som output, og dette er default
+  såfremt output parameter ikke anvendes.
+
+  Såfremt der angives XML som output parameter, leveres XML baseret på det
+  specificerede JSON skema:
+
+  * Der udføres samme sæt SQL'er (data fremsøgning) uafhængigt af ønsket
+  format og der hentes kun data der indgår i JSON skemaet.
+
+  * Herefter formateres de fremsøgte data til det ønskede format ud fra JSON
+  skemaet.
+
+
+  Om output er i XML eller JSON er et spørgsmål om syntaks og påvirker IKKE
+  data indholdet.
+
+
+  Parameter       |  Værdi |
+
+  --------------- | ---------------------------------------------- |
+
+  Format          | JSON                                           |
+
+  Sikkerhedszone  | 5 - Indeholder fortrolige eller følsomme data. |
+
+  Adgangsniveau   | Indgået aftale med CPR om anvendelse af data påkrævet. |
+
+  Anvendt udstillingsmodel | Person Udstillingsmodel forefindes:
+  http://data.gov.dk/model/diagrammer/ |
+
+  REST-regler     | Anvend paging. Default paging-størrelse: 20 |
+
+  ---------------------------------------------------------------------
+
+  ### Resultatkoder:
+
+  Der er nedenfor angivet responskoder der er specfikke for de enkelte operationer.
+
+  Der anvendes følgende generelle HTTP Statuskoder:
+
+  * 400 - Bad Request
+
+  * 401 - Unauthorized
+
+  * 403 - Forbidden
+
+  * 406 - Not Acceptable
+
+  * 408 - Request Timeout
+
+  * 415 - Unsupported Media Type
+
+  * 500 - Unexpected failure
+
+  Derudover vil der blive anvendt JSON API fejlkoder [JSON API error format](http://jsonapi.org/format/#errors).
+contact:
+  name: Datafordeler Support
+  url: http://datafordeler.dk
+  email: support@datafordeler.dk
+license:
+  name: Apache-2.0
+  url: http://www.apache.org/licenses/LICENSE-2.0

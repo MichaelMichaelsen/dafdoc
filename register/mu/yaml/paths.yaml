@@ -8,6 +8,8 @@
         * **Kommunekode**.
 
       Er de ikke sat fås ingen resultater.
+    security:
+      - basicAuth: []
     tags:
       - Ejendom
     parameters:

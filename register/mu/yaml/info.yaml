@@ -19,18 +19,25 @@ description: >
   vandløbsarealer noteringsforhold (f.eks. om landbrugsejendomme, samlede
   faste ejendomme eller fredskov).
 
-  Matrikelkortet er et digitalt, juridisk kortværk, som viser de registrerede
+
+  ### Matrikelkortet
+
+  er et digitalt, juridisk kortværk, som viser de registrerede
   ejendomsgrænser og vejrettigheder. I matrikelkortet vises også de
   fredskovsbelagte arealer, zoner for strandbeskyttelse og klitfredning.
-  Matrikelarkivet indeholder bl.a. tidligere gældende matrikelkort,
+
+
+  ### Matrikelarkivet
+
+  indeholder bl.a. tidligere gældende matrikelkort,
   matrikelprotokoller og registrerede matrikulære sager, herunder
   måloplysninger.
 
   Matrikelregistret og matrikelkortet er integreret i én samlet datamodel,
-  hvor ”Matrikulære data” er det bærende dataelement.
+  hvor **Matrikulære data** er det bærende dataelement.
 
-  Matrikulære data kan
-  deles op i tre grupper:
+
+  **Matrikulære data**  kan deles op i tre grupper:
 
   1. Elementer i basismatriklen
 
@@ -64,8 +71,22 @@ description: >
   **Øvrige elementer** indeholder administrative og matrikulære områder, der
   automatisk kan afledes ud fra elementer i basismatriklen. De indgår således
   ikke direkte i den matrikulære proces, men kan bruges som støttemateriale i
-  processen. Temaer: Region, kommune, sogn, ejerlav, herred,
-  opmålingsdistrikt.
+  processen.
+
+
+  **Temaer**
+
+  1. Region
+
+  2. Kommune
+
+  3. Sogn
+
+  4. Ejerlav
+
+  5. Herred
+
+  6. Opmålingsdistrikt.
 
 
   Endelig er **temaer** elementer, der bygger på den grundlæggende matrikulære
