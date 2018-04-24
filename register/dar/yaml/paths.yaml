@@ -1,0 +1,60 @@
+/adresse:
+  get:
+    summary: Søg en adresse
+    description: |
+      Søg en eller en liste af adresser
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/Id'
+      - $ref: '#/parameters/VirkningFra'
+      - $ref: '#/parameters/VirkningTil'
+      - $ref: '#/parameters/Virkningsaktoer'
+      - $ref: '#/parameters/RegistreringFra'
+      - $ref: '#/parameters/RegistreringTil'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/Forretningsproces'
+      - $ref: '#/parameters/Forretningsomraade'
+      - $ref: '#/parameters/Forretningshaendelse'
+      - $ref: '#/parameters/MedDybde'
+      - $ref: '#/parameters/DAFTimestampFra'
+      - $ref: '#/parameters/DAFTimestampTil'
+      - $ref: '#/parameters/Husnummer'
+      - $ref: '#/parameters/Bygning'
+      - $ref: '#/parameters/NavngivenVej'
+      - $ref: '#/parameters/Kommunekode'
+      - $ref: '#/parameters/Vejkode'
+      - $ref: '#/parameters/Nord'
+      - $ref: '#/parameters/Syd'
+      - $ref: '#/parameters/Oest'
+      - $ref: '#/parameters/Vest'
+    responses:
+      '200':
+        description: En liste af kommuner
+        schema:
+          $ref: '#/definitions/Adresse'
+/husnummer:
+  get:
+    description: |
+      Søg et Husnummer
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/Id'
+      - $ref: '#/parameters/VirkningFra'
+      - $ref: '#/parameters/VirkningTil'
+      - $ref: '#/parameters/Virkningsaktoer'
+      - $ref: '#/parameters/RegistreringFra'
+      - $ref: '#/parameters/RegistreringTil'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/Forretningsproces'
+      - $ref: '#/parameters/Forretningsomraade'
+      - $ref: '#/parameters/Forretningshaendelse'
+      - $ref: '#/parameters/MedDybde'
+      - $ref: '#/parameters/DAFTimestampFra'
+      - $ref: '#/parameters/DAFTimestampTil'
+    responses:
+      '200':
+        description: En liste af kommuner
+        schema:
+          $ref: '#/definitions/Adresse'

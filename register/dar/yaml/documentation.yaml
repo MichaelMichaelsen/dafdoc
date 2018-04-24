@@ -1,0 +1,11 @@
+external:
+  description: |
+    Detaljeret beskrivelse af brugen af services på datafordeleren
+  url: http://datafordeler.dk/api
+
+categories:
+  - name: Adresse
+    description: Service for DAR
+    externalDocs:
+      description: Dokumentation af DAR
+      url: http://sdfe.dk/dar

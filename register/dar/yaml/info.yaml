@@ -1,0 +1,13 @@
+
+version: 'DLS Version 2.3.3'
+title: Services for DAR på Datafordeleren
+description: >
+  ## Danmarks Adresse Register
+
+
+
+termsOfService: http://datafordeler.dk
+contact:
+  name: Datafordeler support
+  url: http://datafordeler.dk
+  email: support@datafordeler.dk

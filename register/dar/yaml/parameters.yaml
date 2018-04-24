@@ -1,0 +1,126 @@
+Id:
+  name: Id
+  in: query
+  description: Identifikation af adresseelementet igennem hele dets livscyklus. EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5
+  type: string
+  format: uuid
+VirkningFra:
+  name: VirkningFra
+  in: query
+  description: Tidspunktet hvorfra den pågældende version af adresselementet har virkning. EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5
+  type: string
+  format: date-time
+VirkningTil:
+  name: VirkningTil
+  in: query
+  description: Tidspunktet hvor virkningen af den pågældende version af adresselementet ophører. EAID_3058C5FD_9824_48ba_B62C_C24587BF6537
+  type: string
+  format: date-time
+Virkningsaktoer:
+  name: Virkningsaktoer
+  in: query
+  description: Den aktør der har afstedkommet virkningsegenskaberne for den pågældende version af adresselementet. EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7
+  type: string
+RegistreringFra:
+  name: RegistreringFra
+  in: query
+  type: string
+  format: date-time
+  description: Tidspunktet hvor registreringen af den pågældendeversion af adresselementet er foretaget. EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7
+RegistreringTil:
+  name: RegistreringTil
+  in: query
+  type: string
+  format: date-time
+  description: Tidspunktet hvor en ny registrering på adresselementet er foretaget, og hvor denne version således ikke længere er den seneste. EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5
+Status:
+  name: Status
+  in: query
+  type: string
+  description: Adresseelementets status i den pågældende version, dvs. elementets tilstand i den samlede livscyklus. EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19
+Forretningsproces:
+  name: Forretningsproces
+  in: query
+  type: string
+  description: Den forretningsproces, som afstedkom opdateringen af adresselementet til den pågældende version. EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC
+Forretningsomraade:
+  name: Forretningsomraade
+  in: query
+  type: string
+  description: Det forretningsområde som har opdateret adresseelementet til den pågældende version. EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2
+Forretningshaendelse:
+  name: Forretningshaendelse
+  in: query
+  type: string
+  description: Den forretningshændelse, som afstedkom opdateringen af adresseelementet til den pågældende version. EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D
+MedDybde:
+  name: MedDybde
+  in: query
+  type: boolean
+  description: Angiver om resultatet skal indeholde nested data fra joins eller kun ID'er.
+  default: true
+DAFTimestampFra:
+  name: DAFTimestampFra
+  in: query
+  type: string
+  format: date-time
+  description: Fra Datafordeler opdateringstidspunkt.
+DAFTimestampTil:
+  name: DAFTimestampTil
+  in: query
+  type: string
+  format: date-time
+  description: Til Datafordeler opdateringstidspunkt
+Husnummer:
+  name: Husnummer
+  in: query
+  type: string
+  format: uuid
+  description: Angiver det DAR husnummer, der indgår i adressen
+Bygning:
+  name: Bygning
+  in: query
+  type: string
+  format: uuid
+  description: Angiver den BBR bygning som adressen ligger i. EAID_src4A2C09_8035_4ca8_8AA0_CBAAB89AF135
+NavngivenVej:
+  name: NavngivenVej
+  in: query
+  type: string
+  format: uuid
+  description: DAR NavngivenVej ID.
+Kommunekode:
+  name: Kommunekode
+  in: query
+  type: string
+  format: '\d{4}'
+  description: Kommunekode
+Vejkode:
+  name: Vejkode
+  in: query
+  type: string
+  description: Vejkode
+Nord:
+  name: Nord
+  in: query
+  type: number
+  format: double
+  description: Nordlig koordinat afgrænsning
+Syd:
+  name: Syd
+  in: query
+  type: number
+  format: double
+  description: Sydlig koordinat afgrænsning
+Oest:
+  name: Oest
+  in: query
+  type: number
+  format: double
+  description: Østlig koordinat afgrænsning
+Vest:
+  name: Vest
+  in: query
+  type: number
+  format: double
+  description: Vestlig koordinat afgrænsning

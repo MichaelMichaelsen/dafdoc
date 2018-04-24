@@ -1,0 +1,6 @@
+
+Regexp
+replace all
+\"type\":\s*\[\"string\",\s*\"null\"\]
+with
+type: string
