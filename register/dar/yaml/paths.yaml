@@ -28,6 +28,10 @@
       - $ref: '#/parameters/Syd'
       - $ref: '#/parameters/Oest'
       - $ref: '#/parameters/Vest'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/count'
     responses:
       '200':
         description: En liste af kommuner
@@ -35,6 +39,7 @@
           $ref: '#/definitions/Adresse'
 /husnummer:
   get:
+    summary: Søg et husnummer
     description: |
       Søg et Husnummer
     tags:
@@ -53,8 +58,126 @@
       - $ref: '#/parameters/MedDybde'
       - $ref: '#/parameters/DAFTimestampFra'
       - $ref: '#/parameters/DAFTimestampTil'
+      - $ref: '#/parameters/AdgangTilBygning'
+      - $ref: '#/parameters/AdgangTilTekniskAnlaeg'
+      - $ref: '#/parameters/Grund'
+      - $ref: '#/parameters/NavngivenVej'
+      - $ref: '#/parameters/Adresse'
+      - $ref: '#/parameters/Postnr'
+      - $ref: '#/parameters/Postnummerinddeling'
+      - $ref: '#/parameters/Afstemningsomraade'
+      - $ref: '#/parameters/Sogneinddeling'
+      - $ref: '#/parameters/Kommuneinddeling'
+      - $ref: '#/parameters/Menighedsraadsafstemningsomraade'
+      - $ref: '#/parameters/Vejmidte'
+      - $ref: '#/parameters/GeoDanmarkBygning'
+      - $ref: '#/parameters/Nord'
+      - $ref: '#/parameters/Syd'
+      - $ref: '#/parameters/Oest'
+      - $ref: '#/parameters/Vest'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/count'
     responses:
       '200':
-        description: En liste af kommuner
+        description: En liste af Husnumre
         schema:
-          $ref: '#/definitions/Adresse'
+          $ref: '#/definitions/Husnummer'
+/navngivenvejkommunedel:
+  get:
+    summary: Hent navngiven vej  kommunedel
+    description: |
+      Hent navngiven vej kommunedel
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/Id'
+      - $ref: '#/parameters/VirkningFra'
+      - $ref: '#/parameters/VirkningTil'
+      - $ref: '#/parameters/Virkningsaktoer'
+      - $ref: '#/parameters/RegistreringFra'
+      - $ref: '#/parameters/RegistreringTil'
+      - $ref: '#/parameters/Registreringsaktoer'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/Forretningsproces'
+      - $ref: '#/parameters/Forretningsomraade'
+      - $ref: '#/parameters/Forretningshaendelse'
+      - $ref: '#/parameters/MedDybde'
+      - $ref: '#/parameters/DAFTimestampFra'
+      - $ref: '#/parameters/DAFTimestampTil'
+      - $ref: '#/parameters/Kommunekode'
+      - $ref: '#/parameters/NavngivenVej'
+      - $ref: '#/parameters/Vejkode'
+      - $ref: '#/parameters/Husnummer'
+      - $ref: '#/parameters/SupplerendeBynavnDAR'
+      - $ref: '#/parameters/SupplerendeBynavnDAGI'
+      - $ref: '#/parameters/Postnummer'
+      - $ref: '#/parameters/Postnummerinddeling'
+      - $ref: '#/parameters/Adresse'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/count'
+    responses:
+      '200':
+        description: En liste af NavngivenVejKommunedel
+        schema:
+          $ref: '#/definitions/NavngivenVejKommunedel'
+/navngivenvej:
+  get:
+    summary: Hent navngiven vej
+    description: |
+      Hent navngiven vej
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/Id'
+      - $ref: '#/parameters/VirkningFra'
+      - $ref: '#/parameters/VirkningTil'
+      - $ref: '#/parameters/Virkningsaktoer'
+      - $ref: '#/parameters/RegistreringFra'
+      - $ref: '#/parameters/RegistreringTil'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/Forretningsproces'
+      - $ref: '#/parameters/Forretningsomraade'
+      - $ref: '#/parameters/Forretningshaendelse'
+      - $ref: '#/parameters/MedDybde'
+      - $ref: '#/parameters/DAFTimestampFra'
+      - $ref: '#/parameters/DAFTimestampTil'
+      - $ref: '#/parameters/SupplerendeBynavnDAGI'
+      - $ref: '#/parameters/Navn'
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/count'
+    responses:
+      '200':
+        description: En liste af NavngivenVej
+        schema:
+          $ref: '#/definitions/NavngivenVej'
+/postnummer:
+  get:
+    summary:  Hent postnummer
+    description:  Hent postnummer
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/Id'
+      - $ref: '#/parameters/VirkningFra'
+      - $ref: '#/parameters/VirkningTil'
+      - $ref: '#/parameters/Virkningsaktoer'
+      - $ref: '#/parameters/RegistreringFra'
+      - $ref: '#/parameters/RegistreringTil'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/Forretningsproces'
+      - $ref: '#/parameters/Forretningsomraade'
+      - $ref: '#/parameters/Forretningshaendelse'
+      - $ref: '#/parameters/MedDybde'
+      - $ref: '#/parameters/DAFTimestampFra'
+      - $ref: '#/parameters/DAFTimestampTil'
+      - $ref: '#/parameters/Postnummerinddeling'
+      - $ref: '#/parameters/Postnr'
+      - $ref: '#/parameters/Navn'
+      - $ref: '#/parameters/count'
+    responses:
+      '200':
+        description: En liste af postnumre
+        schema:
+          $ref: '#/definitions/Postnummer'

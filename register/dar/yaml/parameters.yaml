@@ -1,3 +1,128 @@
+SupplerendeBynavnDAR:
+  name: SupplerendeBynavnDAR
+  in: query
+  type: number
+  format: int32
+  description: DAR SupplerendeBynavn ID
+Registreringsaktoer:
+  name: Registreringsaktoer
+  in: query
+  type: string
+  description: Den aktør der har foretaget registreringen af den pågældende version af adresselementet
+Navn:
+  name: Navn
+  in: query
+  type: string
+  description: SupplerendeBynavn navn
+SupplerendeBynavnDAGI:
+  name: SupplerendeBynavnDAGI
+  in: query
+  type: number
+  format: int32
+  description: DAGI SupplerendeBynavn ID
+GeoDanmarkBygning:
+  name: GeoDanmarkBygning
+  in: query
+  type: number
+  format: int32
+  description: GeoDK Bygning ID
+Vejmidte:
+  name: Vejmidte
+  in: query
+  type: number
+  format: int32
+  description: GeoDK Vejmidte ID
+Menighedsraadsafstemningsomraade:
+  name: Menighedsraadsafstemningsomraade
+  in: query
+  type: number
+  format: int32
+  description: DAGI Menighedsrådsafstemingsområde ID
+Kommuneinddeling:
+  name: Kommuneinddeling
+  in: query
+  type: number
+  format: int32
+  description: DAGI Kommuneinddeling ID
+Sogneinddeling:
+  name: Sogneinddeling
+  in: query
+  type: number
+  format: int32
+  description: DAGI Sogneinddeling ID
+Afstemningsomraade:
+  name: Afstemningsomraade
+  in: query
+  type: number
+  format: int32
+  description: DAGI Afstemningsområde ID
+Postnummerinddeling:
+  name: Postnummerinddeling
+  in: query
+  type: number
+  format: int32
+  description: DAGI Postnummerinddeling ID
+Postnummer:
+  name: Postnummer
+  in: query
+  type: string
+  description: Postnummer
+Postnr:
+  name: Postnr
+  in: query
+  type: string
+  format: uuid
+  description: DAR Postnummer ID.
+Adresse:
+  name: Adresse
+  in: query
+  type: string
+  format: uuid
+  description: Angiver de DAR adresser, der anvender husnummeret
+Grund:
+  name: Grund
+  in: query
+  type: string
+  format: uuid
+  description: Den BBR grund som husnummeret repræsenterer
+pageSize:
+  name: pageSize
+  in: query
+  description: Number of records returned
+  type: integer
+  format: int32
+  minimum: 1
+  default:
+pageNumber:
+  name: pageNumber
+  in: query
+  description: Page number
+  type: integer
+  default:
+format:
+  name: format
+  in: query
+  description: Output format xml or json
+  type: string
+  default: json
+count:
+  name: count
+  in: query
+  type: boolean
+  default: false
+  description: returnere antallet af records
+AdgangTilTekniskAnlaeg:
+  name: AdgangTilTekniskAnlaeg
+  in: query
+  type: string
+  format: uuid
+  description: Det BBR tekniske anlæg som husnummeret angiver adgangsvejen til. EAID_dst79A4C1_23B2_4c0c_85CC_60C6E2EA5AE0
+AdgangTilBygning:
+  name: AdgangTilBygning
+  in: query
+  type: string
+  format: uuid
+  description: Den BBR bygning som husnummeret identificerer adgangen til. EAID_dst3E4349_6115_4191_AF4F_243CCE561C41
 Id:
   name: Id
   in: query
@@ -57,8 +182,10 @@ MedDybde:
   name: MedDybde
   in: query
   type: boolean
-  description: Angiver om resultatet skal indeholde nested data fra joins eller kun ID'er.
-  default: true
+  description: |
+    Angiver om resultatet skal indeholde nested data fra joins eller kun ID'er.
+    Hvis MedDybde er TRUE (eller NULL) så udfyldes JSON objektet med alt data, også nestede objekter; det vil sige data fra hovedobjektet samt relaterede objekters data. Hvis MedDybde er FALSE så indeholder JSON kun data som findes i hovedobjektet samt ID’er for hovedobjektets relaterede data.
+  default: false
 DAFTimestampFra:
   name: DAFTimestampFra
   in: query
