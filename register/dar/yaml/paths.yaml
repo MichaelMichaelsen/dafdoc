@@ -2,7 +2,9 @@
   get:
     summary: Søg en adresse
     description: |
-      Søg en eller en liste af adresser
+      Her udstilles **Adresse(r)** og tilknytningerne til **NavngivenVej**, **Husnummer** og **Grunddataregister** (BBR)
+      (**Enhed** samt **Bygning** (hvis Adressen er beliggende i anden Bygning).
+
     tags:
       - Adresse
     parameters:
@@ -32,11 +34,30 @@
       - $ref: '#/parameters/pageNumber'
       - $ref: '#/parameters/format'
       - $ref: '#/parameters/count'
+    produces:
+      - application/json
+      - applicaiton/xml
     responses:
       '200':
         description: En liste af kommuner
         schema:
           $ref: '#/definitions/Adresse'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /husnummer:
   get:
     summary: Søg et husnummer
@@ -84,6 +105,22 @@
         description: En liste af Husnumre
         schema:
           $ref: '#/definitions/Husnummer'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /navngivenvejkommunedel:
   get:
     summary: Hent navngiven vej  kommunedel
@@ -122,6 +159,22 @@
         description: En liste af NavngivenVejKommunedel
         schema:
           $ref: '#/definitions/NavngivenVejKommunedel'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /navngivenvej:
   get:
     summary: Hent navngiven vej
@@ -152,6 +205,22 @@
         description: En liste af NavngivenVej
         schema:
           $ref: '#/definitions/NavngivenVej'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /postnummer:
   get:
     summary:  Hent postnummer
@@ -181,6 +250,22 @@
         description: En liste af postnumre
         schema:
           $ref: '#/definitions/Postnummer'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /supplerendeBynavn:
   get:
     summary: Hent adresse baseret på supplerende supplerendeBynavn
@@ -221,6 +306,22 @@
         description: En liste af adresser
         schema:
           $ref: '#/definitions/husnummerTilAdresse'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /husnummerTilJordstykke:
   get:
     summary: Hent et jordstykkeid for et givet husnummer
@@ -231,9 +332,25 @@
       - $ref: '#/parameters/husnummerId'
     responses:
       '200':
-        description: En liste af husnumre
+        description: |
+          **OK**
         schema:
           $ref: '#/definitions/husnummerTilAdresse'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
 /adresseTilHusnummer:
   get:
     summary: Hent en adresse for et givet husnummer
@@ -247,6 +364,22 @@
         description: Husnummer
         schema:
           $ref: '#/definitions/adresseTilHusnummer'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /husnummerTilTekniskAnlægBfe:
   get:
     summary: Hent et BFE nummer for en ejerlejlighed givet et husnummer id
@@ -260,6 +393,22 @@
         description: BFE
         schema:
           $ref: '#/definitions/husnummerTilTekniskAnlægBfe'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /husnummerTilBygningBfe:
   get:
     summary: Hent et BFE nummer for en bygningd givet et husnummer id
@@ -273,6 +422,22 @@
         description: BFE
         schema:
           $ref: '#/definitions/husnummerTilTekniskAnlægBfe'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+
 /adresseTilEnhedBfe:
   get:
     summary: Hent et BFE nummer for en given adresse
@@ -286,3 +451,18 @@
         description: BFE
         schema:
           $ref: '#/definitions/adresseTilEnhedBfe'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
