@@ -181,3 +181,108 @@
         description: En liste af postnumre
         schema:
           $ref: '#/definitions/Postnummer'
+/supplerendeBynavn:
+  get:
+    summary: Hent adresse baseret på supplerende supplerendeBynavn
+    description: Hent supplerende supplerendeBynavn
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/Id'
+      - $ref: '#/parameters/VirkningFra'
+      - $ref: '#/parameters/VirkningTil'
+      - $ref: '#/parameters/Virkningsaktoer'
+      - $ref: '#/parameters/RegistreringFra'
+      - $ref: '#/parameters/RegistreringTil'
+      - $ref: '#/parameters/Status'
+      - $ref: '#/parameters/Forretningsproces'
+      - $ref: '#/parameters/Forretningsomraade'
+      - $ref: '#/parameters/Forretningshaendelse'
+      - $ref: '#/parameters/MedDybde'
+      - $ref: '#/parameters/DAFTimestampFra'
+      - $ref: '#/parameters/DAFTimestampTil'
+      - $ref: '#/parameters/SupplerendeBynavnDAGI'
+      - $ref: '#/parameters/Navn'
+    responses:
+      '200':
+        description: En jordstykkeid for et givent husnummer
+        schema:
+          $ref: '#/definitions/SupplerendeBynavn'
+/husnummerTilAdresse:
+  get:
+    summary: Hent et jordstykkeid for en given adresse
+    description: Hent et jordstykkeid for en given adresse
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/husnummerId'
+    responses:
+      '200':
+        description: En liste af adresser
+        schema:
+          $ref: '#/definitions/husnummerTilAdresse'
+/husnummerTilJordstykke:
+  get:
+    summary: Hent et jordstykkeid for et givet husnummer
+    description: Hent et jordstykkeid for et givet husnummer
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/husnummerId'
+    responses:
+      '200':
+        description: En liste af husnumre
+        schema:
+          $ref: '#/definitions/husnummerTilAdresse'
+/adresseTilHusnummer:
+  get:
+    summary: Hent en adresse for et givet husnummer
+    description: Hent en adresse for et givet husnummer
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/adresseId'
+    responses:
+      '200':
+        description: Husnummer
+        schema:
+          $ref: '#/definitions/adresseTilHusnummer'
+/husnummerTilTekniskAnlægBfe:
+  get:
+    summary: Hent et BFE nummer for en ejerlejlighed givet et husnummer id
+    description: Hent et BFE nummer for en ejerlejlighed givet et husnummer id
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/husnummerId'
+    responses:
+      '200':
+        description: BFE
+        schema:
+          $ref: '#/definitions/husnummerTilTekniskAnlægBfe'
+/husnummerTilBygningBfe:
+  get:
+    summary: Hent et BFE nummer for en bygningd givet et husnummer id
+    description: Hent et BFE nummer for en bygningd givet et husnummer id
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/husnummerId'
+    responses:
+      '200':
+        description: BFE
+        schema:
+          $ref: '#/definitions/husnummerTilTekniskAnlægBfe'
+/adresseTilEnhedBfe:
+  get:
+    summary: Hent et BFE nummer for en given adresse
+    description: Hent et BFE nummer for en given adresse
+    tags:
+      - Adresse
+    parameters:
+      - $ref: '#/parameters/adresseId'
+    responses:
+      '200':
+        description: BFE
+        schema:
+          $ref: '#/definitions/adresseTilEnhedBfe'

@@ -1,3 +1,15 @@
+adresseId:
+  name: adresseId
+  in: query
+  type: string
+  format: uuid
+  description: Identifikation af adresseelementet igennem hele dets livscyklus. EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008
+husnummerId:
+  name: husnummerId
+  in: query
+  type: string
+  format: uuid
+  description: DAR Husnummer ID. EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008
 SupplerendeBynavnDAR:
   name: SupplerendeBynavnDAR
   in: query
