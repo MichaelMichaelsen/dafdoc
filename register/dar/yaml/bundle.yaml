@@ -3,7 +3,7 @@
   "info": {
     "version": "DLS Version 2.3.3",
     "title": "Services for DAR på Datafordeleren",
-    "description": "## Danmarks Adresse Register\n",
+    "description": "## Danmarks Adresse Register\n### Baseret på Data Levarance Specifikation version 2.3.3\n",
     "termsOfService": "http://datafordeler.dk",
     "contact": {
       "name": "Datafordeler support",
@@ -75,7 +75,7 @@
     "/adresse": {
       "get": {
         "summary": "Søg en adresse",
-        "description": "Søg en eller en liste af adresser\n",
+        "description": "Her udstilles **Adresse(r)** og tilknytningerne til **NavngivenVej**, **Husnummer** og **Grunddataregister** (BBR)\n(**Enhed** samt **Bygning** (hvis Adressen er beliggende i anden Bygning).\n",
         "tags": [
           "Adresse"
         ],
@@ -159,12 +159,31 @@
             "$ref": "#/parameters/count"
           }
         ],
+        "produces": [
+          "application/json",
+          "applicaiton/xml"
+        ],
         "responses": {
           "200": {
             "description": "En liste af kommuner",
             "schema": {
               "$ref": "#/definitions/Adresse"
             }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
           }
         }
       }
@@ -286,6 +305,21 @@
             "schema": {
               "$ref": "#/definitions/Husnummer"
             }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
           }
         }
       }
@@ -380,6 +414,21 @@
             "schema": {
               "$ref": "#/definitions/NavngivenVejKommunedel"
             }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
           }
         }
       }
@@ -450,6 +499,21 @@
             "schema": {
               "$ref": "#/definitions/NavngivenVej"
             }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
           }
         }
       }
@@ -520,6 +584,307 @@
             "schema": {
               "$ref": "#/definitions/Postnummer"
             }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
+          }
+        }
+      }
+    },
+    "/supplerendeBynavn": {
+      "get": {
+        "summary": "Hent adresse baseret på supplerende supplerendeBynavn",
+        "description": "Hent supplerende supplerendeBynavn",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/Id"
+          },
+          {
+            "$ref": "#/parameters/VirkningFra"
+          },
+          {
+            "$ref": "#/parameters/VirkningTil"
+          },
+          {
+            "$ref": "#/parameters/Virkningsaktoer"
+          },
+          {
+            "$ref": "#/parameters/RegistreringFra"
+          },
+          {
+            "$ref": "#/parameters/RegistreringTil"
+          },
+          {
+            "$ref": "#/parameters/Status"
+          },
+          {
+            "$ref": "#/parameters/Forretningsproces"
+          },
+          {
+            "$ref": "#/parameters/Forretningsomraade"
+          },
+          {
+            "$ref": "#/parameters/Forretningshaendelse"
+          },
+          {
+            "$ref": "#/parameters/MedDybde"
+          },
+          {
+            "$ref": "#/parameters/DAFTimestampFra"
+          },
+          {
+            "$ref": "#/parameters/DAFTimestampTil"
+          },
+          {
+            "$ref": "#/parameters/SupplerendeBynavnDAGI"
+          },
+          {
+            "$ref": "#/parameters/Navn"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "En jordstykkeid for et givent husnummer",
+            "schema": {
+              "$ref": "#/definitions/SupplerendeBynavn"
+            }
+          }
+        }
+      }
+    },
+    "/husnummerTilAdresse": {
+      "get": {
+        "summary": "Hent et jordstykkeid for en given adresse",
+        "description": "Hent et jordstykkeid for en given adresse",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/husnummerId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "En liste af adresser",
+            "schema": {
+              "$ref": "#/definitions/husnummerTilAdresse"
+            }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
+          }
+        }
+      }
+    },
+    "/husnummerTilJordstykke": {
+      "get": {
+        "summary": "Hent et jordstykkeid for et givet husnummer",
+        "description": "Hent et jordstykkeid for et givet husnummer",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/husnummerId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "**OK**\n",
+            "schema": {
+              "$ref": "#/definitions/husnummerTilAdresse"
+            }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
+          }
+        }
+      }
+    },
+    "/adresseTilHusnummer": {
+      "get": {
+        "summary": "Hent en adresse for et givet husnummer",
+        "description": "Hent en adresse for et givet husnummer",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/adresseId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Husnummer",
+            "schema": {
+              "$ref": "#/definitions/adresseTilHusnummer"
+            }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
+          }
+        }
+      }
+    },
+    "/husnummerTilTekniskAnlægBfe": {
+      "get": {
+        "summary": "Hent et BFE nummer for en ejerlejlighed givet et husnummer id",
+        "description": "Hent et BFE nummer for en ejerlejlighed givet et husnummer id",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/husnummerId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BFE",
+            "schema": {
+              "$ref": "#/definitions/husnummerTilTekniskAnlægBfe"
+            }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
+          }
+        }
+      }
+    },
+    "/husnummerTilBygningBfe": {
+      "get": {
+        "summary": "Hent et BFE nummer for en bygningd givet et husnummer id",
+        "description": "Hent et BFE nummer for en bygningd givet et husnummer id",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/husnummerId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BFE",
+            "schema": {
+              "$ref": "#/definitions/husnummerTilTekniskAnlægBfe"
+            }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
+          }
+        }
+      }
+    },
+    "/adresseTilEnhedBfe": {
+      "get": {
+        "summary": "Hent et BFE nummer for en given adresse",
+        "description": "Hent et BFE nummer for en given adresse",
+        "tags": [
+          "Adresse"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/adresseId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "BFE",
+            "schema": {
+              "$ref": "#/definitions/adresseTilEnhedBfe"
+            }
+          },
+          "204": {
+            "description": "**No Content**. The server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "**Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).\n"
+          },
+          "401": {
+            "description": "**Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "**Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "500": {
+            "description": "**Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl\n"
           }
         }
       }
@@ -568,7 +933,8 @@
           },
           "id_lokalId": {
             "description": "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5",
-            "type": "string"
+            "type": "string",
+            "example": "00002732-733c-433a-a5da-a7d428a980cf"
           },
           "id_namespace": {
             "description": "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8",
@@ -2640,68 +3006,175 @@
         }
       }
     },
-    "ErrorMessage": {
-      "title": "MultiDeviceErrorMessage",
-      "description": "An error message with a long and a short description",
-      "required": [
-        "longMessage",
-        "shortMessage"
-      ],
-      "properties": {
-        "longMessage": {
-          "description": "A long error description",
-          "type": "string"
-        },
-        "shortMessage": {
-          "description": "A short error description",
-          "type": "string"
+    "SupplerendeBynavn": {
+      "type": "array",
+      "items": {
+        "description": "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77",
+        "type": "object",
+        "properties": {
+          "datafordelerOpdateringstid": {
+            "title": "datafordelerOpdateringstid",
+            "type": "string",
+            "description": "UpdateTimestamp()",
+            "format": "date-time"
+          },
+          "forretningshændelse": {
+            "description": "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D",
+            "type": "string"
+          },
+          "forretningsområde": {
+            "description": "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2",
+            "type": "string"
+          },
+          "forretningsproces": {
+            "description": "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC",
+            "type": "string"
+          },
+          "id_lokalId": {
+            "description": "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5",
+            "type": "string"
+          },
+          "id_namespace": {
+            "description": "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8",
+            "type": "string"
+          },
+          "navn": {
+            "description": "EAID_8359992A_59C4_48c4_981D_7A42F20CA168",
+            "type": "string"
+          },
+          "registreringFra": {
+            "description": "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7",
+            "type": "string",
+            "format": "date-time"
+          },
+          "registreringsaktør": {
+            "description": "EAID_9F724D2B_7763_4997_8C85_580610BABC1F",
+            "type": "string"
+          },
+          "registreringTil": {
+            "description": "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5",
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "description": "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19",
+            "type": "string"
+          },
+          "supplerendeBynavn": {
+            "description": "EAID_C6722E9B_EF6C_425d_9373_A933C01A6A64",
+            "type": "string"
+          },
+          "virkningFra": {
+            "description": "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5",
+            "type": "string",
+            "format": "date-time"
+          },
+          "virkningsaktør": {
+            "description": "EAID_8E60197F_D857_47c6_8611_75B63D0940FD",
+            "type": "string"
+          },
+          "virkningTil": {
+            "description": "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537",
+            "type": "string",
+            "format": "date-time"
+          }
         }
       }
     },
-    "MultilingualErrorMessage": {
-      "title": "MultiLingualMultiDeviceErrorMessage",
-      "description": "An multilingual error message (hashmap) with a long and a short description",
-      "additionalProperties": {
-        "$ref": "#/definitions/ErrorMessage"
-      },
+    "husnummerTilJordstykke": {
+      "type": "object",
       "properties": {
-        "defaultLanguage": {
-          "$ref": "#/definitions/ErrorMessage"
-        }
-      },
-      "example": {
-        "defaultLanguage": {
-          "longMessage": "We're deeply sorry but an error occured",
-          "shortMessage": "Error"
+        "gældendeJordstykke": {
+          "type": "object",
+          "description": "EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1",
+          "properties": {
+            "jordstykkeLokalId": {
+              "type": "string",
+              "description": "EAID_57428AF0_E57B_40ff_9680_DBA58BD0BAB0.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
+            },
+            "samletFastEjendom": {
+              "type": "integer",
+              "description": "EAID_dst4D3E5E_84EF_4d87_85F6_8B46883C79F9"
+            }
+          }
         },
-        "fr": {
-          "longMessage": "Nous sommes désolé mais une erreur est survenu",
-          "shortMessage": "Erreur"
+        "foreløbigJordstykke": {
+          "type": "object",
+          "description": "EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1",
+          "properties": {
+            "jordstykkeLokalId": {
+              "type": "string",
+              "description": "EAID_57428AF0_E57B_40ff_9680_DBA58BD0BAB0.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
+            },
+            "samletFastEjendom": {
+              "type": "integer",
+              "description": "EAID_dst4D3E5E_84EF_4d87_85F6_8B46883C79F9"
+            }
+          }
         }
       }
     },
-    "Error": {
-      "title": "MultiLingualMultiDeviceError",
-      "description": "Give full information about the problem",
-      "required": [
-        "code",
-        "message"
-      ],
-      "properties": {
-        "code": {
-          "description": "A human readable code (death to numeric error codes!)",
-          "type": "string",
-          "enum": [
-            "DBERR",
-            "NTERR",
-            "UNERR"
-          ],
-          "example": "UNERR"
-        },
-        "message": {
-          "$ref": "#/definitions/MultilingualErrorMessage"
-        }
+    "husnummerTilAdresse": {
+      "type": "array",
+      "description": "EAID_6043F4D9_C4CA_44d0_BE88_027166A8B008",
+      "items": {
+        "type": "string",
+        "example": "57428AF0_E57B_40ff_9680_DBA58BD0BAB0",
+        "description": "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
       }
+    },
+    "adresseTilHusnummer": {
+      "type": "string",
+      "description": "EAID_src6919CB_1734_44ef_BE5B_C115B637B2CD"
+    },
+    "adresseTilEnhedBfe": {
+      "type": "array",
+      "description": "EAID_0E5C322B_0AA8_4005_B17E_F0397230EE7D",
+      "items": {
+        "type": "integer",
+        "description": "EAID_DAEA052B_1881_496a_B35B_A7BE3B6B7586"
+      }
+    },
+    "husnummerTilTekniskAnlægBfe": {
+      "type": "object",
+      "properties": {
+        "ejerlejlighed": {
+          "type": "integer",
+          "description": "EAID_DAEA052B_1881_496a_B35B_A7BE3B6B7586"
+        },
+        "bygningPaaFremmedGrundList": {
+          "type": "array",
+          "description": "EAID_0E5C322B_0AA8_4005_B17E_F0397230EE7D",
+          "items": {
+            "type": "integer",
+            "description": "EAID_DAEA052B_1881_496a_B35B_A7BE3B6B7586"
+          }
+        },
+        "jordstykkeList": {
+          "type": "array",
+          "description": "EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1",
+          "items": {
+            "type": "object",
+            "properties": {
+              "jordstykkeLokalId": {
+                "description": "EAID_57428AF0_E57B_40ff_9680_DBA58BD0BAB0.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5",
+                "type": "string"
+              },
+              "samletFastEjendom": {
+                "description": "EAID_dst4D3E5E_84EF_4d87_85F6_8B46883C79F9",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "jordstykkeLokalId"
+            ]
+          }
+        }
+      },
+      "required": [
+        "bygningPaaFremmedGrundList",
+        "jordstykkeList"
+      ]
     }
   },
   "responses": {
@@ -2717,41 +3190,24 @@
           "type": "string",
           "format": "date-time"
         }
-      },
-      "schema": {
-        "$ref": "#/definitions/Error"
-      }
-    },
-    "PersonDoesNotExistResponse": {
-      "description": "Person does not exist.",
-      "headers": {
-        "X-Rate-Limit-Remaining": {
-          "description": "How many calls consumer can do",
-          "type": "integer"
-        },
-        "X-Rate-Limit-Reset": {
-          "description": "When rate limit will be reset",
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "TotallyUnexpectedResponse": {
-      "description": "A totally unexpected response",
-      "headers": {
-        "X-Rate-Limit-Remaining": {
-          "description": "How many calls consumer can do",
-          "type": "integer"
-        },
-        "X-Rate-Limit-Reset": {
-          "description": "When rate limit will be reset",
-          "type": "string",
-          "format": "date-time"
-        }
       }
     }
   },
   "parameters": {
+    "adresseId": {
+      "name": "adresseId",
+      "in": "query",
+      "type": "string",
+      "format": "uuid",
+      "description": "Identifikation af adresseelementet igennem hele dets livscyklus. EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008"
+    },
+    "husnummerId": {
+      "name": "husnummerId",
+      "in": "query",
+      "type": "string",
+      "format": "uuid",
+      "description": "DAR Husnummer ID. EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008"
+    },
     "SupplerendeBynavnDAR": {
       "name": "SupplerendeBynavnDAR",
       "in": "query",

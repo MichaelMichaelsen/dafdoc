@@ -9,3 +9,5 @@ categories:
     externalDocs:
       description: Dokumentation af DAR
       url: http://sdfe.dk/dar
+  - name: Tværgående service
+    description: Service som henter data fra andre registre end DAR

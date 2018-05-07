@@ -7,6 +7,7 @@
 
     tags:
       - Adresse
+      - Tværgående service
     parameters:
       - $ref: '#/parameters/Id'
       - $ref: '#/parameters/VirkningFra'
@@ -65,6 +66,7 @@
       Søg et Husnummer
     tags:
       - Adresse
+      - Tværgående service
     parameters:
       - $ref: '#/parameters/Id'
       - $ref: '#/parameters/VirkningFra'
@@ -328,6 +330,7 @@
     description: Hent et jordstykkeid for et givet husnummer
     tags:
       - Adresse
+      - Tværgående service
     parameters:
       - $ref: '#/parameters/husnummerId'
     responses:
@@ -386,6 +389,7 @@
     description: Hent et BFE nummer for en ejerlejlighed givet et husnummer id
     tags:
       - Adresse
+      - Tværgående service
     parameters:
       - $ref: '#/parameters/husnummerId'
     responses:
@@ -415,6 +419,7 @@
     description: Hent et BFE nummer for en bygningd givet et husnummer id
     tags:
       - Adresse
+      - Tværgående service
     parameters:
       - $ref: '#/parameters/husnummerId'
     responses:
@@ -444,6 +449,7 @@
     description: Hent et BFE nummer for en given adresse
     tags:
       - Adresse
+      - Tværgående service
     parameters:
       - $ref: '#/parameters/adresseId'
     responses:
