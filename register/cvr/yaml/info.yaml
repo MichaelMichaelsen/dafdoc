@@ -1,0 +1,20 @@
+
+version: 'DLS Version 1.7.2'
+title: Services for CVR på Datafordeleren
+description: >
+  ## Det Centrale Virksomhedsregister, CVR
+
+  ### Baseret på Data Levarance Specifikation version 1.7.2
+  Henter hele CVR objekter, med summarisk data for andre relaterede objekter såsom Produktionsenheder og fuldansvarligdeltager, samt de frit tilgængelig Beskæftigelsesdata.
+
+  ## Begrænsninger for adgang og brug
+
+  Accept af §19 erklæring om respektering af reklamebeskyttede enheder er påkrævet.
+
+  Samt accept af / forståelse for, at "registreringFra" og "registreringTil" ikke nødvendigvis kan anvendes som forvaltningsmæssige data til beslutningstagning. Det er alene "datafordelerOpdateringstid", som fortæller noget om, hvornår data på datafordeleren er opdateret og derfor er tilgæn
+
+termsOfService: http://datafordeler.dk
+contact:
+  name: Datafordeler support
+  url: http://datafordeler.dk
+  email: support@datafordeler.dk

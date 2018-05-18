@@ -1,9 +1,43 @@
 swagger: '2.0'
 info:
-  version: '3.2'
+  version: 'DLS 3.2'
   title: Services for CPR på Datafordeleren
   description: >
     # CPR #
+
+    Dokumentet beskriver de webservicese der udstilles på Datafordeleren fra CPR til offentlige anvendere.
+
+    ## Kategorier ##
+
+    De Offentlige CPR tjenester er inddelt i 3 kategorier af output: Small, Medium og Full, som indgår i navngivningen.
+    Disse kategorier giver oplysning om omfanget af data der returneres for en person.
+    Hver kategori kan yderligere inddeles med en metode der kun returnerer aktuelle data (current) og en metode der returnerer aktuelle og historiske data.
+
+
+    Tjenestekategori  |  Beskrivelse |
+
+    ----------------|----------- |
+
+    Small | Tjenesterne returnerer kun basisoplysninger om personen |
+
+    Medium | Tjenesterne returnerer de samme data som Small tjenesterne, men ydermere også referencer til personer, som personen refererer til. Personens: Ægtefæller, Forældre, Forældremyndige samt Børn. Tjenesterne returner PNR og PersonID for reference personerne, såfremt de er til stede. Ægtefæller og forældre kan også returneres som PersonUdenCpr, jvnf. Json-schema. |
+
+    Full | Tjenesterne returnerer de samme data som Medium tjenesterne, men ud over at returnere PNR og PersonId for reference personerne, såfremt de er til stede, returneres også data om personreferencens aktuelle navn og ophold: UdrejseIndrejse, Adresseoplysninger, Forsvinding samt KontaktAdresse |
+
+    ## Svartider ##
+
+    Hver metode har en given maksimum svartider afhængig af SLA- kategorien for servicen. her er oversigten over SLA gruppe og maksimal svartider
+
+
+    SLA  |  Maksimum svartider (sekunder) |
+
+    ----------------|----------- |
+
+    Simpel | 0.09 |
+
+    Almindelig | 1.0  |
+
+    Kompleks | 2.5 |
 
 
     ## URL opbygning ##
@@ -59,31 +93,67 @@ info:
     REST-regler     | Anvend paging. Default paging-størrelse: 20 |
 
     ---------------------------------------------------------------------
-    
-    ### Resultatkoder:
-    
-    Der er nedenfor angivet responskoder der er specfikke for de enkelte operationer. 
-    
+
+    ## Søgeparametre ##
+
+    Alle inputparametre er opdelt i objekter.
+
+
+    Ved fremsøgning af data opfattes parametrene som AND mellem objekter og OR mellem angivne værdier til specifikke objekter. Det er muligt at spørge med arrays på alle inputparametre, uanset datatype.
+
+    Eksempelvis:
+      - Person
+      o Reklamebeskyttelse = Nej
+      - Adresse
+      o Husnummer = (’13B’, ’24’, ’27’)
+    Dette eksempel, skal omsættes til:
+      SELECT * FROM CPR
+      WHERE Reklamebeskyttelse = Nej AND Husnummer IN (’13B’, ’24’, ’27’)
+
+      Note:
+        Husnummer IN (’13B’, ’24’, ’27’) er lig med
+        Husnummer = ’13’ OR Husnummer = ’24’ OR Husnummer = ’27’
+
+    Udover ovenstående anvendes operatorerne lig med (=), større end   (>) og mindre end (<) på integer og dato parametre.
+      Eksempelvis:
+        - Tilflytningsadresse > 2016.02.23
+
+      Tekst parametre (string), wildcards understøttes på enkelt karakterer (?) og på en ubegrænset mængde karakterer (*)
+
+    Eksempel:
+      - Postdistrikt = Br?nshøj  (Brønshøj)
+      - Postdistrikt = Brøn* (Brønshøj, Brønderslev, mf.)
+      - Postdistrikt = B*rød (Birkerød, mf.)
+      - Postdistrikt = *rød (Hillerød, Birkerød, Solrød, mf.)
+
+    ## Outputparametre ##
+
+    Hvor muligt leveres altid VirkningFRA og VirkningTIL samt tilhørende usikkerhedsmarkeringer.
+
+    ## Resultatkoder ##
+
+    Der er nedenfor angivet responskoder der er specfikke for de enkelte operationer.
+
     Der anvendes følgende generelle HTTP Statuskoder:
-    
+
     * 400 - Bad Request
-    
+
     * 401 - Unauthorized
-    
+
     * 403 - Forbidden
-    
+
     * 406 - Not Acceptable
-    
+
     * 408 - Request Timeout
-    
+
     * 415 - Unsupported Media Type
-    
+
     * 500 - Unexpected failure
-    
+
     Derudover vil der blive anvendt JSON API fejlkoder [JSON API error format](http://jsonapi.org/format/#errors).
 schemes:
   - https
-host: test03-s5-certservices.datafordeler.dk
+host: s5-certservices.datafordeler.dk
 basePath: /CPR
 tags:
   - name: Offentlige
@@ -101,7 +171,16 @@ paths:
         - application/json
         - application/xml
       summary: Hent en person ud fra personnummeret
-      description: Hent en person ud fra personnummeret
+      description: >
+        Hent en person ud fra personnummeret
+
+        * Tjenestekategori: N/A
+
+        * SLA kategori: Simpel
+
+        * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+        * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
       parameters:
         - name: pnr.personnummer.eq
           type: string
@@ -111,6 +190,9 @@ paths:
             Person.Personnummer.personnummerLigMed
             Entydig identifikation af en personer i CPR
             EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0
+        - $ref: '#/parameters/format'
+        - $ref: '#/parameters/pageSize'
+        - $ref: '#/parameters/pageNumber'
       responses:
         '200':
           description: OK - Private Person Aktuel - version 3.2
@@ -161,16 +243,19 @@ paths:
     get:
       summary: Find en person
       description: |
-        Find en person
+        Søgning af person på adresse og navne
 
-        Sikkerhedszone: 5
+         * Tjenestekategori: N/A
 
-        Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet.
+         * SLA kategori: Simpel
+
+         * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+         * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
       tags:
         - Privat
       parameters:
-        - $ref: '#/parameters/format'
-        - name: cadr.bygningsnummer.eq cadr.bygningsnummer.eq
+        - name: cadr.bygningsnummer.eq
           in: query
           type: string
           required: false
@@ -218,6 +303,7 @@ paths:
           description: >-
             Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne.
             Konkat af fornavne og mellemnavn
+        - $ref: '#/parameters/format'
         - $ref: '#/parameters/pageSize'
         - $ref: '#/parameters/pageNumber'
       responses:
@@ -275,11 +361,13 @@ paths:
         Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
         navn.
 
+        * Tjenestekategori: N/A
 
-        Sikkerhedszone 5
+        * SLA kategori: Simpel
 
+        * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
 
-        Adgangsniveau Indgået aftale med CPR om anvendelse af data påkrævet.
+        * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
       tags:
         - Privat
       parameters:
@@ -341,7 +429,17 @@ paths:
   /CprPrivateDaradressName/1/REST/PrivatePersonCurrentDaradressName:
     get:
       summary: Hent person information
-      description: Hent person information
+      description: >
+        Hent person information
+
+          * Tjenestekategori: N/A
+
+          * SLA kategori: Simpel
+
+          * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+          * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
+
       tags:
         - Privat
       parameters:
@@ -358,6 +456,9 @@ paths:
           in: query
           description: Person.CprAdresse.daradresseLigMed - Angivelse af adresseUUID
           format: uuid
+        - $ref: '#/parameters/format'
+        - $ref: '#/parameters/pageSize'
+        - $ref: '#/parameters/pageNumber'
       responses:
         '200':
           description: OK
@@ -495,29 +596,3 @@ definitions:
       - forkortet
       - indeholder_tegn_der_ikke_kan_indrapporteres_til_cpr
       - utilstraekkeligt_dokumenteret
-properties:
-  Personer:
-    title: Personer
-    type: array
-    items:
-      type: object
-      properties:
-        Person:
-          type: object
-          title: Person
-          properties:
-            statusdato:
-              title: statusdato
-              description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
-              type: string
-              format: date-time
-            statusdatoUsikkerhedsmarkering:
-              title: statusdatoUsikkerhedsmarkering
-              description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
-              type: boolean
-            status:
-              $ref: '#/definitions/PersonStatus'
-            stilling:
-              title: stilling
-              description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
-              type: string

@@ -1,0 +1,1169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ejer="http://data.gov.dk/schemas/ejerfortegnelsen/1/replikering" elementFormDefault="qualified" targetNamespace="http://data.gov.dk/schemas/ejerfortegnelsen/1/replikering" version="1.3.0">
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="AlternativAdresse" type="ejer:AlternativAdresseType">
+    <annotation>
+      <appinfo>EAID_0879F43E_7722_4dbf_826A_2F912C2705E5</appinfo>
+    </annotation>
+  </element>
+  <complexType name="AlternativAdresseType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="adresselinje1" type="string">
+        <annotation>
+          <appinfo>EAID_B050D271_8341_48db_87A2_7DC640FAAC2C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="landeKodeNumerisk" type="string">
+        <annotation>
+          <appinfo>EAID_3E1400AF_484E_43c4_B9F5_209D824174B0</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje2" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_AA254756_CF77_4be6_BB6A_8C387EDBA6E9</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje3" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_B42EF18B_19AF_46d2_9AE4_EB317C22940B</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje4" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_5318D302_8E05_4610_97FB_389F411E99A6</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje5" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_7E27D876_7A7F_43fd_A511_D5D5234D41F1</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje6" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_39CEAC1F_89D9_4442_89F3_EF2324B8C59F</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje7" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_58DFD53C_9307_45b3_AB1B_6F0A8FE2564C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje8" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_9F767153_2115_470e_9C98_180D962BA789</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje9" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_88E7A246_88B5_4d84_B97B_D855F43BF2D1</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresselinje10" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_2F1290A0_6AB7_49b3_8B89_555B3BDEE655</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="altAdrVirksomhedCVRNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dst37A4DD_AD6A_44fa_836D_B4DEE2633F44</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="altAdrPersonPersonNr" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst9C4674_CA89_46c9_882D_AF92F8838CCA</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="Ejendomsadministrator" type="ejer:EjendomsadministratorType">
+    <annotation>
+      <appinfo>EAID_7E192906_4D37_4d13_9323_A66912833336</appinfo>
+    </annotation>
+  </element>
+  <complexType name="EjendomsadministratorType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Feltliste ,Stedbestemmelse -->
+	  <element minOccurs="0" nillable="true" name="feltliste" type="string"/>
+	  <element minOccurs="0" nillable="true" name="StedbestemmelsesReference" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="personEllerVirksomhedLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dstC85E12_E209_42f5_AFB3_0739EC4303D9</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="bestemtFastEjendomBFENr" type="integer">
+        <annotation>
+          <appinfo>EAID_dst831A8A_9D17_463c_96AE_199F42DCA267</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="produktionsenhedPNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dstF6D55E_01CB_4674_A3B6_53F0B183CADE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="personPersonNr" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dstB18BF9_EAE1_4e5e_96C9_D2234E281C60</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virksomhedCVRNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dstE13914_9E08_4ed7_91EF_EFA5AAF5C774</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <simpleType name="EjerforholdskodeVaerdiType">
+    <restriction base="string">
+      <enumeration value="10"/>
+      <enumeration value="20"/>
+      <enumeration value="30"/>
+      <enumeration value="40"/>
+      <enumeration value="41"/>
+      <enumeration value="50"/>
+      <enumeration value="60"/>
+      <enumeration value="70"/>
+      <enumeration value="80"/>
+      <enumeration value="90"/>
+      <enumeration value="99"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="EjerfortegnelseForretningshaendelseType">
+    <restriction base="string">
+      <enumeration value="Ejerskifte tilbageført"/>
+      <enumeration value="Landsdækkende kørsel"/>
+      <enumeration value="Opdatering af ejendomsadministrator"/>
+      <enumeration value="Ukendt - konverteret fra ESR"/>
+      <enumeration value="Annulleret personnummer"/>
+      <enumeration value="Personnummer nedlagt pga. dobbeltregistrering"/>
+      <enumeration value="Person død"/>
+      <enumeration value="Person udrejst"/>
+      <enumeration value="Person forsvundet"/>
+      <enumeration value="Opdatering af administrator for person eller virksomhed"/>
+      <enumeration value="Opdatering af ejer uden registreret CPR- eller CVR nummer"/>
+      <enumeration value="Ophør af en produktionsenhed"/>
+      <enumeration value="Ophør af virksomhed"/>
+      <enumeration value="Skift af virksomhedsform"/>
+      <enumeration value="Administrator af ejerskab"/>
+      <enumeration value="Ægtepagt adkomst"/>
+      <enumeration value="Aflysning af betinget skøde"/>
+      <enumeration value="Aflyst eller annulleret ejerskab"/>
+      <enumeration value="Anden adkomst"/>
+      <enumeration value="Auktionsskøde"/>
+      <enumeration value="Betinget bodeling"/>
+      <enumeration value="Betinget skøde"/>
+      <enumeration value="Bodeling"/>
+      <enumeration value="Ejendomsdom"/>
+      <enumeration value="Indberettet ejerskifte"/>
+      <enumeration value="Endelig indførsel adkomst"/>
+      <enumeration value="Endeligt skøde"/>
+      <enumeration value="Hævd"/>
+      <enumeration value="Kopieret ejerskab til ny ejendom"/>
+      <enumeration value="Meddelelse fast ejendom adkomst"/>
+      <enumeration value="Meddelelse om tvangsauktion"/>
+      <enumeration value="Navneændring"/>
+      <enumeration value="Opdatering af person- eller virksomhedsoplysninger"/>
+      <enumeration value="Opretning af ejerandele"/>
+      <enumeration value="Oprettet ejerskab af ny ejendom"/>
+      <enumeration value="Rettelse af ejerskab"/>
+      <enumeration value="Skifteretsattest"/>
+      <enumeration value="SkifteretsattestÆgtefælle"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="EjerfortegnelseForretningsomraadeType">
+    <restriction base="string">
+      <enumeration value="54.15"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="EjerfortegnelseForretningsprocesType">
+    <restriction base="string">
+      <enumeration value="Hændelse fra Digital Tinglysning"/>
+      <enumeration value="Konvertering fra ESR"/>
+      <enumeration value="Landsdækkende kørsel"/>
+      <enumeration value="Manuel opdatering"/>
+      <enumeration value="Hændelse fra CPR"/>
+      <enumeration value="Hændelse fra CVR"/>
+      <enumeration value="Opdatering fra Matriklen"/>
+      <enumeration value="Opdatering fra Skifte- eller Fogedret"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="EjerfortegnelsestatusVaerdiType">
+    <restriction base="string">
+      <enumeration value="gældende"/>
+      <enumeration value="tilbagerullet"/>
+      <enumeration value="historisk"/>
+    </restriction>
+  </simpleType>
+  <element name="Ejerskab" type="ejer:EjerskabType">
+    <annotation>
+      <appinfo>EAID_422EE0E4_C1B2_4dc0_A1DD_88F37B725096</appinfo>
+    </annotation>
+  </element>
+  <complexType name="EjerskabType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Feltliste ,Stedbestemmelse -->
+	  <element minOccurs="0" nillable="true" name="feltliste" type="string"/>
+	  <element minOccurs="0" nillable="true" name="StedbestemmelsesReference" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="begraensning" nillable="true" type="boolean">
+        <annotation>
+          <appinfo>EAID_A4BFDABD_4993_4654_A8FD_CDB60B9A89A4</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ejerforholdskode" type="ejer:EjerforholdskodeVaerdiType">
+        <annotation>
+          <appinfo>EAID_1910B76C_A9D5_4e34_9A1D_495F70E4D887</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ejetFoer01071998" type="boolean">
+        <annotation>
+          <appinfo>EAID_2E6C5DAC_516D_488a_866E_DF247291610D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="faktiskEjerandel_taeller" type="integer">
+        <annotation>
+          <appinfo>EAID_73EA95A7_5898_4baa_9E07_75AB0397FF92.EAID_F4081119_31CD_4e24_8DAE_56481EBB68C1</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="faktiskEjerandel_naevner" type="integer">
+        <annotation>
+          <appinfo>EAID_73EA95A7_5898_4baa_9E07_75AB0397FF92.EAID_B48E7EF3_99F8_464c_A5E0_6A3BC71D0895</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="primaerKontakt" type="boolean">
+        <annotation>
+          <appinfo>EAID_907CD008_A727_4260_BD0F_EF47C23A9829</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="tinglystEjerandel_taeller" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_D8EF2154_5CF4_493d_9CBE_6D3FB667563F.EAID_F4081119_31CD_4e24_8DAE_56481EBB68C1</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="tinglystEjerandel_naevner" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_D8EF2154_5CF4_493d_9CBE_6D3FB667563F.EAID_B48E7EF3_99F8_464c_A5E0_6A3BC71D0895</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="administrerendeVirksomhedCVRNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dstBD9A82_3E2D_4b40_86C0_C5B7DB0F19A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ejendeVirksomhedCVRNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dst963D65_C08F_4bec_8AFF_BB9DC92B07FF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ejendePersonPersonNR" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst232201_AC47_4eb1_B8E6_E5D6B6665D8F</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="produktionsenhedPNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dst3656C2_0D2F_478a_9610_2F82E4CD123E</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="administratoroplysLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dstAE43F3_859B_4231_8427_A6B603C4546C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ejeroplysningerLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst976384_168B_431a_9C00_CC8D9097563E</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="bestemtFastEjendomBFENr" type="integer">
+        <annotation>
+          <appinfo>EAID_dst911481_AA7A_425a_8B3D_DA1AE8630B36</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="administrerendePersonPersonNr" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst144D06_2F7B_4bcd_8B4D_83D413D7CD07</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="Ejerskabsskifte" type="ejer:EjerskabsskifteType">
+    <annotation>
+      <appinfo>EAID_0F2275F5_3B9C_4386_A7AC_95C86E2E2D91</appinfo>
+    </annotation>
+  </element>
+  <complexType name="EjerskabsskifteType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="afstaaetAndel_taeller" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_F3565DB6_4C3A_414f_9506_E272A5D627EC.EAID_F4081119_31CD_4e24_8DAE_56481EBB68C1</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="afstaaetAndel_naevner" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_F3565DB6_4C3A_414f_9506_E272A5D627EC.EAID_B48E7EF3_99F8_464c_A5E0_6A3BC71D0895</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="modtagetAndel_taeller" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_8CB947C1_27F4_4c55_BBA3_FF5693E0A557.EAID_F4081119_31CD_4e24_8DAE_56481EBB68C1</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="modtagetAndel_naevner" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_8CB947C1_27F4_4c55_BBA3_FF5693E0A557.EAID_B48E7EF3_99F8_464c_A5E0_6A3BC71D0895</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="modtagendeEjerobjektLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst6FA13A_FB67_4e8b_83CE_4C34C024EADC</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ejerskifteLokalId" type="string">
+        <annotation>
+          <appinfo>EAID_dst89FF6A_2AE7_4b96_87DF_B25D0F8306D2</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="afgivendeEjerobjektLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dstE333A2_2E7C_48e2_A627_5CBADA0F119F</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="Ejerskifte" type="ejer:EjerskifteType">
+    <annotation>
+      <appinfo>EAID_9F5F102E_4713_47d7_92AC_C1858DAB021C</appinfo>
+    </annotation>
+  </element>
+  <complexType name="EjerskifteType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Feltliste ,Stedbestemmelse, Ekstern payload elementer-->
+	  <element minOccurs="0" nillable="true" name="feltliste" type="string"/>
+	  <element minOccurs="0" nillable="true" name="StedbestemmelsesReference" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejerskabsskifte_status" type="string"/>
+	  <element minOccurs="0" nillable="true" name="afstaaetAndel_taeller" type="string"/>
+	  <element minOccurs="0" nillable="true" name="afstaaetAndel_naevner" type="string"/>
+	  <element minOccurs="0" nillable="true" name="modtagetAndel_taeller" type="string"/>
+	  <element minOccurs="0" nillable="true" name="modtagetAndel_naevner" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejerskab_id_lokalId" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejerskab_status" type="string"/>
+	  <element minOccurs="0" nillable="true" name="begraensning" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejerforholdskode" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejetFoer01071998" type="string"/>
+	  <element minOccurs="0" nillable="true" name="faktiskEjerandel_taeller" type="string"/>
+	  <element minOccurs="0" nillable="true" name="faktiskEjerandel_naevner" type="string"/>
+	  <element minOccurs="0" nillable="true" name="tinglystEjerandel_taeller" type="string"/>
+	  <element minOccurs="0" nillable="true" name="tinglystEjerandel_naevner" type="string"/> 
+	  <element minOccurs="0" nillable="true" name="primaerKontakt" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejesAfPerson" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejesAfVirksomhed" type="string"/>
+	  <element minOccurs="0" nillable="true" name="ejesAfPVOplysning" type="string"/>
+	  <element minOccurs="0" nillable="true" name="adminPerson" type="string"/>
+	  <element minOccurs="0" nillable="true" name="adminVirksomhed" type="string"/>
+	  <element minOccurs="0" nillable="true" name="adminPVOplysning" type="string"/>
+	  <element minOccurs="0" nillable="true" name="adminPEnhed" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="anmeldelsesidentifikator" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_9A3BAD64_62D3_474f_9B49_CF3395FC7FD4</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="betinget" nillable="true" type="boolean">
+        <annotation>
+          <appinfo>EAID_5916184F_4D3D_47e9_B332_773271ED0B84</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="fristDato" nillable="true" type="date">
+        <annotation>
+          <appinfo>EAID_0D18DDD3_267E_4dec_9703_B3137049DF02</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="overtagelsesdato" type="dateTime">
+        <annotation>
+          <appinfo>EAID_6E1517E9_FCDB_425b_A76B_E820A8F6065B</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="anmeldelsesdato" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_049A7392_2527_4259_A517_EBA8D37E0AAC</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="overdragelsesmaade" nillable="true" type="ejer:OverdragelsesmaadeVaerdiType">
+        <annotation>
+          <appinfo>EAID_2323BC46_9947_4fb0_ACBA_2CF2664C1C43</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="bestemtFastEjendomBFENr" type="integer">
+        <annotation>
+          <appinfo>EAID_dst2E9BC3_F084_4064_A34B_334C6CC03CB8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="handelsoplysningerLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_srcAF2743_B4C2_4b81_BCD2_B7519A0CC2ED</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="Handelsoplysninger" type="ejer:HandelsoplysningerType">
+    <annotation>
+      <appinfo>EAID_49531FA9_4AE5_45b3_9DD6_05E60F3CB9A2</appinfo>
+    </annotation>
+  </element>
+  <complexType name="HandelsoplysningerType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="afstaaelsesdato" nillable="true" type="date">
+        <annotation>
+          <appinfo>EAID_D4111412_4601_4b18_8305_DA7CD7D61221</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="betalingsforpligtelsesdato" nillable="true" type="date">
+        <annotation>
+          <appinfo>EAID_F6348186_62D3_42c2_9EEA_CAC95D681930</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="koebsaftaleDato" nillable="true" type="date">
+        <annotation>
+          <appinfo>EAID_0060BFA0_6C67_49de_8618_DB66B1C3AA6E</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="entreprisesum" nillable="true" type="double">
+        <annotation>
+          <appinfo>EAID_3E452068_699F_4922_ACC0_EE5F1A0A50EB</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="husdyrbesaetningsum" nillable="true" type="double">
+        <annotation>
+          <appinfo>EAID_46BB2551_BE54_4e53_A793_4EFA76263A6F</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="loesoeresum" nillable="true" type="double">
+        <annotation>
+          <appinfo>EAID_425C2926_5C24_46a1_8984_3FD9D832E52B</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="kontantKoebesum" nillable="true" type="double">
+        <annotation>
+          <appinfo>EAID_C4C7340C_39A8_4f2c_BD5E_490061B51479</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="samletKoebesum" nillable="true" type="double">
+        <annotation>
+          <appinfo>EAID_BD45AB85_C593_4f0a_B67B_6E857056047E</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="valutakode" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_46325A8B_74E5_432c_892F_9E88628946FB</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="bygningerOmfattet" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_BCE0E660_7C5B_4099_9D19_266752580DF9</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="skoedetekst" nillable="true">
+        <annotation>
+          <appinfo>EAID_A5CD530F_4E55_4140_8E03_9D2FCE2F8F38</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="15000"/>
+          </restriction>
+        </simpleType>
+      </element>
+    </sequence>
+  </complexType>
+  <simpleType name="OverdragelsesmaadeVaerdiType">
+    <restriction base="string">
+      <enumeration value="Almindelig fri handel"/>
+      <enumeration value="Anden overdragelse"/>
+      <enumeration value="Interessesammenfald"/>
+      <enumeration value="Mageskifte"/>
+      <enumeration value="Almindelig fri handel særlige vilkår"/>
+      <enumeration value="Familieoverdragelse"/>
+      <enumeration value="Ikke oplyst"/>
+    </restriction>
+  </simpleType>
+  <element name="PersonEllerVirksomhedsadmini" type="ejer:PersonEllerVirksomhedsadminiType">
+    <annotation>
+      <appinfo>EAID_1564DE75_19FD_41ec_895F_5C3C8EC62D07</appinfo>
+    </annotation>
+  </element>
+  <complexType name="PersonEllerVirksomhedsadminiType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Feltliste -->
+	  <element minOccurs="0" nillable="true" name="feltliste" type="string"/>
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="personVirksomhedOplysLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst8A47FE_F044_4730_B613_ECC1BEFE5D07</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="administreretPersonPersonNr" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst1DAE7E_323C_42c4_A0D0_3D2574FCCEA4</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virksomhedCVRNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dstD3265D_BD47_41a2_893F_BC2868DF7D35</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="produktionsenhedPNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dst0F15B8_03C8_430a_86D6_6AE6BDC5D97D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="administreretVirksomCVRNr" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_dst49808D_BE67_47bb_8C51_ED19142A62E3</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="personPersonNr" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst2EFB3C_3E6E_4cc4_8EF6_720C401A8723</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="personVirksomOplLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dstD29BA9_BA2B_4328_AE3A_417B3FC87C29</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="PersonVirksomhedsoplys" type="ejer:PersonVirksomhedsoplysType">
+    <annotation>
+      <appinfo>EAID_DA2687C8_18A3_49ba_BC1F_BAAAB720DAB0</appinfo>
+    </annotation>
+  </element>
+  <complexType name="PersonVirksomhedsoplysType">
+    <sequence>
+      <element name="objectid" type="string"/>
+	  <!-- Feltliste, Ekstern payload elementer -->
+	  <element minOccurs="0" nillable="true" name="feltliste" type="string"/>
+    <!-- Denne er en dublet (ikke en del af ekstern payload), og fjernes derfor. MINEI 20170511.
+    <element minOccurs="0" nillable="true" name="alternativAdresseLokalId" type="string"/>
+  -->
+      <element minOccurs="0" nillable="true" name="alternativAdresse_status" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje1" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje2" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje3" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje4" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje5" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje6" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje7" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje8" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje9" type="string"/>
+      <element minOccurs="0" nillable="true" name="adresselinje10" type="string"/>
+	  <element minOccurs="0" nillable="true" name="landeKodeNumerisk" type="string"/> 
+	  <!-- Modelelementer -->
+      <element minOccurs="0" name="id_namespace" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="id_lokalId" type="string">
+        <annotation>
+          <appinfo>EAID_42EEFD36_07DE_48e5_AF47_A3302D9EDEF5.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningshaendelse" type="ejer:EjerfortegnelseForretningshaendelseType">
+        <annotation>
+          <appinfo>EAID_EDB900B1_E09F_41af_9925_81793C8AD137</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsomraade" type="ejer:EjerfortegnelseForretningsomraadeType">
+        <annotation>
+          <appinfo>EAID_C2D4C015_3079_4907_A85B_B2A4D66188BE</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="forretningsproces" type="ejer:EjerfortegnelseForretningsprocesType">
+        <annotation>
+          <appinfo>EAID_6E09BC0B_4FEB_4fe5_9D75_A0A0A1D121B7</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="status" type="ejer:EjerfortegnelsestatusVaerdiType">
+        <annotation>
+          <appinfo>EAID_5DF93B9F_50AA_49aa_9481_F04517799FFF</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_76A43210_69E9_4a22_8D1F_A4CBCF5D362D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_E41A79F3_7D5D_4314_AA49_2610AFC92738</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="registreringsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_F6836D58_7AD0_404b_920E_FD8764511D5A</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningFra" type="dateTime">
+        <annotation>
+          <appinfo>EAID_DB0ADB0B_AEF4_4c51_846D_D3404DC85449</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningTil" nillable="true" type="dateTime">
+        <annotation>
+          <appinfo>EAID_06091801_5AC6_4262_825D_0B4C2FA3D57C</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="virkningsaktoer" type="string">
+        <annotation>
+          <appinfo>EAID_96D2147C_1A0D_45cf_85B2_5C8F69EB084D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="behandlingsID">
+        <annotation>
+          <appinfo>EAID_A7C68DBB_D219_40c4_84A4_8BCF63D9C26B</appinfo>
+        </annotation>
+        <simpleType>
+          <restriction base="string">
+            <maxLength value="100"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element minOccurs="0" name="navn" type="string">
+        <annotation>
+          <appinfo>EAID_D6A62534_41FE_4276_8329_3199BEA7FA6D</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="fiktivtPVnummer" nillable="true" type="integer">
+        <annotation>
+          <appinfo>EAID_7A84F94B_7116_48ba_B35E_37757DA1DFC9</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="adresseLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_dst8AAAC3_A278_48da_8981_F945A55A36D0</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="kommuneinddelingKommunekode" type="string">
+        <annotation>
+          <appinfo>EAID_dst40CD2F_3E58_440d_9205_958F38C3B650</appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="alternativAdresseLokalId" nillable="true" type="string">
+        <annotation>
+          <appinfo>EAID_src07218D_D2A9_4dde_9E70_598B7F38DD61</appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+    <element name="Ejerskifte_BilagsbankRef" type="ejer:Ejerskifte_BilagsbankRefType">
+      <annotation>
+        <appinfo>EAID_F0A392A5_B8E7_4a86_AFD3_B54197380B04</appinfo>
+      </annotation>
+    </element>
+  <complexType name="Ejerskifte_BilagsbankRefType">
+    <sequence>
+      <element name="ejerskifteObjectid" type="string"/>
+      <element name="bilagsbankRef" type="string"/>
+    </sequence>
+  </complexType>
+</schema>

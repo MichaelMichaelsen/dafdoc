@@ -1,0 +1,21 @@
+external:
+  description: |
+    Detaljeret beskrivelse af brugen af services på datafordeleren
+  url: http://datafordeler.dk/api
+
+categories:
+  - name: Simpel
+    description: SLA kategorier i produktion - maksimum svartid 0.09 sekund
+    externalDocs:
+      description: Dokumentation af CVR
+      url: http://sdfe.dk/cvr
+  - name: Normal
+    description: SLA kategorier i produktion - maksimum svartid 1.0 sekund
+    externalDocs:
+      description: Dokumentation af CVR
+      url: http://sdfe.dk/cvr
+  - name: Kompleks
+    description: SLA kategorier i produktion - maksimum svartid 2.5 sekund
+    externalDocs:
+      description: Dokumentation af CVR
+      url: http://sdfe.dk/cvr

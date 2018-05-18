@@ -1,0 +1,10 @@
+Standard500ErrorResponse:
+  description: An unexpected error occured.
+  headers:
+    X-Rate-Limit-Remaining:
+      description: How many calls consumer can do
+      type: integer
+    X-Rate-Limit-Reset:
+      description: When rate limit will be reset
+      type: string
+      format: date-time
