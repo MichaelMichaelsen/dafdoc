@@ -3,6 +3,40 @@ title: Services for CPR på Datafordeleren
 description: >
   # CPR #
 
+  Dokumentet beskriver de webservicese der udstilles på Datafordeleren fra CPR til offentlige anvendere.
+
+  ## Kategorier ##
+
+  De Offentlige CPR tjenester er inddelt i 3 kategorier af output: Small, Medium og Full, som indgår i navngivningen.
+  Disse kategorier giver oplysning om omfanget af data der returneres for en person.
+  Hver kategori kan yderligere inddeles med en metode der kun returnerer aktuelle data (current) og en metode der returnerer aktuelle og historiske data.
+
+
+  Tjenestekategori  |  Beskrivelse |
+
+  ----------------|----------- |
+
+  Small | Tjenesterne returnerer kun basisoplysninger om personen |
+
+  Medium | Tjenesterne returnerer de samme data som Small tjenesterne, men ydermere også referencer til personer, som personen refererer til. Personens: Ægtefæller, Forældre, Forældremyndige samt Børn. Tjenesterne returner PNR og PersonID for reference personerne, såfremt de er til stede. Ægtefæller og forældre kan også returneres som PersonUdenCpr, jvnf. Json-schema. |
+
+  Full | Tjenesterne returnerer de samme data som Medium tjenesterne, men ud over at returnere PNR og PersonId for reference personerne, såfremt de er til stede, returneres også data om personreferencens aktuelle navn og ophold: UdrejseIndrejse, Adresseoplysninger, Forsvinding samt KontaktAdresse |
+
+  ## Svartider ##
+
+  Hver metode har en given maksimum svartider afhængig af SLA- kategorien for servicen. her er oversigten over SLA gruppe og maksimal svartider
+
+
+  SLA  |  Maksimum svartider (sekunder) |
+
+  ----------------|----------- |
+
+  Simpel | 0.09 |
+
+  Almindelig | 1.0  |
+
+  Kompleks | 2.5 |
+
 
   ## URL opbygning ##
 
@@ -58,31 +92,43 @@ description: >
 
   ---------------------------------------------------------------------
 
-  ### Resultatkoder:
+  ## Søgeparametre ##
 
-  Der er nedenfor angivet responskoder der er specfikke for de enkelte operationer.
+  Alle inputparametre er opdelt i objekter.
 
-  Der anvendes følgende generelle HTTP Statuskoder:
 
-  * 400 - Bad Request
+  Ved fremsøgning af data opfattes parametrene som AND mellem objekter og OR mellem angivne værdier til specifikke objekter. Det er muligt at spørge med arrays på alle inputparametre, uanset datatype.
 
-  * 401 - Unauthorized
+  Eksempelvis:
+    - Person
+    o Reklamebeskyttelse = Nej
+    - Adresse
+    o Husnummer = (’13B’, ’24’, ’27’)
+  Dette eksempel, skal omsættes til:
+    SELECT * FROM CPR
+    WHERE Reklamebeskyttelse = Nej AND Husnummer IN (’13B’, ’24’, ’27’)
 
-  * 403 - Forbidden
+    Note:
+      Husnummer IN (’13B’, ’24’, ’27’) er lig med
+      Husnummer = ’13’ OR Husnummer = ’24’ OR Husnummer = ’27’
 
-  * 406 - Not Acceptable
+  Udover ovenstående anvendes operatorerne lig med (=), større end   (>) og mindre end (<) på integer og dato parametre.
+    Eksempelvis:
+      - Tilflytningsadresse > 2016.02.23
 
-  * 408 - Request Timeout
+    Tekst parametre (string), wildcards understøttes på enkelt karakterer (?) og på en ubegrænset mængde karakterer (*)
 
-  * 415 - Unsupported Media Type
+  Eksempel:
+    - Postdistrikt = Br?nshøj  (Brønshøj)
+    - Postdistrikt = Brøn* (Brønshøj, Brønderslev, mf.)
+    - Postdistrikt = B*rød (Birkerød, mf.)
+    - Postdistrikt = *rød (Hillerød, Birkerød, Solrød, mf.)
 
-  * 500 - Unexpected failure
+  ## Outputparametre ##
 
-  Derudover vil der blive anvendt JSON API fejlkoder [JSON API error format](http://jsonapi.org/format/#errors).
+  Hvor muligt leveres altid VirkningFRA og VirkningTIL samt tilhørende usikkerhedsmarkeringer.
+
 contact:
   name: Datafordeler Support
   url: http://datafordeler.dk
   email: support@datafordeler.dk
-license:
-  name: Apache-2.0
-  url: http://www.apache.org/licenses/LICENSE-2.0

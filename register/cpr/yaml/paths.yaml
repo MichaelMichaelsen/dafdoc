@@ -1,380 +1,450 @@
-/js-less-consumer-persons:
-  parameters:
-    - $ref: '#/parameters/userAgent'
-  post:
-    summary: Creates a person
-    description: For JS-less partners
-    operationId: createUserJS
-    deprecated: true
+/CprPrivatePNR/1/rest/PrivatePersonCurrentPNR:
+  get:
     tags:
-      - JSLess
-      - Persons
-    security:
-      - OauthSecurity:
-        - admin
-      - LegacySecurity: []
-    consumes:
-      - application/x-www-form-urlencoded
+      - Privat
     produces:
-      - text/html
-    parameters:
-      - name: username
-        in: formData
-        required: true
-        pattern: '[a-z0-9]{8,64}'
-        minLength: 8
-        maxLength: 64
-        type: string
-      - name: firstname
-        in: formData
-        type: string
-      - name: lastname
-        in: formData
-        type: string
-      - name: dateOfBirth
-        in: formData
-        type: string
-        format: date
-    responses:
-      '204':
-        description: Person succesfully created.
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '400':
-        description: Person couldn't have been created.
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '500':
-        description: An error occured.
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-/persons:
-  parameters:
-    - $ref: '#/parameters/userAgent'
-  get:
-    summary: Gets some persons
-    description: Returns a list containing all persons. The list supports paging.
-    operationId: searchUsers
-    tags:
-      - Persons
-    parameters:
-      - $ref: '#/parameters/pageSize'
-      - $ref: '#/parameters/pageNumber'
-      - $ref: '#/parameters/includeNonVerifiedUsers'
-      - $ref: '#/parameters/sortPersons'
-    responses:
-      '200':
-        description: A list of Person
-        schema:
-          $ref: '#/definitions/Persons'
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-  post:
-    summary: Creates a person
-    description: Adds a new person to the persons list.
-    operationId: createUser
-    tags:
-      - Persons
-    security:
-      - OauthSecurity:
-        - admin
-      - LegacySecurity: []
-    parameters:
-      - name: person
-        in: body
-        required: true
-        description: The person to create.
-        schema:
-          $ref: '#/definitions/Person'
-    responses:
-      '204':
-        description: Person succesfully created.
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '400':
-        description: Person couldn't have been created.
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-'/persons/{username}':
-  parameters:
-    - $ref: '#/parameters/username'
-    - $ref: '#/parameters/userAgent'
-  get:
-    summary: Gets a person
-    description: Returns a single person for its username.
-    operationId: readPerson
-    tags:
-      - Persons
-    responses:
-      '200':
-        description: A Person
-        schema:
-          $ref: '#/definitions/Person'
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-  delete:
-    summary: Deletes a person
-    description: Delete a single person identified via its username
-    operationId: deletePerson
-    tags:
-      - Persons
-    responses:
-      '204':
-        description: Person successfully deleted.
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-'/persons/{username}/friends':
-  parameters:
-    - $ref: '#/parameters/username'
-    - $ref: '#/parameters/userAgent'
-  get:
-    summary: Gets a person's friends
-    description: Returns a list containing all persons. The list supports paging.
-    operationId: readPersonsFriends
-    tags:
-      - Persons
-    parameters:
-      - $ref: '#/parameters/pageSize'
-      - $ref: '#/parameters/pageNumber'
-      - $ref: '#/parameters/includeNonVerifiedUsers'
-      - $ref: '#/parameters/sortPersons'
-    responses:
-      '200':
-        description: A person's friends list
-        schema:
-          $ref: '#/definitions/PagedPersons'
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-'/persons/{username}/collecting-items':
-  parameters:
-    - $ref: '#/parameters/username'
-    - $ref: '#/parameters/userAgent'
-  get:
-    summary: Gets a person's collecting items list
-    description: |
-      Returns a list containing all items this person is looking for.  
-      The list supports paging.
-    operationId: readPersonsCollectingItems
-    tags:
-      - Items
-    parameters:
-      - $ref: '#/parameters/pageSize'
-      - $ref: '#/parameters/pageNumber'
-      - $ref: '#/parameters/filterItemTypes'
-    responses:
-      '200':
-        description: A collected items list
-        schema:
-          $ref: '#/definitions/PagedCollectingItems'
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-        examples:
-          application/json:
-            {
-              "totalItems": 10,
-              "totalPage": 4,
-              "pageSize": 3,
-              "currentPage": 2,
-              "items": 
-              [
-                { 
-                  "itemType": "Vinyl",
-                  "maxPrice": 20,
-                  "imageId": "98096838-04eb-4bac-b32e-cd5b7196de71",
-                  "albumName": "Captain Future Original Soundtrack",
-                  "artist": "Yuji Ohno"
-                },
-                { 
-                  "itemType": "VHS",
-                  "maxPrice": 10,
-                  "imageId": "b74469bc-e6a1-4a90-858a-88ef94079356",
-                  "movieTitle": "Star Crash",
-                  "director": "Luigi Cozzi"
-                },
-                { 
-                  "itemType": "AudioCassette",
-                  "maxPrice": 10,
-                  "imageId": "b74469bc-e6a1-4a90-858a-88ef94079356",
-                  "albumName": "Star Wars",
-                  "artist": "John Williams"
-                }
-              ]
-            }
-      '404':
-        $ref: '#/responses/PersonDoesNotExistResponse'
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-/images:
-  parameters:
-    - $ref: '#/parameters/userAgent'
-  post:
-    summary: Uploads an image
-    description: Upload an image, will return an image id. 
-    operationId: storeImage
-    externalDocs:
-      description: How to upload media
-      url: http://doc.simple.api/media/upload
-    tags:
-      - Media
-    security:
-      - MediaSecurity: []
-    consumes:
-      - multipart/form-data
-    parameters:
-      - name: image
-        in: formData
-        type: file
-    responses:
-      '200':
-        description: Image's ID
-        schema:
-          properties:
-            imageId:
-              type: string
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
-      '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
-/images/{imageId}:
-  parameters:
-    - $ref: '#/parameters/userAgent'
-  get:
-    summary: Gets an image
-    description: Return an image 
-    operationId: readImage
-    tags:
-      - Media
-    parameters:
-      - name: imageId
-        in: path
-        required: true
-        type: string
-    produces:
-      - image/png
-      - image/gif
-      - image/jpeg
       - application/json
-      - application/x-yaml
+      - application/xml
+    summary: Hent en person ud fra personnummeret
+    description: >
+      Hent en person ud fra personnummeret
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Simpel
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
+    parameters:
+      - name: pnr.personnummer.eq
+        type: string
+        in: query
+        required: true
+        description: >
+          Person.Personnummer.personnummerLigMed
+          Entydig identifikation af en personer i CPR
+          EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
     responses:
       '200':
-        description: The image
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
+        description: >
+          *OK*
+          Standard response for successful HTTP requests.
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              Person:
+                type: object
+                title: Person
+                properties:
+                  statusdato:
+                    title: statusdato
+                    description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                    type: string
+                    format: date-time
+                  statusdatoUsikkerhedsmarkering:
+                    title: statusdatoUsikkerhedsmarkering
+                    description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                    type: boolean
+                  status:
+                    $ref: '#/definitions/PersonStatus'
+                  stilling:
+                    title: stilling
+                    description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                    type: string
+                  Beskyttelser:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Beskyttelse:
+                          $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                  Navn:
+                    $ref: '#/definitions/NavnUdenVirkningsperiode'
+      '204':
+        description: >
+          *No Content*
+          The server successfully processed the request and is not returning any content.
+      '400':
+        description: >-
+          *Bad Request*
+
+          The server cannot or will not process the request due to an apparent client error
+          (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: >
+          *Unauthorized*
+          Authentication is required and has failed or has not yet been provided. The response must include a
+          WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: >
+          *Forbidden*
+          The request was valid, but the server is refusing action.
+          The user might not have the necessary permissions for a resource.
       '404':
-        description: Image do not exists
-        headers:
-          X-Rate-Limit-Remaining:
-            description: How many calls consumer can do
-            type: integer
-          X-Rate-Limit-Reset:
-            description: When rate limit will be reset
-            type: string
-            format: date-time
+        description: >
+          *Not Found*
+          The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+      '405':
+        description: >
+          *Method Not Allowed*
+          A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a
+          read-only resource.
       '500':
-        $ref: '#/responses/Standard500ErrorResponse'
-      default:
-        $ref: '#/responses/TotallyUnexpectedResponse'
+        description: >
+          *Internal Server Error*
+          A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.[
+/CprPrivateAdressName/1/rest/PrivatePersonCurrentAdressName:
+  get:
+    summary: Find en person ud fra adresse og navn
+    description: |
+      Søgning af person på adresse og navne
+
+       * Tjenestekategori: N/A
+
+       * SLA kategori: Simpel
+
+       * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+       * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
+    tags:
+      - Privat
+    parameters:
+      - name: cadr.bygningsnummer.eq
+        in: query
+        type: string
+        required: false
+        description: >-
+          Person.CprAdresse.bygningsnummerLigMed - Bygningsnummer er et
+          persondatafelt, og anvendes på Grønland
+      - name: cadr.etage.eq
+        in: query
+        type: string
+        required: false
+        description: Person.CprAdresse.etageLigMed - Angivelse af etage i adressen
+      - name: cadr.husnummer.eq
+        in: query
+        type: string
+        required: false
+        description: >-
+          Person.CprAdresse.husnummerLigMed - Angiver husnummer for en given
+          bolig
+      - name: cadr.postnummer.eq
+        in: query
+        type: integer
+        required: true
+        description: 'Person.CprAdresse.postnummerLigMed - Postnummer, krævet felt'
+      - name: cadr.sidedoer.eq
+        in: query
+        type: string
+        required: false
+        description: Person.CprAdresse.sidedoerLigMed - Sidedør nummer for en bolig
+      - name: cadr.vejadresseringsnavn.eq
+        in: query
+        type: string
+        required: false
+        description: >-
+          Person.CprAdresse.vejadresseringsnavnLigMed - Forkortelse af adresse
+          som bruges ved forsendelser
+      - name: navn.efternavn.eq
+        in: query
+        type: string
+        required: false
+        description: Person.Navn.efternavnLigMed - En persons efternavne
+      - name: navn.fornavne.eq
+        in: query
+        type: string
+        required: false
+        description: >-
+          Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne.
+          Konkat af fornavne og mellemnavn
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: OK
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              Person:
+                type: object
+                title: Person
+                properties:
+                  statusdato:
+                    title: statusdato
+                    description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                    type: string
+                    format: date-time
+                  statusdatoUsikkerhedsmarkering:
+                    title: statusdatoUsikkerhedsmarkering
+                    description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                    type: boolean
+                  status:
+                    $ref: '#/definitions/PersonStatus'
+                  stilling:
+                    title: stilling
+                    description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                    type: string
+                  Beskyttelser:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Beskyttelse:
+                          $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                  Navn:
+                    $ref: '#/definitions/NavnUdenVirkningsperiode'
+      '204':
+        description: >
+          *No Content*
+
+          The server successfully processed the request and is not returning any content.
+      '400':
+        description: >-
+          *Bad Request*
+
+          The server cannot or will not process the request due to an apparent client error
+          (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: >
+          *Unauthorized*
+          Authentication is required and has failed or has not yet been provided. The response must include a
+          WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: >
+          *Forbidden*
+          The request was valid, but the server is refusing action.
+          The user might not have the necessary permissions for a resource.
+      '404':
+        description: >
+          *Not Found*
+          The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+      '405':
+        description: >
+          *Method Not Allowed*
+          A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a
+          read-only resource.
+      '500':
+        description: >
+          *Internal Server Error*
+          A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.[
+/CPRPrivateDateOfBirth/1/rest/PrivatePersonCurrentDateOfBirthName:
+  get:
+    summary: >-
+      Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
+      navn.
+    description: >
+      Private kunders anvendelse af aktuelle CPR data med søgning på DarID og
+      navn.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Simpel
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
+    tags:
+      - Privat
+    parameters:
+      - name: navn.efternavn.eq
+        type: string
+        in: query
+        description: Person.Navn.efternavnLigMed - En persons efternavn
+      - name: navn.fornavne.eq
+        type: string
+        in: query
+        description: >-
+          Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne.
+          Konkat af fornavne og mellemnavn
+      - name: person.foedselsdato.eq
+        type: string
+        in: query
+        description: >-
+          Person.Person.foedselsdatoLigMed -Angiver hvilken dato fødslen har
+          fundet sted. Datoformat følger ISO 8601
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: OK
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              Person:
+                type: object
+                title: Person
+                properties:
+                  statusdato:
+                    title: statusdato
+                    description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                    type: string
+                    format: date-time
+                  statusdatoUsikkerhedsmarkering:
+                    title: statusdatoUsikkerhedsmarkering
+                    description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                    type: boolean
+                  status:
+                    $ref: '#/definitions/PersonStatus'
+                  stilling:
+                    title: stilling
+                    description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                    type: string
+                  Beskyttelser:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Beskyttelse:
+                          $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                  Navn:
+                    $ref: '#/definitions/NavnUdenVirkningsperiode'
+      '204':
+        description: >
+          *No Content*
+
+          The server successfully processed the request and is not returning any content.
+      '400':
+        description: >-
+          *Bad Request*
+
+          The server cannot or will not process the request due to an apparent client error
+          (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: >
+          *Unauthorized*
+          Authentication is required and has failed or has not yet been provided. The response must include a
+          WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: >
+          *Forbidden*
+          The request was valid, but the server is refusing action.
+          The user might not have the necessary permissions for a resource.
+      '404':
+        description: >
+          *Not Found*
+          The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+      '405':
+        description: >
+          *Method Not Allowed*
+          A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a
+          read-only resource.
+      '500':
+        description: >
+          *Internal Server Error*
+          A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.[
+
+/CprPrivateDaradressName/1/REST/PrivatePersonCurrentDaradressName:
+  get:
+    summary: Hent person information
+    description: >
+      Hent person information
+
+        * Tjenestekategori: N/A
+
+        * SLA kategori: Simpel
+
+        * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+        * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet
+
+    tags:
+      - Privat
+    parameters:
+      - name: navn.efternavn.eq
+        type: string
+        in: query
+        description: Person.Navn.efternavnLigMed - En persons efternavne
+      - name: navn.fornavne.eq
+        type: string
+        in: query
+        description: Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne
+      - name: cadr.daradresse.eq
+        type: string
+        in: query
+        description: Person.CprAdresse.daradresseLigMed - Angivelse af adresseUUID
+        format: uuid
+      - $ref: '#/parameters/format'
+      - $ref: '#/parameters/pageSize'
+      - $ref: '#/parameters/pageNumber'
+    responses:
+      '200':
+        description: OK
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              Person:
+                type: object
+                title: Person
+                properties:
+                  statusdato:
+                    title: statusdato
+                    description: EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49
+                    type: string
+                    format: date-time
+                  statusdatoUsikkerhedsmarkering:
+                    title: statusdatoUsikkerhedsmarkering
+                    description: EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7
+                    type: boolean
+                  status:
+                    $ref: '#/definitions/PersonStatus'
+                  stilling:
+                    title: stilling
+                    description: EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4
+                    type: string
+                  Beskyttelser:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Beskyttelse:
+                          $ref: '#/definitions/BeskyttelseUdenVirkningTil'
+                  Navn:
+                    $ref: '#/definitions/NavnUdenVirkningsperiode'
+      '204':
+        description: >
+          *No Content*
+
+          The server successfully processed the request and is not returning any content.
+      '400':
+        description: >-
+          *Bad Request*
+
+          The server cannot or will not process the request due to an apparent client error
+          (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: >
+          *Unauthorized*
+          Authentication is required and has failed or has not yet been provided. The response must include a
+          WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: >
+          *Forbidden*
+          The request was valid, but the server is refusing action.
+          The user might not have the necessary permissions for a resource.
+      '404':
+        description: >
+          *Not Found*
+          The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.
+      '405':
+        description: >
+          *Method Not Allowed*
+          A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a
+          read-only resource.
+      '500':
+        description: >
+          *Internal Server Error*
+          A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.[

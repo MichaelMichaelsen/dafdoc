@@ -1,18 +1,13 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.1.0",
-    "title": "Simple API",
-    "description": "A simple API to learn how to write OpenAPI Specification.\nThis file uses almost every single aspect of the [Open API Specification](https://openapis.org/).\nThis API will use JSON.\nThis is just a change\n\nBut this should still works\nBut what about many filterItemTypes\nJSON looks like this:\n\n```JSON\n{\n  \"key\": \"value\",\n  \"anotherKey\": \"anotherValue\"\n}\n```\n",
-    "termsOfService": "http://simple.api/terms-of-service",
+    "version": "DLS Version 3.2",
+    "title": "Services for CPR på Datafordeleren",
+    "description": "# CPR #\nDokumentet beskriver de webservicese der udstilles på Datafordeleren fra CPR til offentlige anvendere.\n## Kategorier ##\nDe Offentlige CPR tjenester er inddelt i 3 kategorier af output: Small, Medium og Full, som indgår i navngivningen. Disse kategorier giver oplysning om omfanget af data der returneres for en person. Hver kategori kan yderligere inddeles med en metode der kun returnerer aktuelle data (current) og en metode der returnerer aktuelle og historiske data.\n\nTjenestekategori  |  Beskrivelse |\n----------------|----------- |\nSmall | Tjenesterne returnerer kun basisoplysninger om personen |\nMedium | Tjenesterne returnerer de samme data som Small tjenesterne, men ydermere også referencer til personer, som personen refererer til. Personens: Ægtefæller, Forældre, Forældremyndige samt Børn. Tjenesterne returner PNR og PersonID for reference personerne, såfremt de er til stede. Ægtefæller og forældre kan også returneres som PersonUdenCpr, jvnf. Json-schema. |\nFull | Tjenesterne returnerer de samme data som Medium tjenesterne, men ud over at returnere PNR og PersonId for reference personerne, såfremt de er til stede, returneres også data om personreferencens aktuelle navn og ophold: UdrejseIndrejse, Adresseoplysninger, Forsvinding samt KontaktAdresse |\n## Svartider ##\nHver metode har en given maksimum svartider afhængig af SLA- kategorien for servicen. her er oversigten over SLA gruppe og maksimal svartider\n\nSLA  |  Maksimum svartider (sekunder) |\n----------------|----------- |\nSimpel | 0.09 |\nAlmindelig | 1.0  |\nKompleks | 2.5 |\n\n## URL opbygning ##\n\nURL for de enkelte REST services er opbygget af et endpoint efterfulgt af registernavn, servicenavn, versionen af servicen, servicetype (REST eller WFS etc.),\nsamt metodenavn for REST services.\nEfter ? tilføjes parametre i kaldet, der kan indeholde generelle kaldeparametre for REST services og metode specifikke parametre.\n\nEndpointet indeholder værtsnavnet, med et præfiks for miljøet hvis det ikke er produktionsmiljøet der tilgås.\nHvis der er tale om fortrolige eller følsomme data, følger S5. Se miljøbeskrivelser på http://Datafordeler.dk\n\nTjenesterne er specificeret til at give JSON som output, og dette er default såfremt output parameter ikke anvendes.\nSåfremt der angives XML som output parameter, leveres XML baseret på det specificerede JSON skema:\n* Der udføres samme sæt SQL'er (data fremsøgning) uafhængigt af ønsket format og der hentes kun data der indgår i JSON skemaet.\n* Herefter formateres de fremsøgte data til det ønskede format ud fra JSON skemaet.\n\nOm output er i XML eller JSON er et spørgsmål om syntaks og påvirker IKKE data indholdet.\n\nParameter       |  Værdi |\n--------------- | ---------------------------------------------- |\nFormat          | JSON                                           |\nSikkerhedszone  | 5 - Indeholder fortrolige eller følsomme data. |\nAdgangsniveau   | Indgået aftale med CPR om anvendelse af data påkrævet. |\nAnvendt udstillingsmodel | Person Udstillingsmodel forefindes: http://data.gov.dk/model/diagrammer/ |\nREST-regler     | Anvend paging. Default paging-størrelse: 20 |\n---------------------------------------------------------------------\n## Søgeparametre ##\nAlle inputparametre er opdelt i objekter.\n\nVed fremsøgning af data opfattes parametrene som AND mellem objekter og OR mellem angivne værdier til specifikke objekter. Det er muligt at spørge med arrays på alle inputparametre, uanset datatype.\nEksempelvis:\n  - Person\n  o Reklamebeskyttelse = Nej\n  - Adresse\n  o Husnummer = (’13B’, ’24’, ’27’)\nDette eksempel, skal omsættes til:\n  SELECT * FROM CPR\n  WHERE Reklamebeskyttelse = Nej AND Husnummer IN (’13B’, ’24’, ’27’)\n\n  Note:\n    Husnummer IN (’13B’, ’24’, ’27’) er lig med\n    Husnummer = ’13’ OR Husnummer = ’24’ OR Husnummer = ’27’\n\nUdover ovenstående anvendes operatorerne lig med (=), større end   (>) og mindre end (<) på integer og dato parametre.\n  Eksempelvis:\n    - Tilflytningsadresse > 2016.02.23\n\n  Tekst parametre (string), wildcards understøttes på enkelt karakterer (?) og på en ubegrænset mængde karakterer (*)\n\nEksempel:\n  - Postdistrikt = Br?nshøj  (Brønshøj)\n  - Postdistrikt = Brøn* (Brønshøj, Brønderslev, mf.)\n  - Postdistrikt = B*rød (Birkerød, mf.)\n  - Postdistrikt = *rød (Hillerød, Birkerød, Solrød, mf.)\n\n## Outputparametre ##\nHvor muligt leveres altid VirkningFRA og VirkningTIL samt tilhørende usikkerhedsmarkeringer.\n",
     "contact": {
-      "name": "John Doe",
-      "url": "http://simple.api/contact",
-      "email": "contact@simple.api"
-    },
-    "license": {
-      "name": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+      "name": "Datafordeler Support",
+      "url": "http://datafordeler.dk",
+      "email": "support@datafordeler.dk"
     }
   },
   "externalDocs": {
@@ -21,43 +16,22 @@
   },
   "tags": [
     {
-      "name": "Persons",
-      "description": "Everything you need to handle `users` and `friends`",
+      "name": "Offentlige",
+      "description": "Services som bruges af det offentlige anvendere.",
       "externalDocs": {
-        "description": "People category documentation",
-        "url": "http://doc.simple.api/people"
+        "url": "http://datafordeler.dk"
       }
     },
     {
-      "name": "Items",
-      "description": "Everything you need to handle items collected by users",
-      "externalDocs": {
-        "description": "Items category documentation",
-        "url": "http://doc.simple.api/items"
-      }
-    },
-    {
-      "name": "Media",
-      "description": "Everything you need to handle images",
-      "externalDocs": {
-        "description": "Media category documentation",
-        "url": "http://doc.simple.api/media"
-      }
-    },
-    {
-      "name": "JSLess",
-      "description": "Specific operations for JS less consumers",
-      "externalDocs": {
-        "description": "JS Less Consumers documentation",
-        "url": "http://doc.simple.api/jsless"
-      }
+      "name": "Privat",
+      "description": "Services, som bruges af det private"
     }
   ],
   "schemes": [
     "https"
   ],
-  "host": "simple.api",
-  "basePath": "/openapi102",
+  "host": "s5-certservices.datafordeler.dk",
+  "basePath": "/CPR",
   "consumes": [
     "application/json",
     "application/x-yaml"
@@ -100,967 +74,380 @@
     }
   ],
   "paths": {
-    "/js-less-consumer-persons": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "post": {
-        "summary": "Creates a person",
-        "description": "For JS-less partners",
-        "operationId": "createUserJS",
-        "deprecated": true,
+    "/CprPrivatePNR/1/rest/PrivatePersonCurrentPNR": {
+      "get": {
         "tags": [
-          "JSLess",
-          "Persons"
-        ],
-        "security": [
-          {
-            "OauthSecurity": [
-              "admin"
-            ]
-          },
-          {
-            "LegacySecurity": []
-          }
-        ],
-        "consumes": [
-          "application/x-www-form-urlencoded"
+          "Privat"
         ],
         "produces": [
-          "text/html"
+          "application/json",
+          "application/xml"
         ],
+        "summary": "Hent en person ud fra personnummeret",
+        "description": "Hent en person ud fra personnummeret\n* Tjenestekategori: N/A\n* SLA kategori: Simpel\n* Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler\n* Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet\n",
         "parameters": [
           {
-            "name": "username",
-            "in": "formData",
-            "required": true,
-            "pattern": "[a-z0-9]{8,64}",
-            "minLength": 8,
-            "maxLength": 64,
-            "type": "string"
-          },
-          {
-            "name": "firstname",
-            "in": "formData",
-            "type": "string"
-          },
-          {
-            "name": "lastname",
-            "in": "formData",
-            "type": "string"
-          },
-          {
-            "name": "dateOfBirth",
-            "in": "formData",
+            "name": "pnr.personnummer.eq",
             "type": "string",
-            "format": "date"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Person succesfully created.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "400": {
-            "description": "Person couldn't have been created.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "500": {
-            "description": "An error occured.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      }
-    },
-    "/persons": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "get": {
-        "summary": "Gets some persons",
-        "description": "Returns a list containing all persons. The list supports paging.",
-        "operationId": "searchUsers",
-        "tags": [
-          "Persons"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/pageSize"
-          },
-          {
-            "$ref": "#/parameters/pageNumber"
-          },
-          {
-            "$ref": "#/parameters/includeNonVerifiedUsers"
-          },
-          {
-            "$ref": "#/parameters/sortPersons"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of Person",
-            "schema": {
-              "$ref": "#/definitions/Persons"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      },
-      "post": {
-        "summary": "Creates a person",
-        "description": "Adds a new person to the persons list.",
-        "operationId": "createUser",
-        "tags": [
-          "Persons"
-        ],
-        "security": [
-          {
-            "OauthSecurity": [
-              "admin"
-            ]
-          },
-          {
-            "LegacySecurity": []
-          }
-        ],
-        "parameters": [
-          {
-            "name": "person",
-            "in": "body",
+            "in": "query",
             "required": true,
-            "description": "The person to create.",
-            "schema": {
-              "$ref": "#/definitions/Person"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Person succesfully created.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
+            "description": "Person.Personnummer.personnummerLigMed Entydig identifikation af en personer i CPR EAID_674CBE6D_060E_46fe_BA9E_0E84874074F0\n"
           },
-          "400": {
-            "description": "Person couldn't have been created.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
+          {
+            "$ref": "#/parameters/format"
           },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      }
-    },
-    "/persons/{username}": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/username"
-        },
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "get": {
-        "summary": "Gets a person",
-        "description": "Returns a single person for its username.",
-        "operationId": "readPerson",
-        "tags": [
-          "Persons"
-        ],
-        "responses": {
-          "200": {
-            "description": "A Person",
-            "schema": {
-              "$ref": "#/definitions/Person"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Deletes a person",
-        "description": "Delete a single person identified via its username",
-        "operationId": "deletePerson",
-        "tags": [
-          "Persons"
-        ],
-        "responses": {
-          "204": {
-            "description": "Person successfully deleted.",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      }
-    },
-    "/persons/{username}/friends": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/username"
-        },
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "get": {
-        "summary": "Gets a person's friends",
-        "description": "Returns a list containing all persons. The list supports paging.",
-        "operationId": "readPersonsFriends",
-        "tags": [
-          "Persons"
-        ],
-        "parameters": [
           {
             "$ref": "#/parameters/pageSize"
           },
           {
             "$ref": "#/parameters/pageNumber"
-          },
-          {
-            "$ref": "#/parameters/includeNonVerifiedUsers"
-          },
-          {
-            "$ref": "#/parameters/sortPersons"
           }
         ],
         "responses": {
           "200": {
-            "description": "A person's friends list",
+            "description": "*OK* Standard response for successful HTTP requests.\n",
             "schema": {
-              "$ref": "#/definitions/PagedPersons"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      }
-    },
-    "/persons/{username}/collecting-items": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/username"
-        },
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "get": {
-        "summary": "Gets a person's collecting items list",
-        "description": "Returns a list containing all items this person is looking for.  \nThe list supports paging.\n",
-        "operationId": "readPersonsCollectingItems",
-        "tags": [
-          "Items"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/parameters/pageSize"
-          },
-          {
-            "$ref": "#/parameters/pageNumber"
-          },
-          {
-            "$ref": "#/parameters/filterItemTypes"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A collected items list",
-            "schema": {
-              "$ref": "#/definitions/PagedCollectingItems"
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            },
-            "examples": {
-              "application/json": {
-                "totalItems": 10,
-                "totalPage": 4,
-                "pageSize": 3,
-                "currentPage": 2,
-                "items": [
-                  {
-                    "itemType": "Vinyl",
-                    "maxPrice": 20,
-                    "imageId": "98096838-04eb-4bac-b32e-cd5b7196de71",
-                    "albumName": "Captain Future Original Soundtrack",
-                    "artist": "Yuji Ohno"
-                  },
-                  {
-                    "itemType": "VHS",
-                    "maxPrice": 10,
-                    "imageId": "b74469bc-e6a1-4a90-858a-88ef94079356",
-                    "movieTitle": "Star Crash",
-                    "director": "Luigi Cozzi"
-                  },
-                  {
-                    "itemType": "AudioCassette",
-                    "maxPrice": 10,
-                    "imageId": "b74469bc-e6a1-4a90-858a-88ef94079356",
-                    "albumName": "Star Wars",
-                    "artist": "John Williams"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Person": {
+                    "type": "object",
+                    "title": "Person",
+                    "properties": {
+                      "statusdato": {
+                        "title": "statusdato",
+                        "description": "EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "statusdatoUsikkerhedsmarkering": {
+                        "title": "statusdatoUsikkerhedsmarkering",
+                        "description": "EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7",
+                        "type": "boolean"
+                      },
+                      "status": {
+                        "$ref": "#/definitions/PersonStatus"
+                      },
+                      "stilling": {
+                        "title": "stilling",
+                        "description": "EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4",
+                        "type": "string"
+                      },
+                      "Beskyttelser": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Beskyttelse": {
+                              "$ref": "#/definitions/BeskyttelseUdenVirkningTil"
+                            }
+                          }
+                        }
+                      },
+                      "Navn": {
+                        "$ref": "#/definitions/NavnUdenVirkningsperiode"
+                      }
+                    }
                   }
-                ]
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/responses/PersonDoesNotExistResponse"
-          },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
-          }
-        }
-      }
-    },
-    "/images": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
-      "post": {
-        "summary": "Uploads an image",
-        "description": "Upload an image, will return an image id.",
-        "operationId": "storeImage",
-        "externalDocs": {
-          "description": "How to upload media",
-          "url": "http://doc.simple.api/media/upload"
-        },
-        "tags": [
-          "Media"
-        ],
-        "security": [
-          {
-            "MediaSecurity": []
-          }
-        ],
-        "consumes": [
-          "multipart/form-data"
-        ],
-        "parameters": [
-          {
-            "name": "image",
-            "in": "formData",
-            "type": "file"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Image's ID",
-            "schema": {
-              "properties": {
-                "imageId": {
-                  "type": "string"
                 }
               }
-            },
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
             }
           },
-          "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
+          "204": {
+            "description": "*No Content* The server successfully processed the request and is not returning any content.\n"
           },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
+          "400": {
+            "description": "*Bad Request*\nThe server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing)."
+          },
+          "401": {
+            "description": "*Unauthorized* Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "*Forbidden* The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
+          },
+          "404": {
+            "description": "*Not Found* The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.\n"
+          },
+          "405": {
+            "description": "*Method Not Allowed* A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a read-only resource.\n"
+          },
+          "500": {
+            "description": "*Internal Server Error* A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.[\n"
           }
         }
       }
     },
-    "/images/{imageId}": {
-      "parameters": [
-        {
-          "$ref": "#/parameters/userAgent"
-        }
-      ],
+    "/CprPrivateAdressName/1/rest/PrivatePersonCurrentAdressName": {
       "get": {
-        "summary": "Gets an image",
-        "description": "Return an image",
-        "operationId": "readImage",
+        "summary": "Find en person",
+        "description": "Søgning af person på adresse og navne\n\n * Tjenestekategori: N/A\n\n * SLA kategori: Simpel\n\n * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler\n\n * Adgangsniveau: Indgået aftale med CPR om anvendelse af data påkrævet\n",
         "tags": [
-          "Media"
+          "Privat"
         ],
         "parameters": [
           {
-            "name": "imageId",
-            "in": "path",
+            "name": "cadr.bygningsnummer.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.CprAdresse.bygningsnummerLigMed - Bygningsnummer er et persondatafelt, og anvendes på Grønland"
+          },
+          {
+            "name": "cadr.etage.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.CprAdresse.etageLigMed - Angivelse af etage i adressen"
+          },
+          {
+            "name": "cadr.husnummer.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.CprAdresse.husnummerLigMed - Angiver husnummer for en given bolig"
+          },
+          {
+            "name": "cadr.postnummer.eq",
+            "in": "query",
+            "type": "integer",
             "required": true,
-            "type": "string"
+            "description": "Person.CprAdresse.postnummerLigMed - Postnummer, krævet felt"
+          },
+          {
+            "name": "cadr.sidedoer.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.CprAdresse.sidedoerLigMed - Sidedør nummer for en bolig"
+          },
+          {
+            "name": "cadr.vejadresseringsnavn.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.CprAdresse.vejadresseringsnavnLigMed - Forkortelse af adresse som bruges ved forsendelser"
+          },
+          {
+            "name": "navn.efternavn.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.Navn.efternavnLigMed - En persons efternavne"
+          },
+          {
+            "name": "navn.fornavne.eq",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Person.Navn.fornavneLigMed - En persons fornavne og mellemnavne. Konkat af fornavne og mellemnavn"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          },
+          {
+            "$ref": "#/parameters/pageNumber"
           }
-        ],
-        "produces": [
-          "image/png",
-          "image/gif",
-          "image/jpeg",
-          "application/json",
-          "application/x-yaml"
         ],
         "responses": {
           "200": {
-            "description": "The image",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Person": {
+                    "type": "object",
+                    "title": "Person",
+                    "properties": {
+                      "statusdato": {
+                        "title": "statusdato",
+                        "description": "EAID_1CB4F47F_E13B_4440_9297_8F25FEC71C49",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "statusdatoUsikkerhedsmarkering": {
+                        "title": "statusdatoUsikkerhedsmarkering",
+                        "description": "EAID_EFF81ED0_3AE0_4535_B0B5_AC4F29FDD5A7",
+                        "type": "boolean"
+                      },
+                      "status": {
+                        "$ref": "#/definitions/PersonStatus"
+                      },
+                      "stilling": {
+                        "title": "stilling",
+                        "description": "EAID_9581CAC7_2F9F_4426_9EC6_3767FA27ECB4",
+                        "type": "string"
+                      },
+                      "Beskyttelser": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Beskyttelse": {
+                              "$ref": "#/definitions/BeskyttelseUdenVirkningTil"
+                            }
+                          }
+                        }
+                      },
+                      "Navn": {
+                        "$ref": "#/definitions/NavnUdenVirkningsperiode"
+                      }
+                    }
+                  }
+                }
               }
             }
+          },
+          "204": {
+            "description": "*No Content*\nThe server successfully processed the request and is not returning any content.\n"
+          },
+          "400": {
+            "description": "*Bad Request*\nThe server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing)."
+          },
+          "401": {
+            "description": "*Unauthorized* Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.\n"
+          },
+          "403": {
+            "description": "*Forbidden* The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.\n"
           },
           "404": {
-            "description": "Image do not exists",
-            "headers": {
-              "X-Rate-Limit-Remaining": {
-                "description": "How many calls consumer can do",
-                "type": "integer"
-              },
-              "X-Rate-Limit-Reset": {
-                "description": "When rate limit will be reset",
-                "type": "string",
-                "format": "date-time"
-              }
-            }
+            "description": "*Not Found* The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.\n"
+          },
+          "405": {
+            "description": "*Method Not Allowed* A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a read-only resource.\n"
           },
           "500": {
-            "$ref": "#/responses/Standard500ErrorResponse"
-          },
-          "default": {
-            "$ref": "#/responses/TotallyUnexpectedResponse"
+            "description": "*Internal Server Error* A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.[\n"
           }
         }
       }
     }
   },
   "definitions": {
-    "Person": {
-      "title": "Human",
-      "description": "A person which can be the user itself or one of his friend",
-      "required": [
-        "username"
+    "PersonStatus": {
+      "title": "PersonStatus",
+      "type": "string",
+      "enum": [
+        "annulleret",
+        "bopael_i_danmark",
+        "bopael_i_danmark_hoej_vejkode",
+        "bopael_i_groenland",
+        "bopael_i_groenland_hoej_vejkode",
+        "doed",
+        "ej_bopael",
+        "forsvundet",
+        "nedlagt_person",
+        "udrejst"
       ],
-      "properties": {
-        "firstName": {
-          "description": "first name",
-          "type": "string",
-          "example": "John"
-        },
-        "lastName": {
-          "description": "last name",
-          "type": "string",
-          "example": "Doe"
-        },
-        "username": {
-          "description": "Username used to connect to the service",
-          "type": "string",
-          "pattern": "[a-z0-9]{8,64}",
-          "minLength": 8,
-          "maxLength": 64,
-          "example": "john1doe6"
-        },
-        "dateOfBirth": {
-          "description": "Date of birth",
-          "type": "string",
-          "format": "date",
-          "example": "1978-06-21T00:00:00.000Z"
-        },
-        "lastTimeOnline": {
-          "description": "The last time this person was connected to the service as a",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true,
-          "example": "2016-06-10T12:36:58.014Z"
-        },
-        "avatarBase64PNG": {
-          "description": "An avatar PNG image as a base64 encoded string ready to use as an src in img html tag",
-          "type": "string",
-          "format": "byte",
-          "default": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAC4jAAAuIwF4pT92AAABy2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIj4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBJbWFnZVJlYWR5PC94bXA6Q3JlYXRvclRvb2w+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgqyI37xAAAU3UlEQVR4AeVbeXRc1Xn/zZt90UgajXbJ1mYtNraM95XF2AbbFINLg1sgBCg9JicnpDk9TciBAzQlFDds56T0QE45PTkQTNkhTmnslthhMWAweMObbGuzJdmythnNPtPfd9+MLEWyZFkj8keu/d685b577/f71vvdK0POwmsS+DMu2p8x7Yr0Px0AiUGCJ9fqftCzb4gzpm+oH70bIdJgADQNPCeJ5iPep0hPDAFD1ZrUIX5DAAh5JNpIgYtGEe/3IRrwIxIOKcJNRiM0oxlGqw0aD5gtrG5EIh6fVOKl8UkHQJFOYhCNIHLuHAJtzQj3dV2QMM2gwZpbBJs3H6aMLMRFYpR6XPCTCb2YVAAU8SQo3tsNX+NRhH3d+mD5TKmC8F8qCZFSSGg8EUego0UdjrwSOEorkBCJmCQQJhUA8h3h9hb0nPha0SdiTblOHvojdRYQBhcBiHahn0BE/b1w186eNBAmzQsYyNUQxV0RL4QLl+Oxi+MkQTLEorQZJoQJgL/5OLRJkoD0A8CBilWPnutAb+MRgERcNOFJKTDRWLrsFrgsGj83K3WI+XqUVKRbFdIPAIlHKIi+hv06OcL1QWUkx5Z6ZjUbUZKbCavRgL5AWB1ZDhMyzEB/Z4cuBSl7MajNiVym1wYkuR/q7iTT4yguzIfZRHcmIk29joTD8Pv6EAxHEY2LwaO08J/TakJWhgNNHd1oOUNOs2y8bol69/J7H6r77P4uxCJhGNJsENMLgHAnFkO8+wzcTitaT7erwY90spkMcLFOMBRFL7ktx5y6ctz7rdVYXF8Nb1YGQTPg+7euxYP/tgXbd+1DUTyKEKxs7o+t5kg9XNyztAOgkUv+c2dU70/+9MeYXlOl7F9Pnw+nW09h/6c78NnBRnzZGkCwV+f2t1YvxvoV87F4VjVyszMoMQnGSzGSmcDsmqn4l/tuxbxdP4aBsYRmMyjJoVW9OArHqJVGACjOFHOXlkAHO9368vNYs3J5MprTBxunPfDftAo9pxrQ091FVYjDbrcpol38jVJ6gqGIAky4Lwri6w+iakoBHvq7DXjk+S9RvtyD3vAYVI3jdRoBMMBKA3i8rQvrr7sayxbNQSgUJifpzpKGS36t2QXId3uQ66dO97YhTomJUaIDrCvVNO08Z+VKpMDEdmdWT+Xd7+GgTeklSGkSAAboaSoitjYTm2vzo/6yOljMZsQZy5tMJhgZ68uhkZAEpSCumZFw5yORW40oo/E4OW9kPU0zKSkSSTp/GJXI53rcHKmGbhLvoLegDU1LSYsEyFgs5Jw/QpcXPak4LsQKB4PBQJJZtPeKuRRtegUBxuZwIZGZj3hXI8LBfgJGaZF/SYkRCkUNHHa6RosZeXWlqMiw4w/HOlCcn4H+aByDBEaqj7ukBQAzB9xGK76iNBO3fn8Tunp6SXgQW97ZhoAlE3arFf3hCAGKwCzAUBr62lpw29rlqMjPxNbfHcDBcB48WW4EI1H0BENK7E0U944znVhfdRZWStc965bih5u+jceffQmbt3yIqRUe+AT0CZS0AJBJP96+6yv86KEnUFroxQ8e2Izm5mZEcquwau31Ss/b+0M43ueHm+JrtVhx6GgDjnKOUJabgUPBbFz7t99jAKSRoAj2dfbAZTYRBANyghHs3fYSZrp8ONnarkBac9UCbH7yNdirc//0AIgRCYkVQxatdZHMYXDyVDt6evtQkFeqwuAE43pQvI3Uf2OcekB3lkGrbws5qP9ReDzZYLikgJJ8gRaju6M3McTEsBpgycyEr7cDO/Y1INAfgN0msYCZxlMUZGJRQVokQLdHRkQ4+JxsNwdvRFtbO7TKMtjsDsTIWVuC8/xIHFZy1kwDaaJOR8ltMecR6rLNbic4TJbQ/1ttYVVPZpMMKOHjsx5KT8v+L1QfEd5zninWgrBNrEwYAMnZ2MX6ow/Np8+grKQQRd4sWncNJ/d8hqDBTAOpoYP+vMnfjwzqtYUqsG//AdTWumG22eBrPYI/fLQL3gwn+ugOv+7xwUnQLDSUzZ3dmN3VinBCH6qA3Mt2KEYTNoAC3YQBkEaiKnWVha8OHMGKpXNRU14KBy387YtqcazhMKw0glQGzHcpN6Dc44rZOZhWXa0yPn+zYibrvUNh4JyAPC2nkUyVBXSR1fMq8eLWD9SjCPsS9RIVkLnEREtaAAhShFGbhU/2HuNUII66mgrOA9pw/dqVyMvLG+rW6AKVi6QahHx+9FAyTE4P5s6yMyq0U+TjiNATCGniDUXMJUj6dN9hVFeWI0F788W+o0BxAQLS7wRLWgCIkOgijwOvvnsATz3YhUVz67Ftx0eIclocpEtTWV8SpiJBqwU+ivCevQfxP+9/gI9370UgwHA334mr5s/gRKgGxXkeJd5hujib1YzW9k68tv0zbLxxDd793Qf4+dufoGiqh3HAxFygYJcWAGQYzNqRKw48+osXUV6SixNNrSoUFqJF8G3UdYn19+z9Gv/x69fx3H9ukS8Gyi5eiZibKQWPbtqA5XPqkJ+TifbOCJ5/bbuqt3PPUWzZfRbeEjc9z8S5L40a0rU0JqGpg8aw9ZwfOOGjb9yHI5+8Rz2vQJAcbzjZjFfe/C1++sSzipiqqSXMD0TQ+EdTZo/ThnP+oKpTw0nQ4aY2dZ0p6cSaufB46fupEroDVK8mdEqLBMgIJCSV0LTU44S7yIMD/9eEf3/hJdxw3TXY8fFneHjzL9RASwrzlKs71tii7m+6chnKCwswJT8PpzvP4fEXt/A+B/2BgCLeYWHIbDGiO2pGjjODXoIxhZIp9fmET2mTgMEjiXGArlgYLbt3DjzO9WSpCZGPFlw4uOGKpbhv480ozvXCycDGyNjh6Vdex89+9WvkujPQ6fPBTFdIk0mjGIG7cgYseUU0glS4QXOFgQ4u8SJtEjC4f4nqAkYLCiuqYQ11IcB5/5nOLuX+8rMY1RGA+mlVqC4tUcmPXn8Ab+38QBGfl5mBjh5xc9QiegxSDJPVDktWjqqbTuKlj0mRAGmYpp+T/D50fbWL7t2EGAOYVLEzGgzQ1d127UpUFhfi/c+/xM6v9sHjdFD/JchJFkmnM3zOqp4FUw6nz2nmvvQyeQCwcY2i6mNO33L2OMKaTbm7JGmc3RkRGuTG8jPdaOcsMlUMJF5yB3ZvIVyVdVQFPYhKvU/Xr8Swk1ai9Aw5JVPRE6Iw0NfnZGeqvkSFwyQ+U9Jh1Hc7gyIhPpUHsPJ5aY4bxUyHZ06pREykaZLKpLVsJJVdFPNpmS6889JzmFKcj86uHlTS/ZmpEkJsD0E5Q6MYpJEzcr5goWpM4VwixOdNZ7rQWrEIPSY7Msj/iYc8IyM4KQBIiOKSlukb32cGU/KDW1/+JWbNqEUD3V+YwBTme1FWWoRyHkK0zCJDjAuaWk6jZk49Xn3qETxdY8V0WxyNIQ3ZbG8yQEi7F1DEU8SPR3nyRfDbZdmw0JLX1VbhvS3P483/3s4o8BXsPXh4GEuWLLgcN69bhfXrr0MZZ4bBPa/ghhIrHmv04JetQLkd6GEH6bQGaTOCMihhupOnE5zm3+gx4pHSo6gruxbRO+9l8BPlvgeLmgidYcDT3HIKHWfPcX4fg8vhQH5eDhMoXmTTTdLfcfpLsX/1VRgP/DPaC5fhnu1WfE4RkAllcOKTwAHwJyQBMmnlOoU6xMn1kTsn5CJiwMP1flRag+h1MV9Aa64xBxBlClz8eE52FvK9HnWdGolklWMEQ4Iesf5GTqdjVUXoawTybDF8tzaEm3faUJiXgJMA+HiEeUwUi0uSAEeS6DMkuDvMG0nskPNTbQmUcFa0OjeGe2cxmDEQolgXNM8C2FbeCc1bwFEzjicIai9Qinr55TODpLj4y5QQolxcDW7lapCJQIkRJKWvHHbhvsN0DWIMrAmU8VKY0Mtx8P8llYsGQJBOEX6Mbg0kvMKRwIbcOGblRFHujsLriMNp5hTWlJqq8CuDBYngcRjsNbD/1T9By84jYGxgJNcmS+nkaeTQHoS2P0D8skkhv5ccAt8YmSds6jVjd7sV206ZsKWTT9lFIcchY+u+BBQuCgAh3sO+jgmnQwbcUxTD2tIIpueEkUPxtBhl/YZc4Ek/OJqBwodGOxKBVkrC5bDd8ENoGSRMEqVDzBmTolxVDn36G8QOPQWDY54OUkKvJ+1LsUiylM37IxqaCcaOUxb84wkCR7UrJxARVvTzEMAupowJgHQsLqjBb8At3jg21QVJeIh5wDiiCQMzOLJYqXclA5MymHz9iYyImdwwF03NebDd9BCMEtpKeKwq88RMceCtxxFvfROGrGUESKbEyYb1RtRZsmDylFsIOFki8Lxp6TPj3RM23H+MOmFOYBp/OikNw8cxqKHk5ahASUeZSeKfqI3gqaW9mJsfUFPfQJS7QCTFzSJTYTnkTn+iHg868SlHmojz2/x5MBdU0Chm0NBxhujwMCWWA0tRLWyL70qSLK1I78OLgCx9ydsgXW2IqfPijAg20eZ8dKUff+lK4CiZ5eW4pZWxyqheIIuNHA9oeLo2jO9c1qdS1EJ4iuCxGh/yXqMu97fCfuXtsOZVUVfIIllEGFQM05eg303uR5lQYYJ0LNMm45ASIQgCyAxvEM8si2DuQSd+csTMZbQE/OxGNPdCYAwdgbTGIpW5fImzHMRqdxwbpvkV8cLxVKeq4sWe6A0SoTYYSzfCWl6nf5XSF3XH4dPQGTM9sC24m9vq9lDGuWHyIktKKoJkjqjmvfV9+NXlXInyGWAjhdSIC5YRAYhSXL02C3oPdmIV9d1tM1LcddG7YEujvaD+J/qPwFy7ihscnEodlCUb+EYg13lkm3MNPUYJmS+u5kJ8G/hwyIUwR2xShMf6aT7817wgGvuYnKHBGJFQfj3sueTavZyN7d/xGb577zrc/uBmbmuVmdqwqkM6H/1GRkZOlF+WrDaCficlwszNkaZpdxCw3RzdaLwbuceUYIUoDdeW+/Hi3AgafEZkc01yhF6HA5DBJatjp87iltuux6P3/wPy62YhbvUySKEmXRIIJD4ehME1jUmNwuSoL8BZMemkwOidigSX0VQgNTKdoz5VrfMUipmwrqIHz07rwJHmPnjNTLFJH4PKELbKhzItxdEmPPzA/dy55SLxDljqbkTC/xU5opLfgz6/iEuCloj2Qsusg5F7f1W5AP0DrXEMepWxKg58MexCT8Yzn+j7Enc/9gJ+/qO7cOSDbUq6B0MwBIAs6v2JnV/gX5+8H7U1NWrnhmR1rDOWkSPShwSe4y3sguGwwVUMg+wEV2V0wjRnpthEltHr6W2NdCaJJgcS3Z/Atv43sEybjTtv2YAr16zH0V6f2sqT+moAAOlKYnSGEFi9coX+PqlQlik1MBaspT/pHL8aqIZp0DigMe1IUjyNHs4ZBIBk//pgxnFm+i3RtxOmWT+Ba/EalYz1eDz4waa7gT07adRleV0vAwBYmIJuYBbmxr++DZUVFeptKkWluTJhnModX8EDHNQ4DZPIm4ET+XCfmuUl+x35J0mw0VPIT3KSnmDkqmM9FSyt19yhluVSi+gL5s9HxqylOMeMk2SspAwA4GBeDgcOcXV3AZzMzspsTQGQ5IrmzqUu8wuZ4Y2rcJXAnMs4/wjifj3dreLXkdpIDsqUW8iI8TokwmfH3x+5D99HMNQ/BsuUavZCOiS7zFKQn4/v3bAKZ75uYR6SaTk+GwBAFiGALkyfPl3qKgDURerEXRt6GWxCUi9H+RVlNmUifvb3CLc0jN0GAddoeM21K2l4j3GE58V1lF7OvyKITEDBWL8C3Iwq9Ksi1l+24M2beznTSocIgO4WFQByUju8XGUoLS5SH6TEP6WHCdmnq2qPEwBpjaJjIGOCH7/OwVGMRnWnevu26YuS7BlHfxI+h1qQKP0OTKXVQ01oUpKrKisUfRLYDUiAkcg0cXVm3sKZ8Hqpe4NL8kODjWohhum80AyuNfp1nOA5lyOyfzNCh79QdWWRQ9QslRhJ/abAMZdUwlz99wyI9rPLi7Q74qYDJ5GYsQYW5XIJXlKtUgzNy8tF+cKr1Y4VsQMqtDfLjgwawIUza+B2y4ZE+U43EikZMhWUy66UMbinPh35FOcWWOcU+Lc9R2/CPQPsU/pI9ZP6VUAQGAP/TsC28CYCwD+zUWowliRwvLEAEs6ZMFZdzrwBhzHok1T7nuxsXDl7BnrPdqu1R+ZumNMTAJpPoq66Sm1glEGkPtAFhWEsXaEhg7M4dqI/G9T6yCQPfZpgPtBaCsPpF9D43lXwT1+OfZ/vht3p5N4BK1PmM5Cbm8sFVEZrnCmq+KNuLvrLbke880NlSHUrPLTZgTuRkv6Pkah+ABb+0ZXS1gEm6rWELgsTszNrpwHPvQFLSZ5eTzeAPaiqIoEsA+IoN9IIP5QY3TyD83Xfp0mOyMvxFLbDkFhzLmK669t4f+s7yCso4C5QO44cPYafPfEM3nj7XZw7xxwiI0HZPivG0L6c84Le48nZ4Sigi/7TThtrlsLCnWlD2J8cZoounc5TanlOAl/dAJqmoGzqFFX1PPeTXyZlyTabllmcwbhdod6OhKeSRfI4irHp5r/A1Vcsw8L5c3HDurV4ZvOj6OvrxRtvvY3unh7+fZXuumwzFjEG2cgY5BT7JZEjFhH/fkabc2Ci61PWf8R6+sOK8jJe2NUuE03+PqeRS1brbroCxUX6ZGUYAElRMrNxLX/NpUWEqm9ykPoc93HbW1ujenLixEnuIrMolbvrjtuZ/Y3jQ26Zk6KkwO6kFNxJKThK9jKgGqlwk3Ui1AStcAlzCjnJP7AiKH9UUnSVFBfjijVrcJzb8TQVAO1vwIol8+FycfMyxX140RszOt0wFs5jZ/wzuAtyY/jXQ57IjlG6xM4Th9SO0rb2drSeauPuMsl1A7duvAX/y70CZzs7lRTIaGyXLYZWtJ79to8sfZJwYb7RmFuLuImeQHdXqr3BJx2ABLK4+LL6ioXAlwRNQmCgHfX19aruyADozciCBf+OjVyUWd1IQOn1Rj0zBpBm7Blurg/SJZWVobAgD41NzeozF43izOm13GnaoTcjBtGRAdsS2oK+Q+yb6A0rpIEuWnO5VYI2BeawanwQT2Zw586Zw7uT+H80X6vv56/SkgAAAABJRU5ErkJggg=="
-        },
-        "spokenLanguages": {
-          "$ref": "#/definitions/SpokenLanguages"
-        }
-      }
+      "example": "bopael_i_danmark"
     },
-    "SpokenLanguages": {
-      "title": "Languages",
-      "description": "A hashmap of spoken languages",
-      "additionalProperties": {
-        "description": "An additional spoken language",
-        "type": "string"
-      },
-      "properties": {
-        "defaultLanguage": {
-          "description": "Default spoken language",
-          "type": "string",
-          "default": "english"
-        }
-      },
-      "example": {
-        "defaultLanguage": "french",
-        "it": "italian",
-        "fr": "french"
-      }
-    },
-    "Persons": {
-      "title": "Humans",
-      "description": "A list of users or friends",
-      "required": [
-        "items"
+    "Status": {
+      "title": "Status",
+      "type": "string",
+      "enum": [
+        "aktuel",
+        "fortrudt",
+        "historisk",
+        "rettet",
+        "teknisk_aendring"
       ],
-      "properties": {
-        "items": {
-          "description": "Array containg the list",
-          "type": "array",
-          "minItems": 10,
-          "maxItems": 100,
-          "uniqueItems": true,
-          "items": {
-            "$ref": "#/definitions/Person"
-          },
-          "example": [
-            {
-              "firstname": "Robert",
-              "lastname\"": "Doe",
-              "username\"": "robdo",
-              "dateOfBirth": "1970-01-28T00:00:00.000Z",
-              "lastTimeOnline": "2016-04-10T14:36:58.014Z"
-            },
-            {
-              "firstname": "Jane",
-              "lastname": "Doe",
-              "username": "jdoe123",
-              "dateOfBirth": "1980-05-12T00:00:00.000Z",
-              "lastTimeOnline": "2016-05-12T19:23:59.014Z"
-            }
-          ]
-        }
-      }
+      "example": "aktuel"
     },
-    "ErrorMessage": {
-      "title": "MultiDeviceErrorMessage",
-      "description": "An error message with a long and a short description",
-      "required": [
-        "longMessage",
-        "shortMessage"
-      ],
+    "BeskyttelseUdenVirkningTil": {
+      "title": "Beskyttelse",
+      "type": "object",
       "properties": {
-        "longMessage": {
-          "description": "A long error description",
-          "type": "string"
-        },
-        "shortMessage": {
-          "description": "A short error description",
-          "type": "string"
-        }
-      }
-    },
-    "MultilingualErrorMessage": {
-      "title": "MultiLingualMultiDeviceErrorMessage",
-      "description": "An multilingual error message (hashmap) with a long and a short description",
-      "additionalProperties": {
-        "$ref": "#/definitions/ErrorMessage"
-      },
-      "properties": {
-        "defaultLanguage": {
-          "$ref": "#/definitions/ErrorMessage"
-        }
-      },
-      "example": {
-        "defaultLanguage": {
-          "longMessage": "We're deeply sorry but an error occured",
-          "shortMessage": "Error"
-        },
-        "fr": {
-          "longMessage": "Nous sommes désolé mais une erreur est survenu",
-          "shortMessage": "Erreur"
-        }
-      }
-    },
-    "Error": {
-      "title": "MultiLingualMultiDeviceError",
-      "description": "Give full information about the problem",
-      "required": [
-        "code",
-        "message"
-      ],
-      "properties": {
-        "code": {
-          "description": "A human readable code (death to numeric error codes!)",
+        "beskyttelsestype": {
+          "title": "beskyttelsestype",
+          "description": "EAID_dst0DF442_9282_4181_B43D_23B02F422804",
           "type": "string",
           "enum": [
-            "DBERR",
-            "NTERR",
-            "UNERR"
-          ],
-          "example": "UNERR"
-        },
-        "message": {
-          "$ref": "#/definitions/MultilingualErrorMessage"
-        }
-      }
-    },
-    "CollectingItem": {
-      "discriminator": "itemType",
-      "required": [
-        "itemType"
-      ],
-      "properties": {
-        "itemType": {
-          "description": "An item can be of different type:\n  \ntype | definition\n-----|-----------\nVinyl| #/definitions/Vinyl\nVHS  | #/definitions/VHS\nAudioCassette | #/definitions/AudioCassette\n",
-          "type": "string",
-          "enum": [
-            "AudioCassette",
-            "Vinyl",
-            "VHS"
+            "lokal_vejviser",
+            "markedsfoering",
+            "navne_og_adresse"
           ]
         },
-        "imageId": {
+        "virkningFra": {
+          "title": "virkningFra",
+          "type": "string",
+          "description": "EAID_8CD2644E_B292_49fd_BCAE_C7B94BE550E9",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "beskyttelsestype"
+      ]
+    },
+    "NavnUdenVirkningsperiode": {
+      "title": "Navn",
+      "type": "object",
+      "properties": {
+        "adresseringsnavn": {
+          "title": "adresseringsnavn",
+          "description": "EAID_2B7D329F_7E3B_4bce_85BC_2B084619649D",
           "type": "string"
         },
-        "maxPrice": {
-          "type": "number",
-          "format": "double",
-          "minimum": 0,
-          "maximum": 10000,
-          "exclusiveMinimum": true,
-          "exclusiveMaximum": false
-        }
-      }
-    },
-    "Vinyl": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/CollectingItem"
+        "efternavn": {
+          "title": "efternavn",
+          "description": "EAID_D3E09BDA_7174_4555_92F0_A7093671DCCF",
+          "type": "string"
         },
-        {
-          "required": [
-            "albumName",
-            "artist"
-          ],
-          "properties": {
-            "albumName": {
-              "type": "string"
-            },
-            "artist": {
-              "type": "string"
-            }
-          }
-        }
-      ]
-    },
-    "VHS": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/CollectingItem"
+        "fornavne": {
+          "title": "fornavne",
+          "description": "EAID_C83C2BED_DA60_4017_B446_044A502AFE01",
+          "type": "string"
         },
-        {
-          "required": [
-            "movieTitle"
-          ],
-          "properties": {
-            "movieTitle": {
-              "type": "string"
-            },
-            "director": {
-              "type": "string"
-            }
-          }
-        }
-      ]
-    },
-    "AudioCassette": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/CollectingItem"
+        "mellemnavn": {
+          "title": "mellemnavn",
+          "description": "EAID_6503AA6C_33D3_4baa_AD1A_5D7FED741A2B",
+          "type": "string"
         },
-        {
-          "required": [
-            "albumName",
-            "artist"
-          ],
-          "properties": {
-            "albumName": {
-              "type": "string"
-            },
-            "artist": {
-              "type": "string"
-            }
-          }
+        "efternavnsmarkering": {
+          "$ref": "#/definitions/Navnemarkering"
+        },
+        "fornavnsmarkering": {
+          "$ref": "#/definitions/Navnemarkering"
+        },
+        "mellemnavnsmarkering": {
+          "$ref": "#/definitions/Navnemarkering"
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
         }
-      ]
-    },
-    "Paging": {
+      },
+      "additionalProperties": false,
       "required": [
-        "totalItems",
-        "totalPages",
-        "pageSize",
-        "currentPage"
-      ],
-      "properties": {
-        "totalItems": {
-          "type": "integer"
-        },
-        "totalPages": {
-          "type": "integer"
-        },
-        "pageSize": {
-          "type": "integer"
-        },
-        "currentPage": {
-          "type": "integer"
-        }
-      }
-    },
-    "PagedPersons": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/Persons"
-        },
-        {
-          "$ref": "#/definitions/Paging"
-        }
+        "status"
       ]
     },
-    "PagedCollectingItems": {
-      "allOf": [
-        {
-          "properties": {
-            "items": {
-              "type": "array",
-              "minItems": 10,
-              "maxItems": 100,
-              "uniqueItems": true,
-              "items": {
-                "$ref": "#/definitions/CollectingItem"
-              }
-            }
-          }
-        },
-        {
-          "$ref": "#/definitions/Paging"
-        }
+    "Navnemarkering": {
+      "type": "string",
+      "title": "Navnemarkering",
+      "description": "Anvendes til at angive dokumentationsniveauet for navnet",
+      "enum": [
+        "forkortet",
+        "indeholder_tegn_der_ikke_kan_indrapporteres_til_cpr",
+        "utilstraekkeligt_dokumenteret"
       ]
     }
   },
   "responses": {
-    "Standard500ErrorResponse": {
-      "description": "An unexpected error occured.",
-      "headers": {
-        "X-Rate-Limit-Remaining": {
-          "description": "How many calls consumer can do",
-          "type": "integer"
-        },
-        "X-Rate-Limit-Reset": {
-          "description": "When rate limit will be reset",
-          "type": "string",
-          "format": "date-time"
-        }
-      },
-      "schema": {
-        "$ref": "#/definitions/Error"
-      }
-    },
-    "PersonDoesNotExistResponse": {
-      "description": "Person does not exist.",
-      "headers": {
-        "X-Rate-Limit-Remaining": {
-          "description": "How many calls consumer can do",
-          "type": "integer"
-        },
-        "X-Rate-Limit-Reset": {
-          "description": "When rate limit will be reset",
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "TotallyUnexpectedResponse": {
-      "description": "A totally unexpected response",
-      "headers": {
-        "X-Rate-Limit-Remaining": {
-          "description": "How many calls consumer can do",
-          "type": "integer"
-        },
-        "X-Rate-Limit-Reset": {
-          "description": "When rate limit will be reset",
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    }
+    "$ref": "responses.yaml"
   },
   "parameters": {
-    "username": {
-      "name": "username",
-      "in": "path",
-      "required": true,
-      "description": "The person's username",
-      "type": "string"
-    },
     "pageSize": {
       "name": "pageSize",
       "in": "query",
-      "description": "Number of persons returned",
+      "description": "Number of records returned",
       "type": "integer",
       "format": "int32",
-      "minimum": 0,
-      "exclusiveMinimum": true,
-      "maximum": 100,
-      "exclusiveMaximum": false,
-      "multipleOf": 10,
-      "default": 20
+      "minimum": 1,
+      "default": 1
     },
     "pageNumber": {
       "name": "pageNumber",
@@ -1069,54 +456,12 @@
       "type": "integer",
       "default": 1
     },
-    "includeNonVerifiedUsers": {
-      "name": "includeNonVerifiedUsers",
+    "format": {
+      "name": "format",
       "in": "query",
-      "description": "Result will not include non verified user by default if this parameter is not provided",
-      "type": "boolean",
-      "default": false,
-      "allowEmptyValue": true
-    },
-    "sortPersons": {
-      "name": "sort",
-      "in": "query",
-      "description": "Result will be sorted by lastTimeOnline descending and username ascending by default if this parameter is not provided",
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "maxItems": 3,
-      "collectionFormat": "pipes",
-      "items": {
-        "type": "string",
-        "pattern": "[-+](username|lastTimeOnline|firstname|lastname)"
-      },
-      "default": [
-        "-lastTimeOnline",
-        "+username"
-      ]
-    },
-    "filterItemTypes": {
-      "name": "itemType",
-      "in": "query",
-      "description": "Filter collected items on their type",
-      "type": "array",
-      "collectionFormat": "multi",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "enum": [
-          "AudioCassette",
-          "Vinyl",
-          "VHS"
-        ]
-      }
-    },
-    "userAgent": {
-      "name": "User-Agent",
-      "description": "All API consumers MUST provide a user agent",
+      "description": "Output format xml or json",
       "type": "string",
-      "in": "header",
-      "required": true
+      "default": "json"
     }
   }
 }

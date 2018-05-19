@@ -32,8 +32,8 @@ paths:
 definitions:
   $ref: definitions.yaml
 
-responses:
-  $ref: responses.yaml
+#responses:
+#  $ref: responses.yaml
 
 parameters:
   $ref: parameters.yaml
