@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/katalog.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <style>
@@ -40,18 +41,18 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="/">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#">Eksempler</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="#">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">Brugervejledning</a>
             </li>
           </ul>
         </div>
@@ -62,15 +63,190 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-          <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-          <ul class="list-unstyled">
-            <li>Bootstrap 4.1.1</li>
-            <li>jQuery 3.3.1</li>
-          </ul>
+          <h1 class="mt-5">Person- og Virksomhedsdata</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card bg-light mb-3">
+            <div class="card-header"><a href="http://www.cpr.dk" class="card-link">CPR - Det Centrale Personregister</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængelig</span></div>
+              <p class="card-text">Indgået aftale med CPR om anvendelse af data er påkrævet</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">3.2</span></a>
+
+              <a href="cprdoc.html" class="btn btn-primary">REST</a>
+              <a href="yaml/dafcpr.yaml" class="btn btn-primary">YAML</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card bg-light mb-3">
+            <div class="card-header"><a href="http://www.cvr.dk" class="card-link">CVR - Det Centrale Virkomshedsregister</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængelig</span></div>
+              <p class="card-text">Indgået aftale med CVR om anvendelse af data er påkrævet</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">1.9.3</span></a>
+
+              <a href="cvr.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Adressedata</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.dar.dk" class="card-link">DAR - Danmarks Adresseregister</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængelig</span></div>
+              <p class="card-text">Frie data</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">2.3.3</span></a>
+              <a href="dar.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">DAGI - Danmarks Administrative Inddelinger</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængelig</span></div>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">2.3.3</span></a>
+              <a href="dagi.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">DS - Danske Stednavne</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængelig</span></div>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="dagi.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Ejendomsdata</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+          <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">MU - Matriklens Udvidelse</a></div>
+            <div class="card-body">
+              <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
+              <p class="card-text">Data om ejendomme, ejerlejligheder og jord</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="mu.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">BBR - Bygning- og Boligsregisteree</a></div>
+            <div class="card-body">
+              <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
+              <h5 class="card-title">BBR</h5>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="mu.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">EBR - Ejendomsbeliggenhedsregisteret</a></div>
+            <div class="card-body">
+              <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
+              <h5 class="card-title">EBR</h5>
+              <p class="card-text">Ejendomsbeliggenhedsregisteret.</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="mu.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">EJF - Ejerfortegnelse</a></div>
+            <div class="card-body">
+              <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
+              <h5 class="card-title">EJF</h5>
+              <p class="card-text">Ejerfortegnelse.</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="mu.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">VUR - Vurderingsregisteret</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængeligt</span></div>
+              <h5 class="card-title">VUR</h5>
+              <p class="card-text">Ejendomsvurderinger.</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="mu.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Kort</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">GeoDK - GeoDanmark</a></div>
+            <div class="card-body">
+              <div class="ribbon"><span>Tilgængeligt</span></div>
+              <h5 class="card-title">GeoDK</h5>
+              <p class="card-text">GeoDanmark</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <a href="mu.html" class="btn btn-primary">REST</a>
+              <a href="#" class="btn btn-primary">Hændelser</a>
+              <a href="#" class="btn btn-primary">Filudtræk</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.min.js"></script>
