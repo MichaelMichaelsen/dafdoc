@@ -1,0 +1,12 @@
+{
+	"Haendelse": {
+		"Telefonnummer": {											/* EAID_B763AF45_B8D7_43bf_AB03_1821B4B72EB6 */
+			"Vaerdi": "Load(Vaerdi)",								/* EAID_919D52EB_48CF_43f6_BD3E_039591C911C0 */
+			"VirkningFra": "Load(VirkningFra)",						/* EAID_506D81DD_586A_4c48_9FC2_231DA2969A8C */
+			"VirkningTil": "Load(VirkningTil)",						/* EAID_27B49B3E_E7D6_4c0d_B152_85672961278B */
+			"CVREnhedsId": "Load(CVREnhedsId)"						/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 */
+			"Forretningshaendelse":"Load(Feltliste)",				
+			"Status": "Constant(aktiv)"								/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D */
+		}
+	}
+}

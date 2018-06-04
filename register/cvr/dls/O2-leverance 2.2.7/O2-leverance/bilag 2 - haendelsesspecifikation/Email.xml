@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Haendelse>
+	<Email> 																	<!-- EAID_C2553530_332D_4c04_AC80_3323354E58F1 -->
+		<Vaerdi>Load(Vaerdi)</Vaerdi> 											<!-- EAID_467853F2_F8CD_4a96_8C5F_1D08716ED7BD -->
+		<VirkningFra>Load(VirkningFra)</VirkningFra> 							<!-- EAID_62C46240_23A7_4124_B5C0_0FEB79301060 -->
+		<VirkningTil>Load(VirkningTil)</VirkningTil> 							<!-- EAID_0B99FA9E_5181_4dd5_8D45_41B73E60C43A -->
+		<CVREnhedsId>Load(CVREnhedsId)</CVREnhedsId> 							<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 -->
+		<Forretningshaendelse>Load(Feltliste)</Forretningshaendelse> 
+		<Status>Constant(aktiv)</Status> 										<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D -->
+	</Email>
+</Haendelse>

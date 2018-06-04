@@ -1,0 +1,12 @@
+{
+	"Haendelse": {
+		"Adressering": {						/* EAID_14E15FA5_89BE_476e_B18A_0D530D6AB00F */
+			"Adresse": "Load(Adresse)",			/* EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7 */
+			"VirkningFra": "Load(VirkningFra)", /* EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A */
+			"VirkningTil": "Load(VirkningTil)", /* EAID_34C532BE_8E39_4665_9824_D89366AF07F2 */
+			"CVREnhedsId": "Load(CVREnhedsId)",  /* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 */
+			"Forretningshaendelse":"Load(Feltliste)", 
+			"Status": "Constant(aktiv)"		/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D */
+		}
+	}
+}

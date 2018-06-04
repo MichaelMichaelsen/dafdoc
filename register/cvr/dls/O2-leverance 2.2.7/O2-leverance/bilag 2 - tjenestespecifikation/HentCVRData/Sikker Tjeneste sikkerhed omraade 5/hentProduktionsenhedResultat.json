@@ -1,0 +1,645 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "metadata": {
+      "$ref": "definitioner.json#/metadatatype"
+  }
+
+  "title": "hentProduktionsenhedResultat",
+
+  "type": "object",
+  "description": "Alle registrede offentlige informationer om produktionsenheden i Datafordeleren",
+  "properties": {
+    "produktionsenhed": {
+      "type": "object",
+      "properties": {
+        "CVREnhedsId": {
+          "type": "string",
+          "description": "EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+        },
+        "pNummer": {
+          "type": "integer",
+          "description": "EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F"
+        },
+        "tilknyttetVirksomhedsCVRNummer": {
+          "type": "integer",
+          "description": "EAID_BB3056B8_3494_47bf_99AF_F5C00976AB92"
+        },
+        "produktionsenhedStartdato": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_B75D9F82_CBBC_4a25_B0D3_C14B61539146"
+        },
+        "produktionsenhedOphoersdato": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_29A66810_5425_47f7_A4FA_D91648AC1389"
+        },
+        "tilknyttetTilVirksomhedStartdato": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_4CBC370B_8388_48f4_96B7_1B76D3EEBDED"
+        },
+        "tilknyttetTilVirksomhedOphoersdato": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_3D1B8ED0_5BB9_4928_BEAC_5449F047A9F2"
+        },
+        "status": {
+          "type": "string",
+          "description": "EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D",
+          "enum": [
+            "aktiv",
+            "inaktiv"
+          ]
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8"
+        },
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "produktionsenhedsnavn": {
+      "type": "object",
+      "description": "EAID_049CB9E9_F315_4be4_95C9_FDE2BFC6A20C",
+      "properties": {
+        "vaerdi": {
+          "type": "string",
+          "description": "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_B75AFE21_DCF2_4535_A9E0_A161DAB68ECB"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_48C888ED_DA98_4703_B40B_6EB97389C577"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_F26BF571_3B37_49a3_8D3A_D023BB50F8A0"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_E61C631F_BCB4_4e4e_BE53_EEA8C29D2DB0"
+        },        
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "beliggenhedsadresse": {
+      "type": "object",
+      "description": "EAID_FF2F21EC_1140_4cc7_B178_C5DE10D1EE78",
+      "properties": {
+        "Adresse": {
+          "type": "string",
+          "description": "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+        },
+        "CVRAdresse_vejkode": {
+          "type": "string",
+          "description": "EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+        },
+        "CVRAdresse_husnummer": {
+          "type": "string",
+          "description": "EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+        },
+        "CVRAdresse_etagebetegnelse": {
+          "type": "string",
+          "description": "EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+        },
+        "CVRAdresse_doerbetegnelse": {
+          "type": "string",
+          "description": "EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+        },
+        "CVRAdresse_kommunekode": {
+          "type": "string",
+          "description": "EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+        },
+        "CVRAdresse_kommunenavn": {
+          "type": "string",
+          "description": "EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+        },
+        "CVRAdresse_postdistrikt": {
+          "type": "string",
+          "description": "EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+        },
+        "CVRAdresse_vejnavn": {
+          "type": "string",
+          "description": "EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+        },
+        "CVRAdresse_postnummer": {
+          "type": "string",
+          "description": "EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+        },
+        "CVRAdresse_supplerendeBynavn": {
+          "type": "string",
+          "description": "EAID_591A2633_FC34_4381_9532_43D88644B500"
+        },
+        "CVRAdresse_adresseFritekst": {
+          "type": "string",
+          "description": "EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+        },
+        "CVRAdresse_landekode": {
+          "type": "string",
+          "description": "EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+        },
+        "coNavn": {
+          "type": "string",
+          "description": "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+        },        
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "postadresse": {
+      "type": "object",
+      "description": "EAID_3F43D2B3_6891_4849_99B8_3475CB47A2E2",
+      "properties": {
+        "Adresse": {
+          "type": "string",
+          "description": "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+        },
+        "CVRAdresse_vejkode": {
+          "type": "string",
+          "description": "EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+        },
+        "CVRAdresse_husnummerFra": {
+          "type": "string",
+          "description": "EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+        },
+        "CVRAdresse_etagebetegnelse": {
+          "type": "string",
+          "description": "EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+        },
+        "CVRAdresse_doerbetegnelse": {
+          "type": "string",
+          "description": "EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+        },
+        "CVRAdresse_kommunekode": {
+          "type": "string",
+          "description": "EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+        },
+        "CVRAdresse_kommunenavn": {
+          "type": "string",
+          "description": "EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+        },
+        "CVRAdresse_postdistrikt": {
+          "type": "string",
+          "description": "EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+        },
+        "CVRAdresse_vejnavn": {
+          "type": "string",
+          "description": "EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+        },
+        "CVRAdresse_postnummer": {
+          "type": "string",
+          "description": "EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+        },
+        "CVRAdresse_supplerendeBynavn": {
+          "type": "string",
+          "description": "EAID_591A2633_FC34_4381_9532_43D88644B500"
+        },
+        "CVRAdresse_adresseFritekst": {
+          "type": "string",
+          "description": "EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+        },
+        "CVRAdresse_landekode": {
+          "type": "string",
+          "description": "EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+        },
+        "coNavn": {
+          "type": "string",
+          "description": "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+        },        
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "reklamebeskyttet": {
+      "type": "object",
+      "description": "EAID_F2A643F4_61DC_4b33_B8E4_03D4F90C0108",
+      "properties": {
+        "vaerdi": {
+          "type": "boolean",
+          "description": "EAID_657F68FA_4810_48dc_B118_59191B6F874B"
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_B1D475AB_A211_4cff_8EC9_39DD87EEC97B"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_04D10665_C1E5_4631_9E49_20EC0607F2A7"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_4B5D9B6C_D91F_44bc_BBFF_1A5F06398F6D"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_589A0DD0_7BEB_4a7f_BD79_3A054A00BDF4"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_750AE06E_B65D_4440_A37D_E9C386AB1E69"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_3A9847FC_7BB1_474b_9755_19CD9F980B4A"
+        },
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "telefonnummer": {
+      "type": "object",
+      "description": "EAID_7D42A105_C730_4125_97C8_BBE1AD20A6D7",
+      "properties": {
+        "vaerdi": {
+          "type": "string",
+          "description": "EAID_919D52EB_48CF_43f6_BD3E_039591C911C0"
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_E54E8CD8_A854_4d19_8AC1_1BD27133FC28"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_E1205164_D1EA_45e6_9117_3E7186C0ADB0"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_34BF3D5D_BABA_4dda_8756_7448D204057D"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_506D81DD_586A_4c48_9FC2_231DA2969A8C"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_27B49B3E_E7D6_4c0d_B152_85672961278B"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_F5F57E32_9A62_4845_8FDF_EFC181CB9961"
+        },        
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "e-mailadresse": {
+      "type": "object",
+      "description": "EAID_CBFCD307_41F2_4bdf_8FCD_9F0DA7734E25",
+      "properties": {
+        "vaerdi": {
+          "type": "string",
+          "description": "EAID_467853F2_F8CD_4a96_8C5F_1D08716ED7BD"
+        },
+        "registreringFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_5F07A04B_B338_4310_A147_C00FF0C8D8D0"
+        },
+        "registreringTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_18095E28_D511_486a_9BA8_F95E68ED7CA8"
+        },
+        "registreringsaktoer": {
+          "type": "string",
+          "description": "EAID_5C9874CE_00B0_4b13_B112_3A38B1BAA1B5"
+        },
+        "virkningFra": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_62C46240_23A7_4124_B5C0_0FEB79301060"
+        },
+        "virkningTil": {
+          "type": "string",
+          "format": "date-time",
+          "description": "EAID_0B99FA9E_5181_4dd5_8D45_41B73E60C43A"
+        },
+        "virkningsaktoer": {
+          "type": "string",
+          "description": "EAID_15ACD2D7_A8A1_44a6_98AB_ACF47CE531D4"
+        },        
+        "metadata": { "$ref": "#/definitioner/metadatatype" }
+      }
+    },
+    "brancher": {
+      "type": "object",
+      "properties": {
+        "hovedbranche": {
+          "type": "object",
+          "description": "EAID_64222C48_19F7_4bcd_9370_FFDC981B1FE7",
+          "properties": {
+            "branchekode": {
+              "type": "string",
+              "description": "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            },
+            "branchekodeTekst": {
+              "type": "string",
+              "description": "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            },
+            "registreringFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            },
+            "registreringTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            },
+            "registreringsaktoer": {
+              "type": "string",
+              "description": "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            },
+            "virkningFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            },
+            "virkningTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            },
+            "virkningsaktoer": {
+              "type": "string",
+              "description": "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            },            
+            "metadata": { "$ref": "#/definitioner/metadatatype" }
+          }
+        },
+        "bibranche1": {
+          "type": "object",
+          "description": "EAID_F7E31A6A_C4E7_4e0c_AB6B_6225B68C792B",
+          "properties": {
+            "branchekode": {
+              "type": "string",
+              "description": "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            },
+            "branchekodeTekst": {
+              "type": "string",
+              "description": "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            },
+            "registreringFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            },
+            "registreringTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            },
+            "registreringsaktoer": {
+              "type": "string",
+              "description": "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            },
+            "virkningFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            },
+            "virkningTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            },
+            "virkningsaktoer": {
+              "type": "string",
+              "description": "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            },            
+            "metadata": { "$ref": "#/definitioner/metadatatype" }
+          }
+        },
+        "bibranche2": {
+          "type": "object",
+          "description": "EAID_FA9EBC1C_3B38_4243_B095_E248595EDF11",
+          "properties": {
+            "branchekode": {
+              "type": "string",
+              "description": "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            },
+            "branchekodeTekst": {
+              "type": "string",
+              "description": "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            },
+            "registreringFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            },
+            "registreringTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            },
+            "registreringsaktoer": {
+              "type": "string",
+              "description": "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            },
+            "virkningFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            },
+            "virkningTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            },
+            "virkningsaktoer": {
+              "type": "string",
+              "description": "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            },            
+            "metadata": { "$ref": "#/definitioner/metadatatype" }
+          }
+        },
+        "bibranche3": {
+          "type": "object",
+          "description": "EAID_6F9170B8_E249_4561_A83E_F724B30FF753",
+          "properties": {
+            "branchekode": {
+              "type": "string",
+              "description": "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            },
+            "branchekodeTekst": {
+              "type": "string",
+              "description": "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            },
+            "registreringFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            },
+            "registreringTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            },
+            "registreringsaktoer": {
+              "type": "string",
+              "description": "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            },
+            "virkningFra": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            },
+            "virkningTil": {
+              "type": "string",
+              "format": "date-time",
+              "description": "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            },
+            "virkningsaktoer": {
+              "type": "string",
+              "description": "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            },            
+            "metadata": { "$ref": "#/definitioner/metadatatype" }
+          }
+        }
+      }
+    },
+    "beskaeftigelse": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "beskaeftigelsestalstype": {
+            "type": "string",
+            "description": "EAID_615A3687_95BD_44b6_B7D9_57A33158B1C5",
+            "enum": [
+              "AarsbeskaeftigelseAntalAarsvaerkInterval",
+              "AarsbeskaeftigelseAntalAnsatteInterval",
+              "AarsbeskaeftigelseAntalAnsatteInklusivEjereInterval",
+              "KvartalsbeskaeftigelseAntalAarsvaerkInterval",
+              "KvartalsbeskaeftigelseAntalAnsatteInterval"
+            ]
+          },
+          "datoFra": {
+            "type": "string",
+            "format": "date-time",
+            "description": "EAID_99EF563E_3F02_4d5a_9A2A_3003CE18D923"
+          },
+          "datoTil": {
+            "type": "string",
+            "format": "date-time",
+            "description": "EAID_EF0FE2DD_6247_4029_BD6A_697A4232F067"
+          },
+          "intervalFra": {
+            "type": "integer",
+            "description": "EAID_A60073D0_6F28_45d4_A749_94661DD8F195"
+          },
+          "intervalTil": {
+            "type": "integer",
+            "description": "EAID_763C4D43_876B_47cf_B8CE_5A66E9975C0A"
+          },
+          "registreringsdato": {
+            "type": "string",
+            "format": "date-time",
+            "description": "EAID_156CDEBF_68E1_4598_9DA3_478805387029"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "metadata": {
+    "$ref": "definitioner.json#/metadatatype"
+  }  
+
+  "title": "soegVirksomhedSummariskResultat",
+
+  "type": "array",
+  "items": {
+    "type": "object",
+    "description": "Liste af soegeresultater med basale oplysninger om de matchende virksomheder EAID_AC14E4B3_B0EC_4580_B60D_B5BB30651F09",
+    "properties": {
+      "CVRNummer": {
+        "type": "integer",
+        "description": "EAID_564C37C6_7647_4f64_9116_5B273C30D955"
+      },
+      "virksomhedStartdato": {
+        "type": "string",
+        "format": "date-time",
+        "description": "EAID_0315F5E1_1610_44da_83F8_6BFE523C3B3C"
+      },
+      "virksomhedsnavn": {
+        "type": "object",
+        "description": "EAID_AE8C2560_67DF_41e3_98D3_AD8500846E9B",
+        "properties": {
+          "vaerdi": {
+            "type": "string",
+            "description": "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+          },
+          "virkningFra": {
+            "type": "string",
+            "format": "date-time",
+            "description": "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+          },
+          "virkningTil": {
+            "type": "string",
+            "format": "date-time",
+            "description": "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+          }
+        }
+      }
+    }
+  }
+}

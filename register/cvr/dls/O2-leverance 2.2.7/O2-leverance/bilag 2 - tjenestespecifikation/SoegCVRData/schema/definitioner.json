@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+   "metadatatype": {
+      "type": "object",
+      "properties": {
+        "datafordelerOpdateringstid": {
+           "type": "string",
+           "format": "date-time",
+           "description": "UpdateTimestamp()"
+        }
+      }
+   }
+}

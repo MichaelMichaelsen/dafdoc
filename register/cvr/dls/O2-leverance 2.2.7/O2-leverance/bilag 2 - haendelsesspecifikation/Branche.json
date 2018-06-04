@@ -1,0 +1,14 @@
+{
+	"Haendelse": {
+		"Branche": {												/* EAID_E5B1DBF5_1989_40bf_859B_226351B73841 */
+			"Sekvens": "Load(sekvens)",
+			"Vaerdi": "Load(Vaerdi)",								/* EAID_FC4113D3_4B87_416b_8710_F03B76018886 */
+			"VaerdiTekst": "Load(vaerdiTekst)",						/* EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F */
+			"VirkningFra": "Load(VirkningFra)",						/* EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681 */
+			"VirkningTil": "Load(VirkningTil)",						/* EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3 */
+			"CVREnhedsId": "Load(CVREnhedsId)"						/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 */
+			"Forretningshaendelse":"Load(Feltliste)",
+			"Status": "Constant(aktiv)"								/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D */
+		}
+	}
+}

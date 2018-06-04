@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+
+	"metadata": {
+	    "$ref": "definitioner.json#/metadatatype"
+	},
+
+	"title": "hentCVREnhedResultat",
+	"type": "object",
+	"description": "Basis Information for en CVREnhed",
+	"properties": {
+		"enhed": {
+			"type": "object",
+			"description": "CVREnhedType EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243",
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+				},
+				"status": {
+					"type": "string",
+					"description": "EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D"
+				},
+				"forretningsnoegleType": {
+					"type": "string",
+					"description": "PNummer, CVRNummer eller CVREnhedsid"
+				},
+				"forretningsnoegle": {
+					"type": "string",
+					"description": "Noeglensvaerdi"
+				},
+				"enhedsType": {
+					"type": "string",
+					"description": "Virksomhed, Produktionsenhed, CVRPerson eller AndreDeltagere"
+				}
+			}
+		}
+	}
+}

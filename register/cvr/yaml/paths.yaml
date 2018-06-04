@@ -1,47 +1,34 @@
-/adresse:
+/HentCVRData/1/rest/hentVirksomhedMedCVRNummer:
   get:
-    summary: Søg en adresse
-    description: |
-      Her udstilles **Adresse(r)** og tilknytningerne til **NavngivenVej**, **Husnummer** og **Grunddataregister** (BBR)
-      (**Enhed** samt **Bygning** (hvis Adressen er beliggende i anden Bygning).
-
+    summary: Returnerer virksomhed for det angivne CVR-nummer.
     tags:
-      - Adresse
+      - HentCVRData
+    description: |
+      Hent oplysninger om en virksomhed for det angivne CVR-nummer.
+      Endvidere kan virkningstid og registreringstid angives
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Normal
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
     parameters:
-      - $ref: '#/parameters/Id'
-      - $ref: '#/parameters/VirkningFra'
-      - $ref: '#/parameters/VirkningTil'
-      - $ref: '#/parameters/Virkningsaktoer'
-      - $ref: '#/parameters/RegistreringFra'
-      - $ref: '#/parameters/RegistreringTil'
-      - $ref: '#/parameters/Status'
-      - $ref: '#/parameters/Forretningsproces'
-      - $ref: '#/parameters/Forretningsomraade'
-      - $ref: '#/parameters/Forretningshaendelse'
-      - $ref: '#/parameters/MedDybde'
-      - $ref: '#/parameters/DAFTimestampFra'
-      - $ref: '#/parameters/DAFTimestampTil'
-      - $ref: '#/parameters/Husnummer'
-      - $ref: '#/parameters/Bygning'
-      - $ref: '#/parameters/NavngivenVej'
-      - $ref: '#/parameters/Kommunekode'
-      - $ref: '#/parameters/Vejkode'
-      - $ref: '#/parameters/Nord'
-      - $ref: '#/parameters/Syd'
-      - $ref: '#/parameters/Oest'
-      - $ref: '#/parameters/Vest'
-      - $ref: '#/parameters/pageSize'
-      - $ref: '#/parameters/pageNumber'
-      - $ref: '#/parameters/format'
-      - $ref: '#/parameters/count'
+      - $ref: '#/parameters/pCVRNummer'
+      - $ref: '#/parameters/pInkluderBeskaeftigelse'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+
     produces:
       - application/json
-      - applicaiton/xml
+      - application/xml
     responses:
       '200':
-        description: En liste af kommuner
+        description: En virksomhed
         schema:
-          $ref: '#/definitions/Adresse'
+          $ref: '#/definitions/hentVirksomhedResultat'
       '204':
         description: |
           **No Content**. The server successfully processed the request and is not returning any content.
@@ -57,54 +44,36 @@
       '500':
         description: |
           **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
-
-/husnummer:
+/HentCVRData/1/rest/hentProduktionsenhedMedPNummer:
   get:
-    summary: Søg et husnummer
+    summary: Returnerer produktionsenhed for det angivne p-nummer
+    tags:
+      - HentCVRData
     description: |
-      Søg et Husnummer
-    tags:
-      - Adresse
+      REST metoden returnerer produktionsenhed for det angivne p-nummer.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Normal
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
     parameters:
-      - $ref: '#/parameters/Id'
-      - $ref: '#/parameters/VirkningFra'
-      - $ref: '#/parameters/VirkningTil'
-      - $ref: '#/parameters/Virkningsaktoer'
-      - $ref: '#/parameters/RegistreringFra'
-      - $ref: '#/parameters/RegistreringTil'
-      - $ref: '#/parameters/Status'
-      - $ref: '#/parameters/Forretningsproces'
-      - $ref: '#/parameters/Forretningsomraade'
-      - $ref: '#/parameters/Forretningshaendelse'
-      - $ref: '#/parameters/MedDybde'
-      - $ref: '#/parameters/DAFTimestampFra'
-      - $ref: '#/parameters/DAFTimestampTil'
-      - $ref: '#/parameters/AdgangTilBygning'
-      - $ref: '#/parameters/AdgangTilTekniskAnlaeg'
-      - $ref: '#/parameters/Grund'
-      - $ref: '#/parameters/NavngivenVej'
-      - $ref: '#/parameters/Adresse'
-      - $ref: '#/parameters/Postnr'
-      - $ref: '#/parameters/Postnummerinddeling'
-      - $ref: '#/parameters/Afstemningsomraade'
-      - $ref: '#/parameters/Sogneinddeling'
-      - $ref: '#/parameters/Kommuneinddeling'
-      - $ref: '#/parameters/Menighedsraadsafstemningsomraade'
-      - $ref: '#/parameters/Vejmidte'
-      - $ref: '#/parameters/GeoDanmarkBygning'
-      - $ref: '#/parameters/Nord'
-      - $ref: '#/parameters/Syd'
-      - $ref: '#/parameters/Oest'
-      - $ref: '#/parameters/Vest'
-      - $ref: '#/parameters/pageSize'
-      - $ref: '#/parameters/pageNumber'
-      - $ref: '#/parameters/format'
-      - $ref: '#/parameters/count'
+      - $ref: '#/parameters/pPNummer'
+      - $ref: '#/parameters/pInkluderBeskaeftigelse'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+    produces:
+      - application/json
+      - application/xml
     responses:
       '200':
-        description: En liste af Husnumre
+        description: En produktionsenhed
         schema:
-          $ref: '#/definitions/Husnummer'
+          $ref: '#/definitions/hentProduktionsenhedResultat'
       '204':
         description: |
           **No Content**. The server successfully processed the request and is not returning any content.
@@ -120,45 +89,35 @@
       '500':
         description: |
           **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
-
-/navngivenvejkommunedel:
+/HentCVRData/1/rest/hentAndredeltagereMedCVREnhedsid:
   get:
-    summary: Hent navngiven vej  kommunedel
+    summary: Returnerer andre deltagere for det angivne CVREnhedsId
+    tags:
+      - HentCVRData
     description: |
-      Hent navngiven vej kommunedel
-    tags:
-      - Adresse
+      REST metoden returnerer andre deltagere fordet angivne CVREnhedsId.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Simpel
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
     parameters:
-      - $ref: '#/parameters/Id'
-      - $ref: '#/parameters/VirkningFra'
-      - $ref: '#/parameters/VirkningTil'
-      - $ref: '#/parameters/Virkningsaktoer'
-      - $ref: '#/parameters/RegistreringFra'
-      - $ref: '#/parameters/RegistreringTil'
-      - $ref: '#/parameters/Registreringsaktoer'
-      - $ref: '#/parameters/Status'
-      - $ref: '#/parameters/Forretningsproces'
-      - $ref: '#/parameters/Forretningsomraade'
-      - $ref: '#/parameters/Forretningshaendelse'
-      - $ref: '#/parameters/MedDybde'
-      - $ref: '#/parameters/DAFTimestampFra'
-      - $ref: '#/parameters/DAFTimestampTil'
-      - $ref: '#/parameters/Kommunekode'
-      - $ref: '#/parameters/NavngivenVej'
-      - $ref: '#/parameters/Vejkode'
-      - $ref: '#/parameters/Husnummer'
-      - $ref: '#/parameters/SupplerendeBynavnDAR'
-      - $ref: '#/parameters/SupplerendeBynavnDAGI'
-      - $ref: '#/parameters/Postnummer'
-      - $ref: '#/parameters/Postnummerinddeling'
-      - $ref: '#/parameters/Adresse'
-      - $ref: '#/parameters/format'
-      - $ref: '#/parameters/count'
+      - $ref: '#/parameters/pId'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+    produces:
+      - application/json
+      - application/xml
     responses:
       '200':
-        description: En liste af NavngivenVejKommunedel
+        description: En virksomhed
         schema:
-          $ref: '#/definitions/NavngivenVejKommunedel'
+          $ref: '#/definitions/hentAndreDeltagereMedIdResultat'
       '204':
         description: |
           **No Content**. The server successfully processed the request and is not returning any content.
@@ -173,255 +132,37 @@
           **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
       '500':
         description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
-
-/navngivenvej:
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/HentCVRData/1/rest/hentProduktionsenhedMedCVREnhedsid:
   get:
-    summary: Hent navngiven vej
+    summary: Produktionsenhed for et p-nummer.
+    tags:
+      - HentCVRData
     description: |
-      Hent navngiven vej
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/Id'
-      - $ref: '#/parameters/VirkningFra'
-      - $ref: '#/parameters/VirkningTil'
-      - $ref: '#/parameters/Virkningsaktoer'
-      - $ref: '#/parameters/RegistreringFra'
-      - $ref: '#/parameters/RegistreringTil'
-      - $ref: '#/parameters/Status'
-      - $ref: '#/parameters/Forretningsproces'
-      - $ref: '#/parameters/Forretningsomraade'
-      - $ref: '#/parameters/Forretningshaendelse'
-      - $ref: '#/parameters/MedDybde'
-      - $ref: '#/parameters/DAFTimestampFra'
-      - $ref: '#/parameters/DAFTimestampTil'
-      - $ref: '#/parameters/SupplerendeBynavnDAGI'
-      - $ref: '#/parameters/Navn'
-      - $ref: '#/parameters/format'
-      - $ref: '#/parameters/count'
-    responses:
-      '200':
-        description: En liste af NavngivenVej
-        schema:
-          $ref: '#/definitions/NavngivenVej'
-      '204':
-        description: |
-          **No Content**. The server successfully processed the request and is not returning any content.
-      '400':
-        description: |
-          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
-      '401':
-        description: |
-          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-      '403':
-        description: |
-          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
-      '500':
-        description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+      REST metoden returnerer produktionsenhed for et givet p-nummer.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
 
-/postnummer:
-  get:
-    summary:  Hent postnummer
-    description:  Hent postnummer
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/Id'
-      - $ref: '#/parameters/VirkningFra'
-      - $ref: '#/parameters/VirkningTil'
-      - $ref: '#/parameters/Virkningsaktoer'
-      - $ref: '#/parameters/RegistreringFra'
-      - $ref: '#/parameters/RegistreringTil'
-      - $ref: '#/parameters/Status'
-      - $ref: '#/parameters/Forretningsproces'
-      - $ref: '#/parameters/Forretningsomraade'
-      - $ref: '#/parameters/Forretningshaendelse'
-      - $ref: '#/parameters/MedDybde'
-      - $ref: '#/parameters/DAFTimestampFra'
-      - $ref: '#/parameters/DAFTimestampTil'
-      - $ref: '#/parameters/Postnummerinddeling'
-      - $ref: '#/parameters/Postnr'
-      - $ref: '#/parameters/Navn'
-      - $ref: '#/parameters/count'
-    responses:
-      '200':
-        description: En liste af postnumre
-        schema:
-          $ref: '#/definitions/Postnummer'
-      '204':
-        description: |
-          **No Content**. The server successfully processed the request and is not returning any content.
-      '400':
-        description: |
-          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
-      '401':
-        description: |
-          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-      '403':
-        description: |
-          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
-      '500':
-        description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+      * Tjenestekategori: N/A
 
-/supplerendeBynavn:
-  get:
-    summary: Hent adresse baseret på supplerende supplerendeBynavn
-    description: Hent supplerende supplerendeBynavn
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/Id'
-      - $ref: '#/parameters/VirkningFra'
-      - $ref: '#/parameters/VirkningTil'
-      - $ref: '#/parameters/Virkningsaktoer'
-      - $ref: '#/parameters/RegistreringFra'
-      - $ref: '#/parameters/RegistreringTil'
-      - $ref: '#/parameters/Status'
-      - $ref: '#/parameters/Forretningsproces'
-      - $ref: '#/parameters/Forretningsomraade'
-      - $ref: '#/parameters/Forretningshaendelse'
-      - $ref: '#/parameters/MedDybde'
-      - $ref: '#/parameters/DAFTimestampFra'
-      - $ref: '#/parameters/DAFTimestampTil'
-      - $ref: '#/parameters/SupplerendeBynavnDAGI'
-      - $ref: '#/parameters/Navn'
-    responses:
-      '200':
-        description: En jordstykkeid for et givent husnummer
-        schema:
-          $ref: '#/definitions/SupplerendeBynavn'
-/husnummerTilAdresse:
-  get:
-    summary: Hent et jordstykkeid for en given adresse
-    description: Hent et jordstykkeid for en given adresse
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/husnummerId'
-    responses:
-      '200':
-        description: En liste af adresser
-        schema:
-          $ref: '#/definitions/husnummerTilAdresse'
-      '204':
-        description: |
-          **No Content**. The server successfully processed the request and is not returning any content.
-      '400':
-        description: |
-          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
-      '401':
-        description: |
-          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-      '403':
-        description: |
-          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
-      '500':
-        description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+      * SLA kategori: Normal
 
-/husnummerTilJordstykke:
-  get:
-    summary: Hent et jordstykkeid for et givet husnummer
-    description: Hent et jordstykkeid for et givet husnummer
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/husnummerId'
-    responses:
-      '200':
-        description: |
-          **OK**
-        schema:
-          $ref: '#/definitions/husnummerTilAdresse'
-      '204':
-        description: |
-          **No Content**. The server successfully processed the request and is not returning any content.
-      '400':
-        description: |
-          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
-      '401':
-        description: |
-          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-      '403':
-        description: |
-          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
-      '500':
-        description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
-/adresseTilHusnummer:
-  get:
-    summary: Hent en adresse for et givet husnummer
-    description: Hent en adresse for et givet husnummer
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/adresseId'
-    responses:
-      '200':
-        description: Husnummer
-        schema:
-          $ref: '#/definitions/adresseTilHusnummer'
-      '204':
-        description: |
-          **No Content**. The server successfully processed the request and is not returning any content.
-      '400':
-        description: |
-          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
-      '401':
-        description: |
-          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-      '403':
-        description: |
-          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
-      '500':
-        description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
 
-/husnummerTilTekniskAnlægBfe:
-  get:
-    summary: Hent et BFE nummer for en ejerlejlighed givet et husnummer id
-    description: Hent et BFE nummer for en ejerlejlighed givet et husnummer id
-    tags:
-      - Adresse
-    parameters:
-      - $ref: '#/parameters/husnummerId'
-    responses:
-      '200':
-        description: BFE
-        schema:
-          $ref: '#/definitions/husnummerTilTekniskAnlægBfe'
-      '204':
-        description: |
-          **No Content**. The server successfully processed the request and is not returning any content.
-      '400':
-        description: |
-          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
-      '401':
-        description: |
-          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-      '403':
-        description: |
-          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
-      '500':
-        description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
 
-/husnummerTilBygningBfe:
-  get:
-    summary: Hent et BFE nummer for en bygningd givet et husnummer id
-    description: Hent et BFE nummer for en bygningd givet et husnummer id
-    tags:
-      - Adresse
     parameters:
-      - $ref: '#/parameters/husnummerId'
+      - $ref: '#/parameters/pId'
+      - $ref: '#/parameters/pInkluderBeskaeftigelse'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+    produces:
+      - application/json
+      - application/xml
     responses:
       '200':
-        description: BFE
+        description: En virksomhed
         schema:
-          $ref: '#/definitions/husnummerTilTekniskAnlægBfe'
+          $ref: '#/definitions/hentVirksomhedResultat'
       '204':
         description: |
           **No Content**. The server successfully processed the request and is not returning any content.
@@ -436,21 +177,36 @@
           **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
       '500':
         description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/HentCVRData/1/rest/hentEnhedMedCVREnhedsid:
+  get:
+    summary: Find en CVREnhed for det angivne CVREnhedsId
+    tags:
+      - HentCVRData
+    description: |
+      REST metoden returnerer en CVREnhed for det angivne CVREnhedsId.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
 
-/adresseTilEnhedBfe:
-  get:
-    summary: Hent et BFE nummer for en given adresse
-    description: Hent et BFE nummer for en given adresse
-    tags:
-      - Adresse
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Normal
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
     parameters:
-      - $ref: '#/parameters/adresseId'
+      - $ref: '#/parameters/pId'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+    produces:
+      - application/json
+      - application/xml
     responses:
       '200':
-        description: BFE
+        description: En virksomhed
         schema:
-          $ref: '#/definitions/adresseTilEnhedBfe'
+          $ref: '#/definitions/hentCVREnhedResultat'
       '204':
         description: |
           **No Content**. The server successfully processed the request and is not returning any content.
@@ -465,4 +221,418 @@
           **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
       '500':
         description: |
-          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitabl
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/HentCVRData/1/rest/hentCVRPersonMedCVREnhedsid:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - HentCVRData
+    description: |
+      REST metoden returnerer en CVRPerson for det angivne CVREnhedsId.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Normal
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pId'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegVirksomhedMedAdresse:
+  get:
+    summary: Returnerer virksomheders CVR-numre og startdato
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer virksomheders CVR-numre og startdato for de virksomheder, som matcher søgekriterierne.
+      Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pAdresse'
+      - $ref: '#/parameters/pInkluderOphoerteVirksomheder'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegVirksomhedMedNavn:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer virksomheders CVR-numre og startdato for de virksomheder, som matcher søgekriterierne.
+      Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pNavn'
+      - $ref: '#/parameters/pInkluderOphoerteVirksomheder'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegVirksomhedMedBranche:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer virksomheders CVR-numre og startdato for de virksomheder, som matcher søgekriterierne. Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pBranche'
+      - $ref: '#/parameters/pInkluderOphoerteVirksomheder'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegVirksomhedMedStartdato:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer virksomheders CVR-numre og startdato for de virksomheder, som matcher søgekriterierne. Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pVirksomhedStartdato'
+      - $ref: '#/parameters/pInkluderOphoerteVirksomheder'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegProduktionsenhedMedNavn:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer produktionsenhedsnumre og startdato for de produktionsenheder, som matcher søgekriterierne. Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pNavn'
+      - $ref: '#/parameters/pInkluderOphoerteVirksomheder'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegProduktionsenhedMedAdresse:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer produktionsenhedsnumre og startdato for de produktionsenheder,
+      som matcher søgekriterierne. Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pAdresse'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegProduktionsenhedMedBranche:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer produktionsenhedsnumre og startdato for de produktionsenheder, som matcher søgekriterierne.
+      Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pBranche'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+/SoegCVRData/1/rest/soegProduktionsenhedMedStartdato:
+  get:
+    summary: Find en CVRPerson for det angivne CVREnhedsId
+    tags:
+      - SøgCVRData
+    description: |
+      REST metoden returnerer produktionsenhedsnumre og startdato for de produktionsenheder, som matcher søgekriterierne.
+      Søgekriterier er AND, dvs. alle kriterier skal være opfyldte for et match.
+      Endvidere kan virkningstid og registreringstid angives, hvis det ønskes.
+
+      * Tjenestekategori: N/A
+
+      * SLA kategori: Kompleks
+
+      * Sikkerhedszone: 5 - Indeholder fortrolige eller følsomme datafordeler
+
+      * Adgangsniveau: Indgået aftale med CVR om anvendelse af data påkrævet
+
+    parameters:
+      - $ref: '#/parameters/pStartdato'
+      - $ref: '#/parameters/pVirkningstid'
+      - $ref: '#/parameters/pRegistreringstid'
+      - $ref: '#/parameters/pSumariske'
+    produces:
+      - application/json
+      - application/xml
+    responses:
+      '200':
+        description: En produktionsenhed
+        schema:
+          $ref: '#/definitions/hentCVRPersonResultat'
+      '204':
+        description: |
+          **No Content**. The server successfully processed the request and is not returning any content.
+      '400':
+        description: |
+          **Bad Request**. The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).
+      '401':
+        description: |
+          **Unauthorized**. Authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
+      '403':
+        description: |
+          **Forbidden**. The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.
+      '500':
+        description: |
+          **Internal Server Error**. A generic error message, given when an unexpected condition was encountered and no more specific message is suitable

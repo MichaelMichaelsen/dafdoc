@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Haendelse>
+	<Virksomhedsform> 															<!-- EAID_4748C879_952D_4b5a_8167_53C1C95F2804 -->
+		<Vaerdi>Load(Vaerdi)</Vaerdi> 											<!-- EAID_8BAFCD1D_D2E4_4809_8899_2C5438FED36E -->
+		<VaerdiTekst>Load(vaerdiTekst)</VaerdiTekst> 							<!-- EAID_3D716CFF_B03C_415d_A1F9_A8CD5DEB8405 -->
+		<VirkningFra>Load(VirkningFra)</VirkningFra> 							<!-- EAID_5566FA05_631E_47c0_A33B_39622D4EA995 -->
+		<VirkningTil>Load(VirkningTil)</VirkningTil> 							<!-- EAID_FEDD37FC_6BA0_45b1_BD03_D0A261125279 -->
+		<CVREnhedsId>Load(CVREnhedsId)</CVREnhedsId> 							<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 -->
+		<Forretningshaendelse>Load(Feltliste)</Forretningshaendelse>
+		<Status>Constant(aktiv)</Status> 										<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D -->							
+	</Virksomhedsform>
+</Haendelse>

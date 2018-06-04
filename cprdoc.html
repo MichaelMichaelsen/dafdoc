@@ -38,7 +38,7 @@
     window.onload = function() {
       // Build a system
       const ui = SwaggerUIBundle({
-        url: "../yaml/dafcpr.yaml",
+        url: "http://www.grunddataprogrammet.dk/dafdoc/yaml/dafcpr.json",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
@@ -46,9 +46,9 @@
           SwaggerUIStandalonePreset
         ],
         plugins: [
-          SwaggerUIBundle.plugins.DownloadUrl
+
         ],
-        layout: "StandaloneLayout"
+        layout: "BaseLayout"
       })
       window.ui = ui
     }

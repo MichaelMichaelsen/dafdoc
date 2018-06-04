@@ -1,0 +1,13 @@
+{
+	"Haendelse": {
+		"AnsvarligDataleverandoer": {							/* EAID_C461E0AE_62DD_4289_8D69_C1257717B3E8 */
+			"Vaerdi": "Load(Vaerdi)",							/* EAID_BDA075C5_3B38_4256_AF2F_FA9D733A059D */
+			"VaerdiTekst": "Load(vaerdiTekst)",					/* EAID_663C6135_6A34_45b1_8388_3FD93C06A689 */
+			"VirkningFra": "Load(VirkningFra)",					/* EAID_9E9D9EF8_B343_4e5c_A5C2_180262642353 */
+			"VirkningTil": "Load(VirkningTil)",					/* EAID_B720C0DE_FF01_40ee_B491_D66F726B7962 */
+			"CVREnhedsId": "Load(CVREnhedsId)"					/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 */
+			"Forretningshaendelse":"Load(Feltliste)",
+			"Status": "Constant(aktiv)"							/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D */
+		}
+	}
+}

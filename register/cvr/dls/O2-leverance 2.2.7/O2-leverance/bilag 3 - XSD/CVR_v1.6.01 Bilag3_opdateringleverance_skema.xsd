@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 (http://www.altova.com) by Jakob Agersted Nielsen (ERHVERVSSTYRELSEN) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cvr="http://data.gov.dk/schemas/CVR/replikering" targetNamespace="http://data.gov.dk/schemas/CVR/replikering" elementFormDefault="qualified" version="1.0">
+	<xs:element name="CVREnhed" type="cvr:CVREnhedType"/>
+	<xs:element name="AndreDeltagere" type="cvr:AndreDeltagereType"/>
+	<xs:element name="CVRPerson" type="cvr:CVRPersonType"/>
+	<xs:element name="Produktionsenhed" type="cvr:ProduktionsenhedType"/>
+	<xs:element name="Virksomhed" type="cvr:VirksomhedType"/>
+	<xs:element name="e-mailadresse" type="cvr:e-mailadresseType"/>
+	<xs:element name="Adressering" type="cvr:AdresseringType"/>
+	<xs:element name="FuldtAnsvarligDeltagerRelation" type="cvr:FuldtAnsvarligDeltagerRelationType"/>
+	<xs:element name="Kreditoplysninger" type="cvr:KreditoplysningerType"/>
+	<xs:element name="Navn" type="cvr:NavnType"/>
+	<xs:element name="Reklamebeskyttelse" type="cvr:ReklamebeskyttelseType"/>
+	<xs:element name="Telefonnummer" type="cvr:TelefonnummerType"/>
+	<xs:element name="Virksomhedsform" type="cvr:VirksomhedsformType"/>
+	<xs:element name="AnsvarligDataleverandoer" type="cvr:AnsvarligDataleverandoerType"/>
+	<xs:element name="Beskaeftigelse" type="cvr:BeskaeftigelseType"/>
+	<xs:element name="Branche" type="cvr:BrancheType"/>
+	<xs:element name="Telefaxnummer" type="cvr:TelefaxnummerType"/>
+	<xs:complexType name="CVREnhedType">
+		<xs:annotation>
+			<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="enhedsType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="forretningsnoegletype" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Forretningsnoegletype for hovedobjekt </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="forretningsnoegle" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Forretningsnoegle for hovedobjekt </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AndreDeltagereType">
+		<xs:annotation>
+			<xs:appinfo>EAID_B4EB6CD9_B806_4b25_B615_84B303BDE25A</xs:appinfo>
+		</xs:annotation>		
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_AB0F6C9D_5A8D_451a_BFCF_2E57887EE2A5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CVRPersonType">
+		<xs:annotation>
+			<xs:appinfo>EAID_5C6BD321_CE56_4c41_B264_68018F30C361</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CPRPerson" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_8040D13A_F1D9_4e08_866B_71FB8F23064F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProduktionsenhedType">
+		<xs:annotation>
+			<xs:appinfo>EAID_7B57B46D_D857_4ec1_81B6_DCE8D393468C</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pNummer" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tilknyttetVirksomhedsCVRNummer" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_BB3056B8_3494_47bf_99AF_F5C00976AB92</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="produktionsenhedStartdato" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B75D9F82_CBBC_4a25_B0D3_C14B61539146</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="produktionsenhedOphoersdato" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_29A66810_5425_47f7_A4FA_D91648AC1389</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tilknyttetTilVirksomhedStartdato" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_4CBC370B_8388_48f4_96B7_1B76D3EEBDED</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="tilknyttetTilVirksomhedOphoersdato" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_3D1B8ED0_5BB9_4928_BEAC_5449F047A9F2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VirksomhedType">
+		<xs:annotation>
+			<xs:appinfo>EAID_AC14E4B3_B0EC_4580_B60D_B5BB30651F09</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRNummer" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_564C37C6_7647_4f64_9116_5B273C30D955</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virksomhedStartdato" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_0315F5E1_1610_44da_83F8_6BFE523C3B3C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virksomhedOphoersdato" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B0E64799_6723_4f31_A9A4_87CBFC0C3946</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EEAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.AID_3FDF04EF_9D4F_4367_8BDB_825672659BB8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="status" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="e-mailadresseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_C2553530_332D_4c04_AC80_3323354E58F1</xs:appinfo>
+		</xs:annotation>		
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_467853F2_F8CD_4a96_8C5F_1D08716ED7BD</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_5F07A04B_B338_4310_A147_C00FF0C8D8D0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_18095E28_D511_486a_9BA8_F95E68ED7CA8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_5C9874CE_00B0_4b13_B112_3A38B1BAA1B5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_62C46240_23A7_4124_B5C0_0FEB79301060</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_0B99FA9E_5181_4dd5_8D45_41B73E60C43A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_15ACD2D7_A8A1_44a6_98AB_ACF47CE531D4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AdresseringType">
+	<xs:annotation>
+		<xs:appinfo>EAID_14E15FA5_89BE_476e_B18A_0D530D6AB00F</xs:appinfo>
+	</xs:annotation>
+		<xs:sequence>
+			<xs:element name="AdresseringAnvendelse" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Angivelse af Adresseringsanvendelsestypen, fx Beliggenhedsadresse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Adresse" type="xs:string" nillable="true" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7</xs:appinfo>
+					<xs:documentation>DAR Adresse EAID_6043F4D9_C4CA_44d0_BE88_027166A8B008</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_vejkode" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_husnummerFra" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_etagebetegnelse" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_doerbetegnelse" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_kommunekode" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_kommunenavn" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_postdistrikt" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_vejnavn" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_husnummerTil" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_126ABFBD_6A02_4454_B5F9_3DCEECE7B620</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_postnummer" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>.EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_supplerendeBynavn" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_adresseFritekst" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CVRAdresse_landekode" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="coNavn" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3971D751_9D70_4733_BA65_1D5211D49394</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_34C532BE_8E39_4665_9824_D89366AF07F2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FuldtAnsvarligDeltagerRelationType">
+		<xs:annotation>
+			<xs:appinfo>EAID_2BD2D677_F932_48ab_9C30_2990CAF229BF</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="deltagendeEnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_64803AC1_B02E_4f9c_9C51_60EB37BC1E3B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_6F210E00_D4D0_4be2_9367_331E09E9ACCE</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_8B215277_BF36_4be6_825F_186CCF5DD550</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_33E9AEF5_67BF_4faf_91D8_7FE2D0AD671E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_4B0F3355_F908_4ffb_98B9_9AF6562BA419</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_3DA2AE8A_8C72_4d0a_91B9_CBFB1AE1079E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_829A5847_591A_4d9a_9CC7_5ED2A0E307D3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KreditoplysningerType">
+		<xs:annotation>
+			<xs:appinfo>EAID_AC59F262_DECD_4e8a_83A3_427DE8CE00CA</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="statusvaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_543F0D37_D980_4776_976B_773836DEE1BE</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="statusvaerdiTekst" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_2678203A_0DFF_453a_A90C_43AC6957ADE1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Kreditoplysning" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_9A0D6125_7E2D_424a_9A47_28BBA5B626A2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kreditoplysningstekst" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_BD66C378_897A_4302_8329_823260CC0B70</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_4D94DF53_8506_4dce_ACD4_FBB4EF942175</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_A2BF6A90_CBF7_478e_B4BC_7E615FC0C9B3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F1EDD945_B24E_4977_A9C0_17B6CFFC17D4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_AC4C76E7_26C4_4b4b_809E_70F376B1F0CF</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_3AFEB13F_B5CF_42c1_82D1_DCEAE23EA1F2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_0FFCB294_6044_43c3_A1B5_69EA51517479</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NavnType">
+		<xs:annotation>
+			<xs:appinfo>EAID_E80306A1_C877_4db4_B4EF_5E9C7A24D22E</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="sekvens" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Sekvens er en del af forretningsnoegle default vaerdi 0 andvent til fremtidssikkring</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B75AFE21_DCF2_4535_A9E0_A161DAB68ECB</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_48C888ED_DA98_4703_B40B_6EB97389C577</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F26BF571_3B37_49a3_8D3A_D023BB50F8A0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_E61C631F_BCB4_4e4e_BE53_EEA8C29D2DB0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReklamebeskyttelseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_9BB4C293_1018_4b5d_9131_F5E881D628C5</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:boolean" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_657F68FA_4810_48dc_B118_59191B6F874B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B1D475AB_A211_4cff_8EC9_39DD87EEC97B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_04D10665_C1E5_4631_9E49_20EC0607F2A7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_4B5D9B6C_D91F_44bc_BBFF_1A5F06398F6D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_589A0DD0_7BEB_4a7f_BD79_3A054A00BDF4</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_750AE06E_B65D_4440_A37D_E9C386AB1E69</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_3A9847FC_7BB1_474b_9755_19CD9F980B4A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TelefonnummerType">
+		<xs:annotation>
+			<xs:appinfo>EAID_B763AF45_B8D7_43bf_AB03_1821B4B72EB6</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_919D52EB_48CF_43f6_BD3E_039591C911C0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_E54E8CD8_A854_4d19_8AC1_1BD27133FC28</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_E1205164_D1EA_45e6_9117_3E7186C0ADB0</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_34BF3D5D_BABA_4dda_8756_7448D204057D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_506D81DD_586A_4c48_9FC2_231DA2969A8C</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_27B49B3E_E7D6_4c0d_B152_85672961278B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_F5F57E32_9A62_4845_8FDF_EFC181CB9961</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VirksomhedsformType">
+		<xs:annotation>
+			<xs:appinfo>EAID_4748C879_952D_4b5a_8167_53C1C95F2804</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_8BAFCD1D_D2E4_4809_8899_2C5438FED36E</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdiTekst" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_3D716CFF_B03C_415d_A1F9_A8CD5DEB8405</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_1AE222EE_57F3_4c1c_881B_06057CFFA1B1</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_32A45774_7DEF_4dba_9099_DD85E3B455E2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_50B964BC_365E_4ae9_8481_D63529FE959D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_5566FA05_631E_47c0_A33B_39622D4EA995</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_FEDD37FC_6BA0_45b1_BD03_D0A261125279</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_1A52BCCF_3D91_482e_A58C_CA444B2273CE</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AnsvarligDataleverandoerType">
+		<xs:annotation>
+			<xs:appinfo>EAID_C461E0AE_62DD_4289_8D69_C1257717B3E8</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_BDA075C5_3B38_4256_AF2F_FA9D733A059D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdiTekst" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_663C6135_6A34_45b1_8388_3FD93C06A689</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_FD9F8C3E_11CE_4161_9409_9E696228570B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_BBFA89B2_0849_48d0_9E7A_E353B1A24364</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_17A661ED_835F_47af_8A69_6695A90CEA65</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_9E9D9EF8_B343_4e5c_A5C2_180262642353</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B720C0DE_FF01_40ee_B491_D66F726B7962</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_1058188E_136C_4cfa_9344_9DE6DF490065</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BeskaeftigelseType">
+		<xs:annotation>
+			<xs:appinfo>EAID_BFBDC77F_6BC4_4c99_A786_7B6810FBA484</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_1BA6EC88_0D35_4b08_9BDD_A56CF488BEC5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="antal" type="xs:integer" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_76F72822_31C9_4092_A5F5_3E2353FB1C51</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="beskaeftigelsestalstype" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_615A3687_95BD_44b6_B7D9_57A33158B1C5</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="datoFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_99EF563E_3F02_4d5a_9A2A_3003CE18D923</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="datoTil" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_EF0FE2DD_6247_4029_BD6A_697A4232F067</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="intervalFra" type="xs:integer" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_A60073D0_6F28_45d4_A749_94661DD8F195</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="intervalTil" type="xs:integer" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_763C4D43_876B_47cf_B8CE_5A66E9975C0A</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsdato" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_156CDEBF_68E1_4598_9DA3_478805387029</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BrancheType">
+		<xs:annotation>
+			<xs:appinfo>EAID_E5B1DBF5_1989_40bf_859B_226351B73841</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sekvens" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_FC4113D3_4B87_416b_8710_F03B76018886</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdiTekst" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_0D5DD7C2_408F_4e85_A076_196CB858380D</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TelefaxnummerType">
+		<xs:annotation>
+			<xs:appinfo>EAID_5D3C09E6_9D77_439d_A566_FAC6268F48A0</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CVREnhedsId" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52</xs:appinfo>
+					<xs:documentation>CVREnhedsID'en som elementet tilhoerer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vaerdi" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_E425284B_3269_4ce5_AB08_E416D1CDEFB7</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringFra" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_8017C023_874F_48c9_9942_1888F47DB623</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringTil" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_7DF28FC8_27F4_4ed7_A607_2227A0BCD00F</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registreringsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_9CB11D01_48ED_458d_9373_08F59A6CF633</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningFra" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_42EFE03B_F02C_4142_8C81_A233871F83A2</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningTil" type="xs:date" nillable="true" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_59A402CF_A066_4709_BC83_8FEBCA84B084</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="virkningsaktoer" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:appinfo>EAID_1C7D5122_FD4E_490a_A3DE_4E239F52CA1B</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="feltliste" type="xs:string" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

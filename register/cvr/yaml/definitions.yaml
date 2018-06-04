@@ -1,1724 +1,1584 @@
-Adresse:
-  type: "array"
-  items:
-    description: "EAID_6043F4D9_C4CA_44d0_BE88_027166A8B008"
-    type: "object"
-    properties:
-      datafordelerOpdateringstid:
-        title: "datafordelerOpdateringstid"
-        type: "string"
-        description: "UpdateTimestamp()"
-        format: "date-time"
-      adressebetegnelse:
-        description: "EAID_BB398854_F92E_4372_A20A_D7136BB5CD9C"
-        type: "string"
-      bygning:
-        description: "EAID_dst4A2C09_8035_4ca8_8AA0_CBAAB89AF135"
-        type: "string"
-      dørbetegnelse:
-        description: "EAID_16B39B2F_0D4D_45ca_8164_8E1D78D202FC"
-        type: string
-      etagebetegnelse:
-        description: "EAID_805BB835_641D_49d5_93E6_80C8E3FFD91C"
-        type: string
-      forretningshændelse:
-        description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-        type: string
-      forretningsområde:
-        description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-        type: string
-      forretningsproces:
-        description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-        type: string
-      id_lokalId:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        type: string
-        example: "00002732-733c-433a-a5da-a7d428a980cf"
-      id_namespace:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-        type: string
-      registreringFra:
-        description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-        type: string
-        format: "date-time"
-      registreringsaktør:
-        description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-        type: string
-      registreringTil:
-        description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-        type: string
-        format: "date-time"
-      status:
-        description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-        type: string
-      virkningFra:
-        description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-        type: string
-        format: "date-time"
-      virkningsaktør:
-        description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-        type: string
-      virkningTil:
-        description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-        type: string
-        format: "date-time"
-      dørpunkt:
-        description: "EAID_00A7AF01_C512_4a85_ADB5_98FB15541948"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          oprindelse_kilde:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-            type: string
-          oprindelse_nøjagtighedsklasse:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-            type: string
-          oprindelse_registrering:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-            type: string
-            format: "date-time"
-          oprindelse_tekniskStandard:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-            type: string
-          position:
-            description: "EAID_4B062EDE_CE8C_414b_AB85_B5A1FD72AA78"
-            type: string
-      husnummer:
-        description: "EAID_D0A626FC_CCAE_4209_B2F6_AC919B74A528"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          adgangsadressebetegnelse:
-            description: "EAID_EDCC14FC_63ED_4ebe_8B52_3E406831A148"
-            type: string
-          adgangTilBygning:
-            description: "EAID_dst3E4349_6115_4191_AF4F_243CCE561C41"
-            type: string
-          adgangTilTekniskAnlæg:
-            description: "EAID_dst79A4C1_23B2_4c0c_85CC_60C6E2EA5AE0"
-            type: string
-          afstemningsområde:
-            description: "EAID_38545A1D_2A85_4020_A332_A0195A41310C"
-            type: "object"
-            properties:
-              id_lokalId:
-                description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              afstemningsområdenummer:
-                description: "EAID_60BC8063_FE94_401b_97AD_E1D1E7CD79A7"
-                type: string
-              navn:
-                description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-                type: string
-          forretningshændelse:
-            description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-            type: string
-          forretningsområde:
-            description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-            type: string
-          forretningsproces:
-            description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-            type: string
-          geoDanmarkBygning:
-            description: "EAID_dst3C28C5_D640_4bc0_9014_FDC7CBF30581"
-            type: string
-          husnummerretning:
-            description: "EAID_1A906922_EFAC_4182_AA8C_08332D52C6EE"
-            type: string
-          husnummertekst:
-            description: "EAID_83A4C230_5C5A_4ffb_B136_0315DD9F8DBE"
-            type: string
-          id_lokalId:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: string
-          id_namespace:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-            type: string
-          jordstykke:
-            description: "EAID_dst052F4B_D60C_4ccd_BAE5_6BCED78FE40C"
-            type: string
-          kommuneinddeling:
-            description: "EAID_25AE826A_41DD_40a6_9AF4_3D347B1DA89F"
-            type: "object"
-            properties:
-              id_lokalId:
-                description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              kommunekode:
-                description: "EAID_A7825EC7_D579_401e_B49C_777BC4A39A2F"
-                type: string
-              navn:
-                description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-                type: string
-          menighedsrådsafstemningsområde:
-            description: "EAID_29CD703F_24CC_4479_B620_1F3D544702AD"
-            type: "object"
-            properties:
-              id_lokalId:
-                description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              mrafstemningsområdenummer:
-                description: "EAID_7BDEA159_0764_4a03_8D1B_94EAE2E044E2"
-                type: string
-              navn:
-                description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-                type: string
-          placeretPåForeløbigtJordstykke:
-            description: "EAID_dstC82C82_CC9D_4d7d_9B8A_8F4A1ADFB5AE"
-            type: string
-          registreringFra:
-            description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-            type: string
-            format: "date-time"
-          registreringsaktør:
-            description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-            type: string
-          registreringTil:
-            description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-            type: string
-            format: "date-time"
-          sogneinddeling:
-            description: "EAID_B2A1A022_22C1_47f3_89CB_DA180694F9C0"
-            type: "object"
-            properties:
-              id_lokalId:
-                description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              sognekode:
-                description: "EAID_E50C6E75_C1CD_4c5a_9C67_3A6463514D0E"
-                type: string
-              navn:
-                description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-                type: string
-          status:
-            description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-            type: string
-          vejmidte:
-            description: "EAID_dstC9842D_CF82_4dc5_8114_3FF7AEF90C17"
-            type: string
-          virkningFra:
-            description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-            type: string
-            format: "date-time"
-          virkningsaktør:
-            description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-            type: string
-          virkningTil:
-            description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-            type: string
-            format: "date-time"
-          adgangspunkt:
-            description: "EAID_00A7AF01_C512_4a85_ADB5_98FB15541948"
-            type: "object"
-            properties:
-              datafordelerOpdateringstid:
-                title: "datafordelerOpdateringstid"
-                type: "string"
-                description: "UpdateTimestamp()"
-                format: "date-time"
-              oprindelse_kilde:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-                type: string
-              oprindelse_nøjagtighedsklasse:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-                type: string
-              oprindelse_registrering:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-                type: string
-                format: "date-time"
-              oprindelse_tekniskStandard:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-                type: string
-              position:
-                description: "EAID_4B062EDE_CE8C_414b_AB85_B5A1FD72AA78"
-                type: string
-          vejpunkt:
-            description: "EAID_00A7AF01_C512_4a85_ADB5_98FB15541948"
-            type: "object"
-            properties:
-              datafordelerOpdateringstid:
-                title: "datafordelerOpdateringstid"
-                type: "string"
-                description: "UpdateTimestamp()"
-                format: "date-time"
-              oprindelse_kilde:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-                type: string
-              oprindelse_nøjagtighedsklasse:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-                type: string
-              oprindelse_registrering:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-                type: string
-                format: "date-time"
-              oprindelse_tekniskStandard:
-                description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-                type: string
-              position:
-                description: "EAID_4B062EDE_CE8C_414b_AB85_B5A1FD72AA78"
-                type: string
-          navngivenVej:
-            description: "EAID_0CB629B5_8D1F_486c_A319_717EDF879B82"
-            type: "object"
-            properties:
-              datafordelerOpdateringstid:
-                title: "datafordelerOpdateringstid"
-                type: "string"
-                description: "UpdateTimestamp()"
-                format: "date-time"
-              administreresAfKommune:
-                description: "EAID_31D3BE04_2F70_4092_8381_5517A5543634"
-                type: string
-              beskrivelse:
-                description: "EAID_C132D872_7F07_4ebf_BC6B_37049F2E5EB8"
-                type: string
-              forretningshændelse:
-                description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                type: string
-              forretningsområde:
-                description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                type: string
-              forretningsproces:
-                description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                type: string
-              id_lokalId:
-                description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              id_namespace:
-                description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                type: string
-              registreringFra:
-                description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                type: string
-                format: "date-time"
-              registreringsaktør:
-                description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                type: string
-              registreringTil:
-                description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                type: string
-                format: "date-time"
-              status:
-                description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                type: string
-              udtaltVejnavn:
-                description: "EAID_788F8478_A747_412d_9DE6_FEE0DB4C1BFA"
-                type: string
-              vejadresseringsnavn:
-                description: "EAID_9621DD9D_50E3_4426_AB5A_A5E43DED4B05"
-                type: string
-              vejnavn:
-                description: "EAID_CA00150C_5B5C_4c32_AE72_A7EE5AEDE015"
-                type: string
-              vejnavnebeliggenhed_oprindelse_kilde:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-                type: string
-              vejnavnebeliggenhed_oprindelse_nøjagtighedsklasse:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-                type: string
-              vejnavnebeliggenhed_oprindelse_registrering:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-                type: string
-                format: "date-time"
-              vejnavnebeliggenhed_oprindelse_tekniskStandard:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-                type: string
-              vejnavnebeliggenhed_vejnavnelinje:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_93C24B4D_0641_4073_B260_1EC7F2024CF4"
-                type: string
-              vejnavnebeliggenhed_vejnavneområde:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_1C496CD9_4541_4574_974D_B641F186077F"
-                type: string
-              vejnavnebeliggenhed_vejtilslutningspunkter:
-                description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_C3E042F2_A66E_40f4_92A1_7C7024A30D16"
-                type: string
-              virkningFra:
-                description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                type: string
-                format: "date-time"
-              virkningsaktør:
-                description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                type: string
-              virkningTil:
-                description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                type: string
-                format: "date-time"
-              navngivenVejKommunedelList:
-                description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-                type: "array"
-                items:
-                  type: "object"
-                  properties:
-                    id_lokalId:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                      type: "string"
-                    navngivenVejKommunedel:
-                      description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-                      type: "object"
-                      properties:
-                        datafordelerOpdateringstid:
-                          title: "datafordelerOpdateringstid"
-                          type: "string"
-                          description: "UpdateTimestamp()"
-                          format: "date-time"
-                        forretningshændelse:
-                          description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                          type: string
-                        forretningsområde:
-                          description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                          type: string
-                        forretningsproces:
-                          description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                          type: string
-                        id_lokalId:
-                          description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                          type: string
-                        id_namespace:
-                          description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                          type: string
-                        kommune:
-                          description: "EAID_0A04B5E9_9F12_49cb_B2AF_AFEE0315AE2B"
-                          type: string
-                        navngivenVej:
-                          description: "EAID_dstE87A3E_ECA3_4f38_A586_117287E4754A"
-                          type: string
-                        registreringFra:
-                          description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                          type: string
-                          format: "date-time"
-                        registreringsaktør:
-                          description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                          type: string
-                        registreringTil:
-                          description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                          type: string
-                          format: "date-time"
-                        status:
-                          description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                          type: string
-                        vejkode:
-                          description: "EAID_852A683F_3E30_4009_A003_B3C8F6F76930"
-                          type: string
-                        virkningFra:
-                          description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                          type: string
-                          format: "date-time"
-                        virkningsaktør:
-                          description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                          type: string
-                        virkningTil:
-                          description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                          type: string
-                          format: "date-time"
-          postnummer:
-            description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-            type: "object"
-            properties:
-              datafordelerOpdateringstid:
-                title: "datafordelerOpdateringstid"
-                type: "string"
-                description: "UpdateTimestamp()"
-                format: "date-time"
-              forretningshændelse:
-                description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                type: string
-              forretningsområde:
-                description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                type: string
-              forretningsproces:
-                description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                type: string
-              id_lokalId:
-                description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              id_namespace:
-                description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                type: string
-              navn:
-                description: "EAID_9E7FA46D_52D9_4615_B24C_599BB28D1923"
-                type: string
-              postnr:
-                description: "EAID_8F8BACBF_E985_4dc1_BCF4_27F5C3FD0BB1"
-                type: string
-              postnummerinddeling:
-                description: "EAID_E5F5DDF9_3CF4_4304_B02D_E67AB0CDD619"
-                type: string
-              registreringFra:
-                description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                type: string
-                format: "date-time"
-              registreringsaktør:
-                description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                type: string
-              registreringTil:
-                description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                type: string
-                format: "date-time"
-              status:
-                description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                type: string
-              virkningFra:
-                description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                type: string
-                format: "date-time"
-              virkningsaktør:
-                description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                type: string
-              virkningTil:
-                description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                type: string
-          supplerendeBynavn:
-            description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-            type: "object"
-            properties:
-              datafordelerOpdateringstid:
-                title: "datafordelerOpdateringstid"
-                type: "string"
-                description: "UpdateTimestamp()"
-                format: "date-time"
-              forretningshændelse:
-                description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                type: string
-              forretningsområde:
-                description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                type: string
-              forretningsproces:
-                description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                type: string
-              id_lokalId:
-                description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                type: string
-              id_namespace:
-                description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                type: string
-              navn:
-                description: "EAID_8359992A_59C4_48c4_981D_7A42F20CA168"
-                type: string
-              registreringFra:
-                description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                type: string
-                format: "date-time"
-              registreringsaktør:
-                description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                type: string
-              registreringTil:
-                description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                type: string
-                format: "date-time"
-              status:
-                description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                type: string
-              supplerendeBynavn:
-                description: "EAID_C6722E9B_EF6C_425d_9373_A933C01A6A64"
-                type: string
-              virkningFra:
-                description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                type: string
-                format: "date-time"
-              virkningsaktør:
-                description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                type: string
-              virkningTil:
-                description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                type: string
-                format: "date-time"
-Husnummer:
-  type: "array"
-  items:
-    description: "EAID_D0A626FC_CCAE_4209_B2F6_AC919B74A528"
-    type: "object"
-    properties:
-      datafordelerOpdateringstid:
-        title: "datafordelerOpdateringstid"
-        type: "string"
-        description: "UpdateTimestamp()"
-        format: "date-time"
-      adgangsadressebetegnelse:
-        description: "EAID_EDCC14FC_63ED_4ebe_8B52_3E406831A148"
-        type: "string"
-      adgangTilBygning:
-        description: "EAID_dst3E4349_6115_4191_AF4F_243CCE561C41"
-        type: "string"
-      adgangTilTekniskAnlæg:
-        description: "EAID_dst79A4C1_23B2_4c0c_85CC_60C6E2EA5AE0"
-        type: "string"
-      afstemningsområde:
-        description: "EAID_38545A1D_2A85_4020_A332_A0195A41310C"
-        type: "object"
-        properties:
-          id_lokalId:
-            description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          afstemningsområdenummer:
-            description: "EAID_60BC8063_FE94_401b_97AD_E1D1E7CD79A7"
-            type: "string"
-          navn:
-            description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-            type: "string"
-      forretningshændelse:
-        description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-        type: "string"
-      forretningsområde:
-        description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-        type: "string"
-      forretningsproces:
-        description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-        type: "string"
-      geoDanmarkBygning:
-        description: "EAID_dst3C28C5_D640_4bc0_9014_FDC7CBF30581"
-        type: "string"
-      husnummerretning:
-        description: "EAID_1A906922_EFAC_4182_AA8C_08332D52C6EE"
-        type: "string"
-      husnummertekst:
-        description: "EAID_83A4C230_5C5A_4ffb_B136_0315DD9F8DBE"
-        type: "string"
-      id_lokalId:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        type: "string"
-      id_namespace:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-        type: "string"
-      jordstykke:
-        description: "EAID_dst052F4B_D60C_4ccd_BAE5_6BCED78FE40C"
-        type: "string"
-      kommuneinddeling:
-        description: "EAID_25AE826A_41DD_40a6_9AF4_3D347B1DA89F"
-        type: "object"
-        properties:
-          id_lokalId:
-            description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          kommunekode:
-            description: "EAID_A7825EC7_D579_401e_B49C_777BC4A39A2F"
-            type: "string"
-          navn:
-            description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-            type: "string"
-      menighedsrådsafstemningsområde:
-        description: "EAID_29CD703F_24CC_4479_B620_1F3D544702AD"
-        type: "object"
-        properties:
-          id_lokalId:
-            description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          mrafstemningsområdenummer:
-            description: "EAID_7BDEA159_0764_4a03_8D1B_94EAE2E044E2"
-            type: "string"
-          navn:
-            description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-            type: "string"
-      placeretPåForeløbigtJordstykke:
-        description: "EAID_dstC82C82_CC9D_4d7d_9B8A_8F4A1ADFB5AE"
-        type: "string"
-      registreringFra:
-        description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-        type: "string"
-        format: "date-time"
-      registreringsaktør:
-        description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-        type: "string"
-      registreringTil:
-        description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-        type: "string"
-        format: "date-time"
-      sogneinddeling:
-        description: "EAID_B2A1A022_22C1_47f3_89CB_DA180694F9C0"
-        type: "object"
-        properties:
-          id_lokalId:
-            description: "EAID_CA8F829A_498B_454b_86AE_9E929FD024BC.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          sognekode:
-            description: "EAID_E50C6E75_C1CD_4c5a_9C67_3A6463514D0E"
-            type: "string"
-          navn:
-            description: "EAID_E32FAD22_7B6E_4d9c_AB1D_43AA2F3E4BD2"
-            type: "string"
-      status:
-        description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-        type: "string"
-      vejmidte:
-        description: "EAID_dstC9842D_CF82_4dc5_8114_3FF7AEF90C17"
-        type: "string"
-      virkningFra:
-        description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-        type: "string"
-        format: "date-time"
-      virkningsaktør:
-        description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-        type: "string"
-      virkningTil:
-        description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-        type: "string"
-        format: "date-time"
-      navngivenVej:
-        description: "EAID_0CB629B5_8D1F_486c_A319_717EDF879B82"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          administreresAfKommune:
-            description: "EAID_31D3BE04_2F70_4092_8381_5517A5543634"
-            type: "string"
-          beskrivelse:
-            description: "EAID_C132D872_7F07_4ebf_BC6B_37049F2E5EB8"
-            type: "string"
-          forretningshændelse:
-            description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-            type: "string"
-          forretningsområde:
-            description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-            type: "string"
-          forretningsproces:
-            description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-            type: "string"
-          id_lokalId:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          id_namespace:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-            type: "string"
-          registreringFra:
-            description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-            type: "string"
-            format: "date-time"
-          registreringsaktør:
-            description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-            type: "string"
-          registreringTil:
-            description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-            type: "string"
-            format: "date-time"
-          status:
-            description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-            type: "string"
-          udtaltVejnavn:
-            description: "EAID_788F8478_A747_412d_9DE6_FEE0DB4C1BFA"
-            type: "string"
-          vejadresseringsnavn:
-            description: "EAID_9621DD9D_50E3_4426_AB5A_A5E43DED4B05"
-            type: "string"
-          vejnavn:
-            description: "EAID_CA00150C_5B5C_4c32_AE72_A7EE5AEDE015"
-            type: "string"
-          vejnavnebeliggenhed_oprindelse_kilde:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-            type: "string"
-          vejnavnebeliggenhed_oprindelse_nøjagtighedsklasse:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-            type: "string"
-          vejnavnebeliggenhed_oprindelse_registrering:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-            type: "string"
-            format: "date-time"
-          vejnavnebeliggenhed_oprindelse_tekniskStandard:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-            type: "string"
-          vejnavnebeliggenhed_vejnavnelinje:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_93C24B4D_0641_4073_B260_1EC7F2024CF4"
-            type: "string"
-          vejnavnebeliggenhed_vejnavneområde:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_1C496CD9_4541_4574_974D_B641F186077F"
-            type: "string"
-          vejnavnebeliggenhed_vejtilslutningspunkter:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_C3E042F2_A66E_40f4_92A1_7C7024A30D16"
-            type: "string"
-          virkningFra:
-            description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-            type: "string"
-            format: "date-time"
-          virkningsaktør:
-            description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-            type: "string"
-          virkningTil:
-            description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-            type: "string"
-            format: "date-time"
-          navngivenVejKommunedelList:
-            description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-            type: "array"
-            items:
-              type: "object"
-              properties:
-                id_lokalId:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                  type: "string"
-                navngivenVejKommunedel:
-                  description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-                  type: "object"
-                  properties:
-                    datafordelerOpdateringstid:
-                      title: "datafordelerOpdateringstid"
-                      type: "string"
-                      description: "UpdateTimestamp()"
-                      format: "date-time"
-                    forretningshændelse:
-                      description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                      type: "string"
-                    forretningsområde:
-                      description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                      type: "string"
-                    forretningsproces:
-                      description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                      type: "string"
-                    id_lokalId:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                      type: "string"
-                    id_namespace:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                      type: "string"
-                    kommune:
-                      description: "EAID_0A04B5E9_9F12_49cb_B2AF_AFEE0315AE2B"
-                      type: "string"
-                    navngivenVej:
-                      description: "EAID_dstE87A3E_ECA3_4f38_A586_117287E4754A"
-                      type: "string"
-                    registreringFra:
-                      description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                      type: "string"
-                      format: "date-time"
-                    registreringsaktør:
-                      description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                      type: "string"
-                    registreringTil:
-                      description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                      type: "string"
-                      format: "date-time"
-                    status:
-                      description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                      type: "string"
-                    vejkode:
-                      description: "EAID_852A683F_3E30_4009_A003_B3C8F6F76930"
-                      type: "string"
-                    virkningFra:
-                      description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                      type: "string"
-                      format: "date-time"
-                    virkningsaktør:
-                      description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                      type: "string"
-                    virkningTil:
-                      description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                      type: "string"
-                      format: "date-time"
-      adgangspunkt:
-        description: "EAID_00A7AF01_C512_4a85_ADB5_98FB15541948"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          oprindelse_kilde:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-            type: "string"
-          oprindelse_nøjagtighedsklasse:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-            type: "string"
-          oprindelse_registrering:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-            type: "string"
-            format: "date-time"
-          oprindelse_tekniskStandard:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-            type: "string"
-          position:
-            description: "EAID_4B062EDE_CE8C_414b_AB85_B5A1FD72AA78"
-            type: "string"
-      vejpunkt:
-        description: "EAID_00A7AF01_C512_4a85_ADB5_98FB15541948"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          oprindelse_kilde:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-            type: "string"
-          oprindelse_nøjagtighedsklasse:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-            type: "string"
-          oprindelse_registrering:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-            type: "string"
-            format: "date-time"
-          oprindelse_tekniskStandard:
-            description: "EAID_B9AAE6C5_974D_4d20_BABA_C62874774F4B.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-            type: "string"
-          position:
-            description: "EAID_4B062EDE_CE8C_414b_AB85_B5A1FD72AA78"
-            type: "string"
-      postnummer:
-        description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          forretningshændelse:
-            description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-            type: "string"
-          forretningsområde:
-            description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-            type: "string"
-          forretningsproces:
-            description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-            type: "string"
-          id_lokalId:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          id_namespace:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-            type: "string"
-          navn:
-            description: "EAID_9E7FA46D_52D9_4615_B24C_599BB28D1923"
-            type: "string"
-          postnr:
-            description: "EAID_8F8BACBF_E985_4dc1_BCF4_27F5C3FD0BB1"
-            type: "string"
-          postnummerinddeling:
-            description: "EAID_E5F5DDF9_3CF4_4304_B02D_E67AB0CDD619"
-            type: "string"
-          registreringFra:
-            description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-            type: "string"
-            format: "date-time"
-          registreringsaktør:
-            description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-            type: "string"
-          registreringTil:
-            description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-            type: "string"
-            format: "date-time"
-          status:
-            description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-            type: "string"
-          virkningFra:
-            description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-            type: "string"
-            format: "date-time"
-          virkningsaktør:
-            description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-            type: "string"
-          virkningTil:
-            description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-            type: "string"
-            format: "date-time"
-      supplerendeBynavn:
-        description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          forretningshændelse:
-            description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-            type: "string"
-          forretningsområde:
-            description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-            type: "string"
-          forretningsproces:
-            description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-            type: "string"
-          id_lokalId:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          id_namespace:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-            type: "string"
-          navn:
-            description: "EAID_8359992A_59C4_48c4_981D_7A42F20CA168"
-            type: "string"
-          registreringFra:
-            description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-            type: "string"
-            format: "date-time"
-          registreringsaktør:
-            description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-            type: "string"
-          registreringTil:
-            description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-            type: "string"
-            format: "date-time"
-          status:
-            description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-            type: "string"
-          supplerendeBynavn:
-            description: "EAID_C6722E9B_EF6C_425d_9373_A933C01A6A64"
-            type: "string"
-          virkningFra:
-            description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-            type: "string"
-            format: "date-time"
-          virkningsaktør:
-            description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-            type: "string"
-          virkningTil:
-            description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-            type: "string"
-            format: "date-time"
-NavngivenVej:
-  type: "array"
-  items:
-    description: "EAID_0CB629B5_8D1F_486c_A319_717EDF879B82"
-    type: "object"
-    properties:
-      datafordelerOpdateringstid:
-        title: "datafordelerOpdateringstid"
-        type: "string"
-        description: "UpdateTimestamp()"
-        format: "date-time"
-      administreresAfKommune:
-        description: "EAID_31D3BE04_2F70_4092_8381_5517A5543634"
-        type: "string"
-      beskrivelse:
-        description: "EAID_C132D872_7F07_4ebf_BC6B_37049F2E5EB8"
-        type: "string"
-      forretningshændelse:
-        description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-        type: "string"
-      forretningsområde:
-        description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-        type: "string"
-      forretningsproces:
-        description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-        type: "string"
-      id_lokalId:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        type: "string"
-      id_namespace:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-        type: "string"
-      registreringFra:
-        description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-        type: "string"
-        format: "date-time"
-      registreringsaktør:
-        description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-        type: "string"
-      registreringTil:
-        description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-        type: "string"
-        format: "date-time"
-      status:
-        description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-        type: "string"
-      udtaltVejnavn:
-        description: "EAID_788F8478_A747_412d_9DE6_FEE0DB4C1BFA"
-        type: "string"
-      vejadresseringsnavn:
-        description: "EAID_9621DD9D_50E3_4426_AB5A_A5E43DED4B05"
-        type: "string"
-      vejnavn:
-        description: "EAID_CA00150C_5B5C_4c32_AE72_A7EE5AEDE015"
-        type: "string"
-      vejnavnebeliggenhed_oprindelse_kilde:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-        type: "string"
-      vejnavnebeliggenhed_oprindelse_nøjagtighedsklasse:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-        type: "string"
-      vejnavnebeliggenhed_oprindelse_registrering:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-        type: "string"
-        format: "date-time"
-      vejnavnebeliggenhed_oprindelse_tekniskStandard:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-        type: "string"
-      vejnavnebeliggenhed_vejnavnelinje:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_93C24B4D_0641_4073_B260_1EC7F2024CF4"
-        type: "string"
-      vejnavnebeliggenhed_vejnavneområde:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_1C496CD9_4541_4574_974D_B641F186077F"
-        type: "string"
-      vejnavnebeliggenhed_vejtilslutningspunkter:
-        description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_C3E042F2_A66E_40f4_92A1_7C7024A30D16"
-        type: "string"
-      virkningFra:
-        description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-        type: "string"
-        format: "date-time"
-      virkningsaktør:
-        description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-        type: "string"
-      virkningTil:
-        description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-        type: "string"
-        format: "date-time"
-      navngivenVejKommunedelList:
-        description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-        type: "array"
-        items:
-          type: "object"
-          properties:
-            id_lokalId:
-              description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-              type: "string"
-            navngivenVejKommunedel:
-              description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-              type: "object"
-              properties:
-                datafordelerOpdateringstid:
-                  title: "datafordelerOpdateringstid"
-                  type: "string"
-                  description: "UpdateTimestamp()"
-                  format: "date-time"
-                forretningshændelse:
-                  description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                  type: "string"
-                forretningsområde:
-                  description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                  type: "string"
-                forretningsproces:
-                  description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                  type: "string"
-                id_lokalId:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                  type: "string"
-                id_namespace:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                  type: "string"
-                kommune:
-                  description: "EAID_0A04B5E9_9F12_49cb_B2AF_AFEE0315AE2B"
-                  type: "string"
-                navngivenVej:
-                  description: "EAID_dstE87A3E_ECA3_4f38_A586_117287E4754A"
-                  type: "string"
-                registreringFra:
-                  description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                  type: "string"
-                  format: "date-time"
-                registreringsaktør:
-                  description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                  type: "string"
-                registreringTil:
-                  description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                  type: "string"
-                  format: "date-time"
-                status:
-                  description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                  type: "string"
-                vejkode:
-                  description: "EAID_852A683F_3E30_4009_A003_B3C8F6F76930"
-                  type: "string"
-                virkningFra:
-                  description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                  type: "string"
-                  format: "date-time"
-                virkningsaktør:
-                  description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                  type: "string"
-                virkningTil:
-                  description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                  type: "string"
-                  format: "date-time"
-      postnummerList:
-        description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-        type: "array"
-        items:
-          type: "object"
-          properties:
-            id_lokalId:
-              description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-              type: "string"
-            postnummer:
-              description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-              type: "object"
-              properties:
-                datafordelerOpdateringstid:
-                  title: "datafordelerOpdateringstid"
-                  type: "string"
-                  description: "UpdateTimestamp()"
-                  format: "date-time"
-                forretningshændelse:
-                  description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                  type: "string"
-                forretningsområde:
-                  description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                  type: "string"
-                forretningsproces:
-                  description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                  type: "string"
-                id_lokalId:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                  type: "string"
-                id_namespace:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                  type: "string"
-                navn:
-                  description: "EAID_9E7FA46D_52D9_4615_B24C_599BB28D1923"
-                  type: "string"
-                postnr:
-                  description: "EAID_8F8BACBF_E985_4dc1_BCF4_27F5C3FD0BB1"
-                  type: "string"
-                postnummerinddeling:
-                  description: "EAID_E5F5DDF9_3CF4_4304_B02D_E67AB0CDD619"
-                  type: "string"
-                registreringFra:
-                  description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                  type: "string"
-                  format: "date-time"
-                registreringsaktør:
-                  description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                  type: "string"
-                registreringTil:
-                  description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                  type: "string"
-                  format: "date-time"
-                status:
-                  description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                  type: "string"
-                virkningFra:
-                  description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                  type: "string"
-                  format: "date-time"
-                virkningsaktør:
-                  description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                  type: "string"
-                virkningTil:
-                  description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                  type: "string"
-                  format: "date-time"
-      supplerendebynavnList:
-        description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-        type: "array"
-        items:
-          type: "object"
-          properties:
-            id_lokalId:
-              description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-              type: "string"
-            supplerendebynavn:
-              description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-              type: "object"
-              properties:
-                datafordelerOpdateringstid:
-                  title: "datafordelerOpdateringstid"
-                  type: "string"
-                  description: "UpdateTimestamp()"
-                  format: "date-time"
-                forretningshændelse:
-                  description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                  type: "string"
-                forretningsområde:
-                  description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                  type: "string"
-                forretningsproces:
-                  description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                  type: "string"
-                id_lokalId:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                  type: "string"
-                id_namespace:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                  type: "string"
-                navn:
-                  description: "EAID_8359992A_59C4_48c4_981D_7A42F20CA168"
-                  type: "string"
-                registreringFra:
-                  description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                  type: "string"
-                  format: "date-time"
-                registreringsaktør:
-                  description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                  type: "string"
-                registreringTil:
-                  description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                  type: "string"
-                  format: "date-time"
-                status:
-                  description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                  type: "string"
-                supplerendeBynavn:
-                  description: "EAID_C6722E9B_EF6C_425d_9373_A933C01A6A64"
-                  type: "string"
-                virkningFra:
-                  description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                  type: "string"
-                  format: "date-time"
-                virkningsaktør:
-                  description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                  type: "string"
-                virkningTil:
-                  description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                  type: "string"
-                  format: "date-time"
-NavngivenVejKommunedel:
-  type: "array"
-  items:
-    description: "EAID_34D070E5_DD89_4984_8054_16BA70936EA0"
-    type: "object"
-    properties:
-      datafordelerOpdateringstid:
-        title: "datafordelerOpdateringstid"
-        type: "string"
-        description: "UpdateTimestamp()"
-        format: "date-time"
-      forretningshændelse:
-        description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-        type: "string"
-      forretningsområde:
-        description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-        type: "string"
-      forretningsproces:
-        description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-        type: "string"
-      id_lokalId:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        type: "string"
-      id_namespace:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-        type: "string"
-      kommune:
-        description: "EAID_0A04B5E9_9F12_49cb_B2AF_AFEE0315AE2B"
-        type: "string"
-      registreringFra:
-        description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-        type: "string"
-        format: "date-time"
-      registreringsaktør:
-        description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-        type: "string"
-      registreringTil:
-        description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-        type: "string"
-        format: "date-time"
-      status:
-        description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-        type: "string"
-      vejkode:
-        description: "EAID_852A683F_3E30_4009_A003_B3C8F6F76930"
-        type: "string"
-      virkningFra:
-        description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-        type: "string"
-        format: "date-time"
-      virkningsaktør:
-        description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-        type: "string"
-      virkningTil:
-        description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-        type: "string"
-        format: "date-time"
-      navngivenVej:
-        description: "EAID_0CB629B5_8D1F_486c_A319_717EDF879B82"
-        type: "object"
-        properties:
-          datafordelerOpdateringstid:
-            title: "datafordelerOpdateringstid"
-            type: "string"
-            description: "UpdateTimestamp()"
-            format: "date-time"
-          administreresAfKommune:
-            description: "EAID_31D3BE04_2F70_4092_8381_5517A5543634"
-            type: "string"
-          beskrivelse:
-            description: "EAID_C132D872_7F07_4ebf_BC6B_37049F2E5EB8"
-            type: "string"
-          forretningshændelse:
-            description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-            type: "string"
-          forretningsområde:
-            description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-            type: "string"
-          forretningsproces:
-            description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-            type: "string"
-          id_lokalId:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          id_namespace:
-            description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-            type: "string"
-          registreringFra:
-            description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-            type: "string"
-            format: "date-time"
-          registreringsaktør:
-            description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-            type: "string"
-          registreringTil:
-            description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-            type: "string"
-            format: "date-time"
-          status:
-            description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-            type: "string"
-          udtaltVejnavn:
-            description: "EAID_788F8478_A747_412d_9DE6_FEE0DB4C1BFA"
-            type: "string"
-          vejadresseringsnavn:
-            description: "EAID_9621DD9D_50E3_4426_AB5A_A5E43DED4B05"
-            type: "string"
-          vejnavn:
-            description: "EAID_CA00150C_5B5C_4c32_AE72_A7EE5AEDE015"
-            type: "string"
-          vejnavnebeliggenhed_oprindelse_kilde:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_FD77FC95_714B_4779_B7FA_F9BBAB41758D"
-            type: "string"
-          vejnavnebeliggenhed_oprindelse_nøjagtighedsklasse:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_B8A27494_DF27_4aa9_B1F4_EBD68D2479A5"
-            type: "string"
-          vejnavnebeliggenhed_oprindelse_registrering:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_10DCC555_0BE9_4991_AD8C_DEA595CB08A0"
-            type: "string"
-            format: "date-time"
-          vejnavnebeliggenhed_oprindelse_tekniskStandard:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_7F8EB510_AD02_4fd5_844B_C9AB17FB1798.EAID_181528AD_2DA3_4e9d_BF38_81916A924D2A"
-            type: "string"
-          vejnavnebeliggenhed_vejnavnelinje:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_93C24B4D_0641_4073_B260_1EC7F2024CF4"
-            type: "string"
-          vejnavnebeliggenhed_vejnavneområde:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_1C496CD9_4541_4574_974D_B641F186077F"
-            type: "string"
-          vejnavnebeliggenhed_vejtilslutningspunkter:
-            description: "EAID_4C594A8E_797B_40bb_B60D_0E5C9159DCD3.EAID_C3E042F2_A66E_40f4_92A1_7C7024A30D16"
-            type: "string"
-          virkningFra:
-            description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-            type: "string"
-            format: "date-time"
-          virkningsaktør:
-            description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-            type: "string"
-          virkningTil:
-            description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-            type: "string"
-            format: "date-time"
-          postnummerList:
-            description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-            type: "array"
-            items:
-              type: "object"
-              properties:
-                id_lokalId:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                  type: "string"
-                postnummer:
-                  description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-                  type: "object"
-                  properties:
-                    datafordelerOpdateringstid:
-                      title: "datafordelerOpdateringstid"
-                      type: "string"
-                      description: "UpdateTimestamp()"
-                      format: "date-time"
-                    forretningshændelse:
-                      description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                      type: "string"
-                    forretningsområde:
-                      description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                      type: "string"
-                    forretningsproces:
-                      description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                      type: "string"
-                    id_lokalId:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                      type: "string"
-                    id_namespace:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                      type: "string"
-                    navn:
-                      description: "EAID_9E7FA46D_52D9_4615_B24C_599BB28D1923"
-                      type: "string"
-                    postnr:
-                      description: "EAID_8F8BACBF_E985_4dc1_BCF4_27F5C3FD0BB1"
-                      type: "string"
-                    postnummerinddeling:
-                      description: "EAID_E5F5DDF9_3CF4_4304_B02D_E67AB0CDD619"
-                      type: "string"
-                    registreringFra:
-                      description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                      type: "string"
-                      format: "date-time"
-                    registreringsaktør:
-                      description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                      type: "string"
-                    registreringTil:
-                      description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                      type: "string"
-                      format: "date-time"
-                    status:
-                      description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                      type: "string"
-                    virkningFra:
-                      description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                      type: "string"
-                      format: "date-time"
-                    virkningsaktør:
-                      description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                      type: "string"
-                    virkningTil:
-                      description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                      type: "string"
-                      format: "date-time"
-          supplerendebynavnList:
-            description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-            type: "array"
-            items:
-              type: "object"
-              properties:
-                id_lokalId:
-                  description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                  type: "string"
-                supplerendebynavn:
-                  description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-                  type: "object"
-                  properties:
-                    datafordelerOpdateringstid:
-                      title: "datafordelerOpdateringstid"
-                      type: "string"
-                      description: "UpdateTimestamp()"
-                      format: "date-time"
-                    forretningshændelse:
-                      description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-                      type: "string"
-                    forretningsområde:
-                      description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-                      type: "string"
-                    forretningsproces:
-                      description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-                      type: "string"
-                    id_lokalId:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-                      type: "string"
-                    id_namespace:
-                      description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-                      type: "string"
-                    navn:
-                      description: "EAID_8359992A_59C4_48c4_981D_7A42F20CA168"
-                      type: "string"
-                    registreringFra:
-                      description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-                      type: "string"
-                      format: "date-time"
-                    registreringsaktør:
-                      description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-                      type: "string"
-                    registreringTil:
-                      description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-                      type: "string"
-                      format: "date-time"
-                    status:
-                      description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-                      type: "string"
-                    supplerendeBynavn:
-                      description: "EAID_C6722E9B_EF6C_425d_9373_A933C01A6A64"
-                      type: "string"
-                    virkningFra:
-                      description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-                      type: "string"
-                      format: "date-time"
-                    virkningsaktør:
-                      description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-                      type: "string"
-                    virkningTil:
-                      description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-                      type: "string"
-                      format: "date-time"
-Postnummer:
-  type: "array"
-  items:
-    description: "EAID_449B3570_F0F7_494e_9756_D49E60644CD0"
-    type: "object"
-    properties:
-      datafordelerOpdateringstid:
-        title: "datafordelerOpdateringstid"
-        type: "string"
-        description: "UpdateTimestamp()"
-        format: "date-time"
-      forretningshændelse:
-        description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-        type: "string"
-      forretningsområde:
-        description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-        type: "string"
-      forretningsproces:
-        description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-        type: "string"
-      id_lokalId:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        type: "string"
-      id_namespace:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-        type: "string"
-      navn:
-        description: "EAID_9E7FA46D_52D9_4615_B24C_599BB28D1923"
-        type: "string"
-      postnr:
-        description: "EAID_8F8BACBF_E985_4dc1_BCF4_27F5C3FD0BB1"
-        type: "string"
-      postnummerinddeling:
-        description: "EAID_E5F5DDF9_3CF4_4304_B02D_E67AB0CDD619"
-        type: "string"
-      registreringFra:
-        description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-        type: "string"
-        format: "date-time"
-      registreringsaktør:
-        description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-        type: "string"
-      registreringTil:
-        description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-        type: "string"
-        format: "date-time"
-      status:
-        description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-        type: "string"
-      virkningFra:
-        description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-        type: "string"
-        format: "date-time"
-      virkningsaktør:
-        description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-        type: "string"
-      virkningTil:
-        description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-        type: "string"
-        format: "date-time"
+metadatatype:
+  type: "object"
+  properties:
+    datafordelerOpdateringstid:
+      title: "datafordelerOpdateringstid"
+      type: "string"
+      description: "UpdateTimestamp()"
+      format: "date-time"
 
-SupplerendeBynavn:
-  type: "array"
-  items:
-    description: "EAID_9D39B21D_E73C_4f1b_9C6C_B75412DAAD77"
-    type: "object"
-    properties:
-      datafordelerOpdateringstid:
-        title: "datafordelerOpdateringstid"
-        type: "string"
-        description: "UpdateTimestamp()"
-        format: "date-time"
-      forretningshændelse:
-        description: "EAID_1CE948DD_FC3D_4638_8913_A2D35A00F64D"
-        type: "string"
-      forretningsområde:
-        description: "EAID_C955CFEC_E2A0_47da_9F76_6452FCC9E4E2"
-        type: "string"
-      forretningsproces:
-        description: "EAID_A9A40479_E58D_4c7a_A0EA_F8EC4829ECAC"
-        type: "string"
-      id_lokalId:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        type: "string"
-      id_namespace:
-        description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_6CEB0356_5CBF_4159_B96B_A2489DD2DAC8"
-        type: "string"
-      navn:
-        description: "EAID_8359992A_59C4_48c4_981D_7A42F20CA168"
-        type: "string"
-      registreringFra:
-        description: "EAID_96862BAA_95CA_46aa_A6A0_757327A10BF7"
-        type: "string"
-        format: "date-time"
-      registreringsaktør:
-        description: "EAID_9F724D2B_7763_4997_8C85_580610BABC1F"
-        type: "string"
-      registreringTil:
-        description: "EAID_301BF58F_26E7_4d1f_B7B6_3881F8C1B0A5"
-        type: "string"
-        format: "date-time"
-      status:
-        description: "EAID_22AF1E6A_73A8_4c89_96EB_C307235DFD19"
-        type: "string"
-      supplerendeBynavn:
-        description: "EAID_C6722E9B_EF6C_425d_9373_A933C01A6A64"
-        type: "string"
-      virkningFra:
-        description: "EAID_AB768062_FD24_4960_8AA1_C6BFF90C00C5"
-        type: "string"
-        format: "date-time"
-      virkningsaktør:
-        description: "EAID_8E60197F_D857_47c6_8611_75B63D0940FD"
-        type: "string"
-      virkningTil:
-        description: "EAID_3058C5FD_9824_48ba_B62C_C24587BF6537"
-        type: "string"
-        format: "date-time"
-husnummerTilJordstykke:
+hentVirksomhedResultat:
+  title: "hentVirksomhedResultat"
   type: "object"
+  description: "Information om virksomheden EAID_AC14E4B3_B0EC_4580_B60D_B5BB30651F09"
   properties:
-    gældendeJordstykke:
+    virksomhed:
       type: "object"
-      description: "EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1"
+      description: "EAID_AC14E4B3_B0EC_4580_B60D_B5BB30651F09"
       properties:
-        jordstykkeLokalId:
+        Id:
           type: "string"
-          description: "EAID_57428AF0_E57B_40ff_9680_DBA58BD0BAB0.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        samletFastEjendom:
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+        CVRNummer:
           type: "integer"
-          description: "EAID_dst4D3E5E_84EF_4d87_85F6_8B46883C79F9"
-    foreløbigJordstykke:
+          description: "EAID_564C37C6_7647_4f64_9116_5B273C30D955"
+        virksomhedStartdato:
+          type: "string"
+          format: "date-time"
+          description: "EAID_0315F5E1_1610_44da_83F8_6BFE523C3B3C"
+        virksomhedOphoersdato:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B0E64799_6723_4f31_A9A4_87CBFC0C3946"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8"
+        status:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D"
+          enum:
+            - "aktiv"
+            - "inaktiv"
+        metadata:
+          $ref: "#/definitions/metadatatype"
+    virksomhedsnavn:
       type: "object"
-      description: "EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1"
+      description: "EAID_AE8C2560_67DF_41e3_98D3_AD8500846E9B"
       properties:
-        jordstykkeLokalId:
+        vaerdi:
           type: "string"
-          description: "EAID_57428AF0_E57B_40ff_9680_DBA58BD0BAB0.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-        samletFastEjendom:
-          type: "integer"
-          description: "EAID_dst4D3E5E_84EF_4d87_85F6_8B46883C79F9"
-husnummerTilAdresse:
-  type: "array"
-  description: "EAID_6043F4D9_C4CA_44d0_BE88_027166A8B008"
-  items:
-    type: "string"
-    example: "57428AF0_E57B_40ff_9680_DBA58BD0BAB0"
-    description: "EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-adresseTilHusnummer:
-  type: "string"
-  description: "EAID_src6919CB_1734_44ef_BE5B_C115B637B2CD"
-adresseTilEnhedBfe:
-  type: "array"
-  description: "EAID_0E5C322B_0AA8_4005_B17E_F0397230EE7D"
-  items:
-    type: "integer"
-    description: "EAID_DAEA052B_1881_496a_B35B_A7BE3B6B7586"
-husnummerTilTekniskAnlægBfe:
-  type: "object"
-  properties:
-    ejerlejlighed:
-      type: "integer"
-      description: "EAID_DAEA052B_1881_496a_B35B_A7BE3B6B7586"
-    bygningPaaFremmedGrundList:
+          description: "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B75AFE21_DCF2_4535_A9E0_A161DAB68ECB"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_48C888ED_DA98_4703_B40B_6EB97389C577"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_F26BF571_3B37_49a3_8D3A_D023BB50F8A0"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_E61C631F_BCB4_4e4e_BE53_EEA8C29D2DB0"
+        metadata:
+          $ref: "#/metadatatype"
+    telefonnummer:
+      type: "object"
+      description: "EAID_8DCE495E_7728_4992_B1E6_C62BEED4A327"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_919D52EB_48CF_43f6_BD3E_039591C911C0"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_E54E8CD8_A854_4d19_8AC1_1BD27133FC28"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_E1205164_D1EA_45e6_9117_3E7186C0ADB0"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_34BF3D5D_BABA_4dda_8756_7448D204057D"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_506D81DD_586A_4c48_9FC2_231DA2969A8C"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_27B49B3E_E7D6_4c0d_B152_85672961278B"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_F5F57E32_9A62_4845_8FDF_EFC181CB9961"
+        metadata:
+          $ref: "#/metadatatype"
+    e-mailadresse:
+      type: "object"
+      description: "EAID_181C6D4B_5470_43ab_8942_4DECEEBA0605"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_467853F2_F8CD_4a96_8C5F_1D08716ED7BD"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_5F07A04B_B338_4310_A147_C00FF0C8D8D0"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_18095E28_D511_486a_9BA8_F95E68ED7CA8"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_5C9874CE_00B0_4b13_B112_3A38B1BAA1B5"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_62C46240_23A7_4124_B5C0_0FEB79301060"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_0B99FA9E_5181_4dd5_8D45_41B73E60C43A"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_15ACD2D7_A8A1_44a6_98AB_ACF47CE531D4"
+        metadata:
+          $ref: "#/metadatatype"
+    virksomhedsform:
+      type: "object"
+      description: "EAID_FD2C0AF8_FD5C_4dbb_85AA_C8A6D22B0A41"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_8BAFCD1D_D2E4_4809_8899_2C5438FED36E"
+        vaerdiTekst:
+          type: "string"
+          description: "EAID_3D716CFF_B03C_415d_A1F9_A8CD5DEB8405"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_1AE222EE_57F3_4c1c_881B_06057CFFA1B1"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_32A45774_7DEF_4dba_9099_DD85E3B455E2"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_50B964BC_365E_4ae9_8481_D63529FE959D"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_5566FA05_631E_47c0_A33B_39622D4EA995"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_FEDD37FC_6BA0_45b1_BD03_D0A261125279"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_1A52BCCF_3D91_482e_A58C_CA444B2273CE"
+        metadata:
+          $ref: "#/metadatatype"
+    beliggenhedsadresse:
+      type: "object"
+      description: "EAID_41A2C86F_F7B7_494c_952D_536E915A1AA6"
+      properties:
+        adresse:
+          type: "string"
+          description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+        CVRAdresse_vejkode:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+        CVRAdresse_husnummerFra:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+        CVRAdresse_etagebetegnelse:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+        CVRAdresse_doerbetegnelse:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+        CVRAdresse_kommunekode:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+        CVRAdresse_kommunenavn:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+        CVRAdresse_postdistrikt:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+        CVRAdresse_vejnavn:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+        CVRAdresse_postnummer:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+        CVRAdresse_supplerendeBynavn:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500"
+        CVRAdresse_adresseFritekst:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+        CVRAdresse_landekode:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+        coNavn:
+          type: "string"
+          description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+        metadata:
+          $ref: "#/metadatatype"
+    postadresse:
+      type: "object"
+      description: "EAID_58038946_7157_4ad5_A9E2_1D7D25B96F93"
+      properties:
+        adresse:
+          type: "string"
+          description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+        CVRAdresse_vejkode:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+        CVRAdresse_husnummerFra:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+        CVRAdresse_etagebetegnelse:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+        CVRAdresse_doerbetegnelse:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+        CVRAdresse_kommunekode:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+        CVRAdresse_kommunenavn:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+        CVRAdresse_postdistrikt:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+        CVRAdresse_vejnavn:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+        CVRAdresse_postnummer:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+        CVRAdresse_supplerendeBynavn:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500"
+        CVRAdresse_adresseFritekst:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+        CVRAdresse_landekode:
+          type: "string"
+          description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+        coNavn:
+          type: "string"
+          description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+        metadata:
+          $ref: "#/metadatatype"
+    produktionsenheder:
       type: "array"
-      description: "EAID_0E5C322B_0AA8_4005_B17E_F0397230EE7D"
-      items:
-        type: "integer"
-        description: "EAID_DAEA052B_1881_496a_B35B_A7BE3B6B7586"
-    jordstykkeList:
-      type: "array"
-      description: "EAID_8B60BEE8_D3BD_4c07_88FF_A2547A3D82D1"
       items:
         type: "object"
         properties:
-          jordstykkeLokalId:
-            description: "EAID_57428AF0_E57B_40ff_9680_DBA58BD0BAB0.EAID_9AB90AE0_9F85_4164_9B25_8EB2139D65A5"
-            type: "string"
-          samletFastEjendom:
-            description: "EAID_dst4D3E5E_84EF_4d87_85F6_8B46883C79F9"
+          pNummer:
             type: "integer"
-        required:
-          - "jordstykkeLokalId"
-  required:
-    - "bygningPaaFremmedGrundList"
-    - "jordstykkeList"
+            description: "EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F"
+          produktionsenhedsnavn:
+            type: "object"
+            description: "EAID_049CB9E9_F315_4be4_95C9_FDE2BFC6A20C"
+            properties:
+              vaerdi:
+                type: "string"
+                description: "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+    beskaeftigelse:
+      type: "array"
+      items:
+        type: "object"
+        description: "EAID_BFBDC77F_6BC4_4c99_A786_7B6810FBA484"
+        properties:
+          beskaeftigelsestalstype:
+            type: "string"
+            description: "EAID_615A3687_95BD_44b6_B7D9_57A33158B1C5"
+          datoFra:
+            type: "string"
+            format: "date-time"
+            description: "EAID_99EF563E_3F02_4d5a_9A2A_3003CE18D923"
+          datoTil:
+            type: "string"
+            format: "date-time"
+            description: "EAID_EF0FE2DD_6247_4029_BD6A_697A4232F067"
+          intervalFra:
+            type: "integer"
+            description: "EAID_A60073D0_6F28_45d4_A749_94661DD8F195"
+          intervalTil:
+            type: "integer"
+            description: "EAID_763C4D43_876B_47cf_B8CE_5A66E9975C0A"
+          registreringsdato:
+            type: "string"
+            format: "date-time"
+            description: "EAID_156CDEBF_68E1_4598_9DA3_478805387029"
+    brancher:
+      type: "object"
+      properties:
+        hovedbranche:
+          type: "object"
+          description: "EAID_3D90DACB_7D5A_40a6_A899_56F0440DF277"
+          properties:
+            vaerdi:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            vaerdiTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+        bibranche1:
+          type: "object"
+          description: "EAID_5E6C11BE_5A3F_465c_A116_5E5D94561D86"
+          properties:
+            vaerdi:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            vaerdiTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+        bibranche2:
+          type: "object"
+          description: "EAID_3AC236A4_C4A2_4048_A166_211978F61C81"
+          properties:
+            vaerdi:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            vaerdiTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+        bibranche3:
+          type: "object"
+          description: "EAID_ECF98B1C_951A_4775_B63A_4A8B4525A411"
+          properties:
+            vaerdi:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            vaerdiTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+    reklamebeskyttet:
+      type: "object"
+      description: "EAID_BA3CB9D9_BDE1_4c75_9290_1777CF6DE44E"
+      properties:
+        vaerdi:
+          type: "boolean"
+          description: "EAID_657F68FA_4810_48dc_B118_59191B6F874B"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B1D475AB_A211_4cff_8EC9_39DD87EEC97B"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_04D10665_C1E5_4631_9E49_20EC0607F2A7"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_4B5D9B6C_D91F_44bc_BBFF_1A5F06398F6D"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_589A0DD0_7BEB_4a7f_BD79_3A054A00BDF4"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_750AE06E_B65D_4440_A37D_E9C386AB1E69"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_3A9847FC_7BB1_474b_9755_19CD9F980B4A"
+        metadata:
+          $ref: "#/metadatatype"
+    kreditoplysninger:
+      type: "object"
+      description: "EAID_B7D67391_EA6E_49e3_8959_C64A3FBA9A9E"
+      properties:
+        statusvaerdi:
+          type: "string"
+          description: "EAID_543F0D37_D980_4776_976B_773836DEE1BE"
+        statusvaerdiTekst:
+          type: "string"
+          description: "EAID_2678203A_0DFF_453a_A90C_43AC6957ADE1"
+        kreditoplysning:
+          type: "string"
+          description: "EAID_9A0D6125_7E2D_424a_9A47_28BBA5B626A2"
+        kreditoplysningstekst:
+          type: "string"
+          description: "EAID_BD66C378_897A_4302_8329_823260CC0B70"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_4D94DF53_8506_4dce_ACD4_FBB4EF942175"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_A2BF6A90_CBF7_478e_B4BC_7E615FC0C9B3"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_F1EDD945_B24E_4977_A9C0_17B6CFFC17D4"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_AC4C76E7_26C4_4b4b_809E_70F376B1F0CF"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_3AFEB13F_B5CF_42c1_82D1_DCEAE23EA1F2"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_0FFCB294_6044_43c3_A1B5_69EA51517479"
+        metadata:
+          $ref: "#/metadatatype"
+    dataleverandoer:
+      type: "object"
+      description: "EAID_C06FAC1E_F83B_4b84_AC6E_304278096B82"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_BDA075C5_3B38_4256_AF2F_FA9D733A059D"
+        vaerdiTekst:
+          type: "string"
+          description: "EAID_663C6135_6A34_45b1_8388_3FD93C06A689"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_FD9F8C3E_11CE_4161_9409_9E696228570B"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_BBFA89B2_0849_48d0_9E7A_E353B1A24364"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_17A661ED_835F_47af_8A69_6695A90CEA65"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_9E9D9EF8_B343_4e5c_A5C2_180262642353"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B720C0DE_FF01_40ee_B491_D66F726B7962"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_1058188E_136C_4cfa_9344_9DE6DF490065"
+    fuldtAnsvarligDeltagerRelation:
+      type: "array"
+      items:
+        type: "object"
+        description: "EAID_B5C65051_A502_4269_874D_661793B3D67F"
+        properties:
+          deltagendeEnhedsId:
+            type: "string"
+            description: "EAID_64803AC1_B02E_4f9c_9C51_60EB37BC1E3B"
+          forretningsnoegleType:
+            type: "string"
+            description: "PNummer, CVRNummer eller CVREnhedsid"
+          forretningsnoegle:
+            type: "string"
+            description: "Noeglensvaerdi"
+          enhedsType:
+            type: "string"
+            description: "Virksomhed, Produktionsenhed, CVRPerson eller AndreDeltagere"
+          registreringFra:
+            type: "string"
+            format: "date-time"
+            description: "EAID_6F210E00_D4D0_4be2_9367_331E09E9ACCE"
+          registreringTil:
+            type: "string"
+            format: "date-time"
+            description: "EAID_8B215277_BF36_4be6_825F_186CCF5DD550"
+          registreringsaktoer:
+            type: "string"
+            description: "EAID_33E9AEF5_67BF_4faf_91D8_7FE2D0AD671E"
+          virkningFra:
+            type: "string"
+            format: "date-time"
+            description: "EAID_4B0F3355_F908_4ffb_98B9_9AF6562BA419"
+          virkningTil:
+            type: "string"
+            format: "date-time"
+            description: "EAID_3DA2AE8A_8C72_4d0a_91B9_CBFB1AE1079E"
+          virkningsaktoer:
+            type: "string"
+            description: "EAID_829A5847_591A_4d9a_9CC7_5ED2A0E307D3"
+hentProduktionsenhedResultat:
+  type: "object"
+  description: "Alle registrede offentlige informationer om produktionsenheden i Datafordeleren"
+  properties:
+    produktionsenhed:
+      type: "object"
+      properties:
+        CVREnhedsId:
+          type: "string"
+          description: "EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+        pNummer:
+          type: "integer"
+          description: "EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F"
+        tilknyttetVirksomhedsCVRNummer:
+          type: "integer"
+          description: "EAID_BB3056B8_3494_47bf_99AF_F5C00976AB92"
+        produktionsenhedStartdato:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B75D9F82_CBBC_4a25_B0D3_C14B61539146"
+        produktionsenhedOphoersdato:
+          type: "string"
+          format: "date-time"
+          description: "EAID_29A66810_5425_47f7_A4FA_D91648AC1389"
+        tilknyttetTilVirksomhedStartdato:
+          type: "string"
+          format: "date-time"
+          description: "EAID_4CBC370B_8388_48f4_96B7_1B76D3EEBDED"
+        tilknyttetTilVirksomhedOphoersdato:
+          type: "string"
+          format: "date-time"
+          description: "EAID_3D1B8ED0_5BB9_4928_BEAC_5449F047A9F2"
+        status:
+          type: "string"
+          description: "EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D"
+          enum:
+            - "aktiv"
+            - "inaktiv"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8"
+        metadata:
+          $ref: "#/metadatatype"
+    produktionsenhedsnavn:
+      type: "object"
+      description: "EAID_049CB9E9_F315_4be4_95C9_FDE2BFC6A20C"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B75AFE21_DCF2_4535_A9E0_A161DAB68ECB"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_48C888ED_DA98_4703_B40B_6EB97389C577"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_F26BF571_3B37_49a3_8D3A_D023BB50F8A0"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_E61C631F_BCB4_4e4e_BE53_EEA8C29D2DB0"
+        metadata:
+          $ref: "#/metadatatype"
+    beliggenhedsadresse:
+      type: "object"
+      description: "EAID_FF2F21EC_1140_4cc7_B178_C5DE10D1EE78"
+      properties:
+        Adresse:
+          type: "string"
+          description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+        CVRAdresse_vejkode:
+          type: "string"
+          description: "EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+        CVRAdresse_husnummer:
+          type: "string"
+          description: "EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+        CVRAdresse_etagebetegnelse:
+          type: "string"
+          description: "EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+        CVRAdresse_doerbetegnelse:
+          type: "string"
+          description: "EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+        CVRAdresse_kommunekode:
+          type: "string"
+          description: "EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+        CVRAdresse_kommunenavn:
+          type: "string"
+          description: "EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+        CVRAdresse_postdistrikt:
+          type: "string"
+          description: "EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+        CVRAdresse_vejnavn:
+          type: "string"
+          description: "EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+        CVRAdresse_postnummer:
+          type: "string"
+          description: "EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+        CVRAdresse_supplerendeBynavn:
+          type: "string"
+          description: "EAID_591A2633_FC34_4381_9532_43D88644B500"
+        CVRAdresse_adresseFritekst:
+          type: "string"
+          description: "EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+        CVRAdresse_landekode:
+          type: "string"
+          description: "EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+        coNavn:
+          type: "string"
+          description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+        metadata:
+          $ref: "#/metadatatype"
+    postadresse:
+      type: "object"
+      description: "EAID_3F43D2B3_6891_4849_99B8_3475CB47A2E2"
+      properties:
+        Adresse:
+          type: "string"
+          description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+        CVRAdresse_vejkode:
+          type: "string"
+          description: "EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+        CVRAdresse_husnummerFra:
+          type: "string"
+          description: "EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+        CVRAdresse_etagebetegnelse:
+          type: "string"
+          description: "EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+        CVRAdresse_doerbetegnelse:
+          type: "string"
+          description: "EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+        CVRAdresse_kommunekode:
+          type: "string"
+          description: "EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+        CVRAdresse_kommunenavn:
+          type: "string"
+          description: "EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+        CVRAdresse_postdistrikt:
+          type: "string"
+          description: "EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+        CVRAdresse_vejnavn:
+          type: "string"
+          description: "EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+        CVRAdresse_postnummer:
+          type: "string"
+          description: "EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+        CVRAdresse_supplerendeBynavn:
+          type: "string"
+          description: "EAID_591A2633_FC34_4381_9532_43D88644B500"
+        CVRAdresse_adresseFritekst:
+          type: "string"
+          description: "EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+        CVRAdresse_landekode:
+          type: "string"
+          description: "EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+        coNavn:
+          type: "string"
+          description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+        metadata:
+          $ref: "#/metadatatype"
+    reklamebeskyttet:
+      type: "object"
+      description: "EAID_F2A643F4_61DC_4b33_B8E4_03D4F90C0108"
+      properties:
+        vaerdi:
+          type: "boolean"
+          description: "EAID_657F68FA_4810_48dc_B118_59191B6F874B"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_B1D475AB_A211_4cff_8EC9_39DD87EEC97B"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_04D10665_C1E5_4631_9E49_20EC0607F2A7"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_4B5D9B6C_D91F_44bc_BBFF_1A5F06398F6D"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_589A0DD0_7BEB_4a7f_BD79_3A054A00BDF4"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_750AE06E_B65D_4440_A37D_E9C386AB1E69"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_3A9847FC_7BB1_474b_9755_19CD9F980B4A"
+        metadata:
+          $ref: "#/metadatatype"
+    telefonnummer:
+      type: "object"
+      description: "EAID_7D42A105_C730_4125_97C8_BBE1AD20A6D7"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_919D52EB_48CF_43f6_BD3E_039591C911C0"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_E54E8CD8_A854_4d19_8AC1_1BD27133FC28"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_E1205164_D1EA_45e6_9117_3E7186C0ADB0"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_34BF3D5D_BABA_4dda_8756_7448D204057D"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_506D81DD_586A_4c48_9FC2_231DA2969A8C"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_27B49B3E_E7D6_4c0d_B152_85672961278B"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_F5F57E32_9A62_4845_8FDF_EFC181CB9961"
+        metadata:
+          $ref: "#/metadatatype"
+    e-mailadresse:
+      type: "object"
+      description: "EAID_CBFCD307_41F2_4bdf_8FCD_9F0DA7734E25"
+      properties:
+        vaerdi:
+          type: "string"
+          description: "EAID_467853F2_F8CD_4a96_8C5F_1D08716ED7BD"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_5F07A04B_B338_4310_A147_C00FF0C8D8D0"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_18095E28_D511_486a_9BA8_F95E68ED7CA8"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_5C9874CE_00B0_4b13_B112_3A38B1BAA1B5"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_62C46240_23A7_4124_B5C0_0FEB79301060"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_0B99FA9E_5181_4dd5_8D45_41B73E60C43A"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_15ACD2D7_A8A1_44a6_98AB_ACF47CE531D4"
+        metadata:
+          $ref: "#/metadatatype"
+    brancher:
+      type: "object"
+      properties:
+        hovedbranche:
+          type: "object"
+          description: "EAID_64222C48_19F7_4bcd_9370_FFDC981B1FE7"
+          properties:
+            branchekode:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            branchekodeTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+        bibranche1:
+          type: "object"
+          description: "EAID_F7E31A6A_C4E7_4e0c_AB6B_6225B68C792B"
+          properties:
+            branchekode:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            branchekodeTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+        bibranche2:
+          type: "object"
+          description: "EAID_FA9EBC1C_3B38_4243_B095_E248595EDF11"
+          properties:
+            branchekode:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            branchekodeTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+        bibranche3:
+          type: "object"
+          description: "EAID_6F9170B8_E249_4561_A83E_F724B30FF753"
+          properties:
+            branchekode:
+              type: "string"
+              description: "EAID_FC4113D3_4B87_416b_8710_F03B76018886"
+            branchekodeTekst:
+              type: "string"
+              description: "EAID_03CA5D9F_45AB_401c_A77E_C59C5BAE925F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_30A12DEE_4E23_44c5_B180_C86D168FC23D"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_1E1E9E5F_E541_44ba_8BA8_5A8891B9C5C8"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_0D5DD7C2_408F_4e85_A076_196CB858380D"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_477AE0A6_AFB9_4396_8D61_CEBACE44C681"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B7DDD3EF_7001_410f_BC29_43D6A410D2E3"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_B0C8B7BD_B572_4eba_A35B_AA4EF82942AE"
+            metadata:
+              $ref: "#/metadatatype"
+    beskaeftigelse:
+      type: "array"
+      items:
+        type: "object"
+        properties:
+          beskaeftigelsestalstype:
+            type: "string"
+            description: "EAID_615A3687_95BD_44b6_B7D9_57A33158B1C5"
+            enum:
+              - "AarsbeskaeftigelseAntalAarsvaerkInterval"
+              - "AarsbeskaeftigelseAntalAnsatteInterval"
+              - "AarsbeskaeftigelseAntalAnsatteInklusivEjereInterval"
+              - "KvartalsbeskaeftigelseAntalAarsvaerkInterval"
+              - "KvartalsbeskaeftigelseAntalAnsatteInterval"
+          datoFra:
+            type: "string"
+            format: "date-time"
+            description: "EAID_99EF563E_3F02_4d5a_9A2A_3003CE18D923"
+          datoTil:
+            type: "string"
+            format: "date-time"
+            description: "EAID_EF0FE2DD_6247_4029_BD6A_697A4232F067"
+          intervalFra:
+            type: "integer"
+            description: "EAID_A60073D0_6F28_45d4_A749_94661DD8F195"
+          intervalTil:
+            type: "integer"
+            description: "EAID_763C4D43_876B_47cf_B8CE_5A66E9975C0A"
+          registreringsdato:
+            type: "string"
+            format: "date-time"
+            description: "EAID_156CDEBF_68E1_4598_9DA3_478805387029"
+hentAndreDeltagereMedIdResultat:
+  type: "object"
+  description: "Information for andre deltagere"
+  properties:
+    andreDeltagere:
+      type: "object"
+      description: "AndreDeltagereType EAID_B4EB6CD9_B806_4b25_B615_84B303BDE25A"
+      properties:
+        id:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+        type:
+          type: "string"
+          description: "Enten virksomhedUdenCVRNummer eller personUdenCPRNummer EAID_AB0F6C9D_5A8D_451a_BFCF_2E57887EE2A5"
+        status:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D"
+        forretningsnoegleType:
+          type: "string"
+          description: "PNummer, CVRNummer eller CVREnhedsid"
+        forretningsnoegle:
+          type: "string"
+          description: "Noeglensvaerdi"
+        enhedsType:
+          type: "string"
+          description: "Virksomhed, Produktionsenhed, CVRPerson eller AndreDeltagere"
+        andreDeltagereNavn:
+          type: "object"
+          description: "EAID_7F00300B_7CD5_4671_9421_A21AF3EA78D9"
+          properties:
+            vaerdi:
+              type: "string"
+              description: "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B75AFE21_DCF2_4535_A9E0_A161DAB68ECB"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_48C888ED_DA98_4703_B40B_6EB97389C577"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_F26BF571_3B37_49a3_8D3A_D023BB50F8A0"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_E61C631F_BCB4_4e4e_BE53_EEA8C29D2DB0"
+            metadata:
+              $ref: "#/metadatatype"
+        beliggenhedsadresse:
+          type: "object"
+          description: "EAID_005DF603_60C3_48a0_9A53_291E562A45A4"
+          properties:
+            adresse:
+              type: "string"
+              description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+            CVRAdresse_vejkode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+            CVRAdresse_husnummerFra:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+            CVRAdresse_etagebetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+            CVRAdresse_doerbetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+            CVRAdresse_kommunekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+            CVRAdresse_kommunenavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+            CVRAdresse_postdistrikt:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+            CVRAdresse_vejnavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+            CVRAdresse_postnummer:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+            CVRAdresse_supplerendeBynavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500"
+            CVRAdresse_adresseFritekst:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+            CVRAdresse_landekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+            coNavn:
+              type: "string"
+              description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+            metadata:
+              $ref: "#/metadatatype"
+        postadresse:
+          type: "object"
+          description: "EAID_B0EF37AE_CA95_452e_96B9_CA5D3828C40F"
+          properties:
+            adresse:
+              type: "string"
+              description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+            CVRAdresse_vejkode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+            CVRAdresse_husnummerFra:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+            CVRAdresse_etagebetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+            CVRAdresse_doerbetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+            CVRAdresse_kommunekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+            CVRAdresse_kommunenavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+            CVRAdresse_postdistrikt:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+            CVRAdresse_vejnavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+            CVRAdresse_postnummer:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+            CVRAdresse_supplerendeBynavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500"
+            CVRAdresse_adresseFritekst:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+            CVRAdresse_landekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+            coNavn:
+              type: "string"
+              description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+hentCVREnhedResultat:
+  type: "object"
+  description: "Basis Information for en CVREnhed"
+  properties:
+    enhed:
+      type: "object"
+      description: "CVREnhedType EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243"
+      properties:
+        id:
+          type: "string"
+          description: "EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+        status:
+          type: "string"
+          description: "EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D"
+        forretningsnoegleType:
+          type: "string"
+          description: "PNummer, CVRNummer eller CVREnhedsid"
+        forretningsnoegle:
+          type: "string"
+          description: "Noeglensvaerdi"
+        enhedsType:
+          type: "string"
+          description: "Virksomhed, Produktionsenhed, CVRPerson eller AndreDeltagere"
+hentCVRPersonResultat:
+  type: "object"
+  description: "Information for CVR person"
+  properties:
+    CVRPerson:
+      type: "object"
+      description: "CVRPerson EAID_5C6BD321_CE56_4c41_B264_68018F30C361"
+      properties:
+        id:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52"
+        registreringFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_3FDF04EF_9D4F_4367_8BDB_825672659BB8"
+        registreringTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_09A86EC6_1192_4f4c_B3FE_4B57C1254990"
+        registreringsaktoer:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_B4129F17_0314_4885_AB56_D0E429D5CC8E"
+        virkningFra:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DF8A413C_A35D_4a7d_B61C_0B836F8E6C22"
+        virkningTil:
+          type: "string"
+          format: "date-time"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_7B6826FD_9124_47aa_96D5_CFB39C172311"
+        virkningsaktoer:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8"
+        status:
+          type: "string"
+          description: "EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D"
+        forretningsnoegleType:
+          type: "string"
+          description: "PNummer, CVRNummer eller CVREnhedsid"
+        forretningsnoegle:
+          type: "string"
+          description: "Noeglensvaerdi"
+        enhedsType:
+          type: "string"
+          description: "Virksomhed, Produktionsenhed, CVRPerson eller AndreDeltagere"
+        navn:
+          type: "object"
+          description: "Navn på CVRPerson - Redundans, hører til CPRPerson EAID_E80306A1_C877_4db4_B4EF_5E9C7A24D22E"
+          properties:
+            vaerdi:
+              type: "string"
+              description: "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_B75AFE21_DCF2_4535_A9E0_A161DAB68ECB"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_48C888ED_DA98_4703_B40B_6EB97389C577"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_F26BF571_3B37_49a3_8D3A_D023BB50F8A0"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_E61C631F_BCB4_4e4e_BE53_EEA8C29D2DB0"
+            metadata:
+              $ref: "#/metadatatype"
+        CVRRegistreretAdresse:
+          type: "object"
+          description: "EAID_B086738B_A71B_4eb4_93FA_2B16BD98E2B4"
+          properties:
+            adresse:
+              type: "string"
+              description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+            CVRAdresse_vejkode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+            CVRAdresse_husnummerFra:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+            CVRAdresse_etagebetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+            CVRAdresse_doerbetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+            CVRAdresse_kommunekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+            CVRAdresse_kommunenavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+            CVRAdresse_postdistrikt:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+            CVRAdresse_vejnavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+            CVRAdresse_postnummer:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+            CVRAdresse_supplerendeBynavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500"
+            CVRAdresse_adresseFritekst:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+            CVRAdresse_landekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+            coNavn:
+              type: "string"
+              description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+            metadata:
+              $ref: "#/metadatatype"
+        CVRRegistreretPostAdresse:
+          type: "object"
+          description: "EAID_CA99C4BB_4D77_42cf_84D7_660656D3C87B"
+          properties:
+            adresse:
+              type: "string"
+              description: "EAID_3BC4B85E_3E1E_4027_B20E_4EAE37543AD7"
+            CVRAdresse_vejkode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_9512F445_32B7_4b72_83FE_83FDF36AC2D8"
+            CVRAdresse_husnummerFra:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_561373D6_30BC_4e42_86F4_76B1D9B60E10"
+            CVRAdresse_etagebetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EF69553F_A19E_4605_8EB4_4F61995B201D"
+            CVRAdresse_doerbetegnelse:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_22C40CDE_4925_4dc9_BA4C_9E4AFA692D67"
+            CVRAdresse_kommunekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_3F9DE3E9_9D86_4722_B59E_09B95A75A9DA"
+            CVRAdresse_kommunenavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_EAEDB565_367E_4a95_8CB8_EE9C308A6F4E"
+            CVRAdresse_postdistrikt:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_8C2C9C6C_E45C_4278_97CC_41AE042337F8"
+            CVRAdresse_vejnavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_1F5BF752_E7DF_4e61_8DA1_39C86F8DC6DE"
+            CVRAdresse_postnummer:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_5FC3AC5A_0DF5_459a_8A17_483105CF8B83"
+            CVRAdresse_supplerendeBynavn:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_591A2633_FC34_4381_9532_43D88644B500"
+            CVRAdresse_adresseFritekst:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_DBBF0C2A_3B2B_4ccd_9BCA_02765BA69D58"
+            CVRAdresse_landekode:
+              type: "string"
+              description: "EAID_F0B60F53_39F8_46ed_9484_BE31C5E2C772.EAID_F4B6B4AF_D20F_43b1_B6C1_0185881B1F39"
+            coNavn:
+              type: "string"
+              description: "EAID_18DDA050_1B3F_434b_B300_E3371C0CDC2C"
+            registreringFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_3971D751_9D70_4733_BA65_1D5211D49394"
+            registreringTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_AC3492C4_1F13_4f49_9B9D_FF9C3CBCA71C"
+            registreringsaktoer:
+              type: "string"
+              description: "EAID_FA746933_8A94_45ca_B1C0_C517A321C3C6"
+            virkningFra:
+              type: "string"
+              format: "date-time"
+              description: "EAID_590F7FB9_8AB1_42dd_B91F_A436E15AF69A"
+            virkningTil:
+              type: "string"
+              format: "date-time"
+              description: "EAID_34C532BE_8E39_4665_9824_D89366AF07F2"
+            virkningsaktoer:
+              type: "string"
+              description: "EAID_DD975F1C_FFF4_4a0a_987B_C625DE4B49C7"
+            metadata:
+              $ref: "#/metadatatype"

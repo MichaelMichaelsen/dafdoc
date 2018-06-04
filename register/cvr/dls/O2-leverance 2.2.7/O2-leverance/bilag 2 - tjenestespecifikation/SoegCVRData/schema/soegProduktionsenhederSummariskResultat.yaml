@@ -1,0 +1,33 @@
+---
+  $schema: "http://json-schema.org/draft-04/schema#"
+  metadata: 
+    $ref: "definitioner.json#/metadatatype"
+  title: "soegProduktionsenhederSummariskResultat"
+  type: "array"
+  items: 
+    type: "object"
+    description: "Liste af soegeresultater med basale oplysninger om de matchende produktionsenheder EAID_7B57B46D_D857_4ec1_81B6_DCE8D393468C "
+    properties: 
+      pNummer: 
+        type: "integer"
+        description: "EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F"
+      produktionsenhedStartdato: 
+        type: "string"
+        format: "date-time"
+        description: "EAID_B75D9F82_CBBC_4a25_B0D3_C14B61539146"
+      produktionsenhedsnavn: 
+        type: "object"
+        description: "EAID_049CB9E9_F315_4be4_95C9_FDE2BFC6A20C"
+        properties: 
+          vaerdi: 
+            type: "string"
+            description: "EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F"
+          virkningFra: 
+            type: "string"
+            format: "date-time"
+            description: "EAID_7A6FFFE2_FE7A_4b79_A459_41520425CCEB"
+          virkningTil: 
+            type: "string"
+            format: "date-time"
+            description: "EAID_DBD6F448_CB6B_4645_8181_B8FBC8E9C4F1"
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Haendelse>
+	<Virksomhed> 																		<!-- EAID_AC14E4B3_B0EC_4580_B60D_B5BB30651F09 -->
+		<CVRnummer>Load(CVRnummer)</CVRnummer> 											<!-- EAID_564C37C6_7647_4f64_9116_5B273C30D955 -->
+		<VirksomhedStartdato>Load(VirksomhedStartdato)</VirksomhedStartdato> 			<!-- EAID_0315F5E1_1610_44da_83F8_6BFE523C3B3C -->
+		<VirksomhedOphoersdato>Load(VirksomhedOphoersdato)</VirksomhedOphoersdato> 		<!-- EAID_B0E64799_6723_4f31_A9A4_87CBFC0C3946 -->
+		<Id>Load(Id)</Id> 																<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 -->
+		<Enhedstype>constant(Virksomhed)</Enhedstype> 									
+		<Forretningshaendelse>Load(Feltliste)</Forretningshaendelse> 					
+		<ForretningsnoegleType>constant(CVRnummer)</ForretningsnoegleType> 				
+		<Forretningsnoegle>Load(CVRnummer)</Forretningsnoegle> 							
+		<Status>constant(Aktiv)</Status> 												<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D -->
+	</Virksomhed>
+</Haendelse>

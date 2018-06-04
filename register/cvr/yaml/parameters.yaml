@@ -1,9 +1,96 @@
+pStartdato:
+  name: pStartdato
+  in: query
+  type: string
+  format: data-time
+  description: En produktionsenheds startdato. EAID_B75D9F82_CBBC_4a25_B0D3_C14B61539146
+pVirksomhedStartdato:
+  name: pVirksomhedStartdato
+  in: query
+  type: string
+  format: data-time
+  description: En virksomheds startdato. EAID_0315F5E1_1610_44da_83F8_6BFE523C3B3C
+pBranche:
+  name: pBranche
+  in: query
+  type: string
+  description: En virksomheds branchekode.vaerdi eller bibranchekode.vaerdi. EAID_E5B1DBF5_1989_40bf_859B_226351B73841.EAID_FC4113D3_4B87_416b_8710_F03B76018886
+pNavn:
+  name: pNavn
+  in: query
+  type: string
+  description: En virksomheds navn.vaerdi. EAID_144A417F_EA68_4352_A9CC_EFF3978E2D8F
+pSumariske:
+  name: pSumariske
+  in: query
+  type: boolean
+  default: true
+  description: output skema
+pInkluderOphoerteVirksomheder:
+  name: pInkluderOphoerteVirksomheder
+  in: query
+  type: boolean
+  default: false
+  description:
+    Angivelse af, om ophørte virksomheder ønskes medtaget i søgeresultat
+pAdresse:
+  name: pAdresse
+  type: string
+  in: query
+  required: false
+  description: |
+    DAR-adresseUUID for virksomhedende på en adresse. EAID_6043F4D9_C4CA_44d0_BE88_027166A8B008
+pId:
+  name: pId
+  type: number
+  in: query
+  required: true
+  description: >
+    Id (CVREnhedsid)
+    EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52
+pCVRNummer:
+  name: pCVRNummer
+  type: number
+  in: query
+  required: true
+  description: >
+    CVR-nummer for en virksomhed.
+    EAID_564C37C6_7647_4f64_9116_5B273C30D955
+pInkluderBeskaeftigelse:
+  name: pInkluderBeskaeftigelse
+  type: boolean
+  in: query
+  required: false
+  description: Angivelse af, om beskræftigelsestal ønskes inkluderet
+  default: false
+pVirkningstid:
+  name: pVirkningstid
+  in: query
+  type: string
+  format: date
+  description: En virksomheds virkningstid
+pRegistreringstid:
+  name: pRegistreringstid
+  in: query
+  type: string
+  format: data-time
+  description: En virksomheds registreringstid
+pPNummer:
+  name: pPNummer
+  in: query
+  type: number
+  format: int32
+  description: En produktionsenheds p-nummer. EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F
 adresseId:
   name: adresseId
   in: query
   type: string
   format: uuid
   description: Identifikation af adresseelementet igennem hele dets livscyklus. EAID_D273E3D8_A3F4_41bc_AF9C_E67B4A29C008
+p:
+  name: p
+  in: query
+  type: string
 husnummerId:
   name: husnummerId
   in: query

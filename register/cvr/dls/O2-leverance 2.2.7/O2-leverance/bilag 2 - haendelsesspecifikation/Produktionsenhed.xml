@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Haendelse>
+	<Produktionsenhed> 																						<!-- EAID_7B57B46D_D857_4ec1_81B6_DCE8D393468C -->
+		<Pnummer>Load(Pnummer)</Pnummer> 																	<!-- EAID_C579CB46_0ED3_4bdf_BA0D_9F4C362BAA2F -->
+		<ProduktionsenhedStartdato>Load(ProduktionsenhedStartdato)</ProduktionsenhedStartdato> 				<!-- EAID_B75D9F82_CBBC_4a25_B0D3_C14B61539146 -->
+		<Produktionsenhedsophoersdato>Load(Produktionsenhedsophoersdato)</Produktionsenhedsophoersdato> 	<!-- EAID_29A66810_5425_47f7_A4FA_D91648AC1389 -->
+		<CVREnhedsId>Load(Id)</CVREnhedsId> 																<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 -->
+		<EnhedsType>Constant(Produktionsenhed)</EnhedsType>
+		<Forretningshaendelse>Load(Feltliste)</Forretningshaendelse>
+		<ForretningsnoegleType>Constant(Pnummer)</ForretningsnoegleType>
+		<Forretningsnoegle>Load(Pnummer)</Forretningsnoegle>
+		<Status>constant(Aktiv)</Status> 										<!-- EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_DCF27A9B_C02A_4f40_B8C3_CD906F00B2D8 -->
+	</Produktionsenhed>
+</Haendelse>

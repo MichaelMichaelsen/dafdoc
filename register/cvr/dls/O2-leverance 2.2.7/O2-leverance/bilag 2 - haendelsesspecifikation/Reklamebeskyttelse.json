@@ -1,0 +1,12 @@
+{
+	"Haendelse": {
+		"Reklamebeskyttelse": {										/* EAID_9BB4C293_1018_4b5d_9131_F5E881D628C5 */
+			"Vaerdi": "Load(Vaerdi)",								/* EAID_657F68FA_4810_48dc_B118_59191B6F874B */
+			"VirkningFra": "Load(VirkningFra)",						/* EAID_589A0DD0_7BEB_4a7f_BD79_3A054A00BDF4 */
+			"VirkningTil": "Load(VirkningTil)",						/* EAID_750AE06E_B65D_4440_A37D_E9C386AB1E69 */
+			"CVREnhedsId": "Load(CVREnhedsId)"						/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 */
+			"Forretningshaendelse":"Load(Feltliste)",
+			"Status": "Constant(aktiv)"								/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D */
+		}
+	}
+}

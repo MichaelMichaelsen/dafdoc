@@ -1,0 +1,15 @@
+{
+	"Haendelse": {
+		"Kreditoplysninger": {											/* EAID_AC59F262_DECD_4e8a_83A3_427DE8CE00CA */
+			"kreditoplysningstekst": "Load(kreditoplysningstekst)",		/* EAID_BD66C378_897A_4302_8329_823260CC0B70 */
+			"kreditoplysning": "Load(kreditoplysning)",					/* EAID_9A0D6125_7E2D_424a_9A47_28BBA5B626A2 */
+			"statusvaerdi": "Load(statusvaerdi)",						/* EAID_543F0D37_D980_4776_976B_773836DEE1BE */
+			"statusvaerditekst": "Load(statusvaerditekst)",				/* EAID_2678203A_0DFF_453a_A90C_43AC6957ADE1 */
+			"VirkningFra": "Load(VirkningFra)",							/* EAID_AC4C76E7_26C4_4b4b_809E_70F376B1F0CF */
+			"VirkningTil": "Load(VirkningTil)",							/* EAID_3AFEB13F_B5CF_42c1_82D1_DCEAE23EA1F2 */
+			"CVREnhedsId": "Load(CVREnhedsId)"							/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_A09EF54A_A9A3_413b_94C2_805EFA701A52 */
+			"Forretningshaendelse":"Load(Feltliste)",
+			"Status": "Constant(aktiv)"									/* EAID_C7FCF2D9_4FC5_4e80_8786_74CD9BA29243.EAID_5870EBD0_F241_4fcf_8ADD_5EF56DBAB21D */
+		}
+	}
+}

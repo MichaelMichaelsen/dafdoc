@@ -27,6 +27,11 @@
 
     </style>
 
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
   </head>
 
   <body>
@@ -34,25 +39,25 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Datafordeler</a>
+        <a class="navbar-brand" href="#">Datafordeler REST API</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Home
+              <a class="nav-link" href="http://www.grunddataprogrammet.dk/dafdoc/katalog.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Eksempler</a>
+              <a class="nav-link" href="#" class="disabled">Eksempler</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">FAQ</a>
+              <a class="nav-link" href="http://datafordeler.dk/faq/">FAQ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Brugervejledning</a>
+              <a class="nav-link" href="http://www.grunddataprogrammet.dk/dafdoc/manualer/Anvendelse af webservices.html">Brugervejledning</a>
             </li>
           </ul>
         </div>
@@ -68,31 +73,74 @@
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <div class="card bg-light mb-3">
-            <div class="card-header"><a href="http://www.cpr.dk" class="card-link">CPR - Det Centrale Personregister</a></div>
+          <div class="card bg-light mb-3 border-left">
+            <div class="card-header"><a href="http://www.cpr.dk" class="card-link">Det Centrale Personregister</a></div>
             <div class="card-body">
+              <h4 class="card-title">CPR</h4>
               <div class="ribbon"><span>Tilgængelig</span></div>
+              <p class="card-text">Med de private services fra CPR er det muligt at få personoplysninger baseret på et CPR-nummer.</p>
               <p class="card-text">Indgået aftale med CPR om anvendelse af data er påkrævet</p>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">3.2</span></a>
-
-              <a href="cprdoc.html" class="btn btn-primary">REST</a>
-              <a href="yaml/dafcpr.yaml" class="btn btn-primary">YAML</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a  href="register/cpr/DLS/CPR_V3.2_2017.09.04_DLS.zip"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Data Leverance Specifikation">
+                  DLS <span class="badge badge-light">3.2</span>
+              </a>
+              <a  href="register/cpr/doc/Implementeringsdetaljer.htm"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Implementeringsdetaljer">
+                  Tips
+              </a>
+              <a  href="doccpr.html"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Swagger API">
+                  REST
+              </a>
+              <a  href="yaml/dafcpr.yaml"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Specikationer i yaml">
+                  OpenAPI
+              </a>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="card bg-light mb-3">
-            <div class="card-header"><a href="http://www.cvr.dk" class="card-link">CVR - Det Centrale Virkomshedsregister</a></div>
+            <div class="card-header"><a href="http://www.cvr.dk" class="card-link">Det Centrale Virkomshedsregister</a></div>
             <div class="card-body">
+              <h4 class="card-title">CVR</h4>
               <div class="ribbon"><span>Tilgængelig</span></div>
+              <p class="card-text">Her kan du få detaljeret informatoin om samtlige danske registrerede virksomheder.</p>
               <p class="card-text">Indgået aftale med CVR om anvendelse af data er påkrævet</p>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">1.9.3</span></a>
-
-              <a href="cvr.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <!-- <p class="card-text">Læs mere om brugeroprettelse og adgang til data på <a href="http://datafordeler.dk/anvender/hvordan-oprettes-bruger-og-dataadgang/">Brugeroprettelse og adgang til data</a></p> -->
+              <a  href="register/cvr/dls/O2-leverance 2.2.7.zip"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Data Leverance Specifikation">
+                  DLS <span class="badge badge-light">2.2.7</span>
+              </a>
+              <a  href="doccvr.html"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Swagger API">
+                  REST
+              </a>
+              <a  href="yaml/dafcvr.yaml"
+                  class="btn btn-primary"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Specikationer i yaml">
+                  OpenAPI
+              </a>
             </div>
           </div>
         </div>
@@ -105,26 +153,30 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="card">
-            <div class="card-header"><a href="http://www.dar.dk" class="card-link">DAR - Danmarks Adresseregister</a></div>
+            <div class="card-header"><a href="http://danmarksadresser.dk/" class="card-link">DAR - Danmarks Adresseregister</a></div>
             <div class="card-body">
+              <h4 class="card-title">DAR</h4>
               <div class="ribbon"><span>Tilgængelig</span></div>
-              <p class="card-text">Frie data</p>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">2.3.3</span></a>
-              <a href="dar.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <p class="card-text">Her er der adgang til detaljeret information om samtlige danske adresser. </p>
+              <p class="card-text">Der er fri adgang til data og det er ikke nødvendigt at oprette bruger</p>
+              <a href="register/dar/DLS/DAR_v2.3.1_2017.10.23_DLS.zip" class="btn btn-primary">DLS <span class="badge badge-light">2.3.1</span></a>
+              <a href="register/dar/doc/Implementeringsdetaljer.html" class="btn btn-primary">Tips</a>
+              <a href="docdar.html" class="btn btn-primary">REST</a>
+              <a href="yaml/dafdar.yaml" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="card">
-            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">DAGI - Danmarks Administrative Inddelinger</a></div>
+            <div class="card-header"><a href="http://sdfe.dk/hent-data/danmarks-administrative-graenser-dagi/" class="card-link">DAGI - Danmarks Administrative Inddelinger</a></div>
             <div class="card-body">
+              <h4 class="card-title">DAGI</h4>
+              <p class="card-text">I DAGI-registret er der på nuværende tidspunkt grænser for landets ca. 2200 sogne, 98 kommuner, 5 regioner, 22 retskredse, 12 politikredse, 92 opstillingskredse og ca. 1100 postnumre</p>
+              <p class="card-text">Der er fri adgang til data og det er ikke nødvendigt at oprette bruger</p>
               <div class="ribbon"><span>Tilgængelig</span></div>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">2.3.3</span></a>
-              <a href="dagi.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">1.17</span></a>
+              <a href="dagi.html" class="btn btn-primary" disabled>REST</a>
+              <a href="yaml/dafdar.json" class="btn btn-primary" disabled>OpenAPI</a>
             </div>
           </div>
         </div>
@@ -132,13 +184,17 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="card">
-            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">DS - Danske Stednavne</a></div>
+            <div class="card-header"><a href="http://sdfe.dk/hent-data/danske-stednavne/" class="card-link">DS - Danske Stednavne</a></div>
             <div class="card-body">
+              <h4 class="card-title">DS</h4>
               <div class="ribbon"><span>Tilgængelig</span></div>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <p class="card-text">Danske Stednavne indeholder stednavne i Danmark.
+Det er 130.000 danske stednavne i alt, der alle er registreret med en geografisk placering.
+Det kan være et punkt, en linje eller et område, der beskriver stednavnets geografiske udbredelse.</p>
+              <p class="card-text">Der er fri adgang til data og det er ikke nødvendigt at oprette bruger</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">2.4</span></a>
               <a href="dagi.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="yaml/dafdar.html" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
@@ -151,27 +207,32 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="card">
-          <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">MU - Matriklens Udvidelse</a></div>
+          <div class="card-header"><a href="http://gst.dk/matriklen/ejendomsdataprogrammet/matriklens-udvidelse/" class="card-link">MU - Matriklens Udvidelse</a></div>
             <div class="card-body">
               <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
-              <p class="card-text">Data om ejendomme, ejerlejligheder og jord</p>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
-              <a href="mu.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <h4 class="card-title">MU</h4>
+              <p class="card-text">Matriklen indeholder registrering af alle typer fast ejendom i Matriklen under samme autoritative, entydige og stabile ejendomsidentifikation (BFE nummer).</p>
+              <p class="card-text">Samlet fast ejendom (Jordstykker) – registreres i forvejen i Matriklen.</p>
+              <p class="card-text">Ejerlejligheder – flyttes fra Tingbogen til Matriklen.</p>
+              <p class="card-text">Bygninger på fremmed grund - flyttes fra Tingbogen og ESR til Matriklen.</p>
+              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">3.4</span></a>
+              <a href="docmu.html" class="btn btn-primary">REST</a>
+              <a href="register/mu/doc/DataIMatriklen.htm" class="btn btn-primary">Tips</a>
+              <a href="yaml/dafdar.yaml" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="card">
-            <div class="card-header"><a href="http://www.sdfe.dk" class="card-link">BBR - Bygning- og Boligsregisteree</a></div>
+            <div class="card-header"><a href="http://www.bbr.dk" class="card-link">BBR - Bygning- og Boligsregisteret</a></div>
             <div class="card-body">
               <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
               <h5 class="card-title">BBR</h5>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <p class="card-text">Bygnings- og Boligregistret (BBR) er et landsdækkende register med data om samtlige landets bygninger og boliger.</p>
+              <p class="card-text">Oplysningerne i BBR dækker bl.a. areal, beliggenhed, anvendelse, installationer, vand- og afløbsforhold, køkkenforhold, ydervægs- og tagdækningsmaterialer m.v. </p>
+              <!-- <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a> -->
               <a href="mu.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="yaml/dafdar.html" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
@@ -184,10 +245,9 @@
               <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
               <h5 class="card-title">EBR</h5>
               <p class="card-text">Ejendomsbeliggenhedsregisteret.</p>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <!-- <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a> -->
               <a href="mu.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="yaml/dafdar.html" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
@@ -197,11 +257,11 @@
             <div class="card-body">
               <div class="ribbon red"><span>Ikke tilgængeligt</span></div>
               <h5 class="card-title">EJF</h5>
-              <p class="card-text">Ejerfortegnelse.</p>
-              <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
+              <p class="card-text">Ejerfortegnelsen er det autoritative register over de faktiske ejere af al fast ejendom i Danmark. </p>
+              <p class="card-text">Ejerfortegnelsen indeholder oplysninger om den eller de personer/virksomheder, som råder over fast ejendom og hvortil meddelelser vedrørende ejendommen kan sendes.  </p>
+              <!-- <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a> -->
               <a href="mu.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="yaml/dafdar.html" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
@@ -215,9 +275,8 @@
               <h5 class="card-title">VUR</h5>
               <p class="card-text">Ejendomsvurderinger.</p>
               <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
-              <a href="mu.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="#" class="btn btn-primary">REST</a>
+              <a href="yaml/dafdar.html" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
@@ -237,8 +296,7 @@
               <p class="card-text">GeoDanmark</p>
               <a href="#" class="btn btn-primary">DLS <span class="badge badge-light">?.?.?</span></a>
               <a href="mu.html" class="btn btn-primary">REST</a>
-              <a href="#" class="btn btn-primary">Hændelser</a>
-              <a href="#" class="btn btn-primary">Filudtræk</a>
+              <a href="yaml/dafdar.html" class="btn btn-primary">OpenAPI</a>
             </div>
           </div>
         </div>
